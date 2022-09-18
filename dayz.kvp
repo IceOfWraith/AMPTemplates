@@ -1,7 +1,7 @@
 App.AdminMethod=STDIO
 App.ApplicationPort1=2302
 App.ApplicationPort2=2305
-App.ApplicationReadyMode=RCONConnected
+App.ApplicationReadyMode=Immediate
 App.BaseDirectory=./dayz/223350/
 App.CommandLineArgs={{$PlatformArgs}} -profiles=./DayZServerData -bepath={{$FullBaseDir}}/battleye -port={{$ApplicationPort1}} -config=serverDZ.cfg -dologs -adminlog -netlog -freezeCheck {{$FormattedArgs}}
 App.CommandLineParameterDelimiter= 

@@ -4,7 +4,7 @@
     "Category": "Hidden Settings",
     "Description": "",
     "Keywords": "",
-    "FieldName": "steamQueryPort",
+    "FieldName": "$ApplicationPort2",
     "InputType": "number",
     "IsFlagArgument": false,
     "ParamFieldName": "steamQueryPort",
