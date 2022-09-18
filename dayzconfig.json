@@ -13,21 +13,22 @@
     "Hidden": true
   },
   {
-    "DisplayName": "Mods",
-    "Category": "Modding",
-    "Description": "Put mod names here for startup",
-    "Keywords": "mods,addons,modding,modification,workshop,plugins",
-    "FieldName": "mods",
-    "InputType": "text",
+    "DisplayName": "RCon Password",
+    "Category": "Hidden Settings",
+    "Description": "",
+    "Keywords": "",
+    "FieldName": "$RemoteAdminPassword",
+    "InputType": "password",
     "IsFlagArgument": false,
-    "ParamFieldName": "mod",
-    "IncludeInCommandLine": true,
+    "ParamFieldName": "passwordRcon",
+    "IncludeInCommandLine": false,
     "DefaultValue": "",
-    "EnumValues": {}
+    "EnumValues": {},
+    "Hidden": true
   },
   {
     "DisplayName": "File Patching",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Ensures that only PBOs are loaded and NO unpacked data.",
     "Keywords": "patch,patching,files,misc,pbo,data",
     "FieldName": "filePatching",
@@ -43,7 +44,7 @@
   },
   {
     "DisplayName": "FPS Limit",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Limits server FPS to specified value (current max is 200) to lower CPU usage of low population servers.",
     "Keywords": "frames,fps,seconds,misc,frames per second,performance",
     "FieldName": "fpsLimit",
@@ -56,7 +57,7 @@
   },
   {
     "DisplayName": "Hostname",
-    "Category": "Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "Sets the name of your server",
     "Keywords": "server,name,hostname,list",
     "FieldName": "hostname",
@@ -64,12 +65,12 @@
     "IsFlagArgument": false,
     "ParamFieldName": "hostname",
     "IncludeInCommandLine": false,
-    "DefaultValue": "Server hosted with AMP",
+    "DefaultValue": "AMP Powered DayZ Server",
     "EnumValues": {}
   },
   {
     "DisplayName": "Password",
-    "Category": "Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "Sets the password required to connect to the server",
     "Keywords": "server,password,joining,join,security,protect,protection",
     "FieldName": "password",
@@ -81,26 +82,12 @@
     "EnumValues": {}
   },
   {
-    "DisplayName": "RCon Password",
-    "Category": "Server Settings",
-    "Description": "Sets the password required to login to RCon",
-    "Keywords": "server,admin,password,security,protect,protection,elevated,permissions,ban,kick",
-    "FieldName": "$RemoteAdminPassword",
-    "InputType": "RandomPassword",
-    "IsFlagArgument": false,
-    "ParamFieldName": "passwordRcon",
-    "IncludeInCommandLine": false,
-    "Required": true,
-    "DefaultValue": "",
-    "EnumValues": {}
-  },
-  {
     "DisplayName": "Admin Password",
-    "Category": "Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "Sets the password required to become a server admin",
     "Keywords": "server,admin,password,security,protect,protection,elevated,permissions,ban,kick",
     "FieldName": "passwordAdmin",
-    "InputType": "password",
+    "InputType": "RandomPassword",
     "IsFlagArgument": false,
     "ParamFieldName": "passwordAdmin",
     "IncludeInCommandLine": false,
@@ -109,7 +96,7 @@
   },
   {
     "DisplayName": "Enable Whitelist",
-    "Category": "Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "Enables or Disables the whitelist ( whitelist.txt )",
     "Keywords": "server,protect,protection,whitelist,userlist,allowlist,list",
     "FieldName": "enableWhitelist",
@@ -125,7 +112,7 @@
   },
   {
     "DisplayName": "Instance ID",
-    "Category": "Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "DayZ server instance id, to identify the number of instances per box and their storage folders with persistence files.",
     "Keywords": "instance,id,instanceid,persistence",
     "FieldName": "instanceId",
@@ -138,7 +125,7 @@
   },
   {
     "DisplayName": "Server Mission",
-    "Category": "Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "Mission to load on server startup. <MissionName>.<TerrainName>",
     "Keywords": "server,mission,terrain,template",
     "FieldName": "template",
@@ -154,7 +141,7 @@
   },
   {
     "DisplayName": "Force Same Build",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "When enabled, the server will allow the connection only to clients with same the .exe revision as the server",
     "Keywords": "misc,join,version,revision,build,buildnumber",
     "FieldName": "forceSameBuild",
@@ -170,7 +157,7 @@
   },
   {
     "DisplayName": "Enable Voicechat",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Enable/disable voice over network",
     "Keywords": "misc,voice,sound,chat,voicechat,teamchat",
     "FieldName": "disableVoN",
@@ -186,7 +173,7 @@
   },
   {
     "DisplayName": "Voice over network quality ( 0-30 )",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Voice over network codec quality, the higher the better (values 0-30)",
     "Keywords": "misc,voice,sound,chat,voicechat,teamchat",
     "FieldName": "vonCodecQuality",
@@ -199,7 +186,7 @@
   },
   {
     "DisplayName": "Enable 3rd person",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Enables the 3rd person view for players",
     "Keywords": "misc,view,3rd,person,camera",
     "FieldName": "disable3rdPerson",
@@ -215,7 +202,7 @@
   },
   {
     "DisplayName": "Enable Crosshair",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Enables the cross-hair for players",
     "Keywords": "misc,view,cross,cross-hair",
     "FieldName": "disableCrosshair",
@@ -231,7 +218,7 @@
   },
   {
     "DisplayName": "Enable personal light",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Enables personal light for all clients connected to server",
     "Keywords": "misc,light,lighting,flashlight,torch",
     "FieldName": "disablePersonalLight",
@@ -286,7 +273,7 @@
   },
   {
     "DisplayName": "Lighting config",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Set this to true if you want darker nights",
     "Keywords": "misc,light,lighting,dark,night,nights",
     "FieldName": "lightingConfig",
@@ -318,7 +305,7 @@
   },
   {
     "DisplayName": "Login queue concurrent players",
-    "Category": "Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "The number of players concurrently processed during the login process. Should prevent massive performance drop during connection when a lot of people are connecting at the same time",
     "Keywords": "server,join,joining,concurrent,que,queue,performance",
     "FieldName": "loginQueueConcurrentPlayers",
@@ -331,7 +318,7 @@
   },
   {
     "DisplayName": "Maximum Amount of Players",
-    "Category": "Server Settings",
+    "Category": "DayZ - DayZ - Server Settings",
     "Description": "The maximum number of players that can join",
     "Keywords": "server,join,joining,concurrent,que,queue,performance",
     "FieldName": "$MaxUsers",
@@ -344,7 +331,7 @@
   },
   {
     "DisplayName": "Login queue max players",
-    "Category": "Server Settings",
+    "Category": "DayZ - DayZ - Server Settings",
     "Description": "The maximum number of players that can wait in login queue",
     "Keywords": "server,join,joining,concurrent,que,queue,performance",
     "FieldName": "loginQueueMaxPlayers",
@@ -357,7 +344,7 @@
   },
   {
     "DisplayName": "Disable houses/door persistance",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Disable houses/doors persistence, usable in case of problems with persistence",
     "Keywords": "misc,house,door,persistance",
     "FieldName": "storeHouseStateDisabled",
@@ -373,7 +360,7 @@
   },
   {
     "DisplayName": "Storage Auto Fix",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Checks if the persistence files are corrupted and replaces corrupted ones with empty ones",
     "Keywords": "misc,storage,fix,persistance",
     "FieldName": "storageAutoFix",
@@ -389,7 +376,7 @@
   },
   {
     "DisplayName": "Restrict RCon",
-    "Category": "Server Settings",
+    "Category": "DayZ - DayZ - Server Settings",
     "Description": "Enables/Disables RCon functions (kick/ban/connection restrictions)",
     "Keywords": "server,rcon,remote,console,battleye,admin,kick,ban",
     "FieldName": "RestrictRCon",
@@ -405,7 +392,7 @@
   },
   {
     "DisplayName": "Respawn Time",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Sets the respawn delay (in seconds) before the player is able to get a new character on the server, when the previous one is dead",
     "Keywords": "spawn,respawn,time,death",
     "FieldName": "respawnTime",
@@ -418,7 +405,7 @@
   },
   {
     "DisplayName": "Message of the day",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Message of the day displayed in the in-game chat",
     "Keywords": "motd,chat,message,text",
     "FieldName": "motd",
@@ -431,7 +418,7 @@
   },
   {
     "DisplayName": "MOTD Interval",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Time interval (in seconds) between each message",
     "Keywords": "motd,message,chat,interval",
     "FieldName": "motdInterval",
@@ -444,7 +431,7 @@
   },
   {
     "DisplayName": "Max Ping",
-    "Category": "Miscellaneous Settings",
+    "Category": "DayZ - Miscellaneous",
     "Description": "Max ping value until server kick the user (value in milliseconds)",
     "Keywords": "ping,maximal,lagging,lag,kick,maxPing",
     "FieldName": "maxPing",
@@ -454,5 +441,34 @@
     "IncludeInCommandLine": false,
     "DefaultValue": "500",
     "EnumValues": {}
+  },
+  {
+    "DisplayName": "Mods",
+    "Category": "DayZ - Server Settings",
+    "Description": "Put mod names here for startup",
+    "Keywords": "mods,addons,modding,modification,workshop,plugins",
+    "FieldName": "mods",
+    "InputType": "text",
+    "IsFlagArgument": false,
+    "ParamFieldName": "mod",
+    "IncludeInCommandLine": true,
+    "DefaultValue": "",
+    "EnumValues": {}
+  },
+  {
+    "DisplayName": "Version",
+    "Category": "SteamCMD and Updates",
+    "Description": "Which version of the server to download. Only applies to Windows, Linux is only supported in the Experimental version. Ensure users download a matching version in Steam.",
+    "Keywords": "version",
+    "FieldName": "version",
+    "InputType": "enum",
+    "IsFlagArgument": false,
+    "ParamFieldName": "version",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "original",
+    "EnumValues": {
+      "experimental": "Experimental",
+      "original": "Original"
+    }
   }
 ]
