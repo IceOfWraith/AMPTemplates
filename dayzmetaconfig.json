@@ -1,0 +1,23 @@
+[
+	{
+		"ConfigFile": "./serverDZ.cfg",
+		"AutoMap": true,
+		"ConfigType": "template",
+		"ConfigFileTemplate": "./dayz/dayzserver.cfg"
+	},
+	{
+		"ConfigFile": "battleye/BEServer_x64.cfg",
+		"ConfigType": "kvp",
+		"ConfigFormat": "{0} {1}",
+		"Subsections": [
+			{
+				"Heading": "$root",
+				"SettingMappings": {
+					"RConPassword": "passwordRcon",
+					"RConPort": "$RemoteAdminPort",
+					"RestrictRCon": "RestrictRCon"
+				}
+			}
+		]
+	}
+]
