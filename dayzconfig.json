@@ -4,7 +4,7 @@
     "Category": "Hidden Settings",
     "Description": "",
     "Keywords": "",
-    "FieldName": "$ApplicationPort2",
+    "FieldName": "$QueryPort",
     "InputType": "number",
     "IsFlagArgument": false,
     "ParamFieldName": "steamQueryPort",
@@ -234,7 +234,7 @@
   },
   {
     "DisplayName": "Server Time",
-    "Category": "Time Settings",
+    "Category": "DayZ - Time Settings",
     "Description": "Initial in-game time of the server. \"SystemTime\" means the local time of the machine. Another possibility is to set the time to some value in \"YYYY/MM/DD/HH/MM\" format, e.g \"2015/4/8/17/23\"",
     "Keywords": "time,server,daytime,cycle,systemtime,servertime",
     "FieldName": "serverTime",
@@ -247,7 +247,7 @@
   },
   {
     "DisplayName": "Server Time Acceleration",
-    "Category": "Time Settings",
+    "Category": "DayZ - Time Settings",
     "Description": "Accelerated Time - The numerical value being a multiplier (0.1-64). Thus, in case it is set to 24, time would move 24 times faster than normal. An entire day would pass in one hour",
     "Keywords": "time,server,daytime,cycle,systemtime,servertime",
     "FieldName": "serverTimeAcceleration",
@@ -260,7 +260,7 @@
   },
   {
     "DisplayName": "Server night time acceleration",
-    "Category": "Time Settings",
+    "Category": "DayZ - Time Settings",
     "Description": "Accelerated Nigh Time - The numerical value being a multiplier (0.1-64) and also multiplied by serverTimeAcceleration value.\nThus, in case it is set to 4 and serverTimeAcceleration is set to 2, night time would move 8 times faster than normal.\nAn entire night would pass in 3 hours.",
     "Keywords": "time,server,daytime,cycle,systemtime,servertime",
     "FieldName": "serverNightTimeAcceleration",
@@ -289,7 +289,7 @@
   },
   {
     "DisplayName": "Server time persistant",
-    "Category": "Time Settings",
+    "Category": "DayZ - Time Settings",
     "Description": "Persistent Time. The actual server time is saved to storage, so when active, the next server start will use the saved time value.",
     "Keywords": "time,server,daytime,cycle,systemtime,servertime",
     "FieldName": "serverTimePersistent",
@@ -318,7 +318,7 @@
   },
   {
     "DisplayName": "Maximum Amount of Players",
-    "Category": "DayZ - DayZ - Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "The maximum number of players that can join",
     "Keywords": "server,join,joining,concurrent,que,queue,performance",
     "FieldName": "$MaxUsers",
@@ -331,7 +331,7 @@
   },
   {
     "DisplayName": "Login queue max players",
-    "Category": "DayZ - DayZ - Server Settings",
+    "Category": "DayZ - Server Settings",
     "Description": "The maximum number of players that can wait in login queue",
     "Keywords": "server,join,joining,concurrent,que,queue,performance",
     "FieldName": "loginQueueMaxPlayers",
