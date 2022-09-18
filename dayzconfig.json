@@ -8,7 +8,7 @@
     "InputType": "number",
     "IsFlagArgument": false,
     "ParamFieldName": "steamQueryPort",
-    "IncludeInCommandLine": true,
+    "IncludeInCommandLine": false,
     "EnumValues": {},
     "Hidden": true
   },
