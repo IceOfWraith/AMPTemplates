@@ -29,7 +29,7 @@ App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} -profiles=./DayZServerData -bepath={{$FullBaseDir}}/battleye -port={{$GamePort}} -config=serverDZ.cfg -dologs -adminlog -netlog -freezeCheck {{$FormattedArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
-App.EnvironmentVariables={"LD_LIBRARY_PATH":"./linux64:%LD_LIBRARY_PATH%","SteamAppId":"221100"}
+App.EnvironmentVariables={"LD_LIBRARY_PATH":"./linux64:%LD_LIBRARY_PATH%","SteamAppId":"{{version}}"}
 App.CommandLineParameterFormat=-{0}={1}
 App.CommandLineParameterDelimiter= 
 App.ExitMethod=String
@@ -56,7 +56,7 @@ App.RCONConnectRetrySeconds=5
 App.RCONHeartbeatMinutes=0
 App.RCONHeartbeatCommand=ping
 App.TelnetLoginFormat={0}
-App.UpdateSources=[{"UpdateStageName": "SteamCMD Download","UpdateSourcePlatform": "Windows", "UpdateSource": "SteamCMD", "UpdateSourceData": "223350", "UpdateSourceTarget": "{{$FullBaseDir}}", "UpdateSourceConditionSetting": "version", "UpdateSourceConditionValue": "original"},{"UpdateStageName": "SteamCMD Download","UpdateSourcePlatform": "Windows", "UpdateSource": "SteamCMD", "UpdateSourceData": "1042420", "UpdateSourceTarget": "{{$FullBaseDir}}", "UpdateSourceConditionSetting": "version", "UpdateSourceConditionValue": "experimental"},{"UpdateStageName": "SteamCMD Download","UpdateSourcePlatform": "Linux", "UpdateSource": "SteamCMD", "UpdateSourceData": "1042420", "UpdateSourceTarget": "{{$FullBaseDir}}"},{"UpdateStageName": "Config Template Download","UpdateSourcePlatform": "All", "UpdateSource": "FetchURL","OverwriteExistingFiles": true, "UpdateSourceData": "https://github.com/IceOfWraith/AMPTemplates/raw/dev/dayzserver.cfg","UpdateSourceTarget":"./"}]
+App.UpdateSources=[{"UpdateStageName": "SteamCMD Download","UpdateSourcePlatform": "Windows", "UpdateSource": "SteamCMD", "UpdateSourceData": "223350", "UpdateSourceTarget": "{{$FullBaseDir}}", "UpdateSourceConditionSetting": "version", "UpdateSourceConditionValue": "221100"},{"UpdateStageName": "SteamCMD Download","UpdateSourcePlatform": "Windows", "UpdateSource": "SteamCMD", "UpdateSourceData": "1042420", "UpdateSourceTarget": "{{$FullBaseDir}}", "UpdateSourceConditionSetting": "version", "UpdateSourceConditionValue": "1024020"},{"UpdateStageName": "SteamCMD Download","UpdateSourcePlatform": "Linux", "UpdateSource": "SteamCMD", "UpdateSourceData": "1042420", "UpdateSourceTarget": "{{$FullBaseDir}}"},{"UpdateStageName": "Config Template Download","UpdateSourcePlatform": "All", "UpdateSource": "FetchURL","OverwriteExistingFiles": true, "UpdateSourceData": "https://github.com/IceOfWraith/AMPTemplates/raw/dev/dayzserver.cfg","UpdateSourceTarget":"./"}]
 App.Compatibility=None
 App.SteamUpdateAnonymousLogin=False
 App.SteamForceLoginPrompt=True
