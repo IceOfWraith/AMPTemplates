@@ -3,7 +3,7 @@
 		"ConfigFile": "./serverDZ.cfg",
 		"AutoMap": true,
 		"ConfigType": "template",
-		"ConfigFileTemplate": "./dayz/dayzserver.cfg"
+		"ConfigFileTemplate": "./dayz/server/AMP_Settings.cfg"
 	},
 	{
 		"ConfigFile": "battleye/BEServer_x64.cfg",
