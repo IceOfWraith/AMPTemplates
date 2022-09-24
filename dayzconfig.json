@@ -286,7 +286,7 @@
     "IncludeInCommandLine": false,
     "DefaultValue": "1",
     "Placeholder": "1",
-    "MinValue": "0.1",
+    "MinValue": "0",
     "MaxValue": "64",
     "EnumValues": {}
   },
@@ -302,7 +302,7 @@
     "IncludeInCommandLine": false,
     "DefaultValue": "1",
     "Placeholder": "1",
-    "MinValue": "0.1",
+    "MinValue": "0",
     "MaxValue": "64",
     "EnumValues": {}
   },
