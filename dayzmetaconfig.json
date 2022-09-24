@@ -6,14 +6,14 @@
 		"ConfigFileTemplate": "./dayz/server/AMP_Settings.cfg"
 	},
 	{
-		"ConfigFile": "battleye/BEServer_x64.cfg",
+		"ConfigFile": "battleye/beserver_x64.cfg",
 		"ConfigType": "kvp",
 		"ConfigFormat": "{0} {1}",
 		"Subsections": [
 			{
 				"Heading": "$root",
 				"SettingMappings": {
-					"RConPassword": "passwordRcon",
+					"RConPassword": "$RemoteAdminPassword",
 					"RConPort": "$RemoteAdminPort",
 					"RestrictRCon": "RestrictRCon"
 				}
