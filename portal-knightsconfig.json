@@ -1,7 +1,7 @@
 [
     {
         "DisplayName":"Server Name",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"The name that your dedicated server will display.",
         "Keywords":"server,name",
         "FieldName":"name",
@@ -14,7 +14,7 @@
     },
     {
         "DisplayName":"Game IP",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"The local network IP address of your dedicated server. The address 0.0.0.0 allows the host computer to listen to all local network traffic. You probably won't need to change this unless you're setting up your server to work on a specific network card or interface.",
         "Keywords":"",
         "FieldName":"$ApplicationIPBinding",
@@ -26,7 +26,7 @@
     },
     {
         "DisplayName":"Game Port",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"The port for the dedicated server.",
         "Keywords":"",
         "FieldName":"$GamePort",
@@ -38,7 +38,7 @@
     },
     {
         "DisplayName":"Save Folder Path",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"This is the location where save data will be written.",
         "Keywords":"Save,folder,path",
         "FieldName":"saveFolderPath",
@@ -50,7 +50,7 @@
     },
     {
         "DisplayName":"Gameplay Mode",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"The game play mode for the dedicated server.",
         "Keywords":"gameplay,Mode",
         "FieldName":"gameplayMode",
@@ -66,7 +66,7 @@
     },
     {
         "DisplayName":"Universe Size",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"The universe size for the dedicated server.",
         "Keywords":"universe,Size",
         "FieldName":"universeSize",
@@ -83,7 +83,7 @@
     },
     {
         "DisplayName":"Universe ID",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"The world slot used when accessing this dedicated server.",
         "Keywords":"universe,Id",
         "FieldName":"universeId",
@@ -96,7 +96,7 @@
     },
     {
         "DisplayName":"Hide Console Window",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"This will hide the console window and break the console in AMP if changed.",
         "Keywords":"",
         "FieldName":"hideConsoleWindow",
@@ -110,7 +110,7 @@
     },
     {
         "DisplayName":"Admin Password",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Choose the password used to access your dedicated server by the Admin user group.",
         "Keywords":"admin,password",
         "FieldName":"adminscredentialspassword",
@@ -123,7 +123,7 @@
     },
     {
         "DisplayName":"Admin Can Login",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Admins can log in.",
         "Keywords":"admin,Login",
         "FieldName":"adminscanLogin",
@@ -139,7 +139,7 @@
     },
     {
         "DisplayName":"Admin Can Kick Players",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Admins can kick other players from the server.",
         "Keywords":"admin,Kick,Players",
         "FieldName":"adminscanKickPlayers",
@@ -155,7 +155,7 @@
     },
     {
         "DisplayName":"Admin Can Modify World",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Admins can mine/build blocks/props.",
         "Keywords":"admin,Modify,World",
         "FieldName":"adminscanModifyWorld",
@@ -171,7 +171,7 @@
     },
     {
         "DisplayName":"Admin Can Interact With Crafting Stations",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Admins can interact with crafting stations.",
         "Keywords":"admin,Interact,Crafting,Stations",
         "FieldName":"adminscanInteractWithCraftingStations",
@@ -187,8 +187,8 @@
     },
     {
         "DisplayName":"Admin Can Interact With Chests",
-        "Category":"Server Settings",
-        "Description":"Defines whether Admins can interact with chests. Should be used together with canModifyWorld in order to also prevent mining of chests.",
+        "Category":"PK - Server Settings",
+        "Description":"Defines whether Admins can interact with chests. Should be used together with \"Admin Can Modify World\" in order to also prevent mining of chests.",
         "Keywords":"admin,Interact,Chests",
         "FieldName":"adminscanInteractWithChests",
         "InputType":"checkbox",
@@ -203,7 +203,7 @@
     },
     {
         "DisplayName":"Admin Can Interact With NPCs",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Admins can interact with NPCs.",
         "Keywords":"admin,Interact,NPCs",
         "FieldName":"adminscanInteractWithNPCs",
@@ -219,7 +219,7 @@
     },
     {
         "DisplayName":"User Password",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Choose the password used to access your dedicated server by the User user group.",
         "Keywords":"user,password",
         "FieldName":"userscredentialspassword",
@@ -232,7 +232,7 @@
     },
     {
         "DisplayName":"User Can Login",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Users can log in.",
         "Keywords":"users,Login",
         "FieldName":"userscanLogin",
@@ -248,7 +248,7 @@
     },
     {
         "DisplayName":"User Can Kick Players",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Users can kick other players from the server.",
         "Keywords":"users,Kick,Players",
         "FieldName":"userscanKickPlayers",
@@ -264,7 +264,7 @@
     },
     {
         "DisplayName":"User Can Modify World",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Users can mine/build blocks/props.",
         "Keywords":"users,Modify,World",
         "FieldName":"userscanModifyWorld",
@@ -280,7 +280,7 @@
     },
     {
         "DisplayName":"User Can Interact With Crafting Stations",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Users can interact with crafting stations.",
         "Keywords":"users,Interact,Crafting,Stations",
         "FieldName":"userscanInteractWithCraftingStations",
@@ -296,8 +296,8 @@
     },
     {
         "DisplayName":"User Can Interact With Chests",
-        "Category":"Server Settings",
-        "Description":"Defines whether Users can interact with chests. Should be used together with canModifyWorld in order to also prevent mining of chests.",
+        "Category":"PK - Server Settings",
+        "Description":"Defines whether Users can interact with chests. Should be used together with \"User Can Modify World\" in order to also prevent mining of chests.",
         "Keywords":"users,Interact,Chests",
         "FieldName":"userscanInteractWithChests",
         "InputType":"checkbox",
@@ -312,7 +312,7 @@
     },
     {
         "DisplayName":"User Can Interact With NPCs",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Users can interact with NPCs.",
         "Keywords":"users,Interact,NPCs",
         "FieldName":"userscanInteractWithNPCs",
@@ -328,7 +328,7 @@
     },
     {
         "DisplayName":"Guest Password",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Choose the password used to access your dedicated server by the Guest user group.",
         "Keywords":"guests,password",
         "FieldName":"guestscredentialspassword",
@@ -341,7 +341,7 @@
     },
     {
         "DisplayName":"Guest Can Login",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Guests can log in.",
         "Keywords":"guests,Login",
         "FieldName":"guestscanLogin",
@@ -357,7 +357,7 @@
     },
     {
         "DisplayName":"Guest Can Kick Players",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Guests can kick other players from the server.",
         "Keywords":"guests,Kick,Players",
         "FieldName":"guestscanKickPlayers",
@@ -373,7 +373,7 @@
     },
     {
         "DisplayName":"Guest Can Modify World",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Guests can mine/build blocks/props.",
         "Keywords":"guests,Modify,World",
         "FieldName":"guestscanModifyWorld",
@@ -389,7 +389,7 @@
     },
     {
         "DisplayName":"Guest Can Interact With Crafting Stations",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Guests can interact with crafting stations.",
         "Keywords":"guests,Interact,Crafting,Stations",
         "FieldName":"guestscanInteractWithCraftingStations",
@@ -405,8 +405,8 @@
     },
     {
         "DisplayName":"Guest Can Interact With Chests",
-        "Category":"Server Settings",
-        "Description":"Defines whether Guests can interact with chests. Should be used together with \"Admin Can Modify World\" enabled in order to also prevent mining of chests.",
+        "Category":"PK - Server Settings",
+        "Description":"Defines whether Guests can interact with chests. Should be used together with \"Guest Can Modify World\" enabled in order to also prevent mining of chests.",
         "Keywords":"guests,Interact,Chests",
         "FieldName":"guestscanInteractWithChests",
         "InputType":"checkbox",
@@ -421,7 +421,7 @@
     },
     {
         "DisplayName":"Guest Can Interact With NPCs",
-        "Category":"Server Settings",
+        "Category":"PK - Server Settings",
         "Description":"Defines whether Guests can interact with NPCs.",
         "Keywords":"guests,Interact,NPCs",
         "FieldName":"guestscanInteractWithNPCs",
