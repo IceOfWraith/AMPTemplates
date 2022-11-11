@@ -1,6 +1,6 @@
 Meta.DisplayName=Space Engineers
 Meta.Description=Space Engineers Dedicated Server
-Meta.OS=Windows, Linux
+Meta.OS=Windows
 Meta.Arch=x86_64
 Meta.Author=IceOfWraith, CubeCoders(base)
 Meta.URL=https://store.steampowered.com/app/244850/Space_Engineers/
