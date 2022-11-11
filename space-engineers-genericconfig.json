@@ -2233,14 +2233,14 @@
       }
     },
     {
-      "DisplayName": "AFK Timeount",
+      "DisplayName": "AFK Timeout",
       "Category": "SE - Trash Removal",
       "Description": "Defines time in minutes after which inactive players will be kicked. 0 is off.",
-      "Keywords": "AFK,Timeount,minutes",
-      "FieldName": "AFKTimeoutMin",
+      "Keywords": "AFK,Timeout,minutes",
+      "FieldName": "AFKTimeountMin",
       "InputType": "number",
       "IsFlagArgument": false,
-      "ParamFieldName": "/MyConfigDedicated/SessionSettings/AFKTimeoutMin | /MyObjectBuilder_WorldConfiguration/Settings/AFKTimeoutMin",
+      "ParamFieldName": "/MyConfigDedicated/SessionSettings/AFKTimeountMin | /MyObjectBuilder_WorldConfiguration/Settings/AFKTimeountMin",
       "IncludeInCommandLine": false,
       "DefaultValue": "0",
       "Placeholder": "0",
