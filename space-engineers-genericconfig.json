@@ -1361,7 +1361,7 @@
       "DefaultValue": "10000000",
       "Placeholder": "10000000",
       "MinValue": "200000",
-      "MaxValue": "9223372036854780000",
+      "MaxValue": "200001",
       "Suffix": "Meters",
       "EnumValues": {}
     },
@@ -1378,7 +1378,7 @@
       "DefaultValue": "10000000",
       "Placeholder": "10000000",
       "MinValue": "500000",
-      "MaxValue": "9223372036854780000",
+      "MaxValue": "500001",
       "Suffix": "Meters",
       "EnumValues": {}
     },
@@ -1395,7 +1395,7 @@
       "DefaultValue": "30000000",
       "Placeholder": "30000000",
       "MinValue": "1000000",
-      "MaxValue": "9223372036854780000",
+      "MaxValue": "1000001",
       "Suffix": "Meters",
       "EnumValues": {}
     },
