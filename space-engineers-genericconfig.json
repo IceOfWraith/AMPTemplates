@@ -54,10 +54,10 @@
     {
       "DisplayName": "Server Release Stream",
       "Category": "SteamCMD and Updates",
-      "Description": "Which release stream should be used to Update the server. Choose a custom release on [SteamDB](https://steamdb.info/app/298740/depots/).",
+      "Description": "Which release stream should be used to update the server. Choose a custom release on [SteamDB](https://steamdb.info/app/298740/depots/) and enter the Branch Name below.",
       "Keywords": "server,release,stream",
-      "FieldName": "releasestream",
-      "ParamFieldName": "releasestream",
+      "FieldName": "Stream",
+      "ParamFieldName": "Stream",
       "IncludeInCommandLine": false,
       "InputType": "text",
       "EnumValues": {},
