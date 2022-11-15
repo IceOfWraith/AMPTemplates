@@ -1987,7 +1987,7 @@
       "IncludeInCommandLine": false,
       "DefaultValue": "1",
       "Placeholder": "1",
-      "MinValue": "0.75",
+      "MinValue": "0",
       "MaxValue": "1",
       "EnumValues": {}
     },
