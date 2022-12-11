@@ -1,0 +1,17 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourceData": "2239530",
+        "UpdateSourceArgs": "",
+        "UpdateSourceVersion": "",
+        "UpdateSourceTarget": "",
+        "UpdateSourceConditionSetting": null,
+        "UpdateSourceConditionValue": null,
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": true,
+        "UpdateSourcePlatform": "All",
+        "ForceDownloadPlatform": null,
+        "UpdateSource": "SteamCMD"
+    }
+]
