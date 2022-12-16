@@ -18,7 +18,7 @@
     "UpdateStageName":"Backup Exclusions Download 1",
     "UpdateSourcePlatform":"All",
     "UpdateSource":"FetchURL",
-    "UpdateSourceData":"https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/main/exclusions/.backupExcludeEmpyrion1",
+    "UpdateSourceData":"https://github.com/IceOfWraith/AMPTemplates/raw/dev/exclusions/.backupExclusionsEmpyrion1",
     "UpdateSourceArgs":".backupExclude",
     "UpdateSourceTarget":"{{$FullBaseDir}}",
     "OverwriteExistingFiles":false}
