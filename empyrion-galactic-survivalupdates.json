@@ -13,5 +13,13 @@
     "UpdateSource": "FetchURL",
     "UpdateSourceData": "https://github.com/CubeCoders/AMPTemplates/raw/main/empyriondedicated.yaml",
     "UpdateSourceTarget": "./530870/"
-  }
+  },
+  {
+    "UpdateStageName":"Backup Exclusions Download 1",
+    "UpdateSourcePlatform":"All",
+    "UpdateSource":"FetchURL",
+    "UpdateSourceData":"https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/main/exclusions/.backupExcludeEmpyrion1",
+    "UpdateSourceArgs":".backupExclude",
+    "UpdateSourceTarget":"{{$FullBaseDir}}",
+    "OverwriteExistingFiles":false}
 ]
