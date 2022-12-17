@@ -21,5 +21,7 @@
     "UpdateSourceData":"https://github.com/IceOfWraith/AMPTemplates/raw/dev/exclusions/.backupExclusionsEmpyrion1",
     "UpdateSourceArgs":".backupExclude",
     "UpdateSourceTarget":"{{$FullBaseDir}}",
+    "UpdateSourceConditionSetting": "backupExclude",
+    "UpdateSourceConditionValue": "true",
     "OverwriteExistingFiles":false}
 ]
