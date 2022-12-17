@@ -195,7 +195,7 @@
     "UpdateStageName":"Backup Exclusions Download 1",
     "UpdateSourcePlatform":"All",
     "UpdateSource":"FetchURL",
-    "UpdateSourceData":"https://github.com/CubeCoders/IceOfWraith/raw/dev/exclusions/.backupExclusions7d2d1",
+    "UpdateSourceData":"https://github.com/IceOfWraith/AMPTemplates/raw/dev/exclusions/.backupExclusions7d2d1",
     "UpdateSourceArgs":".backupExclude",
     "UpdateSourceTarget":"{{$FullBaseDir}}",
     "UpdateSourceConditionSetting": "backupExclude",
