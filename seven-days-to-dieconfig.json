@@ -1192,10 +1192,10 @@
         "IsFlagArgument":false,
         "ParamFieldName":"backupExclude",
         "IncludeInCommandLine":false,
-        "DefaultValue":"True",
+        "DefaultValue":"true",
         "EnumValues":{
-            "False": "False",
-            "True": "True"
+            "False": "false",
+            "True": "true"
         }
     },{
         "DisplayName":"Please Read!",
