@@ -25,9 +25,9 @@ App.BaseDirectory=./wurm-unlimited/402370/
 App.ExecutableWin=402370\runtime\bin\java.exe
 App.ExecutableLinux=402370/runtime/jre1.8.0_172/bin/java
 App.WorkingDir=402370
-App.LinuxCommandLineArgs="-Dworkdir={{$FullBaseDir}}" "-Djava.library.path={{$FullBaseDir}}nativelibs" -Xmx{{MaxHeapSize}}m -XX:+OptimizeStringConcat -XX:+AggressiveOpts {{CustomJavaArgs}} -jar ./{{jar}}
-App.WindowsCommandLineArgs="-Dworkdir={{$FullBaseDir}}" "-Djava.library.path={{$FullBaseDir}}nativelibs" -Xmx{{MaxHeapSize}}m -XX:+OptimizeStringConcat -XX:+AggressiveOpts {{CustomJavaArgs}} -jar {{jar}}
-App.CommandLineArgs=ip="{{$ApplicationIPBinding}}" externalport="{{$ApplicationPort1}}" queryport="{{$ApplicationPort2}}" {{$FormattedArgs}}
+App.LinuxCommandLineArgs="-Dworkdir={{$FullBaseDir}}" "-Djava.library.path={{$FullBaseDir}}nativelibs" -Xmx{{MaxHeapSize}}m -XX:+OptimizeStringConcat -XX:+AggressiveOpts {{CustomJavaArgs}} -jar ./{{ModLauncher}}.jar
+App.WindowsCommandLineArgs="-Dworkdir={{$FullBaseDir}}" "-Djava.library.path={{$FullBaseDir}}nativelibs" -Xmx{{MaxHeapSize}}m -XX:+OptimizeStringConcat -XX:+AggressiveOpts {{CustomJavaArgs}} -jar {{ModLauncher}}.jar
+App.CommandLineArgs={{$PlatformArgs}} ip="{{$ApplicationIPBinding}}" externalport="{{$ApplicationPort1}}" queryport="{{$ApplicationPort2}}" {{$FormattedArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}:{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"366220"}

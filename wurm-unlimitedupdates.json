@@ -29,8 +29,8 @@
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
-        "UpdateSourceConditionSetting": "modLauncher",
-        "UpdateSourceConditionValue": "true",
+        "UpdateSourceConditionSetting": "ModLauncher",
+        "UpdateSourceConditionValue": "modlauncher",
         "DeleteAfterExtract": true
       },
       {
@@ -39,8 +39,8 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
         "UpdateSourceArgs": "/C \"{{$FullBaseDir}}runtime\\bin\\java.exe\" -classpath patcher.jar;javassist.jar org.gotti.wurmunlimited.patcher.PatchServerJar",
-        "UpdateSourceConditionSetting": "modLauncher",
-        "UpdateSourceConditionValue": "true"
+        "UpdateSourceConditionSetting": "ModLauncher",
+        "UpdateSourceConditionValue": "modlauncher"
       },
       {
         "UpdateStageName": "Mod Launcher Patcher",
@@ -48,7 +48,7 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c \"{{$FullBaseDir}}runtime/jre1.8.0_172/bin/java\" -classpath patcher.jar:javassist.jar org.gotti.wurmunlimited.patcher.PatchServerJar",
-        "UpdateSourceConditionSetting": "modLauncher",
-        "UpdateSourceConditionValue": "true"
+        "UpdateSourceConditionSetting": "ModLauncher",
+        "UpdateSourceConditionValue": "modlauncher"
       }
 ]

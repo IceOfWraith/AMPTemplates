@@ -197,5 +197,21 @@
         "ParamFieldName": "CustomJavaArgs",
         "IncludeInCommandLine": false,
         "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Install WurmServerModLauncher",
+        "Description": "Automatically install the WurmServerModLauncher when updating.",
+        "Category": "SteamCMD and Updates",
+        "Keywords": "wurm,server,mod,launcher",
+        "FieldName": "ModLauncher",
+        "InputType": "checkbox",
+        "IsFlagArgument": false,
+        "ParamFieldName": "ModLauncher",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "false",
+        "EnumValues": {
+            "True": "modlauncher",
+            "False": "server"
+        }
     }
 ]
