@@ -19,5 +19,36 @@
       "UpdateStageName": "Stop Server",
       "UpdateSourcePlatform": "All",
       "UpdateSource": "ShutdownApplication"
-    }
-  ]
+    },
+    {
+        "UpdateStageName": "Mod Launcher Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURLFromJQ",
+        "UpdateSourceData": "https://api.github.com/repos/ago1024/WurmServerModLauncher/releases/latest",
+        "UpdateSourceArgs": "$.assets[12].browser_download_url",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "UpdateSourceConditionSetting": "modLauncher",
+        "UpdateSourceConditionValue": "true",
+        "DeleteAfterExtract": true
+      },
+      {
+        "UpdateStageName": "Mod Launcher Patcher",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C \"{{$FullBaseDir}}runtime\\bin\\java.exe\" -classpath patcher.jar;javassist.jar org.gotti.wurmunlimited.patcher.PatchServerJar",
+        "UpdateSourceConditionSetting": "modLauncher",
+        "UpdateSourceConditionValue": "true"
+      },
+      {
+        "UpdateStageName": "Mod Launcher Patcher",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"{{$FullBaseDir}}runtime/jre1.8.0_172/bin/java\" -classpath patcher.jar:javassist.jar org.gotti.wurmunlimited.patcher.PatchServerJar",
+        "UpdateSourceConditionSetting": "modLauncher",
+        "UpdateSourceConditionValue": "true"
+      }
+]
