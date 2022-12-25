@@ -9,7 +9,7 @@ Meta.EndpointURIFormat=steam://connect/{ip}:{GenericModule.App.ApplicationPort2}
 Meta.ConfigManifest=wurm-unlimitedconfig.json
 Meta.MetaConfigManifest=wurm-unlimitedmetaconfig.json
 Meta.ConfigRoot=wurm-unlimited.kvp
-Meta.MinAMPVersion=2.3.2.1
+Meta.MinAMPVersion=2.4.1.2
 Meta.SpecificDockerImage=
 Meta.DockerRequired=False
 Meta.ContainerPolicy=Supported
@@ -25,8 +25,8 @@ App.BaseDirectory=./wurm-unlimited/402370/
 App.ExecutableWin=402370\runtime\bin\java.exe
 App.ExecutableLinux=402370/runtime/jre1.8.0_172/bin/java
 App.WorkingDir=402370
-App.LinuxCommandLineArgs="-Dworkdir={{$FullBaseDir}}" "-Djava.library.path={{$FullBaseDir}}nativelibs" -Xmn256M -Xms512m -Xmx2048m -XX:+OptimizeStringConcat -XX:+AggressiveOpts {{customJavaArgs}} -jar ./{{jar}}
-App.WindowsCommandLineArgs="-Dworkdir={{$FullBaseDir}}" "-Djava.library.path={{$FullBaseDir}}nativelibs" -Xmn256M -Xms512m -Xmx2048m -XX:+OptimizeStringConcat -XX:+AggressiveOpts {{customJavaArgs}} -jar {{jar}}
+App.LinuxCommandLineArgs="-Dworkdir={{$FullBaseDir}}" "-Djava.library.path={{$FullBaseDir}}nativelibs" -Xmx{{MaxHeapSize}}m -XX:+OptimizeStringConcat -XX:+AggressiveOpts {{CustomJavaArgs}} -jar ./{{jar}}
+App.WindowsCommandLineArgs="-Dworkdir={{$FullBaseDir}}" "-Djava.library.path={{$FullBaseDir}}nativelibs" -Xmx{{MaxHeapSize}}m -XX:+OptimizeStringConcat -XX:+AggressiveOpts {{CustomJavaArgs}} -jar {{jar}}
 App.CommandLineArgs=ip="{{$ApplicationIPBinding}}" externalport="{{$ApplicationPort1}}" queryport="{{$ApplicationPort2}}" {{$FormattedArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}

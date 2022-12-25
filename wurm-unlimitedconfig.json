@@ -175,53 +175,27 @@
     {
         "DisplayName": "Memory Limit",
         "Category": "Server Settings",
-        "Description": "Java's maximum heap size (Must include ####m at the end)",
-        "Keywords": "maximum,memory,limit",
+        "Description": "Java's maximum heap size.",
+        "Keywords": "maximum,memory,limit,heap,size",
         "FieldName": "MaxHeapSize",
         "InputType": "text",
         "IsFlagArgument": false,
-        "ParamFieldName": "Memory.MaxHeapSize",
+        "ParamFieldName": "MaxHeapSize",
         "IncludeInCommandLine": false,
-        "DefaultValue": "2048m"
+        "DefaultValue": "2048",
+        "Placeholder": "2048",
+        "Suffix": "m"
     },
     {
         "DisplayName": "Custom Java Arguments",
         "Category": "Server Settings",
         "Description": "Settings that will be appended to the Java arguments for the server.",
         "Keywords": "custom,java,arguments,args",
-        "FieldName": "customJavaArgs",
+        "FieldName": "CustomJavaArgs",
         "InputType": "text",
         "IsFlagArgument": false,
-        "ParamFieldName": "customJavaArgs",
+        "ParamFieldName": "CustomJavaArgs",
         "IncludeInCommandLine": false,
         "DefaultValue": ""
-    },
-    {
-        "DisplayName": "Override Java Location",
-        "Category": "Server Settings",
-        "Description": "For \"Failed to load jvm.dll\", enables use of the Custom Java Location setting.",
-        "Keywords": "custom,java,arguments,args,location",
-        "FieldName": "OverrideDefaultJavaPath",
-        "InputType": "checkbox",
-        "IsFlagArgument": false,
-        "ParamFieldName": "Runtime.OverrideDefaultJavaPath",
-        "IncludeInCommandLine": false,
-        "DefaultValue": "false",
-        "EnumValues": {
-            "True": "true",
-            "False": "false"
-        }
-    },
-    {
-        "DisplayName": "Custom Java Location",
-        "Category": "Server Settings",
-        "Description": "For \"Failed to load jvm.dll\", specify a location where jvm.dll is located.",
-        "Keywords": "custom,java,arguments,args,location",
-        "FieldName": "JavaPath",
-        "InputType": "text",
-        "IsFlagArgument": false,
-        "ParamFieldName": "Runtime.JavaPath",
-        "IncludeInCommandLine": false,
-        "DefaultValue": "C:\\Program Files\\Java\\jre1.8.0_321\\bin\\server"
     }
 ]
