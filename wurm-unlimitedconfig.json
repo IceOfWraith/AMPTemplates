@@ -207,8 +207,8 @@
         "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "ModLauncher",
-        "IncludeInCommandLine": true,
-        "DefaultValue": "false",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "server",
         "EnumValues": {
             "True": "modlauncher",
             "False": "server"
