@@ -1,6 +1,6 @@
 Meta.DisplayName=DayZ (Original)
 Meta.Description=DayZ (Original) Dedicated Server
-Meta.OS=Windows
+Meta.OS=3
 Meta.Arch=x86_64
 Meta.Author=Greelan, Aperture Development, IceOfWraith
 Meta.URL=https://dayz.com/
@@ -10,7 +10,7 @@ Meta.ConfigManifest=dayz-originalconfig.json
 Meta.MetaConfigManifest=dayz-originalmetaconfig.json
 Meta.ConfigRoot=dayz-original.kvp
 Meta.MinAMPVersion=2.4.2.0
-Meta.SpecificDockerImage=
+Meta.SpecificDockerImage=cubecoders/ampbase:xvfb
 Meta.DockerRequired=False
 Meta.ContainerPolicy=Supported
 Meta.ContainerPolicyReason=
@@ -23,14 +23,14 @@ App.DisplayName=DayZ (Original)
 App.RootDir=./dayz/
 App.BaseDirectory=./dayz/223350/
 App.ExecutableWin=223350\DayZServer_x64.exe
-App.ExecutableLinux=
+App.ExecutableLinux=1493710/proton
 App.WorkingDir=223350
-App.LinuxCommandLineArgs=
+App.LinuxCommandLineArgs=run "{{$FullBaseDir}}DayZServer_x64.exe"
 App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} "-profiles={{$FullBaseDir}}DayZServerData" "-bepath={{$FullBaseDir}}battleye" -port={{$GamePort}} -config=serverDZ.cfg -dologs -adminlog -freezeCheck -ip={{$ApplicationIPBinding}} {{$FormattedArgs}} "{{CustomServerArgs}}"
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
-App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"221100"}
+App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"221100","STEAM_COMPAT_DATA_PATH":"{{$FullRootDir}}1493710","STEAM_COMPAT_CLIENT_INSTALL_PATH":"{{$FullRootDir}}1493710"}
 App.CommandLineParameterFormat="-{0}={1}"
 App.CommandLineParameterDelimiter= 
 App.ExitMethod=String

@@ -1,11 +1,18 @@
 [
     {
         "UpdateStageName":"SteamCMD Download",
-        "UpdateSourcePlatform":"Windows",
+        "UpdateSourcePlatform":"All",
         "UpdateSource":"SteamCMD",
         "UpdateSourceData":"223350",
         "UpdateSourceArgs":"221100",
-        "UpdateSourceTarget":"{{$FullBaseDir}}"
+        "UpdateSourceTarget":"{{$FullBaseDir}}",
+        "ForceDownloadPlatform": "Windows"
+    },
+    {
+        "UpdateStageName": "Proton Compatibility Layer",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData":"1493710"
     },
     {
         "UpdateStageName":"Config Template Download",
