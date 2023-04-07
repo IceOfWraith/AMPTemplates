@@ -6,6 +6,12 @@
         "UpdateSource":"SteamCMD"
     },
     {
+        "UpdateStageName":"Settings Directory Creation",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"CreateDirectory",
+        "UpdateSourceArgs":"{{$FullBaseDir}}American Truck Simulator"
+    },
+    {
         "UpdateStageName":"Settings Template Download",
         "UpdateSourcePlatform":"All",
         "UpdateSource":"FetchURL",
