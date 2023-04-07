@@ -1,8 +1,17 @@
 [
     {
-        "UpdateStageName": "SteamCMD Download",
-        "UpdateSourceData": "2239530",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "SteamCMD"
+        "UpdateStageName":"SteamCMD Download",
+        "UpdateSourceData":"2239530",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"SteamCMD"
+    },
+    {
+        "UpdateStageName":"Settings Template Download",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"FetchURL",
+        "UpdateSourceData":"https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/night-of-the-deadserversettings.ini",
+        "UpdateSourceArgs":"AMP_server_config.sii",
+        "UpdateSourceTarget":"{{$FullBaseDir}}American Truck Simulator",
+        "OverwriteExistingFiles":true
     }
 ]

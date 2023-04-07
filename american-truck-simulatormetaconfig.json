@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "ConfigFile":"American Truck Simulator/server_config.sii",
+    "AutoMap":true,
+    "ConfigType":"template",
+    "ConfigFileTemplate":"American Truck Simulator/AMP_server_config.sii"
+  }
+]
