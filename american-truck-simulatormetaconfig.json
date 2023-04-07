@@ -1,8 +1,8 @@
 [
   {
-    "ConfigFile":"{{$FullBaseDir}}American Truck Simulator/server_config.sii",
+    "ConfigFile":"American Truck Simulator/server_config.sii",
     "AutoMap":true,
     "ConfigType":"template",
-    "ConfigFileTemplate":"{{$FullBaseDir}}American Truck Simulator/AMP_server_config.sii"
+    "ConfigFileTemplate":"american-truck-simulator/2239530/American Truck Simulator/AMP_server_config.sii"
   }
 ]
