@@ -132,7 +132,8 @@
         "IsFlagArgument":false,
         "ParamFieldName":"connection_dedicated_port",
         "IncludeInCommandLine":false,
-        "EnumValues":{}
+        "EnumValues":{},
+        "Hidden":true
     },
     {
         "DisplayName":"query_dedicated_port",
@@ -140,11 +141,12 @@
         "Description":"Port used for Steam Query",
         "Keywords":"",
         "FieldName":"$QueryDedicatedPort",
-        "InputType":"hidden",
+        "InputType":"number",
         "IsFlagArgument":false,
         "ParamFieldName":"query_dedicated_port",
         "IncludeInCommandLine":false,
-        "EnumValues":{}
+        "EnumValues":{},
+        "Hidden":true
     },
     {
         "DisplayName":"Server Logon Token",
