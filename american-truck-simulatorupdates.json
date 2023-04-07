@@ -9,7 +9,7 @@
         "UpdateStageName":"Settings Template Download",
         "UpdateSourcePlatform":"All",
         "UpdateSource":"FetchURL",
-        "UpdateSourceData":"https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/night-of-the-deadserversettings.ini",
+        "UpdateSourceData":"https://github.com/IceOfWraith/AMPTemplates/raw/dev/american-truck-simulator.sii",
         "UpdateSourceArgs":"AMP_server_config.sii",
         "UpdateSourceTarget":"{{$FullBaseDir}}American Truck Simulator",
         "OverwriteExistingFiles":true
