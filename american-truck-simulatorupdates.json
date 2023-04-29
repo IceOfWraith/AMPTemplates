@@ -18,7 +18,7 @@
         "UpdateSource":"FetchURL",
         "UpdateSourceData":"https://github.com/IceOfWraith/AMPTemplates/raw/dev/american-truck-simulator.sii",
         "UpdateSourceArgs":"AMP_server_config.sii",
-        "UpdateSourceTarget":"{{$FullRootDir}}American Truck Simulator",
+        "UpdateSourceTarget":"{{$FullRootDir}}",
         "OverwriteExistingFiles":true
     }
 ]
