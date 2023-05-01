@@ -62,6 +62,6 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd foundry-vtt & rmdir /S /Q node & rename node-{{NodeVersion}}-win-x64 node"
+        "UpdateSourceArgs":"/C cd node & rmdir /S /Q node & rename node-{{NodeVersion}}-win-x64 node"
     }
 ]
