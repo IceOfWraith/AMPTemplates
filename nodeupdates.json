@@ -1,26 +1,37 @@
 [
     {
-        "UpdateStageName":"Server Directory Creation",
+        "UpdateStageName":"Application Download",
         "UpdateSourcePlatform":"All",
-        "UpdateSource":"CreateDirectory",
-        "UpdateSourceArgs":"{{$FullBaseDir}}server"
+        "UpdateSource":"GitRepo",
+        "UpdateSourceData":"{{DownloadLocation}}",
+        "UpdateSourceTarget":"{{$FullBaseDir}}",
+        "UpdateSourceConditionSetting":"DownloadType",
+        "UpdateSourceConditionValue":"GitRepo"
     },
     {
-        "UpdateStageName":"Data Directory Creation",
+        "UpdateStageName":"Application Download",
         "UpdateSourcePlatform":"All",
-        "UpdateSource":"CreateDirectory",
-        "UpdateSourceArgs":"{{$FullBaseDir}}data"
-    },
-    {
-        "UpdateStageName":"Server Download",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"FetchURL",
-        "UpdateSourceData":"{{DownloadURL}}",
-        "UpdateSourceTarget":"{{$FullBaseDir}}server",
-        "UpdateSourceArgs":"FoundryVTT.zip",
+        "UpdateSource":"GithubRelease",
+        "UpdateSourceArgs":"{{DownloadLocation}}",
+		"UpdateSourceData":"{{DownloadFilename}}",
+        "UpdateSourceTarget":"{{$FullBaseDir}}",
         "UnzipUpdateSource":true,
         "OverwriteExistingFiles":true,
-        "DeleteAfterExtract":true
+        "DeleteAfterExtract":true,
+        "UpdateSourceConditionSetting":"DownloadType",
+        "UpdateSourceConditionValue":"GithubRelase"
+    },
+    {
+        "UpdateStageName":"Application Download",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"FetchURL",
+        "UpdateSourceData":"{{DownloadLocation}}",
+        "UpdateSourceTarget":"{{$FullBaseDir}}",
+        "UnzipUpdateSource":true,
+        "OverwriteExistingFiles":true,
+        "DeleteAfterExtract":true,
+        "UpdateSourceConditionSetting":"DownloadType",
+        "UpdateSourceConditionValue":"DownloadURL"
     },
     {
         "UpdateStageName":"Node.js Download",
@@ -34,7 +45,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd foundry-vtt && rm -Rf node && tar xf node-{{NodeVersion}}-linux-x64.tar.gz && mv node-{{NodeVersion}}-linux-x64 node && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
+        "UpdateSourceArgs":"-c 'cd node && rm -Rf node && tar xf node-{{NodeVersion}}-linux-x64.tar.gz && mv node-{{NodeVersion}}-linux-x64 node && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
     },
     {
         "UpdateStageName":"Node.js Download",
