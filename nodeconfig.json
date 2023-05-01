@@ -85,5 +85,19 @@
         "DefaultValue":"",
         "Placeholder":"value1=example value2=test",
         "EnumValues":{}
+    },
+    {
+        "DisplayName":"Additional npm Packages",
+        "Category":"Node Settings",
+        "Description":"Specify any additional npm packages to install separated by a space.",
+        "Keywords":"additional,npm,packages",
+        "FieldName":"NpmPackages",
+        "InputType":"text",
+        "IsFlagArgument":false,
+        "ParamFieldName":"NpmPackages",
+        "IncludeInCommandLine":false,
+        "DefaultValue":"",
+        "Placeholder":"express fastify socket.io",
+        "EnumValues":{}
     }
 ]
