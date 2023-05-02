@@ -4,7 +4,7 @@
         "UpdateSourcePlatform":"All",
         "UpdateSource":"GitRepo",
         "UpdateSourceData":"{{DownloadLocation}}",
-        "UpdateSourceTarget":"{{$FullBaseDir}}",
+        "UpdateSourceTarget":"{{$FullBaseDir}}app",
         "UpdateSourceConditionSetting":"DownloadType",
         "UpdateSourceConditionValue":"GitRepo"
     },
@@ -13,8 +13,8 @@
         "UpdateSourcePlatform":"All",
         "UpdateSource":"GithubRelease",
         "UpdateSourceArgs":"{{DownloadLocation}}",
-		"UpdateSourceData":"{{DownloadFilename}}",
-        "UpdateSourceTarget":"{{$FullBaseDir}}",
+        "UpdateSourceData":"{{DownloadFilename}}",
+        "UpdateSourceTarget":"{{$FullBaseDir}}app",
         "UnzipUpdateSource":true,
         "OverwriteExistingFiles":true,
         "DeleteAfterExtract":true,
@@ -26,7 +26,7 @@
         "UpdateSourcePlatform":"All",
         "UpdateSource":"FetchURL",
         "UpdateSourceData":"{{DownloadLocation}}",
-        "UpdateSourceTarget":"{{$FullBaseDir}}",
+        "UpdateSourceTarget":"{{$FullBaseDir}}app",
         "UnzipUpdateSource":true,
         "OverwriteExistingFiles":true,
         "DeleteAfterExtract":true,
@@ -65,48 +65,17 @@
         "UpdateSourceArgs":"/C cd node & rmdir /S /Q node & rename node-{{NodeVersion}}-win-x64 node"
     },
     {
-        "UpdateStageName":"npm Download",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"FetchURL",
-        "UpdateSourceData":"https://nodejs.org/download/release/npm/npm-{{NpmVersion}}-linux-x64.tgz",
-        "UpdateSourceTarget":"{{$FullBaseDir}}"
-    },
-    {
-        "UpdateStageName":"npm Extract",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"Executable",
-        "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd npm && rm -Rf npm && tar xf npm-{{NpmVersion}}-linux-x64.tgz && mv npm-{{NpmVersion}}-linux-x64 npm && rm npm-{{NpmVersion}}-linux-x64.tgz'"
-    },
-    {
-        "UpdateStageName":"npm Download",
-        "UpdateSourcePlatform":"Windows",
-        "UpdateSource":"FetchURL",
-        "UpdateSourceData":"https://nodejs.org/download/release/npm/npm-{{NpmVersion}}-win-x64.zip",
-        "UpdateSourceTarget":"{{$FullBaseDir}}",
-        "UnzipUpdateSource":true,
-        "OverwriteExistingFiles":true,
-        "DeleteAfterExtract":true
-    },
-    {
-        "UpdateStageName":"npm Extract",
-        "UpdateSourcePlatform":"Windows",
-        "UpdateSource":"Executable",
-        "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd npm & rmdir /S /Q npm & rename npm-{{NpmVersion}}-win-x64 npm"
-    },
-    {
         "UpdateStageName":"npm Packages",
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd npm && npm install {{NpmPackages}}'"
+        "UpdateSourceArgs":"-c 'cd node && node/bin/node node/bin/npm install {{NpmPackages}}'"
     },
     {
         "UpdateStageName":"npm Packages",
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd npm & npm install {{NpmPackages}}"
+        "UpdateSourceArgs":"/C cd node & node/node node/npm install {{NpmPackages}}"
     }
 ]

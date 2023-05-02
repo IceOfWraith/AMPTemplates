@@ -9,7 +9,7 @@
         "IsFlagArgument":false,
         "ParamFieldName":"DownloadType",
         "IncludeInCommandLine":false,
-        "DefaultValue":"",
+        "DefaultValue":"GitRepo",
         "EnumValues":{
             "GitRepo":"GitHub Repo",
             "GithubRelease":"GitHub Release",
@@ -47,15 +47,29 @@
     {
         "DisplayName":"Node.js Version",
         "Category":"Node Settings",
-        "Description":"Sets the [Node.js release version](https://nodejs.org/download/release/) to install to run the application.",
+        "Description":"Sets the [Node.js release version](https://nodejs.org/download/release/) to install to run the application. NOTE: Specify a numbered version like v.14.21.3, rather than any \"latest\" version",
         "Keywords":"node,nodejs,version",
         "FieldName":"NodeVersion",
         "InputType":"text",
         "IsFlagArgument":false,
         "ParamFieldName":"NodeVersion",
         "IncludeInCommandLine":false,
-        "DefaultValue":"latest-v20.x",
-        "Placeholder":"latest-v20.x",
+        "DefaultValue":"v18.16.0",
+        "Placeholder":"v18.16.0",
+        "EnumValues":{}
+    },
+    {
+        "DisplayName":"npm Version",
+        "Category":"Node Settings",
+        "Description":"Sets the [npm release version](https://nodejs.org/download/release/npm/) to install additional modules.",
+        "Keywords":"npm,version",
+        "FieldName":"NpmVersion",
+        "InputType":"text",
+        "IsFlagArgument":false,
+        "ParamFieldName":"NpmVersion",
+        "IncludeInCommandLine":false,
+        "DefaultValue":"1.4.9",
+        "Placeholder":"1.4.9",
         "EnumValues":{}
     },
     {
