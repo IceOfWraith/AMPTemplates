@@ -19,7 +19,7 @@
         "OverwriteExistingFiles":true,
         "DeleteAfterExtract":true,
         "UpdateSourceConditionSetting":"DownloadType",
-        "UpdateSourceConditionValue":"GithubRelase"
+        "UpdateSourceConditionValue":"GithubRelease"
     },
     {
         "UpdateStageName":"Application Download",
