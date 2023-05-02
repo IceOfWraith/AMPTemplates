@@ -47,7 +47,7 @@
     {
         "DisplayName":"Node.js Version",
         "Category":"Node Settings",
-        "Description":"Sets the [Node.js release version](https://nodejs.org/download/release/) to install to run the application. NOTE: Specify a numbered version like v.14.21.3, rather than any \"latest\" version",
+        "Description":"Sets the [Node.js release version](https://nodejs.org/download/release/) to install to run the application. NOTE: Specify a numbered version like v.18.16.0, rather than any \"latest\" version. Minimum version supported is 11.13.0.",
         "Keywords":"node,nodejs,version",
         "FieldName":"NodeVersion",
         "InputType":"text",
@@ -59,23 +59,9 @@
         "EnumValues":{}
     },
     {
-        "DisplayName":"npm Version",
-        "Category":"Node Settings",
-        "Description":"Sets the [npm release version](https://nodejs.org/download/release/npm/) to install additional modules.",
-        "Keywords":"npm,version",
-        "FieldName":"NpmVersion",
-        "InputType":"text",
-        "IsFlagArgument":false,
-        "ParamFieldName":"NpmVersion",
-        "IncludeInCommandLine":false,
-        "DefaultValue":"1.4.9",
-        "Placeholder":"1.4.9",
-        "EnumValues":{}
-    },
-    {
         "DisplayName":"Application Name",
         "Category":"Node Settings",
-        "Description":"Specify name of the Node application to execute Do not specify \"node\" in front.",
+        "Description":"Specify name of the Node application to execute Do not specify \"node\" in front. If the bot downloads in a subfolder of \"app\" you must prefix the folders to the name.",
         "Keywords":"app,application,name",
         "FieldName":"ApplicationName",
         "InputType":"text",
