@@ -1,5 +1,11 @@
 [
     {
+        "UpdateStageName":"App Directory Creation",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"CreateDirectory",
+        "UpdateSourceArgs":"{{$FullBaseDir}}app"
+    },
+    {
         "UpdateStageName":"Application Download",
         "UpdateSourcePlatform":"All",
         "UpdateSource":"GitRepo",
