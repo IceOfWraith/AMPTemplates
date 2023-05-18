@@ -75,13 +75,53 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd node && node/bin/node node/bin/npm install {{NpmPackages}}'"
+        "UpdateSourceArgs":"-c 'cd node && node/bin/node node/bin/npm install {{NpmPackages}}'",
+        "UpdateSourceConditionSetting":"NpmInstallType",
+        "UpdateSourceConditionValue":"specify"
     },
     {
         "UpdateStageName":"npm Packages",
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd node & node/node node/npm install {{NpmPackages}}"
+        "UpdateSourceArgs":"/C cd node & node/node node/npm install {{NpmPackages}}",
+        "UpdateSourceConditionSetting":"NpmInstallType",
+        "UpdateSourceConditionValue":"specify"
+    },
+    {
+        "UpdateStageName":"npm Packages",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c 'cd node && node/bin/node node/bin/npm i'",
+        "UpdateSourceConditionSetting":"NpmInstallType",
+        "UpdateSourceConditionValue":"npmi"
+    },
+    {
+        "UpdateStageName":"npm Packages",
+        "UpdateSourcePlatform":"Windows",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"cmd.exe",
+        "UpdateSourceArgs":"/C cd node & node/node node/npm i",
+        "UpdateSourceConditionSetting":"NpmInstallType",
+        "UpdateSourceConditionValue":"npmi"
+    },
+    {
+        "UpdateStageName":"npm Packages",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c 'cd node && node/bin/node node/bin/npm ci'",
+        "UpdateSourceConditionSetting":"NpmInstallType",
+        "UpdateSourceConditionValue":"npmci"
+    },
+    {
+        "UpdateStageName":"npm Packages",
+        "UpdateSourcePlatform":"Windows",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"cmd.exe",
+        "UpdateSourceArgs":"/C cd node & node/node node/npm ci",
+        "UpdateSourceConditionSetting":"NpmInstallType",
+        "UpdateSourceConditionValue":"npmci"
     }
 ]
