@@ -47,7 +47,7 @@
     {
         "DisplayName":"Node.js Version",
         "Category":"Node - Settings",
-        "Description":"Sets the [Node.js release version](https://nodejs.org/download/release/) to install to run the application. NOTE: Specify a numbered version like v.18.16.0, rather than any \"latest\" version. Minimum version supported is 11.13.0.",
+        "Description":"Sets the [Node.js release version](https://nodejs.org/download/release/) to install to run the application. NOTE: Specify a numbered version like v.18.16.0, rather than any \"latest\" version.",
         "Keywords":"node,nodejs,version",
         "FieldName":"NodeVersion",
         "InputType":"text",
@@ -96,7 +96,7 @@
         "IsFlagArgument":false,
         "ParamFieldName":"NpmInstallType",
         "IncludeInCommandLine":false,
-        "DefaultValue":"specify",
+        "DefaultValue":"npmi",
         "EnumValues":{
             "none":"None",
             "npmci":"npm ci",
