@@ -61,7 +61,7 @@
     {
         "DisplayName":"Application Name",
         "Category":"Node - Settings",
-        "Description":"Specify name of the Node application to execute Do not specify \"node\" in front. If the bot downloads in a subfolder of \"app\" you must prefix the folders to the name.",
+        "Description":"Specify name of the Node application to execute Do not specify \"node\" in front.",
         "Keywords":"app,application,name",
         "FieldName":"ApplicationName",
         "InputType":"text",
@@ -71,6 +71,68 @@
         "DefaultValue":"",
         "Placeholder":"index.js",
         "EnumValues":{}
+    },
+    {
+        "DisplayName":"Application Location",
+        "Category":"Node - Settings",
+        "Description":"If the app downloads in a subfolder of \"app\" you must specify the folders here.",
+        "Keywords":"app,application,location",
+        "FieldName":"ApplicationLocation",
+        "InputType":"text",
+        "IsFlagArgument":false,
+        "ParamFieldName":"ApplicationLocation",
+        "IncludeInCommandLine":false,
+        "DefaultValue":"",
+        "Placeholder":"IceBot-main",
+        "EnumValues":{}
+    },
+    {
+        "DisplayName":"Full Application Location",
+        "Category":"Node - Settings",
+        "Description":"",
+        "Keywords":"",
+        "FieldName":"ApplicationLocationFull",
+        "InputType":"text",
+        "IsFlagArgument":false,
+        "ParamFieldName":"ApplicationLocationFull",
+        "IncludeInCommandLine":false,
+        "DefaultValue":"",
+        "EnumValues":{
+            "{{$FullBaseDir}}app/{{ApplicationLocation}}/":""
+        },
+        "Hidden":true
+    },
+    {
+        "DisplayName":"Full Node Location",
+        "Category":"Node - Settings",
+        "Description":"",
+        "Keywords":"",
+        "FieldName":"NodeLocationFull",
+        "InputType":"text",
+        "IsFlagArgument":false,
+        "ParamFieldName":"NodeLocationFull",
+        "IncludeInCommandLine":false,
+        "DefaultValue":"",
+        "EnumValues":{
+            "{{$FullBaseDir}}node/":""
+        },
+        "Hidden":true
+    },
+    {
+        "DisplayName":"Setup Log",
+        "Category":"Node - Settings",
+        "Description":"",
+        "Keywords":"",
+        "FieldName":"Log",
+        "InputType":"text",
+        "IsFlagArgument":false,
+        "ParamFieldName":"Log",
+        "IncludeInCommandLine":false,
+        "DefaultValue":"",
+        "EnumValues":{
+            "{{$FullBaseDir}}AMPSetupLog.txt":""
+        },
+        "Hidden":true
     },
     {
         "DisplayName":"Command Line Arguments",

@@ -51,7 +51,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd node && rm -Rf node && tar xf node-{{NodeVersion}}-linux-x64.tar.gz && mv node-{{NodeVersion}}-linux-x64 node && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
+        "UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}\" && rm -Rf \"{{NodeLocationFull}}\" && tar xfv node-{{NodeVersion}}-linux-x64.tar.gz > {{Log}} && mv -v node-{{NodeVersion}}-linux-x64 node >> {{Log}} && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
     },
     {
         "UpdateStageName":"Node.js Download",
@@ -68,14 +68,14 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd node & rmdir /S /Q node & rename node-{{NodeVersion}}-win-x64 node"
+        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}\" && rmdir /S /Q \"{{NodeLocationFull}}\" && rename node-{{NodeVersion}}-win-x64 node > {{Log}}"
     },
     {
         "UpdateStageName":"npm Packages",
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd node/app && ../node/bin/node ../node/bin/npm install {{NpmPackages}}'",
+        "UpdateSourceArgs":"-c 'cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}bin/node\" \"{{NodeLocationFull}}bin/npm\" i {{NpmPackages}} >> {{Log}}'",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"specify"
     },
@@ -84,7 +84,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd node/app & ../node/node ../node/npm install {{NpmPackages}}",
+        "UpdateSourceArgs":"/C cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}node\" \"{{NodeLocationFull}}npm\" i {{NpmPackages}} >> {{Log}}",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"specify"
     },
@@ -93,7 +93,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd node/app && ../node/bin/node ../node/bin/npm i'",
+        "UpdateSourceArgs":"-c 'cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}bin/node\" \"{{NodeLocationFull}}bin/npm\" i >> {{Log}}'",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmi"
     },
@@ -102,7 +102,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd node/app & ../node/node ../node/npm i",
+        "UpdateSourceArgs":"/C cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}node\" \"{{NodeLocationFull}}npm\" i >> {{Log}}",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmi"
     },
@@ -111,7 +111,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd node/app && ../node/bin/node ../node/bin/npm ci'",
+        "UpdateSourceArgs":"-c 'cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}bin/node\" \"{{NodeLocationFull}}bin/npm\" ci >> {{Log}}'",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmci"
     },
@@ -120,7 +120,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd node/app & ../node/node ../node/npm ci",
+        "UpdateSourceArgs":"/C cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}node\" \"{{NodeLocationFull}}npm\" ci >> {{Log}}",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmci"
     }
