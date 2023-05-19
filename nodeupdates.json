@@ -51,7 +51,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}\" && rm -Rf \"{{NodeLocationFull}}\" && tar xfv node-{{NodeVersion}}-linux-x64.tar.gz > {{Log}} && mv -v node-{{NodeVersion}}-linux-x64 node >> {{Log}} && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
+        "UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}\" && rm -Rf \"{{$FullBaseDir}}node/\" && tar xfv node-{{NodeVersion}}-linux-x64.tar.gz > {{$FullBaseDir}}AMPSetupLog.txt && mv -v node-{{NodeVersion}}-linux-x64 node >> {{$FullBaseDir}}AMPSetupLog.txt && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
     },
     {
         "UpdateStageName":"Node.js Download",
@@ -68,14 +68,14 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}\" && rmdir /S /Q \"{{NodeLocationFull}}\" && rename node-{{NodeVersion}}-win-x64 node > {{Log}}"
+        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}\" && rmdir /S /Q \"{{$FullBaseDir}}node/\" && rename node-{{NodeVersion}}-win-x64 node > {{$FullBaseDir}}AMPSetupLog.txt"
     },
     {
         "UpdateStageName":"npm Packages",
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}bin/node\" \"{{NodeLocationFull}}bin/npm\" i {{NpmPackages}} >> {{Log}}'",
+        "UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/bin/node\" \"{{$FullBaseDir}}node/bin/npm\" i {{NpmPackages}} >> {{$FullBaseDir}}AMPSetupLog.txt'",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"specify"
     },
@@ -84,7 +84,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}node\" \"{{NodeLocationFull}}npm\" i {{NpmPackages}} >> {{Log}}",
+        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/node\" \"{{$FullBaseDir}}node/npm\" i {{NpmPackages}} >> {{$FullBaseDir}}AMPSetupLog.txt",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"specify"
     },
@@ -93,7 +93,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}bin/node\" \"{{NodeLocationFull}}bin/npm\" i >> {{Log}}'",
+        "UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/bin/node\" \"{{$FullBaseDir}}node/bin/npm\" i >> {{$FullBaseDir}}AMPSetupLog.txt'",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmi"
     },
@@ -102,7 +102,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}node\" \"{{NodeLocationFull}}npm\" i >> {{Log}}",
+        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/node\" \"{{$FullBaseDir}}node/npm\" i >> {{$FullBaseDir}}AMPSetupLog.txt",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmi"
     },
@@ -111,7 +111,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}bin/node\" \"{{NodeLocationFull}}bin/npm\" ci >> {{Log}}'",
+        "UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/bin/node\" \"{{$FullBaseDir}}node/bin/npm\" ci >> {{$FullBaseDir}}AMPSetupLog.txt'",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmci"
     },
@@ -120,7 +120,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd \"{{ApplicationLocationFull}}\" && \"{{NodeLocationFull}}node\" \"{{NodeLocationFull}}npm\" ci >> {{Log}}",
+        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/node\" \"{{$FullBaseDir}}node/npm\" ci >> {{$FullBaseDir}}AMPSetupLog.txt",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmci"
     }

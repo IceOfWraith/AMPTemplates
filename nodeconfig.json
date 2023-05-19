@@ -87,54 +87,6 @@
         "EnumValues":{}
     },
     {
-        "DisplayName":"Full Application Location",
-        "Category":"Node - Settings",
-        "Description":"",
-        "Keywords":"",
-        "FieldName":"ApplicationLocationFull",
-        "InputType":"text",
-        "IsFlagArgument":false,
-        "ParamFieldName":"ApplicationLocationFull",
-        "IncludeInCommandLine":false,
-        "DefaultValue":"{{$FullBaseDir}}app/{{ApplicationLocation}}/",
-        "EnumValues":{
-            "{{$FullBaseDir}}app/{{ApplicationLocation}}/":""
-        },
-        "Hidden":true
-    },
-    {
-        "DisplayName":"Full Node Location",
-        "Category":"Node - Settings",
-        "Description":"",
-        "Keywords":"",
-        "FieldName":"NodeLocationFull",
-        "InputType":"text",
-        "IsFlagArgument":false,
-        "ParamFieldName":"NodeLocationFull",
-        "IncludeInCommandLine":false,
-        "DefaultValue":"{{$FullBaseDir}}node/",
-        "EnumValues":{
-            "{{$FullBaseDir}}node/":""
-        },
-        "Hidden":true
-    },
-    {
-        "DisplayName":"Setup Log",
-        "Category":"Node - Settings",
-        "Description":"",
-        "Keywords":"",
-        "FieldName":"Log",
-        "InputType":"text",
-        "IsFlagArgument":false,
-        "ParamFieldName":"Log",
-        "IncludeInCommandLine":false,
-        "DefaultValue":"{{$FullBaseDir}}AMPSetupLog.txt",
-        "EnumValues":{
-            "{{$FullBaseDir}}AMPSetupLog.txt":""
-        },
-        "Hidden":true
-    },
-    {
         "DisplayName":"Command Line Arguments",
         "Category":"Node - Settings",
         "Description":"Specify any command line arguments to include.",
