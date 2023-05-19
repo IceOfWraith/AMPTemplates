@@ -96,7 +96,7 @@
         "IsFlagArgument":false,
         "ParamFieldName":"ApplicationLocationFull",
         "IncludeInCommandLine":false,
-        "DefaultValue":"",
+        "DefaultValue":"{{$FullBaseDir}}app/{{ApplicationLocation}}/",
         "EnumValues":{
             "{{$FullBaseDir}}app/{{ApplicationLocation}}/":""
         },
@@ -112,7 +112,7 @@
         "IsFlagArgument":false,
         "ParamFieldName":"NodeLocationFull",
         "IncludeInCommandLine":false,
-        "DefaultValue":"",
+        "DefaultValue":"{{$FullBaseDir}}node/",
         "EnumValues":{
             "{{$FullBaseDir}}node/":""
         },
@@ -128,7 +128,7 @@
         "IsFlagArgument":false,
         "ParamFieldName":"Log",
         "IncludeInCommandLine":false,
-        "DefaultValue":"",
+        "DefaultValue":"{{$FullBaseDir}}AMPSetupLog.txt",
         "EnumValues":{
             "{{$FullBaseDir}}AMPSetupLog.txt":""
         },
