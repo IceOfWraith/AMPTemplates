@@ -11,9 +11,10 @@
         "IncludeInCommandLine":false,
         "DefaultValue":"GitRepo",
         "EnumValues":{
-            "GitRepo":"GitHub Repo",
+            "DownloadURL":"Download URL",
             "GithubRelease":"GitHub Release",
-            "DownloadURL":"Download URL"
+            "GitRepo":"GitHub Repo",
+            "None":"None"
         }
     },
     {
