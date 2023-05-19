@@ -2,7 +2,7 @@
     {
         "DisplayName":"Application Download Type",
         "Category":"Node - Settings",
-        "Description":"Sets the full URL to download the application from. Update the application after setting this value.",
+        "Description":"Sets where to download the application from. Update the application after setting this value.",
         "Keywords":"download,type",
         "FieldName":"DownloadType",
         "InputType":"enum",
@@ -92,7 +92,7 @@
         "Description":"Specify \"npm i\" to use a packages.json or specify \"npm ci\" to use a packages-lock.json.",
         "Keywords":"npm,install,type",
         "FieldName":"NpmInstallType",
-        "InputType":"checkbox",
+        "InputType":"enum",
         "IsFlagArgument":false,
         "ParamFieldName":"NpmInstallType",
         "IncludeInCommandLine":false,
