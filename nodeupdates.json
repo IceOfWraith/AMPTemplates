@@ -84,7 +84,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/node\" \"{{$FullBaseDir}}node\\node_modules\\npm\\bin\\npm-cli.js\" i {{NpmPackages}} >> {{$FullBaseDir}}AMPSetupLog.txt",
+        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app\\{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/node\" \"{{$FullBaseDir}}node\\node_modules\\npm\\bin\\npm-cli.js\" i {{NpmPackages}} >> {{$FullBaseDir}}AMPSetupLog.txt",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"specify"
     },
@@ -102,7 +102,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/node\" \"{{$FullBaseDir}}node\\node_modules\\npm\\bin\\npm-cli.js\" i >> {{$FullBaseDir}}AMPSetupLog.txt",
+        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app\\{{ApplicationLocation}}/\" && \"{{$FullBaseDir}}node/node\" \"{{$FullBaseDir}}node\\node_modules\\npm\\bin\\npm-cli.js\" i >> {{$FullBaseDir}}AMPSetupLog.txt",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmi"
     },
@@ -120,7 +120,7 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app/{{ApplicationLocation}}\\\" && \"{{$FullBaseDir}}node\\node\" \"{{$FullBaseDir}}node\\node_modules\\npm\\bin\\npm-cli.js\" ci >> {{$FullBaseDir}}AMPSetupLog.txt",
+        "UpdateSourceArgs":"/C cd \"{{$FullBaseDir}}app\\{{ApplicationLocation}}\\\" && \"{{$FullBaseDir}}node\\node\" \"{{$FullBaseDir}}node\\node_modules\\npm\\bin\\npm-cli.js\" ci >> {{$FullBaseDir}}AMPSetupLog.txt",
         "UpdateSourceConditionSetting":"NpmInstallType",
         "UpdateSourceConditionValue":"npmci"
     }
