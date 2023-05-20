@@ -42,6 +42,7 @@
     {
         "UpdateStageName":"Node.js Download",
         "UpdateSourcePlatform":"Linux",
+        "UpdateSourceArch":"x86_64",
         "UpdateSource":"FetchURL",
         "UpdateSourceData":"https://nodejs.org/download/release/{{NodeVersion}}/node-{{NodeVersion}}-linux-x64.tar.gz",
         "UpdateSourceTarget":"{{$FullBaseDir}}"
@@ -49,9 +50,26 @@
     {
         "UpdateStageName":"Node.js Extract",
         "UpdateSourcePlatform":"Linux",
+        "UpdateSourceArch":"x86_64",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-		"UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}\" && rm -Rf \"{{$FullBaseDir}}node/\" && tar xfv node-{{NodeVersion}}-linux-x64.tar.gz > {{$FullBaseDir}}AMPSetupLog.txt 2>&1 && mv -v node-{{NodeVersion}}-linux-x64 node >> {{$FullBaseDir}}AMPSetupLog.txt 2>&1 && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
+        "UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}\" && rm -Rf \"{{$FullBaseDir}}node/\" && tar xfv node-{{NodeVersion}}-linux-x64.tar.gz > {{$FullBaseDir}}AMPSetupLog.txt 2>&1 && mv -v node-{{NodeVersion}}-linux-x64 node >> {{$FullBaseDir}}AMPSetupLog.txt 2>&1 && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
+    },
+    {
+        "UpdateStageName":"Node.js Download",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSourceArch":"aarch64",
+        "UpdateSource":"FetchURL",
+        "UpdateSourceData":"https://nodejs.org/download/release/{{NodeVersion}}/node-{{NodeVersion}}-linux-arm64.tar.gz",
+        "UpdateSourceTarget":"{{$FullBaseDir}}"
+    },
+    {
+        "UpdateStageName":"Node.js Extract",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSourceArch":"aarch64",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c 'cd \"{{$FullBaseDir}}\" && rm -Rf \"{{$FullBaseDir}}node/\" && tar xfv node-{{NodeVersion}}-linux-x64.tar.gz > {{$FullBaseDir}}AMPSetupLog.txt 2>&1 && mv -v node-{{NodeVersion}}-linux-x64 node >> {{$FullBaseDir}}AMPSetupLog.txt 2>&1 && rm node-{{NodeVersion}}-linux-x64.tar.gz'"
     },
     {
         "UpdateStageName":"Node.js Download",
