@@ -246,7 +246,7 @@
         "IsFlagArgument":false,
         "ParamFieldName":"/ServerSettings/property[@name='ControlPanelPassword']/@value",
         "IncludeInCommandLine":false,
-        "DefaultValue":"CHANGEME",
+        "DefaultValue":"{{newguid()}}",
         "EnumValues":{}
     },{
         "DisplayName":"Web Dashboard URL",
