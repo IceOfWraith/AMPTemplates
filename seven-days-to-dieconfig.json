@@ -1177,7 +1177,7 @@
         }
     },{
         "DisplayName":"Max Chunk Age",
-        "Category":"7d2d - Gameplay Settings",
+        "Category":"7d2d - Server Settings",
         "Description":"The number of in-game days which must pass since visiting a chunk before it will reset to its original state if not revisited or protected (e.g. by a land claim or bedroll being in close proximity).",
         "Keywords":"Max,Chunk,Age",
         "FieldName":"MaxChunkAge",
@@ -1191,7 +1191,7 @@
         "Suffix": "days"
     },{
         "DisplayName":"Save Data Limit",
-        "Category":"7d2d - Gameplay Settings",
+        "Category":"7d2d - Server Settings",
         "Description":"The maximum disk space allowance for each saved game in megabytes (MB). Saved chunks may be forceably reset to their original states to free up space when this limit is reached. Negative values disable the limit.",
         "Keywords":"Save,Data,Limit",
         "FieldName":"SaveDataLimit",
