@@ -251,7 +251,7 @@
     },{
         "DisplayName":"Web Dashboard URL",
         "Category":"7d2d - Server Settings",
-        "Description":"External URL to the web dashboard if not just using the public IP of the server, e.g. if the web dashboard is behind a reverse proxy. Needs to be the full URL, like \"https://domainOfReverseProxy.tld:1234/\". Can be left empty if directly using the public IP and dashboard port. Only applies to game version 21.0 and above.",
+        "Description":"External URL to the web dashboard if not just using the public IP of the server, e.g. if the web dashboard is behind a reverse proxy. Needs to be the full URL, like \"https://domainOfReverseProxy.tld:1234/\\". Can be left empty if directly using the public IP and dashboard port. Only applies to game version 21.0 and above.",
         "Keywords":"Web,Dashboard,URL",
         "FieldName":"WebDashboardUrl",
         "InputType":"text",
