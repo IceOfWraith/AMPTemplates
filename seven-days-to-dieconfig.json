@@ -242,7 +242,7 @@
         "Description":"Password to gain entry to the control panel. This only applies to game version 20.7 and below.",
         "Keywords":"Control,Panel,Password",
         "FieldName":"ControlPanelPassword",
-        "InputType":"RandomPassword",
+        "InputType":"password",
         "IsFlagArgument":false,
         "ParamFieldName":"/ServerSettings/property[@name='ControlPanelPassword']/@value",
         "IncludeInCommandLine":false,
