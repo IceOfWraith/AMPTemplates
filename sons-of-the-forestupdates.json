@@ -15,12 +15,6 @@
         "DeleteAfterExtract": true,
         "OneShot": false
     },{
-        "UpdateStageName":"Copy Wine Prefix",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"Executable",
-        "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cp -a /wineprefix {{$FullRootDir}}.wine\'"
-    },{
         "UpdateStageName":"Initialise Wine",
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
