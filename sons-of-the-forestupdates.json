@@ -16,6 +16,15 @@
         "OneShot": false
     },
     {
+        "UpdateStageName":"Base Config Download",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"FetchURL",
+        "UpdateSourceData":"https://github.com/IceOfWraith/AMPTemplates/raw/dev/sons-of-the-forestdedicatedserver.cfg",
+        "UpdateSourceTarget":"{{$FullBaseDir}}save",
+        "UpdateSourceArgs":"dedicatedserver.cfg",
+        "OverwriteExistingFiles":false
+    },
+    {
         "UpdateStageName":"Initialise Wine",
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
