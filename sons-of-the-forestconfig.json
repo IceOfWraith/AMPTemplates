@@ -247,19 +247,15 @@
         "DisplayName": "Game Mode Info",
         "Category": "SotF - Game Settings",
         "Description": "In order for these settings to take effect, you should choose \"Custom\" for the Gmae Mode in \"SotF - Server Settings\".",
-        "Keywords": "tree,regrowth",
-        "FieldName": "dedicatedserver.TreeRegrowth",
-        "InputType": "checkbox",
+        "Keywords": "game,mode,info",
+        "FieldName": "GameModeInfo",
+        "InputType": "hidden",
         "IsFlagArgument": false,
-        "ParamFieldName": "dedicatedserver.TreeRegrowth",
+        "ParamFieldName": "GameModeInfo",
         "IncludeInCommandLine": true,
-        "DefaultValue": "true",
         "Hidden": false,
         "SkipIfEmpty": true,
-        "EnumValues": {
-            "True": "true",
-            "False": "false"
-        }
+        "EnumValues": {}
     },
     {
         "DisplayName": "Tree Regrowth",
