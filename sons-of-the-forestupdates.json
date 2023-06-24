@@ -15,10 +15,16 @@
         "DeleteAfterExtract": true,
         "OneShot": false
     },{
+        "UpdateStageName":"Copy Wine Prefix",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c 'cp -a /wineprefix {{$FullRootDir}}.wine\'"
+    },{
         "UpdateStageName":"Initialise Wine",
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'WINEPREFIX=\"/wineprefix\" WINEARCH=win64 /usr/bin/wineboot --init --update'"
+        "UpdateSourceArgs":"-c 'WINEPREFIX=\"{{$FullRootDir}}.wine\" WINEARCH=win64 /usr/bin/wineboot --init --update'"
     }
 ]
