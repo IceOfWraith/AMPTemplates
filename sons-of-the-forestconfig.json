@@ -1,75 +1,63 @@
 [
     {
         "DisplayName": "IpAddress",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "Listening interface for the game server, usually 0.0.0.0 if listening on all interfaces.",
         "Keywords": "ipaddress",
-        "FieldName": "IpAddress",
+        "FieldName": "$ApplicationIPBinding",
         "InputType": "text",
         "IsFlagArgument": false,
         "ParamFieldName": "IpAddress",
         "IncludeInCommandLine": true,
-        "DefaultValue": "{{$ApplicationIPBinding}}",
-        "Placeholder": "{{$ApplicationIPBinding}}",
-        "Suffix": "",
         "Hidden": true,
         "SkipIfEmpty": false,
         "EnumValues": {}
     },
     {
         "DisplayName": "GamePort",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "UDP port used for gameplay netcode (Bolt).",
         "Keywords": "gameport",
-        "FieldName": "{{$GamePort1}}",
+        "FieldName": "$GamePort1",
         "InputType": "number",
         "IsFlagArgument": false,
-        "ParamFieldName": "{{$GamePort1}}",
+        "ParamFieldName": "GamePort",
         "IncludeInCommandLine": true,
-        "DefaultValue": "",
-        "Placeholder": "",
-        "Suffix": "",
         "Hidden": true,
         "SkipIfEmpty": false,
         "EnumValues": {}
     },
     {
         "DisplayName": "QueryPort",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "UDP port used by Steam to list the server and enable the discovery services.",
         "Keywords": "queryport",
-        "FieldName": "{{$SteamQueryPort}}",
+        "FieldName": "$SteamQueryPort",
         "InputType": "number",
         "IsFlagArgument": false,
-        "ParamFieldName": "{{$SteamQueryPort}}",
+        "ParamFieldName": "QueryPort",
         "IncludeInCommandLine": true,
-        "DefaultValue": "",
-        "Placeholder": "",
-        "Suffix": "",
         "Hidden": true,
         "SkipIfEmpty": false,
         "EnumValues": {}
     },
     {
         "DisplayName": "BlobSyncPort",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "BlobSyncPort UDP port used by the BlobSync system to initialize game systems and exchange data.",
         "Keywords": "blobsyncport",
-        "FieldName": "{{$Port3}}",
+        "FieldName": "$BlobSyncPort",
         "InputType": "number",
         "IsFlagArgument": false,
-        "ParamFieldName": "{{$Port3}}",
+        "ParamFieldName": "BlobSyncPort",
         "IncludeInCommandLine": true,
-        "DefaultValue": "",
-        "Placeholder": "",
-        "Suffix": "",
         "Hidden": true,
         "SkipIfEmpty": false,
         "EnumValues": {}
     },
     {
         "DisplayName": "Server Name",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": " Name of the server visible in the server list, and in the Steam contacts.",
         "Keywords": "server,name",
         "FieldName": "ServerName",
@@ -86,10 +74,10 @@
     },
     {
         "DisplayName": "Max Players",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "The maximum number of players allowed simultaneously on the server.",
         "Keywords": "max,players",
-        "FieldName": "MaxPlayers",
+        "FieldName": "$MaxUsers",
         "InputType": "number",
         "IsFlagArgument": false,
         "ParamFieldName": "MaxPlayers",
@@ -103,7 +91,7 @@
     },
     {
         "DisplayName": "Password",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "Adds a password to make your server “private”. Upon connection, this password will be requested before the client can proceed.",
         "Keywords": "password",
         "FieldName": "Password",
@@ -112,16 +100,14 @@
         "ParamFieldName": "Password",
         "IncludeInCommandLine": true,
         "DefaultValue": "",
-        "Placeholder": "",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {}
     },
     {
         "DisplayName": "Lan Only",
-        "Category": "Server Settings",
-        "Description": "",
+        "Category": "SotF - Server Settings",
+        "Description": "Allows or restricts the server visibility to LAN only.",
         "Keywords": "lan,only",
         "FieldName": "LanOnly",
         "InputType": "checkbox",
@@ -129,8 +115,6 @@
         "ParamFieldName": "LanOnly",
         "IncludeInCommandLine": true,
         "DefaultValue": "false",
-        "Placeholder": "false",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -140,7 +124,7 @@
     },
     {
         "DisplayName": "Save Slot",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": " When creating a new save, this number will be the id of the save.",
         "Keywords": "save,slot",
         "FieldName": "SaveSlot",
@@ -150,14 +134,13 @@
         "IncludeInCommandLine": true,
         "DefaultValue": "1",
         "Placeholder": "1",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {}
     },
     {
         "DisplayName": "Save Mode",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "Game save initialization mode. • “continue”: will create a new save on SaveSlot if it doesn’t exist, or load it if it exist. • “new”: will create a new game, with a new game id, and overwrite any game previously saved on the SaveSlot. If the server stops and restarts, the previous save will be overwritten for as long as the mode is set to “new”.",
         "Keywords": "save,mode",
         "FieldName": "",
@@ -166,8 +149,6 @@
         "ParamFieldName": "",
         "IncludeInCommandLine": true,
         "DefaultValue": "continue",
-        "Placeholder": "continue",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -177,8 +158,8 @@
     },
     {
         "DisplayName": "Game Mode",
-        "Category": "Server Settings",
-        "Description": "Sets the difficulty game mode when creating a new save. This parameter is ignored if loading a save (save mode set to “continue” with a save that exists on the slot). If the game mode is set to “custom”, then the custom game mode settings will be read from CustomGameModeSettings option, described later.",
+        "Category": "SotF - Server Settings",
+        "Description": "Sets the difficulty game mode when creating a new save. This parameter is ignored if loading a save (save mode set to “continue” with a save that exists on the slot). If the game mode is set to “custom”, then the custom game mode settings will be read from \"SotF - Game Settings\".",
         "Keywords": "game,mode",
         "FieldName": "GameMode",
         "InputType": "enum",
@@ -186,8 +167,6 @@
         "ParamFieldName": "GameMode",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -200,7 +179,7 @@
     },
     {
         "DisplayName": "Save Interval",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": " How often the game server automatically saves the game to SaveSlot, in seconds.",
         "Keywords": "save,interval",
         "FieldName": "SaveInterval",
@@ -217,7 +196,7 @@
     },
     {
         "DisplayName": "Idle Day Cycle Speed",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "A multiplier to how quickly the time passes compared to normal gameplay when the server is considered idle (no player connected).",
         "Keywords": "idle,day,cycle,speed",
         "FieldName": "IdleDayCycleSpeed",
@@ -234,7 +213,7 @@
     },
     {
         "DisplayName": "Idle Target Framerate",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": " Target framerate of the server when it’s considered idle (no player connected).",
         "Keywords": "idle,target,framerate",
         "FieldName": "IdleTargetFramerate",
@@ -251,7 +230,7 @@
     },
     {
         "DisplayName": "Active Target Framerate",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "Target framerate of the server when it’s NOT considered idle (one or more player connected).",
         "Keywords": "active,target,framerate",
         "FieldName": "ActiveTargetFramerate",
@@ -268,7 +247,7 @@
     },
     {
         "DisplayName": "Log Files Enabled",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "Defines if the logs will be written to files.",
         "Keywords": "log,files,enabled",
         "FieldName": "LogFilesEnabled",
@@ -277,8 +256,6 @@
         "ParamFieldName": "LogFilesEnabled",
         "IncludeInCommandLine": true,
         "DefaultValue": "true",
-        "Placeholder": "true",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -288,7 +265,7 @@
     },
     {
         "DisplayName": "Timestamp Log Filenames",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "Enabled log files timestamping. • “true”: every time the server runs will dump log output to a new file, with filename having the following format: sotf_log_{DateTime:yyyy-MM-dd_HH-mm-ss}.txt • “false”: the filename will be sotf_log.txt and previous log will be overwritten if it already exists.",
         "Keywords": "timestamp,log,filenames",
         "FieldName": "TimestampLogFilenames",
@@ -297,8 +274,6 @@
         "ParamFieldName": "TimestampLogFilenames",
         "IncludeInCommandLine": true,
         "DefaultValue": "true",
-        "Placeholder": "true",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -308,7 +283,7 @@
     },
     {
         "DisplayName": "Timestamp Log Entries",
-        "Category": "Server Settings",
+        "Category": "SotF - Server Settings",
         "Description": "Enables each log entry written to file to be timestamped.",
         "Keywords": "timestamp,log,entries",
         "FieldName": "TimestampLogEntries",
@@ -317,8 +292,6 @@
         "ParamFieldName": "TimestampLogEntries",
         "IncludeInCommandLine": true,
         "DefaultValue": "true",
-        "Placeholder": "true",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -328,7 +301,7 @@
     },
     {
         "DisplayName": "Tree Regrowth",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Enable automatic tree regrowth, triggered when sleeping.",
         "Keywords": "tree,regrowth",
         "FieldName": "TreeRegrowth",
@@ -337,8 +310,6 @@
         "ParamFieldName": "TreeRegrowth",
         "IncludeInCommandLine": true,
         "DefaultValue": "true",
-        "Placeholder": "true",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -348,7 +319,7 @@
     },
     {
         "DisplayName": "Structure Damage",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Allow buildings to be damaged.",
         "Keywords": "structure,damage",
         "FieldName": "Structure.Damage",
@@ -357,8 +328,6 @@
         "ParamFieldName": "Structure.Damage",
         "IncludeInCommandLine": true,
         "DefaultValue": "true",
-        "Placeholder": "true",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -368,7 +337,7 @@
     },
     {
         "DisplayName": "Enemy Spawn",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Enable enemies spawning.",
         "Keywords": "enemy,spawn",
         "FieldName": "GameSetting.Vail.EnemySpawn",
@@ -377,8 +346,6 @@
         "ParamFieldName": "GameSetting.Vail.EnemySpawn",
         "IncludeInCommandLine": true,
         "DefaultValue": "true",
-        "Placeholder": "true",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -388,7 +355,7 @@
     },
     {
         "DisplayName": "Enemy Health",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjust enemy starting health.",
         "Keywords": "enemy,health",
         "FieldName": "GameSetting.Vail.EnemyHealth",
@@ -397,8 +364,6 @@
         "ParamFieldName": "GameSetting.Vail.EnemyHealth",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -409,7 +374,7 @@
     },
     {
         "DisplayName": "Enemy Damage",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjust damage enemies can do.",
         "Keywords": "enemy,damage",
         "FieldName": "GameSetting.Vail.EnemyDamage",
@@ -418,8 +383,6 @@
         "ParamFieldName": "GameSetting.Vail.EnemyDamage",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -430,7 +393,7 @@
     },
     {
         "DisplayName": "Enemy Armour",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjust enemies armor strength.",
         "Keywords": "enemy,armour",
         "FieldName": "GameSetting.Vail.EnemyArmour",
@@ -439,8 +402,6 @@
         "ParamFieldName": "GameSetting.Vail.EnemyArmour",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -451,7 +412,7 @@
     },
     {
         "DisplayName": "Enemy Aggression",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjust enemy aggression level.",
         "Keywords": "enemy,aggression",
         "FieldName": "GameSetting.Vail.EnemyAggression",
@@ -460,8 +421,6 @@
         "ParamFieldName": "GameSetting.Vail.EnemyAggression",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -472,7 +431,7 @@
     },
     {
         "DisplayName": "Animal Spawn Rate",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjust animal spawn rate.",
         "Keywords": "animal,spawn,rate",
         "FieldName": "AnimalSpawnRate",
@@ -481,8 +440,6 @@
         "ParamFieldName": "AnimalSpawnRate",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -493,7 +450,7 @@
     },
     {
         "DisplayName": "Starting Season",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Set environmental starting season.",
         "Keywords": "starting,season",
         "FieldName": "GameSetting.Environment.StartingSeason",
@@ -502,8 +459,6 @@
         "ParamFieldName": "GameSetting.Environment.StartingSeason",
         "IncludeInCommandLine": true,
         "DefaultValue": "spring",
-        "Placeholder": "spring",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -515,7 +470,7 @@
     },
     {
         "DisplayName": "Season Length",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjust season length.",
         "Keywords": "season,length",
         "FieldName": "GameSetting.Environment.SeasonLength",
@@ -524,8 +479,6 @@
         "ParamFieldName": "GameSetting.Environment.SeasonLength",
         "IncludeInCommandLine": true,
         "DefaultValue": "default",
-        "Placeholder": "default",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -537,7 +490,7 @@
     },
     {
         "DisplayName": "Day Length",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjust day length.",
         "Keywords": "day,length",
         "FieldName": "GameSetting.Environment.DayLength",
@@ -546,8 +499,6 @@
         "ParamFieldName": "GameSetting.Environment.DayLength",
         "IncludeInCommandLine": true,
         "DefaultValue": "default",
-        "Placeholder": "default",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -559,7 +510,7 @@
     },
     {
         "DisplayName": "Precipitation Frequency",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjust the frequency of rain and snow.",
         "Keywords": "precipitation,frequency",
         "FieldName": "GameSetting.Environment.PrecipitationFrequency",
@@ -568,8 +519,6 @@
         "ParamFieldName": "GameSetting.Environment.PrecipitationFrequency",
         "IncludeInCommandLine": true,
         "DefaultValue": "default",
-        "Placeholder": "default",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -580,7 +529,7 @@
     },
     {
         "DisplayName": "Consumable Effects",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Enable damage taken when low hydration and low fullness.",
         "Keywords": "consumable,effects",
         "FieldName": "GameSetting.Survival.ConsumableEffects",
@@ -589,8 +538,6 @@
         "ParamFieldName": "GameSetting.Survival.ConsumableEffects",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -600,7 +547,7 @@
     },
     {
         "DisplayName": "Player Stats Damage",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Enable damage from each bad or rotten food and drink.",
         "Keywords": "player,stats,damage",
         "FieldName": "GameSetting.Survival.PlayerStatsDamage",
@@ -609,8 +556,6 @@
         "ParamFieldName": "GameSetting.Survival.PlayerStatsDamage",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -621,7 +566,7 @@
     },
     {
         "DisplayName": "Cold Penalties",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Adjusts the severity that cold will affect health and stamina regeneration.",
         "Keywords": "cold,penalties",
         "FieldName": "GameSetting.Survival.ColdPenalties",
@@ -630,8 +575,6 @@
         "ParamFieldName": "GameSetting.Survival.ColdPenalties",
         "IncludeInCommandLine": true,
         "DefaultValue": "normal",
-        "Placeholder": "normal",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -642,7 +585,7 @@
     },
     {
         "DisplayName": "Reduced Food In Containers",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Reduces the amount of food found in containers.",
         "Keywords": "reduced,food,in,containers",
         "FieldName": "GameSetting.Survival.ReducedFoodInContainers",
@@ -651,8 +594,6 @@
         "ParamFieldName": "GameSetting.Survival.ReducedFoodInContainers",
         "IncludeInCommandLine": true,
         "DefaultValue": "false",
-        "Placeholder": "false",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
@@ -662,7 +603,7 @@
     },
     {
         "DisplayName": "Single Use Containers",
-        "Category": "Server Settings",
+        "Category": "SotF - Game Settings",
         "Description": "Containers can only be opened once.",
         "Keywords": "single,use,containers",
         "FieldName": "GameSetting.Survival.SingleUseContainers",
@@ -671,8 +612,6 @@
         "ParamFieldName": "GameSetting.Survival.SingleUseContainers",
         "IncludeInCommandLine": true,
         "DefaultValue": "false",
-        "Placeholder": "false",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
