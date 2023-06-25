@@ -1,5 +1,57 @@
 [
     {
+        "DisplayName": "IpAddress",
+        "Category": "Server Settings",
+        "Description": "Listening interface for the game server, usually 0.0.0.0 if listening on all interfaces.",
+        "Keywords": "ipaddress",
+        "FieldName": "$ApplicationIPBinding",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "$.IpAddress",
+        "IncludeInCommandLine": false,
+        "Hidden": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "GamePort",
+        "Category": "Server Settings",
+        "Description": "UDP port used for gameplay netcode (Bolt).",
+        "Keywords": "gameport",
+        "FieldName": "$GamePort",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "$.GamePort",
+        "IncludeInCommandLine": false,
+        "Hidden": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "QueryPort",
+        "Category": "Server Settings",
+        "Description": "UDP port used by Steam to list the server and enable the discovery services.",
+        "Keywords": "queryport",
+        "FieldName": "$SteamQueryPort",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "$.QueryPort",
+        "IncludeInCommandLine": false,
+        "Hidden": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "BlobSyncPort",
+        "Category": "Server Settings",
+        "Description": "BlobSyncPort UDP port used by the BlobSync system to initialize game systems and exchange data.",
+        "Keywords": "blobsyncport",
+        "FieldName": "$BlobSyncPort",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "$.BlobSyncPort",
+        "IncludeInCommandLine": false,
+        "Hidden": true,
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "Server Name",
         "Category": "SotF - Server Settings",
         "Description": " Name of the server visible in the server list, and in the Steam contacts.",

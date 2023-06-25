@@ -2,9 +2,9 @@
     {
         "Protocol": "UDP",
         "Port": "8766",
-        "Name": "Game Port 1",
+        "Name": "Game Port",
         "Description": "UDP port used for gameplay netcode (Bolt).",
-        "Ref": "GamePort1"
+        "Ref": "GamePort"
     },
     {
         "Protocol": "UDP",
