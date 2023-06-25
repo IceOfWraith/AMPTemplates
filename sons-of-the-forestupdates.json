@@ -16,6 +16,13 @@
         "OneShot": false
     },
     {
+        "UpdateStageName":"Create Config Directory",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"CreateDirectory",
+        "UpdateSourceArgs":"{{$FullBaseDir}}save",
+        "OverwriteExistingFiles":false
+    },
+    {
         "UpdateStageName":"Base Config Download",
         "UpdateSourcePlatform":"All",
         "UpdateSource":"FetchURL",
