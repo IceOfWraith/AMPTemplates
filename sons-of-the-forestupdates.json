@@ -37,23 +37,5 @@
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
         "UpdateSourceArgs":"-c 'WINEPREFIX=\"{{$FullRootDir}}.wine\" WINEARCH=win64 /usr/bin/wineboot --init --update'"
-    },
-    {
-        "UpdateStageName":"Start Server",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"StartApplication",
-        "OneShot":true
-    },
-    {
-        "UpdateStageName":"Wait For Server Start",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"WaitForStartupComplete",
-        "OneShot":true
-    },
-    {
-        "UpdateStageName":"Stop Server",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"ShutdownApplication",
-        "OneShot":true
     }
 ]
