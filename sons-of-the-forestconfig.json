@@ -148,8 +148,8 @@
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "continue": "Continue",
-            "new": "New"
+            "Continue": "Continue",
+            "New": "New"
         }
     },
     {
@@ -166,11 +166,11 @@
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "normal": "Normal",
-            "hard": "Hard",
-            "hardsurvival": "Hard Survival",
-            "peaceful": "Peaceful",
-            "custom": "Custom"
+            "Normal": "Normal",
+            "Hard": "Hard",
+            "Hardsurvival": "Hard Survival",
+            "Peaceful": "Peaceful",
+            "Custom": "Custom"
         }
     },
     {
@@ -304,7 +304,7 @@
         "InputType": "hidden",
         "IsFlagArgument": false,
         "ParamFieldName": "$.GameModeInfo",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {}
@@ -318,7 +318,7 @@
         "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "$.GameSettings['Gameplay.TreeRegrowth']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "true",
         "Hidden": false,
         "SkipIfEmpty": true,
@@ -336,7 +336,7 @@
         "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "$.GameSettings['Structure.Damage']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "true",
         "Hidden": false,
         "SkipIfEmpty": true,
@@ -354,7 +354,7 @@
         "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Vail.EnemySpawn']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "true",
         "Hidden": false,
         "SkipIfEmpty": true,
@@ -372,14 +372,14 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Vail.EnemyHealth']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "normal",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "low": "Low",
-            "normal": "Normal",
-            "high": "High"
+            "Low": "Low",
+            "Normal": "Normal",
+            "High": "High"
         }
     },
     {
@@ -391,14 +391,14 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Vail.EnemyDamage']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "normal",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "low": "Low",
-            "normal": "Normal",
-            "high": "High"
+            "Low": "Low",
+            "Normal": "Normal",
+            "High": "High"
         }
     },
     {
@@ -410,14 +410,14 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Vail.EnemyArmour']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "normal",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "low": "Low",
-            "normal": "Normal",
-            "high": "High"
+            "Low": "Low",
+            "Normal": "Normal",
+            "High": "High"
         }
     },
     {
@@ -429,14 +429,14 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Vail.EnemyAggression']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "normal",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "low": "Low",
-            "normal": "Normal",
-            "high": "High"
+            "Low": "Low",
+            "Normal": "Normal",
+            "High": "High"
         }
     },
     {
@@ -448,14 +448,14 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Vail.AnimalSpawnRate']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "normal",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "low": "Low",
-            "normal": "Normal",
-            "high": "High"
+            "Low": "Low",
+            "Normal": "Normal",
+            "High": "High"
         }
     },
     {
@@ -467,15 +467,15 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Environment.StartingSeason']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "spring",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "spring": "Spring",
-            "summer": "Summer",
-            "autumn": "Autumn",
-            "winter": "Winter"
+            "Spring": "Spring",
+            "Summer": "Summer",
+            "Autumn": "Autumn",
+            "Winter": "Winter"
         }
     },
     {
@@ -487,15 +487,15 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Environment.SeasonLength']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "default",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "short": "Short",
-            "default": "Default",
-            "long": "Long",
-            "realistic": "Realistic"
+            "Short": "Short",
+            "Default": "Default",
+            "Long": "Long",
+            "Realistic": "Realistic"
         }
     },
     {
@@ -507,15 +507,15 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Environment.DayLength']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "default",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "short": "Short",
-            "default": "Default",
-            "long": "Long",
-            "realistic": "Realistic"
+            "Short": "Short",
+            "Default": "Default",
+            "Long": "Long",
+            "Realistic": "Realistic"
         }
     },
     {
@@ -527,14 +527,14 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Environment.PrecipitationFrequency']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "default",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "low": "Low",
-            "default": "Default",
-            "high": "High"
+            "Low": "Low",
+            "Default": "Default",
+            "High": "High"
         }
     },
     {
@@ -546,13 +546,13 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Survival.ConsumableEffects']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "normal",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "normal": "Normal",
-            "hard": "Hard"
+            "Normal": "Normal",
+            "Hard": "Hard"
         }
     },
     {
@@ -564,14 +564,14 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Survival.PlayerStatsDamage']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "normal",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "off": "Off",
-            "normal": "Normal",
-            "hard": "Hard"
+            "Off": "Off",
+            "Normal": "Normal",
+            "Hard": "Hard"
         }
     },
     {
@@ -583,14 +583,14 @@
         "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Survival.ColdPenalties']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "normal",
         "Hidden": false,
         "SkipIfEmpty": true,
         "EnumValues": {
-            "off": "Off",
-            "normal": "Normal",
-            "hard": "Hard"
+            "Off": "Off",
+            "Normal": "Normal",
+            "Hard": "Hard"
         }
     },
     {
@@ -602,7 +602,7 @@
         "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Survival.ReducedFoodInContainers']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "false",
         "Hidden": false,
         "SkipIfEmpty": true,
@@ -620,7 +620,7 @@
         "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "$.CustomGameModeSettings['GameSetting.Survival.SingleUseContainers']",
-        "IncludeInCommandLine": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "false",
         "Hidden": false,
         "SkipIfEmpty": true,
