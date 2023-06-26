@@ -296,6 +296,20 @@
         }
     },
     {
+        "DisplayName":"Server Owners",
+        "Category":"SotF - Server Settings",
+        "Description":"To administrate your server from in game directly, you need to setup server ownership. Add the Steam64 IDs of every server owner, one steam id per line. You can use # to comment out a line. That can be helpful to keep track of SteamIDs, you can include their name in the line above or below, starting with a #. [Find Steam64 IDs](https://steamidfinder.com/)",
+        "Keywords":"server,owners,admins",
+        "FieldName":"ServerOwners",
+        "InputType":"list",
+        "IsFlagArgument":false,
+        "ParamFieldName":"ServerOwners",
+        "IncludeInCommandLine":false,
+        "DefaultValue":"",
+        "Special":"listfile:./sons-of-the-forest/2465200/saves/ownerswhitelist.txt",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "Game Mode Info",
         "Category": "SotF - Game Settings",
         "Description": "In order for these settings to take effect, you should choose \"Custom\" for the Gmae Mode in \"SotF - Server Settings\".",
