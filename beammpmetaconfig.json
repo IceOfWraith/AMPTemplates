@@ -1,0 +1,8 @@
+[
+    {
+        "ConfigFile": "ServerConfig.toml",
+        "ConfigType": "kvp",
+        "ConfigFormat": "{0} = \"{1}\"",
+        "AutoMap": true
+    }
+]
