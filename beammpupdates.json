@@ -5,15 +5,8 @@
         "UpdateSource": "GithubRelease",
         "UpdateSourceData": "BeamMP-Server.exe",
         "UpdateSourceArgs": "BeamMP/BeamMP-Server",
-        "UpdateSourceVersion": "",
-        "UpdateSourceTarget": "",
         "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": false,
-        "ForceDownloadPlatform": null,
-        "UpdateSourceConditionSetting": null,
-        "UpdateSourceConditionValue": null,
-        "DeleteAfterExtract": true,
-        "OneShot": false
+        "OverwriteExistingFiles": true,
     },
     {
         "UpdateStageName": "BeamMP Download",
@@ -21,30 +14,22 @@
         "UpdateSource": "GithubRelease",
         "UpdateSourceData": "BeamMP-Server-debian-11",
         "UpdateSourceArgs": "BeamMP/BeamMP-Server",
-        "UpdateSourceVersion": "",
-        "UpdateSourceTarget": "",
         "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": false,
-        "ForceDownloadPlatform": null,
-        "UpdateSourceConditionSetting": null,
-        "UpdateSourceConditionValue": null,
-        "DeleteAfterExtract": true,
-        "OneShot": false
+        "OverwriteExistingFiles": true,
     },
     {
-        "UpdateStageName": "Config File Creation",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "StartApplication",
-        "UpdateSourceData": "",
-        "UpdateSourceArgs": "",
-        "UpdateSourceVersion": "",
-        "UpdateSourceTarget": "",
-        "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": false,
-        "ForceDownloadPlatform": null,
-        "UpdateSourceConditionSetting": null,
-        "UpdateSourceConditionValue": null,
-        "DeleteAfterExtract": true,
-        "OneShot": true
+        "UpdateStageName":"Start Server",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"StartApplication"
+    },
+    {
+        "UpdateStageName":"Wait For Server Start",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"WaitForStartupComplete"
+    },
+    {
+        "UpdateStageName":"Stop Server",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"ShutdownApplication"
     }
 ]
