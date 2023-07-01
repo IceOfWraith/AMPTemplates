@@ -178,7 +178,7 @@
         "Category": "Server Settings",
         "Description": "The binding IP for the HTTP webserver.",
         "Keywords": "",
-        "FieldName": "$ApplicationBindingIP",
+        "FieldName": "$ApplicationIPBinding",
         "InputType": "text",
         "ParamFieldName": "HTTPServerIP",
         "Hidden": true
