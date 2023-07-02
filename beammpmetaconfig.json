@@ -1,16 +1,7 @@
 [
     {
         "ConfigFile": "{{$FullBaseDir}}ServerConfig.toml",
-        "ConfigType": "kvp",
-        "ConfigFormat": "{0} = \"{1}\"",
-        "ConfigFormatRegex": "^(?<key>.+?) = \"(?<value>.*?)\"$",
-        "AutoMap": true
-    },
-    {
-        "ConfigFile": "{{$FullBaseDir}}ServerConfig.toml",
-        "ConfigType": "kvp",
-        "ConfigFormat": "{0} = {1}",
-        "ConfigFormatRegex": "^(?<key>.+?) = (?<value>.*?)$",
-        "AutoMap": true
+        "ConfigType": "template",
+        "ConfigTemplate": "{{$FullRootDir}}beammpServerConfig.toml"
     }
 ]

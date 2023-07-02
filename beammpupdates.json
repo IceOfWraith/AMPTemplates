@@ -26,6 +26,14 @@
         "UpdateSourceArgs":"{{$FullBaseDir}}BeamMP-Server-debian-11"
     },
     {
+        "UpdateStageName": "Config Template Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/IceOfWraith/AMPTemplates/raw/dev/beammpServerConfig.toml",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "OverwriteExistingFiles": "true"
+    },
+    {
         "UpdateStageName":"Start Server",
         "UpdateSourcePlatform":"All",
         "UpdateSource":"StartApplication"
