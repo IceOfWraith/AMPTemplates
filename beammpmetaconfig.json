@@ -3,6 +3,6 @@
         "ConfigFile": "ServerConfig.toml",
         "AutoMap": true,
         "ConfigType": "template",
-        "ConfigTemplate": "beammp/beammpServerConfig.toml"
+        "ConfigFileTemplate": "beammp/beammpServerConfig.toml"
     }
 ]
