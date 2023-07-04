@@ -32,20 +32,5 @@
         "UpdateSourceData": "https://github.com/IceOfWraith/AMPTemplates/raw/dev/beammpServerConfig.toml",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": "true"
-    },
-    {
-        "UpdateStageName":"Start Server",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"StartApplication"
-    },
-    {
-        "UpdateStageName":"Wait For Server Start",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"WaitForStartupComplete"
-    },
-    {
-        "UpdateStageName":"Stop Server",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"ShutdownApplication"
     }
 ]
