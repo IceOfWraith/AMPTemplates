@@ -8,7 +8,8 @@
         "InputType": "text",
         "ParamFieldName": "Name",
         "DefaultValue": "AMP Powered BeamMP Server",
-        "Placeholder": "AMP Powered BeamMP Server"
+        "Placeholder": "AMP Powered BeamMP Server",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Port",
@@ -18,7 +19,8 @@
         "FieldName": "$MainGamePort",
         "InputType": "number",
         "ParamFieldName": "Port",
-        "Hidden": true
+        "Hidden": true,
+        "EnumValues": {}
     },
     {
         "DisplayName": "Auth Key",
@@ -28,7 +30,8 @@
         "FieldName": "AuthKey",
         "InputType": "text",
         "ParamFieldName": "AuthKey",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Log Chat",
@@ -83,7 +86,8 @@
         "DefaultValue": "1",
         "Placeholder": "1",
         "MinValue": "1",
-        "Suffix": "cars"
+        "Suffix": "cars",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Max Players",
@@ -95,7 +99,8 @@
         "ParamFieldName": "MaxPlayers",
         "DefaultValue": "8",
         "Placeholder": "8",
-        "Suffix": "players"
+        "Suffix": "players",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Map",
@@ -106,7 +111,8 @@
         "InputType": "text",
         "ParamFieldName": "Map",
         "DefaultValue": "/levels/gridmap_v2/info.json",
-        "Placeholder": "/levels/gridmap_v2/info.json"
+        "Placeholder": "/levels/gridmap_v2/info.json",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Description",
@@ -117,7 +123,8 @@
         "InputType": "text",
         "ParamFieldName": "Description",
         "DefaultValue": "BeamMP Default Description",
-        "Placeholder": "BeamMP Default Description"
+        "Placeholder": "BeamMP Default Description",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Resource Folder",
@@ -128,7 +135,8 @@
         "InputType": "text",
         "ParamFieldName": "ResourceFolder",
         "DefaultValue": "Resources",
-        "Placeholder": "Resources"
+        "Placeholder": "Resources",
+        "EnumValues": {}
     },
     {
         "DisplayName": "I'm Scared Of Updates",
@@ -181,7 +189,8 @@
         "FieldName": "$ApplicationIPBinding",
         "InputType": "text",
         "ParamFieldName": "HTTPServerIP",
-        "Hidden": true
+        "Hidden": true,
+        "EnumValues": {}
     },
     {
         "DisplayName": "HTTPServerPort",
@@ -191,7 +200,8 @@
         "FieldName": "$HTTPServerPort",
         "InputType": "number",
         "ParamFieldName": "HTTPServerPort",
-        "Hidden": true
+        "Hidden": true,
+        "EnumValues": {}
     },
     {
         "DisplayName": "Use SSL",
