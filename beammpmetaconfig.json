@@ -1,8 +1,8 @@
 [
     {
-        "ConfigFile": "{{$FullBaseDir}}ServerConfig.toml",
+        "ConfigFile": "ServerConfig.toml",
         "AutoMap": true,
         "ConfigType": "template",
-        "ConfigTemplate": "{{$FullRootDir}}beammpServerConfig.toml"
+        "ConfigTemplate": "beammp/beammpServerConfig.toml"
     }
 ]
