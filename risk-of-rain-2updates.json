@@ -1,11 +1,19 @@
 [
     {
-        "UpdateStageName":"SteamCMD Download",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"SteamCMD",
-        "UpdateSourceData":"1180760",
-        "UpdateSourceArgs":"632360",
-        "ForceDownloadPlatform":"Windows"
+        "UpdateStageName": "TEST",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1180760",
+        "UpdateSourceArgs": "632360",
+        "UpdateSourceVersion": "",
+        "UpdateSourceTarget": "",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "ForceDownloadPlatform": "",
+        "UpdateSourceConditionSetting": "",
+        "UpdateSourceConditionValue": "",
+        "DeleteAfterExtract": true,
+        "OneShot": false
     },
     {
         "UpdateStageName":"SteamCMD Download",
