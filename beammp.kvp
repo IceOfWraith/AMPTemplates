@@ -16,7 +16,6 @@ Meta.DockerRequired=False
 Meta.ContainerPolicy=RecommendedOnLinux
 Meta.ContainerPolicyReason=The provided executable on Linux is designed to work on Debian 12. For this reason, it's recommended to run the server in Docker.
 Meta.ExtraSetupStepsURI=
-Meta.ExtraContainerPackages=["liblua5.3-0"]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 App.DisplayName=BeamMP
