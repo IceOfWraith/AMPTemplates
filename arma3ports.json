@@ -18,7 +18,7 @@
                 "Protocol": "UDP",
                 "Port": 2304,
                 "Ref": "SteamPort",
-                "Offset" : 2,
+                "Offset" : 3,
                 "Name": "Steam Port",
                 "Description": "Port for Steam traffic"
             },
@@ -26,7 +26,7 @@
                 "Protocol": "UDP",
                 "Port": 2305,
                 "Ref": "ReservedPort",
-                "Offset" : 3,
+                "Offset" : 5,
                 "Name": "Reserved Port",
                 "Description": "Port reserved for VON traffic"
             },
@@ -34,7 +34,7 @@
                 "Protocol": "UDP",
                 "Port": 2306,
                 "Ref": "BattlEyePort",
-                "Offset" : 4,
+                "Offset" : 6,
                 "Name": "BattlEye Port",
                 "Description": "Port for BattlEye traffic"
             },
@@ -42,7 +42,7 @@
                 "Protocol": "UDP",
                 "Port": 2307,
                 "Ref": "RCONPort",
-                "Offset" : 5,
+                "Offset" : 100,
                 "Name": "RCON Port",
                 "Description": "Port for RCON traffic"
             }
