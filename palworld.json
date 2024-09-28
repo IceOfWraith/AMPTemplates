@@ -1,6 +1,6 @@
 {
     "Meta": {
-        "DisplayName": "Palworld1",
+        "DisplayName": "Palworld",
         "Description": "Palworld Dedicated Server",
         "OS": "Windows, Linux",
         "AarchSupport": "Unknown",
@@ -27,7 +27,7 @@
         "ReleaseNotes": "",
         "BreakingReleaseNotes": "",
         "ImportableExtensions": [],
-        "AppConfigId": "afacd4b2-eb92-4628-8068-9a9975651f54"
+        "AppConfigId": "afacd4b2-eb92-4628-8068-9a9975651f24"
     },
     "App": {
         "DisplayName": "Palworld",
