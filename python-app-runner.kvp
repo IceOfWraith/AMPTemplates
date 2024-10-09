@@ -17,11 +17,11 @@ Meta.DockerBaseReadOnly=False
 Meta.ContainerPolicy=Supported
 Meta.ContainerPolicyReason=
 Meta.ExtraSetupStepsURI=https://discourse.cubecoders.com/docs?topic=7420?utm_source=ampcreate&utm_content=python
-Meta.Prerequsites=[]
+Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.ConfigVersion=1.3
+Meta.ConfigVersion=1.4
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
 Meta.AppConfigId=c4cb3198-7b63-469d-959f-17a965d061ac
