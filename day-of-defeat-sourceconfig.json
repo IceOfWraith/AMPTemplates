@@ -24,18 +24,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Server Search Key",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "Sets a search key for finding the server in the lobby",
-        "Keywords": "search,key,lobby,sv_search_key",
-        "FieldName": "sv_search_key",
-        "InputType": "text",
-        "ParamFieldName": "sv_search_key",
-        "DefaultValue": "",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "Server Tags",
         "Category": "Day of Defeat Source:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -59,21 +47,6 @@
         "ParamFieldName": "sv_steamgroup",
         "DefaultValue": "",
         "EnumValues": {}
-    },
-    {
-        "DisplayName": "Enable MOTD",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "If set, the server message of the day (MOTD) will be shown to clients when they connect. Configure the MOTD in 'left4dead2/motd.txt'",
-        "Keywords": "motd,show,enable,motd_enabled",
-        "FieldName": "motd_enabled",
-        "InputType": "checkbox",
-        "ParamFieldName": "motd_enabled",
-        "DefaultValue": "1",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
     },
     {
         "DisplayName": "LAN Server",
@@ -153,40 +126,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Allowed Game Modes",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "Sets a comma-separated list of game modes allowed on the server. Choose from: coop, realism, survival, versus, scavenge, dash, holdout, shootzones",
-        "Keywords": "game,mode,types,gamemode,gametypes,sv_gametypes",
-        "FieldName": "sv_gametypes",
-        "InputType": "text",
-        "ParamFieldName": "sv_gametypes",
-        "DefaultValue": "coop,realism,survival,versus,scavenge,dash,holdout,shootzones",
-        "Placeholder": "coop,realism,survival,versus,scavenge,dash,holdout,shootzones",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Initial Game Mode",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "Sets the game mode to start the server with. Should be one of the Allowed Game Modes. Requires SourceMod",
-        "Keywords": "game,mode,gamemode,mp_gamemode,sm_cvar",
-        "FieldName": "mp_gamemode",
-        "InputType": "enum",
-        "ParamFieldName": "mp_gamemode",
-        "DefaultValue": "coop",
-        "EnumValues": {
-            "coop": "Co-op",
-            "realism": "Realism",
-            "versus": "Versus",
-            "survival": "Survival",
-            "scavenge": "Scavenge",
-            "dash": "Dash",
-            "holdout": "Holdout",
-            "shootzones": "Shootzones"
-        }
-    },
-    {
         "DisplayName": "Server Region",
         "Category": "Day of Defeat Source:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -264,21 +203,6 @@
         "InputType": "checkbox",
         "ParamFieldName": "mp_allowspectators",
         "DefaultValue": "1",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Allow Lobby Connect Only",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "Allow only connections to the server from the matchmaking lobby, and no direct connections",
-        "Keywords": "allow,lobby,connect,direct,sv_allow_lobby_connect_only",
-        "FieldName": "sv_allow_lobby_connect_only",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_allow_lobby_connect_only",
-        "DefaultValue": "0",
         "EnumValues": {
             "False": "0",
             "True": "1"
@@ -607,23 +531,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Difficulty Level",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the game difficulty level",
-        "Keywords": "difficulty,level,z_difficulty",
-        "FieldName": "z_difficulty",
-        "InputType": "enum",
-        "ParamFieldName": "z_difficulty",
-        "DefaultValue": "Normal",
-        "EnumValues": {
-            "Easy": "Easy",
-            "Normal": "Normal",
-            "Hard": "Advanced (Hard)",
-            "Impossible": "Expert (Impossible)"
-        }
-    },
-    {
         "DisplayName": "Enable Friendly Fire",
         "Category": "Day of Defeat Source:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
@@ -637,62 +544,6 @@
             "False": "0",
             "True": "1"
         }
-    },
-    {
-        "DisplayName": "Friendly Fire Damage Factor (Easy)",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the friendly fire damage factor for survivors on Easy difficulty. 0 = disabled. Requires SourceMod",
-        "Keywords": "friendly,fire,survivors,easy,survivor_friendly_fire_factor_easy,sm_cvar",
-        "FieldName": "survivor_friendly_fire_factor_easy",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "survivor_friendly_fire_factor_easy",
-        "DefaultValue": "0",
-        "Placeholder": "0",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Friendly Fire Damage Factor (Normal)",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the friendly fire damage factor for survivors on Normal difficulty. 0 = disabled. Requires SourceMod",
-        "Keywords": "friendly,fire,survivors,normal,survivor_friendly_fire_factor_normal,sm_cvar",
-        "FieldName": "survivor_friendly_fire_factor_normal",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "survivor_friendly_fire_factor_normal",
-        "DefaultValue": "0.5",
-        "Placeholder": "0.5",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Friendly Fire Damage Factor (Advanced)",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the friendly fire damage factor for survivors on Advanced difficulty. 0 = disabled. Requires SourceMod",
-        "Keywords": "friendly,fire,survivors,hard,survivor_friendly_fire_factor_hard,sm_cvar",
-        "FieldName": "survivor_friendly_fire_factor_hard",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "survivor_friendly_fire_factor_hard",
-        "DefaultValue": "0.3",
-        "Placeholder": "0.3",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Friendly Fire Damage Factor (Expert)",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the friendly fire damage factor for survivors on Expert difficulty. 0 = disabled. Requires SourceMod",
-        "Keywords": "friendly,fire,survivors,expert,survivor_friendly_fire_factor_expert,sm_cvar",
-        "FieldName": "survivor_friendly_fire_factor_expert",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "survivor_friendly_fire_factor_expert",
-        "DefaultValue": "0.1",
-        "Placeholder": "0.1",
-        "EnumValues": {}
     },
     {
         "DisplayName": "Enable Flashlight",
@@ -815,36 +666,6 @@
         }
     },
     {
-        "DisplayName": "Automatic Team Balancing",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets whether to automatically balance teams based on the Teams Unbalance Limit. Requires SourceMod",
-        "Keywords": "team,automatic,balance,balancing,mp_autoteambalance,sm_cvar",
-        "FieldName": "mp_autoteambalance",
-        "InputType": "enum",
-        "ParamFieldName": "mp_autoteambalance",
-        "DefaultValue": "1",
-        "EnumValues": {
-            "0": "Off",
-            "1": "Forcibly switch (default)",
-            "2": "Ask for volunteers"
-        }
-    },
-    {
-        "DisplayName": "Teams Unbalance Limit",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Teams will be considered unbalanced for the purpose of Automatic Team Balancing when one team has this many more players than the other team. 0 = check disabled. Requires SourceMod",
-        "Keywords": "team,automatic,balance,balancing,limit,mp_teams_unbalance_limit,sm_cvar",
-        "FieldName": "mp_teams_unbalance_limit",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "mp_teams_unbalance_limit",
-        "DefaultValue": "1",
-        "Placeholder": "1",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "Enable Stalemate Mode",
         "Category": "Day of Defeat Source:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
@@ -890,21 +711,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Map Rotation Round Limit",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the maximum number of rounds to play before the map rotates. 0 = disabled. Requires SourceMod",
-        "Keywords": "round,limit,rotation,mp_maxrounds,sm_cvar",
-        "FieldName": "mp_maxrounds",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "mp_maxrounds",
-        "DefaultValue": "0",
-        "Placeholder": "0",
-        "Suffix": "rounds",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "Map Rotation Win Limit",
         "Category": "Day of Defeat Source:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
@@ -916,19 +722,6 @@
         "ParamFieldName": "mp_winlimit",
         "DefaultValue": "0",
         "Placeholder": "0",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Versus Round Limit",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the number of rounds to play for the versus game mode",
-        "Keywords": "round,limit,versus,mp_roundlimit",
-        "FieldName": "mp_roundlimit",
-        "InputType": "number",
-        "ParamFieldName": "mp_roundlimit",
-        "DefaultValue": "3",
-        "Placeholder": "3",
         "EnumValues": {}
     },
     {
@@ -945,64 +738,6 @@
             "False": "0",
             "True": "1"
         }
-    },
-    {
-        "DisplayName": "Disable Survivor Glow",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Disable glow effect on survivors. Requires SourceMod",
-        "Keywords": "disable,glow,survivors,sv_disable_glow_survivors,sm_cvar",
-        "FieldName": "sv_disable_glow_survivors",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_disable_glow_survivors",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Disable Glow on Far Items",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Disable glow effect on far items. Requires SourceMod",
-        "Keywords": "disable,glow,far,items,sv_disable_glow_faritems,sm_cvar",
-        "FieldName": "sv_disable_glow_faritems",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_disable_glow_faritems",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Disable Rescue",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Disable rescue. Requires SourceMod",
-        "Keywords": "disable,rescue,sv_rescue_disabled,sm_cvar",
-        "FieldName": "sv_rescue_disabled",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_rescue_disabled",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Pipe Bomb Timer Duration",
-        "Category": "Day of Defeat Source:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Duration of pipe bomb timer",
-        "Keywords": "pipe,bomb,timer,duration,pipe_bomb_timer_duration,sm_cvar",
-        "FieldName": "pipe_bomb_timer_duration",
-        "InputType": "number",
-        "ParamFieldName": "pipe_bomb_timer_duration",
-        "DefaultValue": "10",
-        "Placeholder": "10",
-        "EnumValues": {}
     },
     {
         "DisplayName": "Alternate Ticks",
