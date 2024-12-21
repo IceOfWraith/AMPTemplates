@@ -29,7 +29,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://mms.alliedmods.net/mmsdrop/{{MetamodBranch}}/mmsource-{{MetamodBranch}}.0-git{{MetamodBuild}}-windows.zip",
-        "UpdateSourceTarget": "{{$FullBaseDir}}dods",
+        "UpdateSourceTarget": "{{$FullBaseDir}}dod",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
         "DeleteAfterExtract": true,
@@ -41,7 +41,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://mms.alliedmods.net/mmsdrop/{{MetamodBranch}}/mmsource-{{MetamodBranch}}.0-git{{MetamodBuild}}-linux.tar.gz",
-        "UpdateSourceTarget": "{{$FullBaseDir}}dods",
+        "UpdateSourceTarget": "{{$FullBaseDir}}dod",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
         "DeleteAfterExtract": true,
@@ -85,7 +85,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -Command \"Set-Location -Path 'l4d2/232290'; if (Test-Path 'dods/cfg/sourcemod') { Remove-Item -Path 'sm/cfg/sourcemod' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null }; if (Test-Path 'dods/addons/sourcemod/configs') { Remove-Item -Path 'sm/addons/sourcemod/configs' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null }; if (Test-Path 'dods/addons/sourcemod/plugins') { Remove-Item -Path 'sm/addons/sourcemod/plugins' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null }; Copy-Item -Path 'sm/*' -Destination 'dods' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null; Remove-Item -Path 'sm' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null\"",
+        "UpdateSourceArgs": "-NoProfile -Command \"Set-Location -Path 'dods/232290'; if (Test-Path 'dod/cfg/sourcemod') { Remove-Item -Path 'sm/cfg/sourcemod' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null }; if (Test-Path 'dod/addons/sourcemod/configs') { Remove-Item -Path 'sm/addons/sourcemod/configs' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null }; if (Test-Path 'dod/addons/sourcemod/plugins') { Remove-Item -Path 'sm/addons/sourcemod/plugins' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null }; Copy-Item -Path 'sm/*' -Destination 'dod' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null; Remove-Item -Path 'sm' -Recurse -Force -ErrorAction SilentlyContinue | Out-Null\"",
         "UpdateSourceConditionSetting": "InstallMod",
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": true
@@ -95,7 +95,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd l4d2/232290 && [ -d dods/cfg/sourcemod ] && rm -rf sm/cfg/sourcemod >/dev/null 2>&1; [ -d dods/addons/sourcemod/configs ] && rm -rf sm/addons/sourcemod/configs >/dev/null 2>&1; [ -d dods/addons/sourcemod/plugins ] && rm -rf sm/addons/sourcemod/plugins >/dev/null 2>&1; \\cp -rf sm/* dods/ >/dev/null 2>&1; rm -rf sm >/dev/null 2>&1\"",
+        "UpdateSourceArgs": "-c \"cd dods/232290 && [ -d dod/cfg/sourcemod ] && rm -rf sm/cfg/sourcemod >/dev/null 2>&1; [ -d dod/addons/sourcemod/configs ] && rm -rf sm/addons/sourcemod/configs >/dev/null 2>&1; [ -d dod/addons/sourcemod/plugins ] && rm -rf sm/addons/sourcemod/plugins >/dev/null 2>&1; \\cp -rf sm/* dod/ >/dev/null 2>&1; rm -rf sm >/dev/null 2>&1\"",
         "UpdateSourceConditionSetting": "InstallMod",
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": true
@@ -104,8 +104,8 @@
         "UpdateStageName": "Activate Metamod and SourceMod",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateFile",
-        "UpdateSourceData": "\"Plugin\"\n{\n\t\"file\"\t\"../dods/addons/metamod/bin/server\"\n}",
-        "UpdateSourceArgs": "{{$FullBaseDir}}dods/addons/metamod.vdf",
+        "UpdateSourceData": "\"Plugin\"\n{\n\t\"file\"\t\"../dod/addons/metamod/bin/server\"\n}",
+        "UpdateSourceArgs": "{{$FullBaseDir}}dod/addons/metamod.vdf",
         "OverwriteExistingFiles": true,
         "UpdateSourceConditionSetting": "InstallMod",
         "UpdateSourceConditionValue": "true"
@@ -115,7 +115,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd l4d2\\232290\\dods\\addons > NUL 2>&1 && del /Q /F metamod.vdf > NUL 2>&1 & exit /b 0",
+        "UpdateSourceArgs": "/C cd dods\\232290\\dod\\addons > NUL 2>&1 && del /Q /F metamod.vdf > NUL 2>&1 & exit /b 0",
         "UpdateSourceConditionSetting": "InstallMod",
         "UpdateSourceConditionValue": "false"
     },
@@ -124,7 +124,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd l4d2/232290/dods/addons >/dev/null 2>&1 && rm -rf metamod.vdf >/dev/null 2>&1; exit 0\"",
+        "UpdateSourceArgs": "-c \"cd dods/232290/dod/addons >/dev/null 2>&1 && rm -rf metamod.vdf >/dev/null 2>&1; exit 0\"",
         "UpdateSourceConditionSetting": "InstallMod",
         "UpdateSourceConditionValue": "false"
     }
