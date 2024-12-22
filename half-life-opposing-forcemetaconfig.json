@@ -1,12 +1,12 @@
 [
     {
-        "ConfigFile": "valve/server.cfg",
+        "ConfigFile": "gearbox/server.cfg",
         "AutoMap": true,
         "ConfigType": "template",
         "ConfigFileTemplate": "hlof/AMP_server.cfg"
     },
     {
-        "ConfigFile": "valve/motd.txt",
+        "ConfigFile": "gearbox/motd.txt",
         "ConfigType": "kvp",
         "ConfigFormat": "{0}{1}",
         "Subsections": [
