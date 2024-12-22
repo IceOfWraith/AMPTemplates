@@ -27,13 +27,13 @@
         "DisplayName": "Server Mod Name",
         "Category": "Team Fortress Classic:stadia_controller",
         "Subcategory": "Server:dns:1",
-        "Description": "Sets the name of the mod directory to load, allowing the use of third-party Team Fortress Classic mods. Don't change this from the default 'valve' unless you know what you are doing!",
+        "Description": "Sets the name of the mod directory to load, allowing the use of third-party Team Fortress Classic mods. Don't change this from the default 'tfc' unless you know what you are doing!",
         "Keywords": "server,mod,directory,game",
         "FieldName": "mod",
         "InputType": "text",
         "ParamFieldName": "mod",
-        "DefaultValue": "valve",
-        "Placeholder": "valve",
+        "DefaultValue": "tfc",
+        "Placeholder": "tfc",
         "EnumValues": {}
     },
     {
@@ -127,7 +127,7 @@
         "InputType": "list",
         "ParamFieldName": "mapcycle",
         "DefaultValue": "[\"ravelin\",\"casbah\",\"flagrun\",\"avanti\",\"dustbowl\",\"warpath\",\"epicenter\",\"badlands\",\"crossover2\",\"2fort\",\"hunted\",\"cz2\",\"well\",\"rock2\"]",
-        "Special": "listfile:./tfc/90/valve/mapcycle.txt",
+        "Special": "listfile:./tfc/90/tfc/mapcycle.txt",
         "EnumValues": {}
     },
     {
@@ -241,7 +241,7 @@
         "InputType": "list",
         "ParamFieldName": "Plugins",
         "DefaultValue": "",
-        "Special": "listfile:./tfc/90/valve/addons/metamod/plugins.ini",
+        "Special": "listfile:./tfc/90/tfc/addons/metamod/plugins.ini",
         "EnumValues": {}
     },
     {
