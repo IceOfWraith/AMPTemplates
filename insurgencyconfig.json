@@ -250,14 +250,14 @@
         "DisplayName": "Player Limit",
         "Category": "Insurgency:stadia_controller",
         "Subcategory": "Server:dns:1",
-        "Description": "Sets the maximum number of players allowed on the server at one time. For more than 4 players, a suitable SourceMod plugin is required",
+        "Description": "Sets the maximum number of players allowed on the server at one time. For more than 49 players, a suitable SourceMod plugin is required",
         "Keywords": "max,players,limit,maxplayers,sm_cvar",
         "FieldName": "$MaxUsers",
         "InputType": "number",
         "MinValue": "1",
         "ParamFieldName": "maxplayers",
-        "DefaultValue": "4",
-        "Placeholder": "4",
+        "DefaultValue": "32",
+        "Placeholder": "32",
         "Suffix": "players",
         "EnumValues": {}
     },
@@ -301,21 +301,6 @@
         "InputType": "checkbox",
         "ParamFieldName": "mp_allowspectators",
         "DefaultValue": "1",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Allow Lobby Connect Only",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "Allow only connections to the server from the matchmaking lobby, and no direct connections",
-        "Keywords": "allow,lobby,connect,direct,sv_allow_lobby_connect_only",
-        "FieldName": "sv_allow_lobby_connect_only",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_allow_lobby_connect_only",
-        "DefaultValue": "0",
         "EnumValues": {
             "False": "0",
             "True": "1"
@@ -481,10 +466,10 @@
         "FieldName": "sv_minrate",
         "InputType": "number",
         "MinValue": "0",
-        "MaxValue": "30000",
+        "MaxValue": "786432",
         "ParamFieldName": "sv_minrate",
-        "DefaultValue": "5000",
-        "Placeholder": "5000",
+        "DefaultValue": "16000",
+        "Placeholder": "16000",
         "Suffix": "bytes/second",
         "EnumValues": {}
     },
@@ -497,7 +482,7 @@
         "FieldName": "sv_maxrate",
         "InputType": "number",
         "MinValue": "0",
-        "MaxValue": "30000",
+        "MaxValue": "786432",
         "ParamFieldName": "sv_maxrate",
         "DefaultValue": "0",
         "Placeholder": "0",
@@ -514,8 +499,8 @@
         "InputType": "number",
         "MinValue": "0",
         "ParamFieldName": "sv_minupdaterate",
-        "DefaultValue": "10",
-        "Placeholder": "10",
+        "DefaultValue": "64",
+        "Placeholder": "64",
         "EnumValues": {}
     },
     {
@@ -528,8 +513,8 @@
         "InputType": "number",
         "MinValue": "0",
         "ParamFieldName": "sv_maxupdaterate",
-        "DefaultValue": "60",
-        "Placeholder": "60",
+        "DefaultValue": "64",
+        "Placeholder": "64",
         "EnumValues": {}
     },
     {
@@ -644,23 +629,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Difficulty Level",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the game difficulty level",
-        "Keywords": "difficulty,level,z_difficulty",
-        "FieldName": "z_difficulty",
-        "InputType": "enum",
-        "ParamFieldName": "z_difficulty",
-        "DefaultValue": "Normal",
-        "EnumValues": {
-            "Easy": "Easy",
-            "Normal": "Normal",
-            "Hard": "Advanced (Hard)",
-            "Impossible": "Expert (Impossible)"
-        }
-    },
-    {
         "DisplayName": "Enable Friendly Fire",
         "Category": "Insurgency:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
@@ -669,67 +637,11 @@
         "FieldName": "mp_friendlyfire",
         "InputType": "checkbox",
         "ParamFieldName": "mp_friendlyfire",
-        "DefaultValue": "0",
+        "DefaultValue": "1",
         "EnumValues": {
             "False": "0",
             "True": "1"
         }
-    },
-    {
-        "DisplayName": "Friendly Fire Damage Factor (Easy)",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the friendly fire damage factor for survivors on Easy difficulty. 0 = disabled. Requires SourceMod",
-        "Keywords": "friendly,fire,survivors,easy,survivor_friendly_fire_factor_easy,sm_cvar",
-        "FieldName": "survivor_friendly_fire_factor_easy",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "survivor_friendly_fire_factor_easy",
-        "DefaultValue": "0",
-        "Placeholder": "0",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Friendly Fire Damage Factor (Normal)",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the friendly fire damage factor for survivors on Normal difficulty. 0 = disabled. Requires SourceMod",
-        "Keywords": "friendly,fire,survivors,normal,survivor_friendly_fire_factor_normal,sm_cvar",
-        "FieldName": "survivor_friendly_fire_factor_normal",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "survivor_friendly_fire_factor_normal",
-        "DefaultValue": "0.5",
-        "Placeholder": "0.5",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Friendly Fire Damage Factor (Advanced)",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the friendly fire damage factor for survivors on Advanced difficulty. 0 = disabled. Requires SourceMod",
-        "Keywords": "friendly,fire,survivors,hard,survivor_friendly_fire_factor_hard,sm_cvar",
-        "FieldName": "survivor_friendly_fire_factor_hard",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "survivor_friendly_fire_factor_hard",
-        "DefaultValue": "0.3",
-        "Placeholder": "0.3",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Friendly Fire Damage Factor (Expert)",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the friendly fire damage factor for survivors on Expert difficulty. 0 = disabled. Requires SourceMod",
-        "Keywords": "friendly,fire,survivors,expert,survivor_friendly_fire_factor_expert,sm_cvar",
-        "FieldName": "survivor_friendly_fire_factor_expert",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "survivor_friendly_fire_factor_expert",
-        "DefaultValue": "0.1",
-        "Placeholder": "0.1",
-        "EnumValues": {}
     },
     {
         "DisplayName": "Enable Flashlight",
@@ -740,7 +652,7 @@
         "FieldName": "mp_flashlight",
         "InputType": "checkbox",
         "ParamFieldName": "mp_flashlight",
-        "DefaultValue": "1",
+        "DefaultValue": "0",
         "EnumValues": {
             "False": "0",
             "True": "1"
@@ -882,36 +794,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Enable Stalemate Mode",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "If set, the stalemate mode will be enabled. Requires SourceMod",
-        "Keywords": "stalemate,mode,mp_stalemate_enable,sm_cvar",
-        "FieldName": "mp_stalemate_enable",
-        "InputType": "checkbox",
-        "ParamFieldName": "mp_stalemate_enable",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Stalemate Mode Time Limit",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the time limit of the stalemate round. Requires SourceMod",
-        "Keywords": "stalemate,round,time,limit,mp_stalemate_timelimit,sm_cvar",
-        "FieldName": "mp_stalemate_timelimit",
-        "InputType": "number",
-        "MinValue": "0",
-        "ParamFieldName": "mp_stalemate_timelimit",
-        "DefaultValue": "240",
-        "Placeholder": "240",
-        "Suffix": "seconds",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "Map Rotation Time Limit",
         "Category": "Insurgency:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
@@ -936,8 +818,8 @@
         "InputType": "number",
         "MinValue": "0",
         "ParamFieldName": "mp_maxrounds",
-        "DefaultValue": "0",
-        "Placeholder": "0",
+        "DefaultValue": "10",
+        "Placeholder": "10",
         "Suffix": "rounds",
         "EnumValues": {}
     },
@@ -956,19 +838,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Versus Round Limit",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Sets the number of rounds to play for the versus game mode",
-        "Keywords": "round,limit,versus,mp_roundlimit",
-        "FieldName": "mp_roundlimit",
-        "InputType": "number",
-        "ParamFieldName": "mp_roundlimit",
-        "DefaultValue": "3",
-        "Placeholder": "3",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "Restrict Spectator Mode",
         "Category": "Insurgency:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
@@ -977,69 +846,11 @@
         "FieldName": "mp_forcecamera",
         "InputType": "checkbox",
         "ParamFieldName": "mp_forcecamera",
-        "DefaultValue": "0",
+        "DefaultValue": "1",
         "EnumValues": {
             "False": "0",
             "True": "1"
         }
-    },
-    {
-        "DisplayName": "Disable Survivor Glow",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Disable glow effect on survivors. Requires SourceMod",
-        "Keywords": "disable,glow,survivors,sv_disable_glow_survivors,sm_cvar",
-        "FieldName": "sv_disable_glow_survivors",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_disable_glow_survivors",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Disable Glow on Far Items",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Disable glow effect on far items. Requires SourceMod",
-        "Keywords": "disable,glow,far,items,sv_disable_glow_faritems,sm_cvar",
-        "FieldName": "sv_disable_glow_faritems",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_disable_glow_faritems",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Disable Rescue",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Disable rescue. Requires SourceMod",
-        "Keywords": "disable,rescue,sv_rescue_disabled,sm_cvar",
-        "FieldName": "sv_rescue_disabled",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_rescue_disabled",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Pipe Bomb Timer Duration",
-        "Category": "Insurgency:stadia_controller",
-        "Subcategory": "Gameplay:joystick:2",
-        "Description": "Duration of pipe bomb timer",
-        "Keywords": "pipe,bomb,timer,duration,pipe_bomb_timer_duration,sm_cvar",
-        "FieldName": "pipe_bomb_timer_duration",
-        "InputType": "number",
-        "ParamFieldName": "pipe_bomb_timer_duration",
-        "DefaultValue": "10",
-        "Placeholder": "10",
-        "EnumValues": {}
     },
     {
         "DisplayName": "Alternate Ticks",
