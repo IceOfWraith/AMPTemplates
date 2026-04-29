@@ -1653,7 +1653,7 @@
         "Category": "Updates",
         "Subcategory": "Server Updates:system_update_alt:-1",
         "Description": "Sets whether to install and run the standard server, or a relevant overhaul mod. You must also set the Release Stream accordingly. EAC is automatically disabled when running an overhaul mod (overriding AMP's setting). Set the Game World to \"RWG\" or a custom Darkness Falls map when running Darkness Falls. Update the server after changing this setting.",
-        "Keywords": "mod,mode,undead,legacy,darkness,falls,vanilla",
+        "Keywords": "mod,mode,undead,legacy,darkness,falls,asylum,vanilla",
         "FieldName": "ModMode",
         "InputType": "enum",
         "IsFlagArgument": false,
@@ -1666,8 +1666,23 @@
             "-RecipeFilter={{RecipeFilter}} -StarterQuestEnabled={{StarterQuestEnabled}} -WanderingHordeFrequency={{WanderingHordeFrequency}} -WanderingHordeRange={{WanderingHordeRange}} -WanderingHordeEnemyCount={{WanderingHordeEnemyCount}} -WanderingHordeEnemyRange={{WanderingHordeEnemyRange}} -DeathPenalty={{UndeadLegacyDeathPenalty}} -POITierLootScale={{POITierLootScale}} -EACEnabled=false ": "Undead Legacy Experimental mod (Alpha 20.7 build)",
             "-EACEnabled=false ": "Darkness Falls mod (Alpha 20.7 build)",
             "-EACEnabled=false  ": "Darkness Falls V5 mod (Alpha 21.2 build)",
-            "-EACEnabled=false   ": "Darkness Falls V6 mod (Version 1.4 build)"
+            "-EACEnabled=false   ": "Darkness Falls V6 mod (Version 1.4 build)",
+            "-EACEnabled=false    ": "The Asylum"
         }
+    },
+    {
+        "DisplayName": "The Asylum Overhaul Mod Version",
+        "Category": "Updates",
+        "Subcategory": "Server Updates:system_update_alt:-1",
+        "Description": "Sets what version of The Asylum mod to install. You must also set the Mode Mode to \"The Asylum\". Update the server after changing this setting.",
+        "Keywords": "asylum,overhaul,mod",
+        "FieldName": "ModMode",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "AsylumVersion",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "2.6.2",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Install uMod",
