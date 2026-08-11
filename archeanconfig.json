@@ -6,7 +6,7 @@
         "FieldName": "ServerName",
         "InputType": "text",
         "ParamFieldName": "server.server_public_name",
-        "DefaultValue": "My Archean Server",
+        "DefaultValue": "AMP Powered Archean Server",
         "EnumValues": {}
     },
     {
