@@ -6,7 +6,8 @@
         "FieldName": "ServerName",
         "InputType": "text",
         "ParamFieldName": "server.server_public_name",
-        "DefaultValue": "My Archean Server"
+        "DefaultValue": "My Archean Server",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Game Mode",
@@ -30,7 +31,8 @@
         "ParamFieldName": "server.max_simultaneous_players",
         "DefaultValue": "16",
         "minValue": "1",
-        "maxValue": "64"
+        "maxValue": "64",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Password",
@@ -39,7 +41,8 @@
         "FieldName": "ServerPassword",
         "InputType": "password",
         "ParamFieldName": "server.password",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Server Online",
@@ -48,11 +51,11 @@
         "FieldName": "ServerOnline",
         "InputType": "checkbox",
         "ParamFieldName": "server.server_online",
+        "DefaultValue": "True",
         "EnumValues": {
             "False": "no",
             "True": "yes"
-        },
-        "DefaultValue": "True"
+        }
     },
     {
         "DisplayName": "Accept Remote Connections",
@@ -61,11 +64,11 @@
         "FieldName": "AcceptRemoteConnections",
         "InputType": "checkbox",
         "ParamFieldName": "server.accept_remote_connections",
+        "DefaultValue": "True",
         "EnumValues": {
             "False": "no",
             "True": "yes"
-        },
-        "DefaultValue": "True"
+        }
     },
     {
         "DisplayName": "External Mods Dir",
@@ -74,7 +77,8 @@
         "FieldName": "ExternalModsDir",
         "InputType": "text",
         "ParamFieldName": "server.external_mods_dir",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Spawn Megalodon",
@@ -83,11 +87,11 @@
         "FieldName": "SpawnMegalodon",
         "InputType": "checkbox",
         "ParamFieldName": "game.megalodon",
+        "DefaultValue": "False",
         "EnumValues": {
-            "false": "no",
-            "true": "yes"
-        },
-        "DefaultValue": "false"
+            "False": "no",
+            "True": "yes"
+        }
     },
     {
         "DisplayName": "Listen Port",
@@ -96,7 +100,8 @@
         "FieldName": "$MainGamePort",
         "InputType": "number",
         "Hidden": true,
-        "ParamFieldName": "networking.listen_port"
+        "ParamFieldName": "networking.listen_port",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Automatic Blacklist",
@@ -105,11 +110,11 @@
         "FieldName": "AutoBlacklist",
         "InputType": "checkbox",
         "ParamFieldName": "networking.automatic_blacklist",
+        "DefaultValue": "False",
         "EnumValues": {
             "False": "no",
             "True": "yes"
-        },
-        "DefaultValue": "False"
+        }
     },
     {
         "DisplayName": "Spawn",
@@ -118,7 +123,8 @@
         "FieldName": "Spawn",
         "InputType": "text",
         "ParamFieldName": "game.spawn",
-        "DefaultValue": "earth"
+        "DefaultValue": "earth",
+        "EnumValues": {}
     },
     {
         "DisplayName": "World",
@@ -127,7 +133,8 @@
         "FieldName": "World",
         "InputType": "text",
         "ParamFieldName": "game.world",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Auto Save Interval",
@@ -139,7 +146,8 @@
         "DefaultValue": "30",
         "minValue": "10",
         "maxValue": "3600",
-        "Suffix": "s"
+        "Suffix": "s",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Updates Per Second",
@@ -150,7 +158,8 @@
         "ParamFieldName": "performance.updates_per_second",
         "DefaultValue": "25",
         "minValue": "1",
-        "maxValue": "64"
+        "maxValue": "64",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Physics Steps Per Update",
@@ -161,7 +170,8 @@
         "ParamFieldName": "performance.physics_steps_per_update",
         "DefaultValue": "8",
         "minValue": "1",
-        "maxValue": "32"
+        "maxValue": "32",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Screens Compression Level",
@@ -172,6 +182,7 @@
         "ParamFieldName": "performance.screens_compression_level",
         "DefaultValue": "2",
         "minValue": "0",
-        "maxValue": "9"
+        "maxValue": "9",
+        "EnumValues": {}
     }
 ]
