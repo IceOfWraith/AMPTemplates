@@ -56,7 +56,7 @@
         "FieldName": "server_online",
         "InputType": "checkbox",
         "ParamFieldName": "server.server_online",
-        "DefaultValue": "True",
+        "DefaultValue": "yes",
         "EnumValues": {
             "False": "no",
             "True": "yes"
@@ -70,7 +70,7 @@
         "FieldName": "accept_remote_connections",
         "InputType": "checkbox",
         "ParamFieldName": "server.accept_remote_connections",
-        "DefaultValue": "True",
+        "DefaultValue": "yes",
         "EnumValues": {
             "False": "no",
             "True": "yes"
@@ -95,7 +95,7 @@
         "FieldName": "megalodon",
         "InputType": "checkbox",
         "ParamFieldName": "game.megalodon",
-        "DefaultValue": "False",
+        "DefaultValue": "no",
         "EnumValues": {
             "False": "no",
             "True": "yes"
@@ -131,7 +131,7 @@
         "FieldName": "automatic_blacklist",
         "InputType": "checkbox",
         "ParamFieldName": "networking.automatic_blacklist",
-        "DefaultValue": "False",
+        "DefaultValue": "no",
         "EnumValues": {
             "False": "no",
             "True": "yes"
