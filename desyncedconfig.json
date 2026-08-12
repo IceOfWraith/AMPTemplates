@@ -1,0 +1,345 @@
+[
+    {
+        "DisplayName": "Release Branch",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "The branch of the server to download and run.",
+        "Keywords": "release,branch",
+        "FieldName": "ReleaseBranch",
+        "InputType": "enum",
+        "ParamFieldName": "ReleaseBranch",
+        "DefaultValue": "public",
+        "Placeholder": "Stable",
+        "EnumValues": {
+            "experimental": "Experimental",
+            "public": "Stable"
+        }
+    },
+    {
+        "DisplayName": "Name",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Server display name (shown in server list)",
+        "Keywords": "name",
+        "FieldName": "SessionName",
+        "InputType": "text",
+        "ParamFieldName": "SessionName",
+        "DefaultValue": "My Server",
+        "Placeholder": "My Server"
+    },
+    {
+        "DisplayName": "Savefile Name",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Save file name",
+        "Keywords": "name",
+        "FieldName": "Savename",
+        "InputType": "text",
+        "ParamFieldName": "Savename",
+        "DefaultValue": "savedata",
+        "Placeholder": "savedata"
+    },
+    {
+        "DisplayName": "Max Players",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Max player limit on server.",
+        "Keywords": "max,players",
+        "FieldName": "SessionPlayers",
+        "InputType": "number",
+        "ParamFieldName": "SessionPlayers",
+        "DefaultValue": "8",
+        "Placeholder": "8",
+        "Suffix": "player/s"
+    },
+    {
+        "DisplayName": "Password",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Password for server (empty = no password)",
+        "Keywords": "password",
+        "FieldName": "SessionPassword",
+        "InputType": "Password",
+        "ParamFieldName": "SessionPassword",
+        "DefaultValue": "NiceSecurePasswordYay",
+        "Placeholder": "NiceSecurePasswordYay"
+    },
+    {
+        "DisplayName": "Server Visibility",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Controls if the server is visible on the public list",
+        "Keywords": "server,visibility",
+        "FieldName": "SessionVisibility",
+        "InputType": "enum",
+        "ParamFieldName": "SessionVisibility",
+        "DefaultValue": "private",
+        "Placeholder": "Private",
+        "EnumValues": {
+            "private": "Private",
+            "public": "Public"
+        }
+    },
+    {
+        "DisplayName": "Session Mode",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Game mode for the session.",
+        "Keywords": "mode,versus",
+        "FieldName": "SessionMode",
+        "InputType": "enum",
+        "ParamFieldName": "SessionMode",
+        "DefaultValue": "Separate/Versus",
+        "Placeholder": "Separate/Versus",
+        "EnumValues": {
+            "Separate/Versus": "Separate/Versus",
+            "Shared/Coop": "Shared/Coop"
+        }
+    },
+    {
+        "DisplayName": "Allow Faction Switching",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Allow players to switch factions.",
+        "Keywords": "allow,faction,switch",
+        "FieldName": "SessionAllowFactionSwitch",
+        "InputType": "checkbox",
+        "ParamFieldName": "SessionAllowFactionSwitch",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Block Unlocked Behaviors",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Prevents unlocked behaviors from being used.",
+        "Keywords": "block,unlocked,behaviors",
+        "FieldName": "SessionBlockUnlockedBehaviors",
+        "InputType": "checkbox",
+        "ParamFieldName": "SessionBlockUnlockedBehaviors",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Run Without Players",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Continue simulation when no player is connected.",
+        "Keywords": "continue,offline,players",
+        "FieldName": "SessionRunWithoutPlayers",
+        "InputType": "checkbox",
+        "ParamFieldName": "SessionRunWithoutPlayers",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Disable Client Save",
+        "Category": "Server Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Disallow client-side saving.",
+        "Keywords": "disable,client,save",
+        "FieldName": "SessionDisableClientSave",
+        "InputType": "checkbox",
+        "ParamFieldName": "SessionDisableClientSave",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Map Seed",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Fixed seed used when creating a new map.",
+        "Keywords": "seed,map",
+        "FieldName": "GameSeed",
+        "InputType": "number",
+        "ParamFieldName": "GameSeed",
+        "DefaultValue": "123",
+        "Placeholder": "123"
+    },
+    {
+        "DisplayName": "Biome Density",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Biome density (elevation_params_freq).",
+        "Keywords": "biome,density",
+        "FieldName": "GameElevationParamsFreq",
+        "InputType": "number",
+        "ParamFieldName": "GameElevationParamsFreq",
+        "DefaultValue": "0.8",
+        "Placeholder": "0.8"
+    },
+    {
+        "DisplayName": "Water/Plateau Density",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Water and plateau density (elevation_params_scale).",
+        "Keywords": "water,plateau,density",
+        "FieldName": "GameElevationParamsScale",
+        "InputType": "number",
+        "ParamFieldName": "GameElevationParamsScale",
+        "DefaultValue": "1.0",
+        "Placeholder": "1.0"
+    },
+    {
+        "DisplayName": "Blight Corruption",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Blight corruption threshold (smaller is more).",
+        "Keywords": "blight,corruption",
+        "FieldName": "GameBlightThreshold",
+        "InputType": "number",
+        "ParamFieldName": "GameBlightThreshold",
+        "DefaultValue": "0.2",
+        "Placeholder": "0.2"
+    },
+    {
+        "DisplayName": "Plateau Amounts",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Plateau level amount (smaller is more).",
+        "Keywords": "plateau,amount",
+        "FieldName": "GamePlateauLevel",
+        "InputType": "number",
+        "ParamFieldName": "GamePlateauLevel",
+        "DefaultValue": "0.15",
+        "Placeholder": "0.15"
+    },
+    {
+        "DisplayName": "Resource Richness",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Resource richness multiplier.",
+        "Keywords": "resource,richness",
+        "FieldName": "GameResourceAmt",
+        "InputType": "number",
+        "ParamFieldName": "GameResourceAmt",
+        "DefaultValue": "1.0",
+        "Placeholder": "1.0"
+    },
+    {
+        "DisplayName": "Infinite Resources",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Enable infinite resources.",
+        "Keywords": "resource,infinite",
+        "FieldName": "GameResourceInf",
+        "InputType": "checkbox",
+        "ParamFieldName": "GameResourceInf",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Enable Day/Night",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Enable day/night cycle.",
+        "Keywords": "day,night,cycle",
+        "FieldName": "GameEnableDayNight",
+        "InputType": "checkbox",
+        "ParamFieldName": "GameEnableDayNight",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Day Length",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Length of a day.",
+        "Keywords": "day,length,period",
+        "FieldName": "GameDayPeriod",
+        "InputType": "number",
+        "ParamFieldName": "GameDayPeriod",
+        "DefaultValue": "1000",
+        "Placeholder": "1000"
+    },
+    {
+        "DisplayName": "Year Length",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Length of a year.",
+        "Keywords": "year,length,period",
+        "FieldName": "GameYearPeriod",
+        "InputType": "number",
+        "ParamFieldName": "GameYearPeriod",
+        "DefaultValue": "20",
+        "Placeholder": "20"
+    },
+    {
+        "DisplayName": "Hostility Level",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Enemy hostility preset.",
+        "Keywords": "hostility,peaceful,passive,aggressive,swarm",
+        "FieldName": "GamePeaceful",
+        "InputType": "enum",
+        "ParamFieldName": "GamePeaceful",
+        "DefaultValue": "3",
+        "Placeholder": "Swarm",
+        "EnumValues": {
+            "0": "None (No enemy bugs will not spawn)",
+            "1": "Passive (Will become hostile if attacked)",
+            "2": "Aggressive (Will attack if you get close)",
+            "3": "Swarm (Will spread and attack discovered players)"
+        }
+    },
+    {
+        "DisplayName": "Difficulty",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "General difficulty scale.",
+        "Keywords": "difficulty",
+        "FieldName": "GameDifficulty",
+        "InputType": "number",
+        "ParamFieldName": "GameDifficulty",
+        "DefaultValue": "1.0",
+        "Placeholder": "1.0"
+    },
+    {
+        "DisplayName": "Enable Bug Hive Evolution",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Enable bug hive evolution mechanics.",
+        "Keywords": "creep,hive,evolution",
+        "FieldName": "GameCreep",
+        "InputType": "checkbox",
+        "ParamFieldName": "GameCreep",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Disable Minigames",
+        "Category": "Game Settings",
+        "Subcategory": "Server:dns:1",
+        "Description": "Disable mini games.",
+        "Keywords": "disable,minigames",
+        "FieldName": "GameDisableMinigames",
+        "InputType": "checkbox",
+        "ParamFieldName": "GameDisableMinigames",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "UpdateStageName": "Application Updating",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "2943070",
+        "UpdateSourceVersion": "{{ReleaseBranch}}",
+        "ForceDownloadPlatform": "Windows"
+    }
+]
