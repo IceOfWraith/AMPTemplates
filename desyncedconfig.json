@@ -24,8 +24,8 @@
         "FieldName": "SessionName",
         "InputType": "text",
         "ParamFieldName": "SessionName",
-        "DefaultValue": "My Server",
-        "Placeholder": "My Server"
+        "DefaultValue": "AMP Powered Desynced Server",
+        "Placeholder": "AMP Powered Desynced Server"
     },
     {
         "DisplayName": "Save File Name",
@@ -61,8 +61,8 @@
         "FieldName": "SessionPassword",
         "InputType": "Password",
         "ParamFieldName": "SessionPassword",
-        "DefaultValue": "NiceSecurePasswordYay",
-        "Placeholder": "NiceSecurePasswordYay"
+        "DefaultValue": "",
+        "Placeholder": ""
     },
     {
         "DisplayName": "Server Visibility",
