@@ -5,7 +5,7 @@ Meta.AarchSupport=Unknown
 Meta.Arch=x86_64
 Meta.Author=zer0ney - Made with AMP Config Generator
 Meta.URL=https://www.desyncedgame.com/
-Meta.DisplayImageSource=steam:2943070
+Meta.DisplayImageSource=steam:1450900
 Meta.EndpointURIFormat=steam://connect/{ip}:{GenericModule.App.Ports.$SteamQueryPort}
 Meta.ConfigManifest=desyncedconfig.json
 Meta.MetaConfigManifest=desyncedmetaconfig.json
@@ -41,7 +41,7 @@ App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} {{Savename}}.desynced -stdout -Port={{$MainGamePort}} -QueryPort={{$SteamQueryPort}} -SessionSettings="{'name': '{{SessionName}}', 'players': {{SessionPlayers}}, 'password': '{{SessionPassword}}', 'visibility': '{{SessionVisibility}}', 'mode': '{{SessionMode}}', 'allow_faction_switch': {{SessionAllowFactionSwitch}}, 'block_unlocked_behaviors': {{SessionBlockUnlockedBehaviors}}, 'run_without_players': {{SessionRunWithoutPlayers}}, 'disable_client_save': {{SessionDisableClientSave}}}" -GameSettings="{'seed': {{GameSeed}}, 'elevation_params_freq': {{GameElevationParamsFreq}}, 'elevation_params_scale': {{GameElevationParamsScale}}, 'blight_threshold': {{GameBlightThreshold}}, 'plateau_level': {{GamePlateauLevel}}, 'resource_amt': {{GameResourceAmt}}, 'resource_inf': {{GameResourceInf}}, 'enable_day_night': {{GameEnableDayNight}}, 'day_period': {{GameDayPeriod}}, 'year_period': {{GameYearPeriod}}, 'peaceful': {{GamePeaceful}}, 'difficulty': {{GameDifficulty}}, 'creep': {{GameCreep}}, 'disable_minigames': {{GameDisableMinigames}}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
-App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:{{$FullRootDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"2943070","WINEPREFIX":"{{$FullRootDir}}.wine","WINEARCH":"win64","WINEDEBUG":"-all"}
+App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:{{$FullRootDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"1450900","WINEPREFIX":"{{$FullRootDir}}.wine","WINEARCH":"win64","WINEDEBUG":"-all"}
 App.CommandLineParameterFormat=
 App.CommandLineParameterDelimiter=
 App.ExitMethod=OS_CLOSE
