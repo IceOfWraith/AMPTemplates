@@ -1,0 +1,160 @@
+[
+    {
+        "DisplayName": "Registry Binding",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "",
+        "Keywords": "",
+        "FieldName": "bind_url",
+        "InputType": "text",
+        "ParamFieldName": "bind_url",
+        "Hidden": true,
+        "DefaultValue": "{{RegistryBinding}}:{{$RegistryPort}}",
+        "ExcludeFromImport": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Registry Binding",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the bind URL for the registry HTTP API (will listen on the Registry Port). Use http://0.0.0.0 so proxies and backends on other hosts can reach it",
+        "Keywords": "registry,bind",
+        "FieldName": "RegistryBinding",
+        "InputType": "text",
+        "ParamFieldName": "RegistryBinding",
+        "DefaultValue": "http://0.0.0.0",
+        "Placeholder": "http://0.0.0.0",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Shared Secret",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the registry HMAC secret. Must match every proxy's remote registry secret and every backend's 'SharedSecret'. Default is a strong random value",
+        "Keywords": "registry,shared,secret,hmac",
+        "FieldName": "shared_secret",
+        "InputType": "password",
+        "ParamFieldName": "shared_secret",
+        "DefaultValue": "{{newguid()}}",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Log Heartbeats",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If enabled, every backend heartbeat is written to the console",
+        "Keywords": "log,heartbeat,debug",
+        "FieldName": "log_heartbeats",
+        "InputType": "checkbox",
+        "ParamFieldName": "log_heartbeats",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "True": "true",
+            "False": "false"
+        }
+    },
+    {
+        "DisplayName": "Advertise On Master Server",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server List:list:2",
+        "Description": "If enabled, the network is listed on the public Vintage Story server list",
+        "Keywords": "advertise,public,master",
+        "FieldName": "identity.advertise_on_master_server",
+        "InputType": "checkbox",
+        "ParamFieldName": "identity.advertise_on_master_server",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "True": "true",
+            "False": "false"
+        }
+    },
+    {
+        "DisplayName": "Network Name",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server List:list:2",
+        "Description": "Sets the network name shown in the public server list",
+        "Keywords": "server,name",
+        "FieldName": "identity.server_name",
+        "InputType": "text",
+        "ParamFieldName": "identity.server_name",
+        "DefaultValue": "Nimbus Network",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Network Description",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server List:list:2",
+        "Description": "Sets the network description shown in the public server list",
+        "Keywords": "server,description",
+        "FieldName": "identity.server_description",
+        "InputType": "text",
+        "ParamFieldName": "identity.server_description",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Public Host",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server List:list:2",
+        "Description": "Sets the hostname or IP players use to reach the proxy. Only used when advertising",
+        "Keywords": "public,host",
+        "FieldName": "identity.public_host",
+        "InputType": "text",
+        "ParamFieldName": "identity.public_host",
+        "DefaultValue": "127.0.0.1",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Public Port",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server List:list:2",
+        "Description": "Sets the port players use to reach the proxy. Only used when advertising",
+        "Keywords": "public,port",
+        "FieldName": "identity.public_port",
+        "InputType": "number",
+        "ParamFieldName": "identity.public_port",
+        "DefaultValue": "42420",
+        "MinValue": "1",
+        "MaxValue": "65535",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Game Version",
+        "Category": "Nimbus:stadia_controller",
+        "Subcategory": "Server List:list:2",
+        "Description": "Sets the Vintage Story version reported to the public server list",
+        "Keywords": "game,version",
+        "FieldName": "identity.game_version",
+        "InputType": "text",
+        "ParamFieldName": "identity.game_version",
+        "DefaultValue": "1.22.6",
+        "Placeholder": "1.22.6",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Nimbus Version",
+        "Category": "Updates",
+        "Subcategory": "Runtime Configuration:build:3",
+        "Description": "Sets the [Nimbus release tag](https://github.com/StratumServer/Nimbus/releases) to install, without the leading v. Empty = latest release. Update the server after changing this setting",
+        "Keywords": "nimbus,version",
+        "FieldName": "NimbusVersion",
+        "ParamFieldName": "NimbusVersion",
+        "InputType": "text",
+        "DefaultValue": "",
+        "Placeholder": "0.5.0",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Dotnet Version",
+        "Category": "Updates",
+        "Subcategory": "Runtime Configuration:build:3",
+        "Description": "Sets the [ASP.NET Core Runtime 10.0 version](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) to install. Empty = latest. Update the server after changing this setting",
+        "Keywords": "dotnet,version",
+        "FieldName": "DotnetVersion",
+        "InputType": "text",
+        "ParamFieldName": "DotnetVersion",
+        "DefaultValue": "",
+        "Placeholder": "10.0.9",
+        "EnumValues": {}
+    }
+]
