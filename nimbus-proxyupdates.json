@@ -8,8 +8,7 @@
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
         "DeleteAfterExtract": true,
-        "SkipOnFailure": false,
-        "UpdateSourceVersion": "v{{NimbusVersion}}"
+        "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Nimbus Installation",

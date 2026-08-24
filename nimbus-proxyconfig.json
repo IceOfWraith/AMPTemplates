@@ -283,19 +283,6 @@
         }
     },
     {
-        "DisplayName": "Nimbus Version",
-        "Category": "Updates",
-        "Subcategory": "Runtime Configuration:build:3",
-        "Description": "Sets the [Nimbus release tag](https://github.com/StratumServer/Nimbus/releases) to install, without the leading v. Empty = latest release. Update the server after changing this setting",
-        "Keywords": "nimbus,version",
-        "FieldName": "NimbusVersion",
-        "ParamFieldName": "NimbusVersion",
-        "InputType": "text",
-        "DefaultValue": "",
-        "Placeholder": "0.5.0",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "Dotnet Version",
         "Category": "Updates",
         "Subcategory": "Runtime Configuration:build:3",
