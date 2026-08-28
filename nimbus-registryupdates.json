@@ -1,5 +1,14 @@
 [
     {
+        "UpdateStageName": "Config Template Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/nimbus-registrytemplate.toml",
+        "UpdateSourceArgs": "AMP_nimbus.registry.toml",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "OverwriteExistingFiles": true
+    },
+    {
         "UpdateStageName": "Nimbus Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "GithubRelease",
