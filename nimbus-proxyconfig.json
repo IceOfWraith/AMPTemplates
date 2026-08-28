@@ -878,7 +878,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_root",
         "ParamFieldName": "Extra_root",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -890,7 +890,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_transfers",
         "ParamFieldName": "Extra_transfers",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -902,7 +902,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_admin",
         "ParamFieldName": "Extra_admin",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -914,7 +914,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_registry",
         "ParamFieldName": "Extra_registry",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -926,7 +926,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_whitelist",
         "ParamFieldName": "Extra_whitelist",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -938,7 +938,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_logging",
         "ParamFieldName": "Extra_logging",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -950,7 +950,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_metrics",
         "ParamFieldName": "Extra_metrics",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -962,7 +962,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_status",
         "ParamFieldName": "Extra_status",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -974,7 +974,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_plugins",
         "ParamFieldName": "Extra_plugins",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -986,7 +986,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_persistence",
         "ParamFieldName": "Extra_persistence",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -998,7 +998,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_advanced",
         "ParamFieldName": "Extra_advanced",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -1010,7 +1010,7 @@
         "Keywords": "advanced,extra,custom,tables",
         "FieldName": "UserSettings",
         "ParamFieldName": "UserSettings",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },

@@ -409,7 +409,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_root",
         "ParamFieldName": "Extra_root",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -421,7 +421,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_api_tokens",
         "ParamFieldName": "Extra_api_tokens",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -433,7 +433,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_identity",
         "ParamFieldName": "Extra_identity",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -445,7 +445,7 @@
         "Keywords": "advanced,extra,custom",
         "FieldName": "Extra_identity_playstyle",
         "ParamFieldName": "Extra_identity_playstyle",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
@@ -457,7 +457,7 @@
         "Keywords": "advanced,extra,custom,tables",
         "FieldName": "UserSettings",
         "ParamFieldName": "UserSettings",
-        "InputType": "textarea",
+        "InputType": "Textarea",
         "DefaultValue": "",
         "EnumValues": {}
     },
