@@ -464,8 +464,8 @@
     {
         "DisplayName": "Dotnet Version",
         "Category": "Updates",
-        "Subcategory": "Runtime Configuration:build:1",
-        "Description": "Sets the ASP.NET Core Runtime 10.0 version to install. Empty = latest. Update the server after changing this setting",
+        "Subcategory": "Runtime Configuration:build:3",
+        "Description": "Sets the [ASP.NET Core Runtime 10.0 version](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) to install. Empty = latest. NOTE: Update the server after switching versions!",
         "Keywords": "dotnet,version",
         "FieldName": "DotnetVersion",
         "ParamFieldName": "DotnetVersion",
