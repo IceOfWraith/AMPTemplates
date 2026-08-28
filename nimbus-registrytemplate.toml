@@ -1,6 +1,6 @@
 bind_url = "{{bind_url}}"
 shared_secret = "{{shared_secret}}"
-accepted_secrets = {{accepted_secrets}}
+accepted_secrets = [{{accepted_secrets}}]
 backend_stale_seconds = {{backend_stale_seconds}}
 backend_drop_seconds = {{backend_drop_seconds}}
 nonce_window_seconds = {{nonce_window_seconds}}

@@ -17,53 +17,53 @@
         "DisplayName": "Backend Servers",
         "Category": "Nimbus:stadia_controller",
         "Subcategory": "Routing:swap_horiz:1",
-        "Description": "Sets the backend pool as a TOML inline table. Each key is a backend ID matching that backend's ServerId in nimbus-server.json, each value is its host:port",
+        "Description": "Sets the backend pool as comma-separated id = \"host:port\" pairs. Each ID must match that backend's ServerId in its nimbus-server.json",
         "Keywords": "servers",
         "FieldName": "servers",
         "InputType": "text",
         "ParamFieldName": "servers",
-        "DefaultValue": "{ default = \"127.0.0.1:42421\" }",
+        "DefaultValue": "default = \"127.0.0.1:42421\"",
         "EnumValues": {},
-        "Placeholder": "{ hub = \"127.0.0.1:42421\", survival = \"127.0.0.1:42422\" }"
+        "Placeholder": "hub = \"127.0.0.1:42421\", survival = \"127.0.0.1:42422\""
     },
     {
         "DisplayName": "Try Order",
         "Category": "Nimbus:stadia_controller",
         "Subcategory": "Routing:swap_horiz:1",
-        "Description": "Sets the backend IDs tried in order when a player connects, as a TOML array. Every ID must exist in Backend Servers",
+        "Description": "Sets the backend IDs tried in order when a player connects, as a quoted comma-separated list. Every ID must exist in Backend Servers",
         "Keywords": "try",
         "FieldName": "try",
         "InputType": "text",
         "ParamFieldName": "try",
-        "DefaultValue": "[\"default\"]",
+        "DefaultValue": "\"default\"",
         "EnumValues": {},
-        "Placeholder": "[\"hub\", \"survival\"]"
+        "Placeholder": "\"hub\", \"survival\""
     },
     {
         "DisplayName": "Forced Hosts",
         "Category": "Nimbus:stadia_controller",
         "Subcategory": "Routing:swap_horiz:1",
-        "Description": "Routes players to specific backends based on the hostname they connected with, as a TOML inline table of hostname to backend ID list. Empty table disables it",
+        "Description": "Routes players to specific backends based on the hostname they connected with, as comma-separated \"hostname\" = [\"backend\"] pairs. Leave empty to disable",
         "Keywords": "forced,hosts",
         "FieldName": "forced_hosts",
         "InputType": "text",
         "ParamFieldName": "forced_hosts",
-        "DefaultValue": "{ }",
+        "DefaultValue": "",
         "EnumValues": {},
-        "Placeholder": "{ \"pvp.example.com\" = [\"pvp\"] }"
+        "Placeholder": "\"pvp.example.com\" = [\"pvp\"]"
     },
     {
         "DisplayName": "Proxy Protocol Backends",
         "Category": "Nimbus:stadia_controller",
         "Subcategory": "Routing:swap_horiz:1",
-        "Description": "Backend IDs that should receive a PROXY protocol header, as a TOML array. Only enable for backends configured to expect it",
+        "Description": "Backend IDs that should receive a PROXY protocol header, as a quoted comma-separated list. Only for backends configured to expect it",
         "Keywords": "proxy,protocol,servers",
         "FieldName": "proxy_protocol_servers",
         "InputType": "text",
         "ParamFieldName": "proxy_protocol_servers",
-        "DefaultValue": "[]",
+        "DefaultValue": "",
         "EnumValues": {},
-        "Placeholder": "[\"hub\"]"
+        "Placeholder": "\"hub\""
     },
     {
         "DisplayName": "Default Transfer Mode",
@@ -202,7 +202,7 @@
         "Description": "Sets the shared secret required by nimctl. Empty means no authentication, which is only safe on a localhost binding",
         "Keywords": "admin,secret",
         "FieldName": "admin_secret",
-        "InputType": "password",
+        "InputType": "Password",
         "ParamFieldName": "admin_secret",
         "DefaultValue": "",
         "EnumValues": {}
@@ -211,14 +211,14 @@
         "DisplayName": "Admin Permissions",
         "Category": "Nimbus:stadia_controller",
         "Subcategory": "Admin API:admin_panel_settings:3",
-        "Description": "Permissions granted to authenticated admin clients, as a TOML array. [\"*\"] grants everything",
+        "Description": "Permissions granted to authenticated admin clients, as a quoted comma-separated list. \"*\" grants everything",
         "Keywords": "admin,granted,permissions",
         "FieldName": "admin_granted_permissions",
         "InputType": "text",
         "ParamFieldName": "admin_granted_permissions",
-        "DefaultValue": "[\"*\"]",
+        "DefaultValue": "\"*\"",
         "EnumValues": {},
-        "Placeholder": "[\"status\", \"drain\"]"
+        "Placeholder": "\"status\", \"drain\""
     },
     {
         "DisplayName": "Registry Mode",
@@ -282,7 +282,7 @@
         "Description": "Sets the embedded registry HMAC secret. Must match SharedSecret in every backend's nimbus-server.json",
         "Keywords": "registry,embedded,shared,secret",
         "FieldName": "registry_embedded_shared_secret",
-        "InputType": "password",
+        "InputType": "Password",
         "ParamFieldName": "registry_embedded_shared_secret",
         "DefaultValue": "{{newguid()}}",
         "EnumValues": {}
@@ -307,7 +307,7 @@
         "Description": "Sets the HMAC secret for the standalone Nimbus Registry. Only used when Registry Mode is Remote",
         "Keywords": "registry,shared,secret",
         "FieldName": "registry_shared_secret",
-        "InputType": "password",
+        "InputType": "Password",
         "ParamFieldName": "registry_shared_secret",
         "DefaultValue": "",
         "EnumValues": {}
@@ -515,14 +515,14 @@
         "DisplayName": "Whitelisted Backends",
         "Category": "Nimbus:stadia_controller",
         "Subcategory": "Access:lock:5",
-        "Description": "Backend IDs closed to unlisted players even when Network Whitelist is off, as a TOML array",
+        "Description": "Backend IDs closed to unlisted players even when Network Whitelist is off, as a quoted comma-separated list",
         "Keywords": "whitelist,servers",
         "FieldName": "whitelist_servers",
         "InputType": "text",
         "ParamFieldName": "whitelist_servers",
-        "DefaultValue": "[]",
+        "DefaultValue": "",
         "EnumValues": {},
-        "Placeholder": "[\"survival\"]"
+        "Placeholder": "\"survival\""
     },
     {
         "DisplayName": "Fail Open Until First Sync",
@@ -725,7 +725,7 @@
         "Description": "Sets a bearer token required by the status endpoint. Empty means no authentication",
         "Keywords": "metrics,status,api,token",
         "FieldName": "metrics_status_api_token",
-        "InputType": "password",
+        "InputType": "Password",
         "ParamFieldName": "metrics_status_api_token",
         "DefaultValue": "",
         "EnumValues": {}
@@ -806,14 +806,14 @@
         "DisplayName": "Disabled Plugins",
         "Category": "Nimbus:stadia_controller",
         "Subcategory": "Plugins:extension:9",
-        "Description": "Plugin names to skip loading, as a TOML array",
+        "Description": "Plugin names to skip loading, as a quoted comma-separated list",
         "Keywords": "plugins,disabled",
         "FieldName": "plugins_disabled",
         "InputType": "text",
         "ParamFieldName": "plugins_disabled",
-        "DefaultValue": "[]",
+        "DefaultValue": "",
         "EnumValues": {},
-        "Placeholder": "[\"example-plugin\"]"
+        "Placeholder": "\"example-plugin\""
     },
     {
         "DisplayName": "Persist Drain Flags",

@@ -1,8 +1,8 @@
 bind = "{{bind}}"
-try = {{try}}
-servers = {{servers}}
-forced_hosts = {{forced_hosts}}
-proxy_protocol_servers = {{proxy_protocol_servers}}
+try = [{{try}}]
+servers = { {{servers}} }
+forced_hosts = { {{forced_hosts}} }
+proxy_protocol_servers = [{{proxy_protocol_servers}}]
 {{Extra_root}}
 [transfers]
 default_mode = "{{transfers_default_mode}}"
@@ -16,7 +16,7 @@ enable_unsafe_seamless_splice = {{transfers_enable_unsafe_seamless_splice}}
 enabled = {{admin_enabled}}
 bind = "{{admin_bind}}"
 secret = "{{admin_secret}}"
-granted_permissions = {{admin_granted_permissions}}
+granted_permissions = [{{admin_granted_permissions}}]
 {{Extra_admin}}
 [registry]
 mode = "{{registry_mode}}"
@@ -41,7 +41,7 @@ api_tokens_trust_forwarded_proto = {{registry_api_tokens_trust_forwarded_proto}}
 {{Extra_registry}}
 [whitelist]
 network = {{whitelist_network}}
-servers = {{whitelist_servers}}
+servers = [{{whitelist_servers}}]
 fail_open_until_first_sync = {{whitelist_fail_open_until_first_sync}}
 {{Extra_whitelist}}
 [logging]
@@ -69,7 +69,7 @@ query_timeout_ms = {{status_query_timeout_ms}}
 [plugins]
 enabled = {{plugins_enabled}}
 directory = "{{plugins_directory}}"
-disabled = {{plugins_disabled}}
+disabled = [{{plugins_disabled}}]
 {{Extra_plugins}}
 [persistence]
 persist_drain_flags = {{persistence_persist_drain_flags}}

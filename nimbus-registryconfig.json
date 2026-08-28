@@ -33,7 +33,7 @@
         "Description": "Sets the registry HMAC secret. Must match every proxy's remote registry secret and every backend's SharedSecret",
         "Keywords": "shared,secret",
         "FieldName": "shared_secret",
-        "InputType": "password",
+        "InputType": "Password",
         "ParamFieldName": "shared_secret",
         "DefaultValue": "{{newguid()}}",
         "EnumValues": {}
@@ -42,14 +42,14 @@
         "DisplayName": "Accepted Secrets",
         "Category": "Nimbus:stadia_controller",
         "Subcategory": "Registry:hub:1",
-        "Description": "Additional secrets accepted during a secret rotation, as a TOML array",
+        "Description": "Additional secrets accepted during a secret rotation, as a quoted comma-separated list",
         "Keywords": "accepted,secrets",
         "FieldName": "accepted_secrets",
         "InputType": "text",
         "ParamFieldName": "accepted_secrets",
-        "DefaultValue": "[]",
+        "DefaultValue": "",
         "EnumValues": {},
-        "Placeholder": "[\"old-secret\"]"
+        "Placeholder": "\"old-secret\""
     },
     {
         "DisplayName": "Backend Stale After",
