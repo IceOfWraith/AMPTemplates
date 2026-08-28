@@ -1,8 +1,0 @@
-[
-    {
-        "ConfigFile": "nimbus.proxy.toml",
-        "AutoMap": true,
-        "ConfigType": "template",
-        "ConfigFileTemplate": "nimbus/server/AMP_nimbus.proxy.toml"
-    }
-]
