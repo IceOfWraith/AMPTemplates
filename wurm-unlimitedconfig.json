@@ -261,14 +261,14 @@
         "Description": "Installs [Ago's Wurm Server Mod Launcher](https://github.com/ago1024/WurmServerModLauncher) when the server is updated, and switches the server over to the patched launcher it produces. Required by every server-side mod, including the Announcer mod.",
         "Keywords": "mod,launcher,modloader,ago,patched,mods",
         "FieldName": "ModLauncher",
-        "InputType": "enum",
+        "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "ModLauncher",
         "IncludeInCommandLine": false,
         "DefaultValue": "",
         "EnumValues": {
-            "": "Disabled",
-            "-patched": "Enabled"
+            "False": "",
+            "True": "-patched"
         }
     },
     {
@@ -278,14 +278,14 @@
         "Description": "Installs the [Announcer](https://github.com/ago1024/WurmServerModLauncher/wiki) mod when the server is updated. Announcer broadcasts player logins and logouts, which is what AMP reads to track who is online. Requires Mod Launcher to be enabled.",
         "Keywords": "announcer,mod,players,tracking,join,leave,login,logout",
         "FieldName": "Announcer",
-        "InputType": "enum",
+        "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "Announcer",
         "IncludeInCommandLine": false,
         "DefaultValue": "false",
         "EnumValues": {
-            "false": "Disabled",
-            "true": "Enabled"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -295,14 +295,14 @@
         "Description": "Broadcasts a message when a player logs in. Turning this off also stops AMP from seeing players join.",
         "Keywords": "announce,players,login,join",
         "FieldName": "announcePlayers",
-        "InputType": "enum",
+        "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "announcePlayers",
         "IncludeInCommandLine": false,
         "DefaultValue": "true",
         "EnumValues": {
-            "true": "True",
-            "false": "False"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -312,14 +312,14 @@
         "Description": "Broadcasts a message when a player logs out. Turning this off also stops AMP from seeing players leave.",
         "Keywords": "announce,players,logout,leave",
         "FieldName": "announcePlayerLogout",
-        "InputType": "enum",
+        "InputType": "checkbox",
         "IsFlagArgument": false,
         "ParamFieldName": "announcePlayerLogout",
         "IncludeInCommandLine": false,
         "DefaultValue": "true",
         "EnumValues": {
-            "true": "True",
-            "false": "False"
+            "False": "false",
+            "True": "true"
         }
     },
     {

@@ -8,26 +8,6 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Remove Previous Patched Launcher",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C if exist wurm-unlimited\\402370\\WurmServerLauncher-patched.exe del /Q wurm-unlimited\\402370\\WurmServerLauncher-patched.exe",
-        "UpdateSourceConditionSetting": "ModLauncher",
-        "UpdateSourceConditionValue": "-patched",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Remove Previous Patched Launcher",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"rm -f ./wurm-unlimited/402370/WurmServerLauncher-patched\"",
-        "UpdateSourceConditionSetting": "ModLauncher",
-        "UpdateSourceConditionValue": "-patched",
-        "SkipOnFailure": false
-    },
-    {
         "UpdateStageName": "Download Wurm Server Mod Launcher",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURLFromJQ",
@@ -46,7 +26,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd /d wurm-unlimited\\402370 && patcher.bat < NUL",
+        "UpdateSourceArgs": "/C cd /d wurm-unlimited\\402370 && (patcher.bat < NUL) & if not exist WurmServerLauncher-patched.exe exit /b 1",
         "UpdateSourceConditionSetting": "ModLauncher",
         "UpdateSourceConditionValue": "-patched",
         "SkipOnFailure": false
@@ -56,7 +36,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd ./wurm-unlimited/402370 && chmod +x patcher.sh && ./patcher.sh\"",
+        "UpdateSourceArgs": "-c \"cd ./wurm-unlimited/402370 && chmod +x patcher.sh && ./patcher.sh; chmod +x WurmServerLauncher-patched 2>/dev/null; test -f WurmServerLauncher-patched\"",
         "UpdateSourceConditionSetting": "ModLauncher",
         "UpdateSourceConditionValue": "-patched",
         "SkipOnFailure": false
