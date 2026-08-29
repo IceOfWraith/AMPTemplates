@@ -6,7 +6,7 @@
     },
     {
         "ConfigFile": "./mods/announcer.config",
-        "AutoMap": false,
+        "AutoMap": true,
         "ConfigType": "kvp"
     }
 ]
