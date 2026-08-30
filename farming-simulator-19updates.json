@@ -41,7 +41,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19install.ps1\" -DownloadURL \"{{DownloadURL}}\" -GameDir \"{{$FullBaseDir}}game\" -WorkDir \"{{$FullBaseDir}}work\"",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19install.ps1\" -Key \"{{ActivationKey}}\" -DownloadURL \"{{DownloadURL}}\" -GameDir \"{{$FullBaseDir}}game\" -WorkDir \"{{$FullBaseDir}}work\"",
         "SkipOnFailure": false
     }
 ]

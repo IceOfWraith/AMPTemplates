@@ -3,7 +3,7 @@
         "DisplayName": "Product Key",
         "Category": "Farming Simulator 19:agriculture",
         "Subcategory": "Activation:vpn_key:1",
-        "Description": "Sets the Farming Simulator 19 product key used to activate this machine. Found on the DVD case or in your GIANTS purchase confirmation. The same key unlocks the download at the [GIANTS eShop](https://eshop.giants-software.com/downloads.php). Activation happens automatically on first start and only needs to succeed once per Windows account. GIANTS licensing requires a separate key for each dedicated server. The game hardcodes its savegame and log folder to Documents\\My Games\\FarmingSimulator2019, so only one instance can run per Windows account",
+        "Description": "Sets the Farming Simulator 19 product key. Found on the DVD case or in your GIANTS purchase confirmation. This key is all that is needed: it is used to look the download up from the [GIANTS download portal](https://eshop.giants-software.com/downloads.php) when the server is updated, and to activate the game on first start. Activation happens automatically on first start and only needs to succeed once per Windows account. GIANTS licensing requires a separate key for each dedicated server. The game hardcodes its savegame and log folder to Documents\\My Games\\FarmingSimulator2019, so only one instance can run per Windows account",
         "Keywords": "product,key,activation,serial,licence,license",
         "FieldName": "ActivationKey",
         "InputType": "Password",
@@ -16,19 +16,18 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Download Link",
+        "DisplayName": "Download Link Override",
         "Category": "Farming Simulator 19:agriculture",
         "Subcategory": "Activation:vpn_key:1",
-        "Description": "Sets the full URL to download the game from. Enter your product key at the [GIANTS eShop downloads page](https://eshop.giants-software.com/downloads.php), right click the Farming Simulator 19 download and copy the link address, then update the server before the link expires. The download is the full game disc image and is several gigabytes, which expands to roughly 10GB once installed",
-        "Keywords": "download,url,link,install",
+        "Description": "Leave this blank. The download link is looked up automatically from the product key. Set it only to install a specific build, by taking the link from the [GIANTS download portal](https://eshop.giants-software.com/downloads.php). The download is the full game disc image and is several gigabytes, which expands to roughly 10GB once installed",
+        "Keywords": "download,url,link,install,override",
         "FieldName": "DownloadURL",
         "InputType": "text",
         "IsFlagArgument": false,
         "ParamFieldName": "DownloadURL",
         "IncludeInCommandLine": false,
         "DefaultValue": "",
-        "Placeholder": "https://eshop.giants-software.com/",
-        "Required": true,
+        "Placeholder": "https://cdn16.giants-software.com/eshop/",
         "EnumValues": {}
     },
     {
