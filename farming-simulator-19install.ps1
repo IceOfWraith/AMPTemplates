@@ -9,6 +9,11 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+# A path ending in a backslash escapes its own closing quote on the command line, gluing a quote onto the value.
+function Clear-PathArg([string]$p) { if (-not $p) { return '' } $p.Trim().Trim('"').TrimEnd('\') }
+$GameDir = Clear-PathArg $GameDir
+$WorkDir = Clear-PathArg $WorkDir
+
 $marker = Join-Path $GameDir 'dedicatedServer.exe'
 if (Test-Path $marker) {
     $v = (Get-Content (Join-Path $GameDir 'VERSION') -ErrorAction SilentlyContinue)
@@ -20,7 +25,7 @@ if (Test-Path $marker) {
 $DownloadURL = $DownloadURL.Trim()
 if (-not $DownloadURL) {
     Write-Output 'ERROR: No download link is set.'
-    Write-Output '       Sign in at https://my.farming-simulator.com/, right click the Farming Simulator 19 download,'
+    Write-Output '       Enter your product key at https://eshop.giants-software.com/downloads.php, right click the download,'
     Write-Output '       copy the link address into the Download Link setting, then update this instance.'
     exit 1
 }

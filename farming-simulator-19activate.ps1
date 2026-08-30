@@ -9,6 +9,10 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 
+# A path ending in a backslash escapes its own closing quote on the command line, gluing a quote onto the value.
+function Clear-PathArg([string]$p) { if (-not $p) { return '' } $p.Trim().Trim('"').TrimEnd('\') }
+$GameDir = Clear-PathArg $GameDir
+
 Add-Type @'
 using System;
 using System.Text;
