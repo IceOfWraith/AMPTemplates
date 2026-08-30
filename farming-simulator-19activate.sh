@@ -6,11 +6,14 @@
 # with SendMessage. Activation is a single file, so this exits immediately once that file exists.
 set -uo pipefail
 
-KEY=""; GAME_DIR=""; PROTON=""; DIALOG_TIMEOUT=90; ACTIVATION_TIMEOUT=120
+KEY=""; GAME_DIR=""; PROTON=""; COMPAT_DIR=""; STEAM_DIR=""; HOME_DIR=""; DIALOG_TIMEOUT=90; ACTIVATION_TIMEOUT=120
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --key) KEY="$2"; shift 2 ;;
         --gamedir) GAME_DIR="${2%/}"; shift 2 ;;
+        --compatdata) COMPAT_DIR="${2%/}"; shift 2 ;;
+        --steamdir) STEAM_DIR="${2%/}"; shift 2 ;;
+        --home) HOME_DIR="${2%/}"; shift 2 ;;
         --proton) PROTON="$2"; shift 2 ;;
         *) echo "ERROR: unknown argument '$1'"; exit 1 ;;
     esac
@@ -21,14 +24,23 @@ done
 # by every instance on a host, and inside a container it is discarded when the container is recreated, so
 # activating there would either share the activation or silently burn a fresh one on every start. Both are
 # worse than failing, because online activations are limited.
-if [[ -z "${STEAM_COMPAT_DATA_PATH:-}" ]]; then
-    echo "ERROR: STEAM_COMPAT_DATA_PATH is not set, so the Proton prefix cannot be located."
+#
+# App.EnvironmentVariables applies to the game process, not to pre-start stages, so the path is passed in
+# as an argument and only falls back to the environment when the script is run by hand.
+[[ -n "$COMPAT_DIR" ]] || COMPAT_DIR="${STEAM_COMPAT_DATA_PATH:-}"
+if [[ -z "$COMPAT_DIR" ]]; then
+    echo "ERROR: no Proton compatdata path was given (--compatdata) and STEAM_COMPAT_DATA_PATH is not set."
     echo "       Activating without it would not persist and would consume an activation on every start."
     exit 1
 fi
-PROFILE="$(readlink -f "$STEAM_COMPAT_DATA_PATH/pfx/drive_c/users/steamuser/Documents" 2>/dev/null)"
+# Proton reads these from the environment when the launcher is run below, and needs a writable HOME.
+export STEAM_COMPAT_DATA_PATH="$COMPAT_DIR"
+[[ -n "$STEAM_DIR" ]] && export STEAM_COMPAT_CLIENT_INSTALL_PATH="$STEAM_DIR"
+[[ -n "$HOME_DIR" ]] && { mkdir -p "$HOME_DIR" 2>/dev/null; export HOME="$HOME_DIR"; }
+
+PROFILE="$(readlink -f "$COMPAT_DIR/pfx/drive_c/users/steamuser/Documents" 2>/dev/null)"
 if [[ -z "$PROFILE" ]]; then
-    echo "ERROR: The Proton prefix at $STEAM_COMPAT_DATA_PATH does not exist yet."
+    echo "ERROR: The Proton prefix at $COMPAT_DIR does not exist yet."
     exit 1
 fi
 PROFILE="$PROFILE/My Games/FarmingSimulator2019"

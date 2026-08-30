@@ -6,12 +6,16 @@
 # under Proton with HOME pointed at the instance is what makes that per-instance instead of machine-wide.
 set -uo pipefail
 
-GAME_DIR=""; LOG_DIR=""; PROFILE_DIR=""; PROTON=""; WEB_PORT="8080"; TLS_PORT="8443"; TLS_ON="false"; ADMIN_USER="admin"; ADMIN_PASS=""
+GAME_DIR=""; LOG_DIR=""; PROFILE_DIR=""; PROTON=""; COMPAT_DIR=""; STEAM_DIR=""; HOME_DIR=""
+WEB_PORT="8080"; TLS_PORT="8443"; TLS_ON="false"; ADMIN_USER="admin"; ADMIN_PASS=""
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --gamedir) GAME_DIR="${2%/}"; shift 2 ;;
         --logdir) LOG_DIR="${2%/}"; shift 2 ;;
         --profiledir) PROFILE_DIR="${2%/}"; shift 2 ;;
+        --compatdata) COMPAT_DIR="${2%/}"; shift 2 ;;
+        --steamdir) STEAM_DIR="${2%/}"; shift 2 ;;
+        --home) HOME_DIR="${2%/}"; shift 2 ;;
         --proton) PROTON="$2"; shift 2 ;;
         --webport) WEB_PORT="$2"; shift 2 ;;
         --tlsport) TLS_PORT="$2"; shift 2 ;;
@@ -23,25 +27,34 @@ while [[ $# -gt 0 ]]; do
 done
 [[ -n "$GAME_DIR" && -n "$LOG_DIR" ]] || { echo "ERROR: --gamedir and --logdir are required"; exit 1; }
 
-# Resolve the Windows-side profile directory. Wine keeps Documents as a real directory inside the prefix
-# rather than linking it to $HOME, so the prefix path is the one the game actually writes to. On a first
-# start the prefix does not exist yet, so ask Proton to build it before looking.
-# The prefix is what keeps savegames per-instance: it lives under the instance directory, and the game's
-# hardcoded "Documents/My Games" path resolves inside it. Falling back to $HOME would put every instance on
-# the host into one shared profile, so require the prefix rather than silently sharing savegames.
-if [[ -z "${STEAM_COMPAT_DATA_PATH:-}" ]]; then
-    echo "ERROR: STEAM_COMPAT_DATA_PATH is not set, so the Proton prefix cannot be located."
+# Wine keeps Documents as a real directory inside the prefix rather than linking it to $HOME, so the prefix
+# is where the game actually writes. It lives under the instance, which is what keeps savegames per-instance;
+# falling back to $HOME would put every instance on the host into one shared profile.
+#
+# App.EnvironmentVariables applies to the game process, not to pre-start stages, so the path is passed in
+# as an argument and only falls back to the environment when the script is run by hand.
+[[ -n "$COMPAT_DIR" ]] || COMPAT_DIR="${STEAM_COMPAT_DATA_PATH:-}"
+if [[ -z "$COMPAT_DIR" ]]; then
+    echo "ERROR: no Proton compatdata path was given (--compatdata) and STEAM_COMPAT_DATA_PATH is not set."
     echo "       Without it the game's savegames would be shared with every other instance on this host."
     exit 1
 fi
-PFX_USER="$STEAM_COMPAT_DATA_PATH/pfx/drive_c/users/steamuser"
+# Proton reads these from the environment, so export them for the prefix creation below. HOME is set to the
+# same instance path the game runs with: Proton writes protonfixes state into it, and the container's own
+# /home/amp is discarded when the container is recreated.
+export STEAM_COMPAT_DATA_PATH="$COMPAT_DIR"
+[[ -n "$STEAM_DIR" ]] && export STEAM_COMPAT_CLIENT_INSTALL_PATH="$STEAM_DIR"
+[[ -n "$HOME_DIR" ]] && { mkdir -p "$HOME_DIR" 2>/dev/null; export HOME="$HOME_DIR"; }
+mkdir -p "$COMPAT_DIR" "${STEAM_DIR:-$COMPAT_DIR}" 2>/dev/null
+
+PFX_USER="$COMPAT_DIR/pfx/drive_c/users/steamuser"
 if [[ ! -d "$PFX_USER" && -n "$PROTON" && -x "$PROTON" ]]; then
     echo "Creating the Proton prefix..."
     "$PROTON" runinprefix cmd /c exit >/dev/null 2>&1
 fi
 DOCUMENTS="$(readlink -f "$PFX_USER/Documents" 2>/dev/null)"
 if [[ -z "$DOCUMENTS" ]]; then
-    echo "ERROR: The Proton prefix at $STEAM_COMPAT_DATA_PATH could not be created or read."
+    echo "ERROR: The Proton prefix at $COMPAT_DIR could not be created or read."
     exit 1
 fi
 
