@@ -1,0 +1,65 @@
+[
+    {
+        "UpdateStageName": "Instance Directory Creation",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}game",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Installation Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-25install.sh",
+        "UpdateSourceArgs": "farming-simulator-25install.sh",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Preparation Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-25prepare.sh",
+        "UpdateSourceArgs": "farming-simulator-25prepare.sh",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Activation Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-25activate.sh",
+        "UpdateSourceArgs": "farming-simulator-25activate.sh",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Proton Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-25proton.sh",
+        "UpdateSourceArgs": "farming-simulator-25proton.sh",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Proton Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-25proton.sh --root \"{{$FullRootDir}}\" --base \"{{$FullBaseDir}}\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Game Download and Install",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-25install.sh --key \"{{ActivationKey}}\" --url \"{{DownloadURL}}\" --gamedir \"{{$FullBaseDir}}game\" --workdir \"{{$FullBaseDir}}work\" --proton \"{{$FullRootDir}}.proton/proton\" --compatdata \"{{$FullRootDir}}.proton/compatdata\" --steamdir \"{{$FullBaseDir}}.steam/steam\" --home \"{{$FullBaseDir}}\"",
+        "SkipOnFailure": false
+    }
+]

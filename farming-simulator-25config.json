@@ -1,0 +1,79 @@
+[
+    {
+        "DisplayName": "Product Key",
+        "Category": "Farming Simulator 25:agriculture",
+        "Subcategory": "Activation:vpn_key:1",
+        "Description": "Sets the Farming Simulator 25 product key. Found on the DVD case or in your GIANTS purchase confirmation. This key is all that is needed: it is used to look the download up from the [GIANTS download portal](https://eshop.giants-software.com/downloads.php) when the server is updated, and to activate the game on first start. Activation happens automatically on first start and only needs to succeed once per instance. GIANTS licensing requires a separate key for each dedicated server",
+        "Keywords": "product,key,activation,serial,licence,license",
+        "FieldName": "ActivationKey",
+        "InputType": "Password",
+        "IsFlagArgument": false,
+        "ParamFieldName": "ActivationKey",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "Placeholder": "XXXXX-XXXXX-XXXXX-XXXXX",
+        "Required": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Download Link Override",
+        "Category": "Farming Simulator 25:agriculture",
+        "Subcategory": "Activation:vpn_key:1",
+        "Description": "Leave this blank. The download link is looked up automatically from the product key. Set it only to install a specific build, by taking the disc image link from the [GIANTS download portal](https://eshop.giants-software.com/downloads.php). Must be a .img disc image, which is read directly rather than mounted, so no special privileges are needed. Installing needs about 60GB free",
+        "Keywords": "download,url,link,install,override",
+        "FieldName": "DownloadURL",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "DownloadURL",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "Placeholder": "https://cdn16.giants-software.com/FarmingSimulator25/",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Admin Username",
+        "Category": "Farming Simulator 25:agriculture",
+        "Subcategory": "Web Interface:dns:2",
+        "Description": "Sets the username for the dedicated server web interface",
+        "Keywords": "admin,username,web,login",
+        "FieldName": "AdminUsername",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "AdminUsername",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "admin",
+        "Required": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Admin Password",
+        "Category": "Farming Simulator 25:agriculture",
+        "Subcategory": "Web Interface:dns:2",
+        "Description": "Sets the password for the dedicated server web interface. If left blank the dedicated server generates its own random password on first start, which can then be read from dedicatedServer.xml in the game folder",
+        "Keywords": "admin,password,web,login",
+        "FieldName": "AdminPassword",
+        "InputType": "Password",
+        "IsFlagArgument": false,
+        "ParamFieldName": "AdminPassword",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "{{newguid()}}",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Enable TLS",
+        "Category": "Farming Simulator 25:agriculture",
+        "Subcategory": "Web Interface:dns:2",
+        "Description": "If set, the web interface is also served over TLS on the Web Interface TLS Port. Requires cert.pem and pk.pem to be present in the game folder, which are not shipped with the game",
+        "Keywords": "tls,ssl,https,certificate",
+        "FieldName": "EnableTLS",
+        "InputType": "checkbox",
+        "IsFlagArgument": false,
+        "ParamFieldName": "EnableTLS",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    }
+]
