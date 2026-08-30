@@ -167,11 +167,32 @@ export WINEDEBUG="${WINEDEBUG:--all}"
 winpath() { printf 'Z:%s' "$(sed 's|/|\\|g' <<<"$1")"; }
 LOG="$WORK_DIR/fs25_install.log"
 
+# Inno's installer engine creates a window even under /VERYSILENT, so it needs a display. Without one Wine
+# reports "no driver could be loaded" and Inno surfaces that as a bare "System Error. Code: 2. File not
+# found.", which looks nothing like the actual cause. A headless X server is enough; nothing needs to see it.
+XVFB_PID=""
+if command -v Xvfb >/dev/null 2>&1; then
+    for n in $(seq 90 120); do
+        [[ -e "/tmp/.X${n}-lock" || -e "/tmp/.X11-unix/X${n}" ]] && continue
+        Xvfb ":$n" -screen 0 1024x768x24 >/dev/null 2>&1 &
+        XVFB_PID=$!
+        export DISPLAY=":$n"
+        sleep 2
+        break
+    done
+fi
+if [[ -z "$XVFB_PID" ]]; then
+    echo "ERROR: Xvfb is not available, and the installer cannot run without a display."
+    echo "       Install xvfb on this host, or run the instance in a container where it is already present."
+    exit 1
+fi
+
 echo "Installing Farming Simulator 25. This takes a long time"
 PROTON_LOG="$WORK_DIR/fs25_proton.log"
 "$PROTON" runinprefix "$SETUP" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOCANCEL /SP- \
     "/DIR=$(winpath "$GAME_DIR")" "/LOG=$(winpath "$LOG")" >"$PROTON_LOG" 2>&1
 rc=$?
+[[ -n "$XVFB_PID" ]] && kill "$XVFB_PID" >/dev/null 2>&1
 
 if [[ ! -f "$GAME_DIR/dedicatedServer.exe" ]]; then
     echo "ERROR: The installer finished (exit $rc) but no dedicated server was installed."
