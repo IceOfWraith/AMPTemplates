@@ -114,15 +114,36 @@ if [[ -z "$WID" ]]; then
 fi
 
 # The key field holds focus when the dialog opens, and Enter is the default button ("Activate >").
-xdotool windowactivate --sync "$WID" 2>/dev/null
-xdotool type --window "$WID" --delay 40 "$KEY"
+#
+# windowactivate is deliberately not used: it asks the window manager to activate the window through
+# _NET_ACTIVE_WINDOW, and there is no window manager on a bare Xvfb, so --sync waits forever. Setting the
+# input focus directly works without one. Keystrokes then go through XTEST rather than being posted to the
+# window, because Wine ignores synthetic XSendEvent input.
+xdotool windowraise "$WID" 2>/dev/null
+xdotool windowfocus "$WID" 2>/dev/null
 sleep 1
-xdotool key --window "$WID" Return
+xdotool type --clearmodifiers --delay 40 "$KEY"
+sleep 1
+xdotool key --clearmodifiers Return
 
+# The launcher reports the outcome in a second window. Wine draws Win32 controls itself, so only the window
+# caption is visible through X and the message body cannot be read, but a new window appearing is proof the
+# key reached the field and the server answered. Without that, the keystrokes never landed.
+RESULT_WID=""
 deadline=$(( SECONDS + ACTIVATION_TIMEOUT ))
 while (( SECONDS < deadline )); do
     sleep 3
     [[ -f "$ACTIVATION" ]] && break
+    if [[ -z "$RESULT_WID" ]]; then
+        for w in $(xdotool search --onlyvisible --name '.*' 2>/dev/null); do
+            [[ "$w" == "$WID" ]] && continue
+            name=$(xdotool getwindowname "$w" 2>/dev/null)
+            [[ -n "$name" ]] || continue
+            RESULT_WID="$w"
+            echo "Launcher responded with: $name"
+            break
+        done
+    fi
 done
 
 if [[ -f "$ACTIVATION" ]]; then
@@ -130,7 +151,19 @@ if [[ -f "$ACTIVATION" ]]; then
     exit 0
 fi
 
-echo "ERROR: Activation did not complete. The key may be invalid, or the online activation limit reached."
-echo "       Check the Product Key setting, or activate once elsewhere and copy the resulting file to:"
+if [[ -n "$RESULT_WID" ]]; then
+    # The key reached the dialog and the activation server answered, so this is a licensing refusal rather
+    # than a problem driving the UI. Wine draws Win32 controls itself, so the reason text cannot be read here.
+    echo "ERROR: The activation server rejected the product key."
+    echo "       The key is either invalid, or its online activation limit has been reached. Each machine"
+    echo "       and each rebuilt Proton prefix counts as a separate activation."
+else
+    echo "ERROR: The product key never reached the dialog, so activation could not be attempted."
+    echo "       Windows currently on the display:"
+    for w in $(xdotool search --onlyvisible --name '.*' 2>/dev/null); do
+        echo "         [$w] $(xdotool getwindowname "$w" 2>/dev/null)"
+    done
+fi
+echo "       To use an activation performed elsewhere, copy its file to:"
 echo "         $ACTIVATION"
 exit 1
