@@ -2,7 +2,6 @@
 # exposes the game's log directory inside the instance, since the game insists on logging under the user profile.
 param(
     [Parameter(Mandatory=$true)][string]$GameDir,
-    [string]$ProfileName = 'FarmingSimulator2019',
     [Parameter(Mandatory=$true)][string]$InstanceLogDir,
     [int]$WebPort = 8080,
     [int]$TlsPort = 8443,
@@ -12,8 +11,8 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 
-$docs = [Environment]::GetFolderPath('MyDocuments')
-$profileDir = Join-Path $docs "My Games\$ProfileName"
+# The dedicated server hardcodes this profile folder; neither <game name> nor -name can move it.
+$profileDir = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'My Games\FarmingSimulator2019'
 $logDir = Join-Path $profileDir 'dedicated_server\logs'
 $serverLog = Join-Path $logDir 'server.log'
 
@@ -23,7 +22,7 @@ if (-not (Test-Path $serverLog)) { New-Item -ItemType File -Path $serverLog | Ou
 # AMP tails a path inside the instance, so link that to the profile's log directory.
 $existing = Get-Item $InstanceLogDir -Force -ErrorAction SilentlyContinue
 if ($existing -and -not $existing.LinkType) { Remove-Item $InstanceLogDir -Recurse -Force }
-elseif ($existing -and $existing.Target -ne $logDir) { Remove-Item $InstanceLogDir -Force }
+elseif ($existing -and ($existing.Target | Select-Object -First 1) -ne $logDir) { Remove-Item $InstanceLogDir -Force }
 if (-not (Test-Path $InstanceLogDir)) {
     New-Item -ItemType Junction -Path $InstanceLogDir -Target $logDir | Out-Null
     Write-Output "Linked instance log directory to $logDir"
@@ -32,7 +31,7 @@ if (-not (Test-Path $InstanceLogDir)) {
 $xmlPath = Join-Path $GameDir 'dedicatedServer.xml'
 if (-not (Test-Path $xmlPath)) {
     Write-Output "ERROR: Could not find $xmlPath"
-    Write-Output '       Check the Game Installation Path setting on this instance.'
+    Write-Output '       Update this instance to install the game before starting it.'
     exit 1
 }
 
@@ -66,9 +65,5 @@ if ($admin) {
     }
 }
 
-# Drives which profile folder under My Games the game server uses.
-$game = $xml.SelectSingleNode('/server/game')
-if ($game) { $game.SetAttribute('name', $ProfileName) }
-
 $xml.Save($xmlPath)
-Write-Output "Configured dedicated server on port $WebPort using profile '$ProfileName'"
+Write-Output "Configured dedicated server on port $WebPort"

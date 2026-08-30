@@ -3,15 +3,17 @@
         "UpdateStageName": "Instance Directory Creation",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "CreateDirectory",
-        "UpdateSourceArgs": "{{$FullBaseDir}}",
+        "UpdateSourceArgs": "{{$FullBaseDir}}game",
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Link Game Installation",
+        "UpdateStageName": "Installation Script Download",
         "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -Command \"$src = '{{GameInstallPath}}'; $dst = '{{$FullBaseDir}}game'; if (-not (Test-Path (Join-Path $src 'dedicatedServer.exe'))) { Write-Output 'ERROR: No Farming Simulator 19 installation was found at the configured Game Installation Path.'; Write-Output '       Farming Simulator 19 cannot be downloaded automatically. Install it on this machine first, then update this instance again.'; exit 1 }; $i = Get-Item $dst -Force -ErrorAction SilentlyContinue; if ($i -and -not $i.LinkType) { Write-Output 'ERROR: A real folder already exists where the game link should go. Remove it and update again.'; exit 1 }; if ($i) { Remove-Item $dst -Force }; New-Item -ItemType Junction -Path $dst -Target $src *> $null; Write-Output ('Linked game installation from ' + $src)\"",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-19install.ps1",
+        "UpdateSourceArgs": "farming-simulator-19install.ps1",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
         "SkipOnFailure": false
     },
     {
@@ -32,6 +34,14 @@
         "UpdateSourceArgs": "farming-simulator-19activate.ps1",
         "UpdateSourceTarget": "{{$FullInstanceDir}}",
         "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Game Download and Install",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19install.ps1\" -DownloadURL \"{{DownloadURL}}\" -GameDir \"{{$FullBaseDir}}game\" -WorkDir \"{{$FullBaseDir}}\"",
         "SkipOnFailure": false
     }
 ]

@@ -4,7 +4,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19prepare.ps1\" -GameDir \"{{GameInstallPath}}\" -ProfileName \"{{ProfileName}}\" -InstanceLogDir \"{{$FullBaseDir}}logs\" -WebPort {{$WebInterfacePort}} -TlsPort {{$WebInterfaceTLSPort}} -EnableTLS \"{{EnableTLS}}\" -AdminUsername \"{{AdminUsername}}\" -AdminPassword \"{{AdminPassword}}\"",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19prepare.ps1\" -GameDir \"{{$FullBaseDir}}game\" -InstanceLogDir \"{{$FullBaseDir}}logs\" -WebPort {{$WebInterfacePort}} -TlsPort {{$WebInterfaceTLSPort}} -EnableTLS \"{{EnableTLS}}\" -AdminUsername \"{{AdminUsername}}\" -AdminPassword \"{{AdminPassword}}\"",
         "SkipOnFailure": false
     },
     {
@@ -12,7 +12,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19activate.ps1\" -Key \"{{ActivationKey}}\" -GameDir \"{{GameInstallPath}}\" -ProfileName \"{{ProfileName}}\"",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19activate.ps1\" -Key \"{{ActivationKey}}\" -GameDir \"{{$FullBaseDir}}game\"",
         "SkipOnFailure": false
     }
 ]

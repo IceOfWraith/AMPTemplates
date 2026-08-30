@@ -1,10 +1,9 @@
 # Activates Farming Simulator 19 by driving the launcher's product key dialog with a key supplied from AMP.
 # The game offers no command line, config file or offline path for the key, so the MFC dialog is the only route.
-# Idempotent: activation is a single 28-byte file per machine, so this exits immediately once that file exists.
+# Idempotent: activation is a single 28-byte file per Windows account, so this exits immediately once it exists.
 param(
     [string]$Key = '',
     [Parameter(Mandatory=$true)][string]$GameDir,
-    [string]$ProfileName = 'FarmingSimulator2019',
     [int]$DialogTimeoutSeconds = 60,
     [int]$ActivationTimeoutSeconds = 120
 )
@@ -49,41 +48,24 @@ $WM_SETTEXT = 0x000C
 $BM_CLICK   = 0x00F5
 $ID_KEYEDIT = 1001   # Edit control in the product key dialog
 $ID_ACTIVATE = 1     # "Activate >" button (IDOK)
-$ACTIVATION_FILE = 'AHC_63805.dat'
 
-$docs = [Environment]::GetFolderPath('MyDocuments')
-# The launcher always writes activation to the stock profile name, whatever the dedicated server's profile is called.
-$launcherProfile = Join-Path $docs 'My Games\FarmingSimulator2019'
-$serverProfile   = Join-Path $docs "My Games\$ProfileName"
-
-function Test-Activated([string]$dir) { Test-Path (Join-Path $dir $ACTIVATION_FILE) }
-
-function Copy-ActivationToServerProfile {
-    if ($launcherProfile -eq $serverProfile) { return }
-    if (-not (Test-Activated $launcherProfile)) { return }
-    New-Item -ItemType Directory -Path $serverProfile -Force | Out-Null
-    Copy-Item (Join-Path $launcherProfile $ACTIVATION_FILE) (Join-Path $serverProfile $ACTIVATION_FILE) -Force
-    Write-Output "Copied activation into profile '$ProfileName'"
-}
+# The game hardcodes this profile folder; neither the dedicated server config nor -name can move it.
+$profileDir = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'My Games\FarmingSimulator2019'
+$activationFile = Join-Path $profileDir 'AHC_63805.dat'
 
 function Stop-GameProcesses($launcher) {
     try { if ($launcher -and -not $launcher.HasExited) { $launcher.Kill() } } catch { }
     Get-Process -Name 'FarmingSimulator2019Game' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
 }
 
-if (Test-Activated $serverProfile) {
-    Write-Output 'Farming Simulator 19 is already activated on this machine'
-    exit 0
-}
-if (Test-Activated $launcherProfile) {
-    Copy-ActivationToServerProfile
-    Write-Output 'Farming Simulator 19 is already activated on this machine'
+if (Test-Path $activationFile) {
+    Write-Output 'Farming Simulator 19 is already activated for this Windows account'
     exit 0
 }
 
 $Key = $Key.Trim()
 if (-not $Key) {
-    Write-Output 'ERROR: Farming Simulator 19 is not activated on this machine and no product key is set.'
+    Write-Output 'ERROR: Farming Simulator 19 is not activated for this Windows account and no product key is set.'
     Write-Output '       Set the Product Key setting on this instance, then start it again.'
     exit 1
 }
@@ -91,7 +73,7 @@ if (-not $Key) {
 $launcherExe = Join-Path $GameDir 'FarmingSimulator2019.exe'
 if (-not (Test-Path $launcherExe)) {
     Write-Output "ERROR: Could not find $launcherExe"
-    Write-Output '       Check the Game Installation Path setting on this instance.'
+    Write-Output '       Update this instance to install the game before starting it.'
     exit 1
 }
 
@@ -111,7 +93,7 @@ while ((Get-Date) -lt $deadline -and $dlg -eq [IntPtr]::Zero) {
 
 if ($dlg -eq [IntPtr]::Zero) {
     Stop-GameProcesses $proc
-    if (Test-Activated $launcherProfile) { Copy-ActivationToServerProfile; Write-Output 'Farming Simulator 19 is already activated on this machine'; exit 0 }
+    if (Test-Path $activationFile) { Write-Output 'Farming Simulator 19 is already activated for this Windows account'; exit 0 }
     Write-Output 'ERROR: The product key dialog did not appear. Activation could not be completed.'
     exit 1
 }
@@ -156,8 +138,7 @@ Start-Sleep -Seconds 3
 # The launcher starts the game itself once activation succeeds, which is not what we want here.
 Stop-GameProcesses $proc
 
-if (Test-Activated $launcherProfile) {
-    Copy-ActivationToServerProfile
+if (Test-Path $activationFile) {
     Write-Output "Activation successful: $resultText"
     exit 0
 }
