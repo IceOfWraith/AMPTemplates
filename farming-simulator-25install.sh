@@ -36,7 +36,24 @@ if [[ -f "$GAME_DIR/dedicatedServer.exe" ]]; then
     exit 0
 fi
 
-if [[ -z "$DOWNLOAD_URL" ]]; then
+IMG="$WORK_DIR/fs25_download.img"
+UNPACK="$WORK_DIR/fs25_unpack"
+
+# A previous attempt that got as far as unpacking leaves the payload behind. Reuse it rather than spending
+# another 21GB download: the install step is the one most likely to need retrying, and with the payload
+# already present neither the product key nor a download link is needed.
+REUSE=0
+shopt -s nullglob nocaseglob
+for cand in "$UNPACK"/Setup.exe "$UNPACK"/*.exe; do [[ -f "$cand" ]] && REUSE=1 && break; done
+shopt -u nullglob nocaseglob
+if (( REUSE )); then
+    echo "Reusing the installer already unpacked in $UNPACK"
+    rm -f "$IMG"
+    # The payload is already on disk, so only the installed game still needs room.
+    REQUIRED_GB=45
+fi
+
+if (( ! REUSE )) && [[ -z "$DOWNLOAD_URL" ]]; then
     if [[ -z "$KEY" ]]; then
         echo "ERROR: No product key is set, so the download link cannot be looked up."
         echo "       Set the Product Key setting on this instance, then update it again."
@@ -69,8 +86,7 @@ if [[ $FREE_GB -lt $REQUIRED_GB ]]; then
     exit 1
 fi
 
-IMG="$WORK_DIR/fs25_download.img"
-UNPACK="$WORK_DIR/fs25_unpack"
+if (( ! REUSE )); then
 rm -rf "$UNPACK"; rm -f "$IMG"
 
 echo "Downloading Farming Simulator 25. This is a very large download and will take a while"
@@ -122,6 +138,7 @@ extract_iso() {
 echo "Reading the disc image"
 extract_iso "$IMG" "$UNPACK" || { rm -f "$IMG"; exit 1; }
 rm -f "$IMG"
+fi   # end of download/extract, skipped when reusing an unpacked payload
 
 # ISO9660 cannot store a hyphen, so slices named "Setup-1a.bin" are written as "SETUP_1A.BIN". Wine matches
 # filenames case-insensitively, so only the separator has to be restored. Hardlinks cost no space.
@@ -161,9 +178,14 @@ if [[ ! -f "$GAME_DIR/dedicatedServer.exe" ]]; then
     if [[ -f "$LOG" ]]; then
         echo "--- installer log ---"
         tail -20 "$LOG" | sed 's/^/    /'
-    else
-        echo "--- the installer wrote no log; Proton output follows ---"
-        tail -20 "$PROTON_LOG" 2>/dev/null | sed 's/^/    /'
+    fi
+    # Inno reports a bare "File not found" when its 32-bit child cannot start, and the reason for that only
+    # ever appears in Wine's own output, so show both rather than choosing between them.
+    if [[ -s "$PROTON_LOG" ]]; then
+        echo "--- Wine/Proton output (errors) ---"
+        grep -iE 'err:|cannot open shared object|not found|failed to load' "$PROTON_LOG" 2>/dev/null |
+            grep -viE 'xalia|mono|gamecontrollerdb|winemenubuilder' | tail -15 | sed 's/^/    /'
+        echo "    (full output: $PROTON_LOG)"
     fi
     echo "---------------------"
     # The unpacked payload is kept so a retry does not need the whole download again.

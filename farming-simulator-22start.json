@@ -1,0 +1,18 @@
+[
+    {
+        "UpdateStageName": "Configure Dedicated Server",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-22prepare.sh --gamedir \"{{$FullBaseDir}}game\" --logdir \"{{$FullBaseDir}}logs\" --profiledir \"{{$FullBaseDir}}profile\" --compatdata \"{{$FullRootDir}}.proton/compatdata\" --steamdir \"{{$FullBaseDir}}.steam/steam\" --home \"{{$FullBaseDir}}\" --proton \"{{$FullRootDir}}.proton/proton\" --webport {{$WebInterfacePort}} --tlsport {{$WebInterfaceTLSPort}} --tls \"{{EnableTLS}}\" --user \"{{AdminUsername}}\" --pass \"{{AdminPassword}}\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Activate Farming Simulator 22",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-22activate.sh --key \"{{ActivationKey}}\" --gamedir \"{{$FullBaseDir}}game\" --compatdata \"{{$FullRootDir}}.proton/compatdata\" --steamdir \"{{$FullBaseDir}}.steam/steam\" --home \"{{$FullBaseDir}}\" --proton \"{{$FullRootDir}}.proton/proton\"",
+        "SkipOnFailure": false
+    }
+]
