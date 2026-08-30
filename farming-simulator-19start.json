@@ -1,18 +1,18 @@
 [
     {
         "UpdateStageName": "Configure Dedicated Server",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19prepare.ps1\" -GameDir \"{{$FullBaseDir}}game\" -InstanceLogDir \"{{$FullBaseDir}}logs\" -WebPort {{$WebInterfacePort}} -TlsPort {{$WebInterfaceTLSPort}} -EnableTLS \"{{EnableTLS}}\" -AdminUsername \"{{AdminUsername}}\" -AdminPassword \"{{AdminPassword}}\"",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-19prepare.sh --gamedir \"{{$FullBaseDir}}game\" --logdir \"{{$FullBaseDir}}logs\" --profiledir \"{{$FullBaseDir}}profile\" --proton \"{{$FullRootDir}}.proton/proton\" --webport {{$WebInterfacePort}} --tlsport {{$WebInterfaceTLSPort}} --tls \"{{EnableTLS}}\" --user \"{{AdminUsername}}\" --pass \"{{AdminPassword}}\"",
         "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Activate Farming Simulator 19",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19activate.ps1\" -Key \"{{ActivationKey}}\" -GameDir \"{{$FullBaseDir}}game\"",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-19activate.sh --key \"{{ActivationKey}}\" --gamedir \"{{$FullBaseDir}}game\" --proton \"{{$FullRootDir}}.proton/proton\"",
         "SkipOnFailure": false
     }
 ]

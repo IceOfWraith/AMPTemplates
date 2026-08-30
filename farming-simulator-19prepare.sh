@@ -1,0 +1,109 @@
+#!/bin/bash
+# Prepares the dedicated server before AMP starts it: writes dedicatedServer.xml from AMP settings and
+# keeps the game's profile directory inside the instance.
+#
+# The game hardcodes its profile to "Documents/My Games/FarmingSimulator2019" under the user profile. Running
+# under Proton with HOME pointed at the instance is what makes that per-instance instead of machine-wide.
+set -uo pipefail
+
+GAME_DIR=""; LOG_DIR=""; PROFILE_DIR=""; PROTON=""; WEB_PORT="8080"; TLS_PORT="8443"; TLS_ON="false"; ADMIN_USER="admin"; ADMIN_PASS=""
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --gamedir) GAME_DIR="${2%/}"; shift 2 ;;
+        --logdir) LOG_DIR="${2%/}"; shift 2 ;;
+        --profiledir) PROFILE_DIR="${2%/}"; shift 2 ;;
+        --proton) PROTON="$2"; shift 2 ;;
+        --webport) WEB_PORT="$2"; shift 2 ;;
+        --tlsport) TLS_PORT="$2"; shift 2 ;;
+        --tls) TLS_ON="$2"; shift 2 ;;
+        --user) ADMIN_USER="$2"; shift 2 ;;
+        --pass) ADMIN_PASS="$2"; shift 2 ;;
+        *) echo "ERROR: unknown argument '$1'"; exit 1 ;;
+    esac
+done
+[[ -n "$GAME_DIR" && -n "$LOG_DIR" ]] || { echo "ERROR: --gamedir and --logdir are required"; exit 1; }
+
+# Resolve the Windows-side profile directory. Wine keeps Documents as a real directory inside the prefix
+# rather than linking it to $HOME, so the prefix path is the one the game actually writes to. On a first
+# start the prefix does not exist yet, so ask Proton to build it before looking.
+# The prefix is what keeps savegames per-instance: it lives under the instance directory, and the game's
+# hardcoded "Documents/My Games" path resolves inside it. Falling back to $HOME would put every instance on
+# the host into one shared profile, so require the prefix rather than silently sharing savegames.
+if [[ -z "${STEAM_COMPAT_DATA_PATH:-}" ]]; then
+    echo "ERROR: STEAM_COMPAT_DATA_PATH is not set, so the Proton prefix cannot be located."
+    echo "       Without it the game's savegames would be shared with every other instance on this host."
+    exit 1
+fi
+PFX_USER="$STEAM_COMPAT_DATA_PATH/pfx/drive_c/users/steamuser"
+if [[ ! -d "$PFX_USER" && -n "$PROTON" && -x "$PROTON" ]]; then
+    echo "Creating the Proton prefix..."
+    "$PROTON" runinprefix cmd /c exit >/dev/null 2>&1
+fi
+DOCUMENTS="$(readlink -f "$PFX_USER/Documents" 2>/dev/null)"
+if [[ -z "$DOCUMENTS" ]]; then
+    echo "ERROR: The Proton prefix at $STEAM_COMPAT_DATA_PATH could not be created or read."
+    exit 1
+fi
+
+# The game's profile path inside the prefix is nine directories below the instance, which is deeper than
+# AMP's backup traversal reaches. Keep the real directory shallow and point the prefix at it, so savegames,
+# mods and the server database sit two or three levels down and get backed up.
+PROFILE="$DOCUMENTS/My Games/FarmingSimulator2019"
+if [[ -n "$PROFILE_DIR" ]]; then
+    mkdir -p "$PROFILE_DIR" || { echo "ERROR: could not create $PROFILE_DIR"; exit 1; }
+    if [[ -L "$PROFILE" ]]; then
+        if [[ "$(readlink -f "$PROFILE")" != "$(readlink -f "$PROFILE_DIR")" ]]; then rm -f "$PROFILE"; fi
+    elif [[ -d "$PROFILE" ]]; then
+        # An earlier start may have written savegames here before the link existed; keep them.
+        cp -a "$PROFILE/." "$PROFILE_DIR/" 2>/dev/null
+        rm -rf "$PROFILE"
+    fi
+    if [[ ! -e "$PROFILE" ]]; then
+        mkdir -p "$(dirname "$PROFILE")"
+        ln -s "$PROFILE_DIR" "$PROFILE" && echo "Linked the game profile to $PROFILE_DIR"
+    fi
+    PROFILE="$PROFILE_DIR"
+fi
+
+GAME_LOGS="$PROFILE/dedicated_server/logs"
+mkdir -p "$GAME_LOGS" || { echo "ERROR: could not create $GAME_LOGS"; exit 1; }
+[[ -f "$GAME_LOGS/server.log" ]] || : > "$GAME_LOGS/server.log"
+
+# AMP tails a path inside the instance, so point that at the profile's log directory.
+if [[ -L "$LOG_DIR" ]]; then
+    [[ "$(readlink -f "$LOG_DIR")" == "$(readlink -f "$GAME_LOGS")" ]] || { rm -f "$LOG_DIR"; }
+elif [[ -d "$LOG_DIR" ]]; then
+    rmdir "$LOG_DIR" 2>/dev/null || rm -rf "$LOG_DIR"
+fi
+if [[ ! -e "$LOG_DIR" ]]; then
+    ln -s "$GAME_LOGS" "$LOG_DIR" && echo "Linked instance log directory to $GAME_LOGS"
+fi
+
+XML="$GAME_DIR/dedicatedServer.xml"
+if [[ ! -f "$XML" ]]; then
+    echo "ERROR: Could not find $XML"
+    echo "       Update this instance to install the game before starting it."
+    exit 1
+fi
+
+[[ "$TLS_ON" == "true" ]] || TLS_ON="false"
+# Anything heading into a sed replacement has to have the delimiter and backreference characters escaped.
+esc() { printf '%s' "$1" | sed -e 's/[|&\\]/\\&/g'; }
+U=$(esc "$ADMIN_USER"); P=$(esc "$ADMIN_PASS")
+
+sed -E -i \
+    -e "s|(<webserver[^>]*port=\")[^\"]*\"|\1${WEB_PORT}\"|" \
+    -e "s|(<tls[^>]*port=\")[^\"]*\"|\1${TLS_PORT}\"|" \
+    -e "s|(<tls[^>]*active=\")[^\"]*\"|\1${TLS_ON}\"|" \
+    -e "s|<username>[^<]*</username>|<username>${U}</username>|" \
+    "$XML" || { echo "ERROR: could not rewrite $XML"; exit 1; }
+
+if [[ -n "$ADMIN_PASS" ]]; then
+    # The server rewrites <password> as <passphrase> on first run, so write the tag it settles on.
+    sed -E -i \
+        -e "s|<password>[^<]*</password>|<passphrase>${P}</passphrase>|" \
+        -e "s|<passphrase>[^<]*</passphrase>|<passphrase>${P}</passphrase>|" \
+        "$XML"
+fi
+
+echo "Configured dedicated server on port ${WEB_PORT}"

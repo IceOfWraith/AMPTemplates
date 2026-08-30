@@ -1,47 +1,65 @@
 [
     {
         "UpdateStageName": "Instance Directory Creation",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "CreateDirectory",
         "UpdateSourceArgs": "{{$FullBaseDir}}game",
         "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Installation Script Download",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-19install.ps1",
-        "UpdateSourceArgs": "farming-simulator-19install.ps1",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-19install.sh",
+        "UpdateSourceArgs": "farming-simulator-19install.sh",
         "UpdateSourceTarget": "{{$FullInstanceDir}}",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Preparation Script Download",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-19prepare.ps1",
-        "UpdateSourceArgs": "farming-simulator-19prepare.ps1",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-19prepare.sh",
+        "UpdateSourceArgs": "farming-simulator-19prepare.sh",
         "UpdateSourceTarget": "{{$FullInstanceDir}}",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Activation Script Download",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-19activate.ps1",
-        "UpdateSourceArgs": "farming-simulator-19activate.ps1",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-19activate.sh",
+        "UpdateSourceArgs": "farming-simulator-19activate.sh",
         "UpdateSourceTarget": "{{$FullInstanceDir}}",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Game Download and Install",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateStageName": "Proton Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-19proton.sh",
+        "UpdateSourceArgs": "farming-simulator-19proton.sh",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Proton Download",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"farming-simulator-19install.ps1\" -Key \"{{ActivationKey}}\" -DownloadURL \"{{DownloadURL}}\" -GameDir \"{{$FullBaseDir}}game\" -WorkDir \"{{$FullBaseDir}}work\"",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-19proton.sh --root \"{{$FullRootDir}}\" --base \"{{$FullBaseDir}}\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Game Download and Install",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-19install.sh --key \"{{ActivationKey}}\" --url \"{{DownloadURL}}\" --gamedir \"{{$FullBaseDir}}game\" --workdir \"{{$FullBaseDir}}work\"",
         "SkipOnFailure": false
     }
 ]
