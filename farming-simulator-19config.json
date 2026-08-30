@@ -19,7 +19,7 @@
         "DisplayName": "Download Link Override",
         "Category": "Farming Simulator 19:agriculture",
         "Subcategory": "Activation:vpn_key:1",
-        "Description": "Leave this blank. The download link is looked up automatically from the product key. Set it only to install a specific build, by taking the link from the [GIANTS download portal](https://eshop.giants-software.com/downloads.php). The download is the full game disc image and is several gigabytes, which expands to roughly 10GB once installed",
+        "Description": "Leave this blank. The download link is looked up automatically from the product key. Set it only to install a specific build, by taking the disc image link from the [GIANTS download portal](https://eshop.giants-software.com/downloads.php). Must be a .img disc image, which is read directly rather than mounted, so no special privileges are needed. Installing needs about 17GB free, settling at roughly 10GB",
         "Keywords": "download,url,link,install,override",
         "FieldName": "DownloadURL",
         "InputType": "text",
