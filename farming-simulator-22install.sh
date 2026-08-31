@@ -27,9 +27,7 @@ UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 INNOEXTRACT_URL="https://github.com/dscharrer/innoextract/releases/download/1.9/innoextract-1.9-linux.tar.xz"
 INNOEXTRACT_SHA256="008efe5011476ccc4aae17c3e22038b5a1bc5c7aad2b9d4d869537bf3874d21f"
 
-# Completeness is tracked with a marker written only after the install is verified. dedicatedServer.exe
-# appears early on, so treating it as proof of a finished install silently accepts a half-written game
-# when an install is interrupted.
+# dedicatedServer.exe appears early, so only a marker written at the end proves the install finished.
 INSTALLED_MARKER="$GAME_DIR/.amp-install-complete"
 if [[ -f "$INSTALLED_MARKER" ]]; then
     echo "Farming Simulator 22 $(cat "$INSTALLED_MARKER" 2>/dev/null) already installed. Skipping"
@@ -58,8 +56,7 @@ if [[ -z "$DOWNLOAD_URL" ]]; then
     fi
     DOWNLOAD_URL=$(printf '%s\n' "${LINKS[@]}" | grep -E 'FarmingSimulator2022.*\.img$' | head -1)
     if [[ -z "$DOWNLOAD_URL" ]]; then
-        echo "ERROR: That product key unlocks downloads, but no Farming Simulator 22 disc image was among them:"
-        printf '         %s\n' "${LINKS[@]}"
+        echo "ERROR: No Farming Simulator 22 download was found for that product key."
         exit 1
     fi
     echo "Found ${DOWNLOAD_URL##*/}"
@@ -84,15 +81,13 @@ echo "Downloading Farming Simulator 22. This is a multi-gigabyte download and wi
 # The CDN 403s any request that does not carry the portal as its referer.
 if ! curl -fsS -A "$UA" -e "$PORTAL" -o "$IMG" "$DOWNLOAD_URL"; then
     echo "ERROR: The download failed."
-    echo "       If this was a 403, the link was rejected by the CDN. Clear the Download Link setting"
-    echo "       so the key is used to look up a fresh link automatically."
+    echo "       Clear the Download Link setting so a fresh link is looked up from your key."
     rm -f "$IMG"; exit 1
 fi
 echo "Downloaded $(awk -v b="$(stat -c%s "$IMG")" 'BEGIN{printf "%.2f", b/1073741824}') GB"
 
 # --- ISO9660 extraction, without mounting ---
-# Mounting needs root. Files are stored as contiguous unencoded extents, so extraction is a seek and a copy.
-# Only the root directory is read: Inno installers keep Setup.exe and their .bin slices there.
+# Mounting needs root. Extents are contiguous, so this is a seek and a copy. Only the root dir is read.
 u8()  { echo "${BYTES[$1]}"; }
 u32() { echo $(( ${BYTES[$1]} | ${BYTES[$(($1+1))]}<<8 | ${BYTES[$(($1+2))]}<<16 | ${BYTES[$(($1+3))]}<<24 )); }
 
@@ -118,8 +113,7 @@ extract_iso() {
         flags=$(u8 $((p+25))); filen=$(u8 $((p+32)))
         local first=${BYTES[$((p+33))]}
 
-        # The first two records of every directory are "." and "..", a single 0x00/0x01 byte. Detect them by
-        # value before building the name, since command substitution cannot carry a NUL through.
+        # "." and ".." are a single 0x00/0x01 byte; detect by value, as $() cannot carry a NUL through.
         if (( filen == 1 && first <= 1 )); then p=$(( p + len )); continue; fi
 
         name=""
@@ -141,8 +135,7 @@ extract_iso() {
 echo "Reading the disc image"
 extract_iso "$IMG" "$UNPACK" || { rm -f "$IMG"; exit 1; }
 
-# ISO9660 cannot store a hyphen, so "Setup-1.bin" slices are written as "SETUP_1.BIN". The unpacker looks
-# slices up by the name in the installer header, so every plausible spelling is linked. Links cost no space.
+# ISO9660 has no hyphen, so "Setup-1.bin" is stored as "SETUP_1.BIN". Link every spelling; links are free.
 shopt -s nullglob nocaseglob
 for f in "$UNPACK"/*_*.bin; do
     base="${f##*/}"
@@ -175,7 +168,7 @@ if [[ -z "$INNO" ]]; then
     fi
     GOT=$(sha256sum "$TOOLS/ie.tar.xz" | cut -d' ' -f1)
     if [[ "$GOT" != "$INNOEXTRACT_SHA256" ]]; then
-        echo "ERROR: the innoextract download did not match its expected checksum (got $GOT)"
+        echo "ERROR: The innoextract download failed its checksum check."
         rm -f "$TOOLS/ie.tar.xz"; exit 1
     fi
     tar -xJf "$TOOLS/ie.tar.xz" -C "$TOOLS" && rm -f "$TOOLS/ie.tar.xz"

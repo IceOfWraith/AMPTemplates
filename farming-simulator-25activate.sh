@@ -20,17 +20,11 @@ while [[ $# -gt 0 ]]; do
 done
 [[ -n "$GAME_DIR" ]] || { echo "ERROR: --gamedir is required"; exit 1; }
 
-# Activation is stored in the prefix, so it must be the same prefix the server will run in. $HOME is shared
-# by every instance on a host, and inside a container it is discarded when the container is recreated, so
-# activating there would either share the activation or silently burn a fresh one on every start. Both are
-# worse than failing, because online activations are limited.
-#
-# App.EnvironmentVariables applies to the game process, not to pre-start stages, so the path is passed in
-# as an argument and only falls back to the environment when the script is run by hand.
+# Activation lives in the prefix, so it must be the prefix the server runs in; $HOME is shared between
+# instances. App.EnvironmentVariables skips pre-start stages, so the path arrives as an argument.
 [[ -n "$COMPAT_DIR" ]] || COMPAT_DIR="${STEAM_COMPAT_DATA_PATH:-}"
 if [[ -z "$COMPAT_DIR" ]]; then
-    echo "ERROR: no Proton compatdata path was given (--compatdata) and STEAM_COMPAT_DATA_PATH is not set."
-    echo "       Activating without it would not persist and would consume an activation on every start."
+    echo "ERROR: No Proton prefix path was given (--compatdata)."
     exit 1
 fi
 # Proton reads these from the environment when the launcher is run below, and needs a writable HOME.
@@ -53,7 +47,7 @@ fi
 
 KEY="${KEY// /}"
 if [[ -z "$KEY" ]]; then
-    echo "ERROR: Farming Simulator 25 is not activated for this instance and no product key is set."
+    echo "ERROR: No product key is set."
     echo "       Set the Product Key setting on this instance, then start it again."
     exit 1
 fi
@@ -64,9 +58,7 @@ LAUNCHER="$GAME_DIR/FarmingSimulator2025.exe"
 
 for tool in xdotool Xvfb; do
     command -v "$tool" >/dev/null 2>&1 || {
-        echo "ERROR: $tool is not installed, so the product key dialog cannot be driven."
-        echo "       Install xvfb and xdotool, or activate once elsewhere and copy the resulting file to:"
-        echo "         $ACTIVATION"
+        echo "ERROR: $tool is not installed, so the product key cannot be entered."
         exit 1
     }
 done
@@ -111,16 +103,15 @@ done
 
 if [[ -z "$WID" ]]; then
     [[ -f "$ACTIVATION" ]] && { echo "Farming Simulator 25 is already activated for this instance"; exit 0; }
-    echo "ERROR: The product key dialog did not appear. Activation could not be completed."
+    echo "ERROR: The product key dialog did not appear."
     exit 1
 fi
 
-# The key field holds focus when the dialog opens, and Enter is the default button ("Activate >").
-#
-# windowactivate is deliberately not used: it asks the window manager to activate the window through
-# _NET_ACTIVE_WINDOW, and there is no window manager on a bare Xvfb, so --sync waits forever. Setting the
-# input focus directly works without one. Keystrokes then go through XTEST rather than being posted to the
-# window, because Wine ignores synthetic XSendEvent input.
+# Snapshot the current windows: "any window that is not the dialog" also matches the launcher's own.
+WINDOWS_BEFORE=" $(xdotool search --onlyvisible --name '.*' 2>/dev/null | tr '\n' ' ') "
+
+# The key field holds focus and Enter is the default button. windowactivate needs a window manager and
+# a bare Xvfb has none, so focus is set directly; keystrokes go via XTEST because Wine ignores XSendEvent.
 xdotool windowraise "$WID" 2>/dev/null
 xdotool windowfocus "$WID" 2>/dev/null
 sleep 1
@@ -128,9 +119,7 @@ xdotool type --clearmodifiers --delay 40 "$KEY"
 sleep 1
 xdotool key --clearmodifiers Return
 
-# The launcher reports the outcome in a second window. Wine draws Win32 controls itself, so only the window
-# caption is visible through X and the message body cannot be read, but a new window appearing is proof the
-# key reached the field and the server answered. Without that, the keystrokes never landed.
+# A window the launcher did not already have open is its reply, and proof the key reached the field.
 RESULT_WID=""
 deadline=$(( SECONDS + ACTIVATION_TIMEOUT ))
 while (( SECONDS < deadline )); do
@@ -138,11 +127,10 @@ while (( SECONDS < deadline )); do
     [[ -f "$ACTIVATION" ]] && break
     if [[ -z "$RESULT_WID" ]]; then
         for w in $(xdotool search --onlyvisible --name '.*' 2>/dev/null); do
-            [[ "$w" == "$WID" ]] && continue
+            [[ "$WINDOWS_BEFORE" == *" $w "* ]] && continue
             name=$(xdotool getwindowname "$w" 2>/dev/null)
             [[ -n "$name" ]] || continue
             RESULT_WID="$w"
-            echo "Launcher responded with: $name"
             break
         done
     fi
@@ -154,18 +142,10 @@ if [[ -f "$ACTIVATION" ]]; then
 fi
 
 if [[ -n "$RESULT_WID" ]]; then
-    # The key reached the dialog and the activation server answered, so this is a licensing refusal rather
-    # than a problem driving the UI. Wine draws Win32 controls itself, so the reason text cannot be read here.
-    echo "ERROR: The activation server rejected the product key."
-    echo "       The key is either invalid, or its online activation limit has been reached. Each machine"
-    echo "       and each rebuilt Proton prefix counts as a separate activation."
+    # A reply window means the server answered, so this is a licensing refusal, not a UI failure.
+    echo "ERROR: Activation failed. The key is invalid, or its activation limit has been reached."
+    echo "       Every instance activates separately. Contact GIANTS support about the key."
 else
-    echo "ERROR: The product key never reached the dialog, so activation could not be attempted."
-    echo "       Windows currently on the display:"
-    for w in $(xdotool search --onlyvisible --name '.*' 2>/dev/null); do
-        echo "         [$w] $(xdotool getwindowname "$w" 2>/dev/null)"
-    done
+    echo "ERROR: The product key could not be entered, so activation was not attempted."
 fi
-echo "       To use an activation performed elsewhere, copy its file to:"
-echo "         $ACTIVATION"
 exit 1

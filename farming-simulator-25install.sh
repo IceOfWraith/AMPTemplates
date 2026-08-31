@@ -30,9 +30,7 @@ UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 # The image is deleted before the install runs, so the peak is the payload plus the installed game.
 REQUIRED_GB=70
 
-# Completeness is tracked with a marker written only after the install is verified. dedicatedServer.exe
-# appears early on, so treating it as proof of a finished install silently accepts a half-written game
-# when an install is interrupted.
+# dedicatedServer.exe appears early, so only a marker written at the end proves the install finished.
 INSTALLED_MARKER="$GAME_DIR/.amp-install-complete"
 if [[ -f "$INSTALLED_MARKER" ]]; then
     echo "Farming Simulator 25 $(cat "$INSTALLED_MARKER" 2>/dev/null) already installed. Skipping"
@@ -78,8 +76,7 @@ if (( ! REUSE )) && [[ -z "$DOWNLOAD_URL" ]]; then
     fi
     DOWNLOAD_URL=$(printf '%s\n' "${LINKS[@]}" | grep -E 'FarmingSimulator25[^/]*\.img$' | head -1)
     if [[ -z "$DOWNLOAD_URL" ]]; then
-        echo "ERROR: That product key unlocks downloads, but no Farming Simulator 25 disc image was among them:"
-        printf '         %s\n' "${LINKS[@]}"
+        echo "ERROR: No Farming Simulator 25 download was found for that product key."
         exit 1
     fi
     echo "Found ${DOWNLOAD_URL##*/}"
@@ -99,8 +96,7 @@ rm -rf "$UNPACK"; rm -f "$IMG"
 echo "Downloading Farming Simulator 25. This is a very large download and will take a while"
 if ! curl -fsS -A "$UA" -e "$PORTAL" -o "$IMG" "$DOWNLOAD_URL"; then
     echo "ERROR: The download failed."
-    echo "       If this was a 403, the link was rejected by the CDN. Clear the Download Link setting"
-    echo "       so the key is used to look up a fresh link automatically."
+    echo "       Clear the Download Link setting so a fresh link is looked up from your key."
     rm -f "$IMG"; exit 1
 fi
 echo "Downloaded $(awk -v b="$(stat -c%s "$IMG")" 'BEGIN{printf "%.2f", b/1073741824}') GB"
@@ -137,7 +133,6 @@ extract_iso() {
         (( flags & 2 )) && continue
         name="${name%%;*}"; name="${name%.}"
         [[ -n "$name" ]] || continue
-        echo "  reading $name"
         dd if="$img" bs=2048 skip="$lba" count=$(( (size + 2047) / 2048 )) 2>/dev/null | head -c "$size" > "$dest/$name"
     done
 }
@@ -189,8 +184,7 @@ if command -v Xvfb >/dev/null 2>&1; then
     done
 fi
 if [[ -z "$XVFB_PID" ]]; then
-    echo "ERROR: Xvfb is not available, and the installer cannot run without a display."
-    echo "       Install xvfb on this host, or run the instance in a container where it is already present."
+    echo "ERROR: Xvfb is not installed, and the installer cannot run without a display."
     exit 1
 fi
 
@@ -206,16 +200,9 @@ if [[ ! -f "$GAME_DIR/dedicatedServer.exe" ]]; then
     if [[ -f "$LOG" ]]; then
         echo "--- installer log ---"
         tail -20 "$LOG" | sed 's/^/    /'
+        echo "---------------------"
     fi
-    # Inno reports a bare "File not found" when its 32-bit child cannot start, and the reason for that only
-    # ever appears in Wine's own output, so show both rather than choosing between them.
-    if [[ -s "$PROTON_LOG" ]]; then
-        echo "--- Wine/Proton output (errors) ---"
-        grep -iE 'err:|cannot open shared object|not found|failed to load' "$PROTON_LOG" 2>/dev/null |
-            grep -viE 'xalia|mono|gamecontrollerdb|winemenubuilder' | tail -15 | sed 's/^/    /'
-        echo "    (full output: $PROTON_LOG)"
-    fi
-    echo "---------------------"
+    echo "Full Wine output: $PROTON_LOG"
     # The unpacked payload is kept so a retry does not need the whole download again.
     echo "The unpacked installer has been left in $UNPACK for a retry."
     exit 1

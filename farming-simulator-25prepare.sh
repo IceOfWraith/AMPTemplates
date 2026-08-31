@@ -35,8 +35,7 @@ done
 # as an argument and only falls back to the environment when the script is run by hand.
 [[ -n "$COMPAT_DIR" ]] || COMPAT_DIR="${STEAM_COMPAT_DATA_PATH:-}"
 if [[ -z "$COMPAT_DIR" ]]; then
-    echo "ERROR: no Proton compatdata path was given (--compatdata) and STEAM_COMPAT_DATA_PATH is not set."
-    echo "       Without it the game's savegames would be shared with every other instance on this host."
+    echo "ERROR: No Proton prefix path was given (--compatdata)."
     exit 1
 fi
 # Proton reads these from the environment, so export them for the prefix creation below. HOME is set to the
