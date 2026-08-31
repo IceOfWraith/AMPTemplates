@@ -51,7 +51,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "farming-simulator-19proton.sh --root \"{{$FullRootDir}}\" --base \"{{$FullBaseDir}}\"",
+        "UpdateSourceArgs": "farming-simulator-19proton.sh --root \"{{$FullRootDir}}\" --base \"{{$FullBaseDir}}\" --version \"{{SpecificReleaseVersion}}\"",
         "SkipOnFailure": false
     },
     {

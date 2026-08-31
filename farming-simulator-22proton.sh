@@ -1,50 +1,73 @@
 #!/bin/bash
 # Installs Proton GE into the instance, which is what runs the Windows dedicated server on Linux.
+# Mirrors the "Proton GE Download" stage the CubeCoders templates use, so the version pinning, the asset
+# naming and the prefix handling all behave the same way here as they do for the Steam-based Proton games.
 set -uo pipefail
 
-ROOT=""; BASE=""
+ROOT=""; BASE=""; VERSION=""
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --root) ROOT="${2%/}"; shift 2 ;;
         --base) BASE="${2%/}"; shift 2 ;;
+        --version) VERSION="$2"; shift 2 ;;
         *) echo "ERROR: unknown argument '$1'"; exit 1 ;;
     esac
 done
 [[ -n "$ROOT" && -n "$BASE" ]] || { echo "ERROR: --root and --base are required"; exit 1; }
 
 PROTON_DIR="$ROOT/.proton"
-# Proton expects a compat data directory and a Steam client path to exist even when no Steam app is involved.
-mkdir -p "$PROTON_DIR/compatdata" "$BASE/.steam/steam" "$BASE/.config" || exit 1
+# Proton expects a compat data directory, a Steam client path and a protonfixes directory to exist even
+# when no Steam app is involved. HOME is the instance, so protonfixes state stays inside it.
+mkdir -p "$PROTON_DIR/compatdata" "$BASE/.steam/steam" "$BASE/.config/protonfixes" || exit 1
 
-if [[ -x "$PROTON_DIR/proton" ]]; then
-    echo "Proton $(cat "$PROTON_DIR/version" 2>/dev/null | awk '{print $NF}') already installed. Skipping"
-    exit 0
+VERSION="${VERSION//[[:space:]]/}"
+if [[ -z "$VERSION" ]]; then
+    echo "Resolving the latest Proton GE release..."
+    # jq is not in every base image, so the tag is read straight out of the JSON.
+    VERSION=$(curl -fsSL https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest \
+              | sed -nE 's/.*"tag_name"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/p' | head -1)
+    [[ -n "$VERSION" ]] || { echo "ERROR: could not resolve the latest Proton GE release from GitHub."; exit 1; }
 fi
-
-echo "Resolving the latest Proton GE release..."
-ASSETS=$(curl -fsSL https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest \
-         | grep -oE 'https://[^"]+/GE-Proton[^"]+\.tar\.gz')
-# Releases list an aarch64 build alongside the x86_64 one, and it is listed first. Pick by architecture
-# rather than by position, or the wrong binary unpacks cleanly and only fails when it is run.
-case "$(uname -m)" in
-    aarch64|arm64) URL=$(grep -iE 'aarch64|arm64' <<<"$ASSETS" | head -1) ;;
-    *)             URL=$(grep -ivE 'aarch64|arm64' <<<"$ASSETS" | head -1) ;;
-esac
-if [[ -z "$URL" ]]; then
-    echo "ERROR: could not resolve a Proton GE release for $(uname -m) from GitHub."
+if [[ ! "$VERSION" =~ ^GE-Proton[0-9]+-[0-9]+$ ]]; then
+    echo "ERROR: '$VERSION' is not a Proton GE release version. Expected a tag such as GE-Proton9-1."
     exit 1
 fi
 
+# The version file reads "<build stamp> GE-ProtonN-N", so the release is its second field.
+INSTALLED=""
+[[ -x "$PROTON_DIR/proton" && -f "$PROTON_DIR/version" ]] && read -r _ INSTALLED < "$PROTON_DIR/version"
+if [[ -n "$INSTALLED" && "$INSTALLED" == "$VERSION"* ]]; then
+    echo "Proton GE $VERSION already installed. Skipping"
+    exit 0
+fi
+
+# From GE-Proton11-4 onward the x86_64 build is named explicitly; earlier releases ship a single asset.
+ver="${VERSION#GE-Proton}"; major="${ver%%-*}"; minor="${ver#*-}"
+SUFFIX=""
+(( major > 11 || (major == 11 && minor >= 4) )) && SUFFIX="-x86_64"
+URL="https://github.com/GloriousEggroll/proton-ge-custom/releases/download/${VERSION}/${VERSION}${SUFFIX}.tar.gz"
+
 echo "Downloading ${URL##*/}"
 if ! curl -fsSL -o "$PROTON_DIR/proton.tar.gz" "$URL"; then
-    echo "ERROR: the Proton download failed."
+    echo "ERROR: the Proton GE download failed."
     rm -f "$PROTON_DIR/proton.tar.gz"
     exit 1
 fi
 
+# A prefix built by one Proton version is not reusable by another, so it goes when the version changes.
+# Savegames, mods and logs live in the profile directory, which the preparation script links out of the
+# prefix, so nothing there is lost. The product key is entered again on the next start.
+rm -rf "${PROTON_DIR:?}/compatdata/"* >/dev/null 2>&1
+
 tar -xzf "$PROTON_DIR/proton.tar.gz" --strip-components=1 -C "$PROTON_DIR" || {
     echo "ERROR: could not unpack Proton."; rm -f "$PROTON_DIR/proton.tar.gz"; exit 1; }
 rm -f "$PROTON_DIR/proton.tar.gz"
-
 [[ -x "$PROTON_DIR/proton" ]] || { echo "ERROR: Proton was unpacked but no proton binary was found."; exit 1; }
-echo "Proton $(cat "$PROTON_DIR/version" 2>/dev/null | awk '{print $NF}') installed"
+
+# Build the prefix now rather than on first start, so a failure surfaces during the update.
+STEAM_COMPAT_DATA_PATH="$PROTON_DIR/compatdata" \
+STEAM_COMPAT_CLIENT_INSTALL_PATH="$BASE/.steam/steam" \
+HOME="$BASE" WINEDEBUG=-all \
+    "$PROTON_DIR/proton" runinprefix cmd /c exit >/dev/null 2>&1
+
+echo "Proton GE $VERSION installed"
