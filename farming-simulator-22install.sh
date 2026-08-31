@@ -27,10 +27,17 @@ UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 INNOEXTRACT_URL="https://github.com/dscharrer/innoextract/releases/download/1.9/innoextract-1.9-linux.tar.xz"
 INNOEXTRACT_SHA256="008efe5011476ccc4aae17c3e22038b5a1bc5c7aad2b9d4d869537bf3874d21f"
 
-if [[ -f "$GAME_DIR/dedicatedServer.exe" ]]; then
-    echo "Farming Simulator 22 $(cat "$GAME_DIR/VERSION" 2>/dev/null) already installed. Skipping"
+# Completeness is tracked with a marker written only after the install is verified. dedicatedServer.exe
+# appears early on, so treating it as proof of a finished install silently accepts a half-written game
+# when an install is interrupted.
+INSTALLED_MARKER="$GAME_DIR/.amp-install-complete"
+if [[ -f "$INSTALLED_MARKER" ]]; then
+    echo "Farming Simulator 22 $(cat "$INSTALLED_MARKER" 2>/dev/null) already installed. Skipping"
     echo "Delete the game folder inside this instance to force a reinstall"
     exit 0
+fi
+if [[ -f "$GAME_DIR/dedicatedServer.exe" ]]; then
+    echo "A previous install did not finish; installing over it"
 fi
 
 if [[ -z "$DOWNLOAD_URL" ]]; then
@@ -60,16 +67,16 @@ fi
 
 mkdir -p "$GAME_DIR" "$WORK_DIR" || exit 1
 
-# ~5GB download, unpacked to ~5GB more, then ~10GB of game files. Fail now rather than after the download.
+# ~15GB download, unpacked to ~15GB more, then ~27GB of game files. Fail now rather than after the download.
 FREE_GB=$(( $(df -P -k "$GAME_DIR" | awk 'NR==2{print $4}') / 1024 / 1024 ))
 if [[ $FREE_GB -lt 48 ]]; then
     echo "ERROR: Only ${FREE_GB}GB is free on the instance drive, and installing Farming Simulator 22 needs about 48GB."
     exit 1
 fi
 
-IMG="$WORK_DIR/fs19_download.img"
-UNPACK="$WORK_DIR/fs19_unpack"
-STAGING="$WORK_DIR/fs19_staging"
+IMG="$WORK_DIR/fs22_download.img"
+UNPACK="$WORK_DIR/fs22_unpack"
+STAGING="$WORK_DIR/fs22_staging"
 TOOLS="$WORK_DIR/tools"
 rm -rf "$UNPACK" "$STAGING"; rm -f "$IMG"
 
@@ -198,4 +205,5 @@ if [[ ! -f "$GAME_DIR/dedicatedServer.exe" ]]; then
     echo "ERROR: The game was unpacked but no dedicated server was found in it."
     exit 1
 fi
+cat "$GAME_DIR/VERSION" 2>/dev/null > "$INSTALLED_MARKER"
 echo "Farming Simulator 22 $(cat "$GAME_DIR/VERSION" 2>/dev/null) installed"

@@ -27,10 +27,17 @@ UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 INNOEXTRACT_URL="https://github.com/dscharrer/innoextract/releases/download/1.9/innoextract-1.9-linux.tar.xz"
 INNOEXTRACT_SHA256="008efe5011476ccc4aae17c3e22038b5a1bc5c7aad2b9d4d869537bf3874d21f"
 
-if [[ -f "$GAME_DIR/dedicatedServer.exe" ]]; then
-    echo "Farming Simulator 19 $(cat "$GAME_DIR/VERSION" 2>/dev/null) already installed. Skipping"
+# Completeness is tracked with a marker written only after the install is verified. dedicatedServer.exe
+# appears early on, so treating it as proof of a finished install silently accepts a half-written game
+# when an install is interrupted.
+INSTALLED_MARKER="$GAME_DIR/.amp-install-complete"
+if [[ -f "$INSTALLED_MARKER" ]]; then
+    echo "Farming Simulator 19 $(cat "$INSTALLED_MARKER" 2>/dev/null) already installed. Skipping"
     echo "Delete the game folder inside this instance to force a reinstall"
     exit 0
+fi
+if [[ -f "$GAME_DIR/dedicatedServer.exe" ]]; then
+    echo "A previous install did not finish; installing over it"
 fi
 
 if [[ -z "$DOWNLOAD_URL" ]]; then
@@ -197,4 +204,5 @@ if [[ ! -f "$GAME_DIR/dedicatedServer.exe" ]]; then
     echo "ERROR: The game was unpacked but no dedicated server was found in it."
     exit 1
 fi
+cat "$GAME_DIR/VERSION" 2>/dev/null > "$INSTALLED_MARKER"
 echo "Farming Simulator 19 $(cat "$GAME_DIR/VERSION" 2>/dev/null) installed"
