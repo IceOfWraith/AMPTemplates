@@ -37,6 +37,16 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Autostart Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dev/farming-simulator-25autostart.sh",
+        "UpdateSourceArgs": "farming-simulator-25autostart.sh",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Proton Script Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",

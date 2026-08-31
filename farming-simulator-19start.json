@@ -14,5 +14,16 @@
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "farming-simulator-19activate.sh --key \"{{ActivationKey}}\" --gamedir \"{{$FullBaseDir}}game\" --compatdata \"{{$FullRootDir}}.proton/compatdata\" --steamdir \"{{$FullBaseDir}}.steam/steam\" --home \"{{$FullBaseDir}}\" --proton \"{{$FullRootDir}}.proton/proton\"",
         "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Start Game Server",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "farming-simulator-19autostart.sh --port {{$WebInterfacePort}} --user \"{{AdminUsername}}\" --pass \"{{AdminPassword}}\" --gameport {{$GamePort}} --savegame \"{{AutoStartSavegame}}\"",
+        "UpdateSourceConditionSetting": "AutoStartGameServer",
+        "UpdateSourceConditionValue": "true",
+        "RunInBackground": true,
+        "SkipOnFailure": true
     }
 ]

@@ -88,5 +88,37 @@
         "DefaultValue": "",
         "Placeholder": "GE-Proton9-1",
         "EnumValues": {}
+    },
+    {
+        "DisplayName": "Start Game Server Automatically",
+        "Category": "Farming Simulator 22:agriculture",
+        "Subcategory": "Game Server:play_arrow:3",
+        "Description": "If set, the game server is started as soon as the dedicated server web interface comes up, instead of waiting for someone to press Start there. The settings the web interface last saved are the ones used, so configure the map, savegame and passwords there and they are reused on every start. Only the game port is overridden, so it always matches the port AMP allocated",
+        "Keywords": "auto,start,automatic,game,server,launch",
+        "FieldName": "AutoStartGameServer",
+        "InputType": "checkbox",
+        "IsFlagArgument": false,
+        "ParamFieldName": "AutoStartGameServer",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Savegame Slot",
+        "Category": "Farming Simulator 22:agriculture",
+        "Subcategory": "Game Server:play_arrow:3",
+        "Description": "Sets which of the twenty savegame slots is started when Start Game Server Automatically is set. Leave blank to use whichever slot is selected in the web interface. An empty slot starts a new game using the map and economy settings saved there",
+        "Keywords": "savegame,slot,save,career",
+        "FieldName": "AutoStartSavegame",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "AutoStartSavegame",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "Placeholder": "1",
+        "EnumValues": {}
     }
 ]
