@@ -14,10 +14,10 @@
         "Description": "Port for the dedicated server web interface over TLS. Only used when TLS is enabled"
     },
     {
-        "Protocol": "Both",
+        "Protocol": "UDP",
         "Port": 10823,
         "Ref": "GamePort",
         "Name": "Game Port",
-        "Description": "Port for game traffic. The dedicated server uses both TCP and UDP on this port"
+        "Description": "Port for game traffic"
     }
 ]
