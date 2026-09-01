@@ -3,7 +3,7 @@
         "DisplayName": "Product Key",
         "Category": "Farming Simulator 25:agriculture",
         "Subcategory": "Activation:vpn_key:1",
-        "Description": "Sets the Farming Simulator 25 product key. Found on the DVD case or in your GIANTS purchase confirmation. This key is all that is needed: it is used to look the download up from the [GIANTS download portal](https://eshop.giants-software.com/downloads.php) when the server is updated, and to activate the game on first start. Activation happens automatically on first start and only needs to succeed once per instance. GIANTS licensing requires a separate key for each dedicated server",
+        "Description": "Sets the Farming Simulator 25 product key. Found on the DVD case or in your GIANTS purchase confirmation. This key is all that is needed: it is used to look the download up from the [GIANTS download portal](https://eshop.giants-software.com/downloads.php) when the server is updated, and to activate the game on first start. Activation happens automatically and only needs to succeed once per instance. GIANTS licensing requires a separate key for each dedicated server, and a key that is already in use by a game client cannot be used by the server at the same time - players get a connection error if it is",
         "Keywords": "product,key,activation,serial,licence,license",
         "FieldName": "ActivationKey",
         "InputType": "Password",
