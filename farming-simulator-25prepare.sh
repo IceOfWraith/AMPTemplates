@@ -7,7 +7,7 @@
 set -uo pipefail
 
 GAME_DIR=""; LOG_DIR=""; PROFILE_DIR=""; PROTON=""; COMPAT_DIR=""; STEAM_DIR=""; HOME_DIR=""
-WEB_PORT="8080"; TLS_PORT="8443"; TLS_ON="false"; ADMIN_USER="admin"; ADMIN_PASS=""
+WEB_PORT="8080"; TLS_PORT="8443"; TLS_ON="false"; ADMIN_USER="admin"; ADMIN_PASS=""; GAME_PORT=""
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --gamedir) GAME_DIR="${2%/}"; shift 2 ;;
@@ -17,6 +17,7 @@ while [[ $# -gt 0 ]]; do
         --steamdir) STEAM_DIR="${2%/}"; shift 2 ;;
         --home) HOME_DIR="${2%/}"; shift 2 ;;
         --proton) PROTON="$2"; shift 2 ;;
+        --gameport) GAME_PORT="$2"; shift 2 ;;
         --webport) WEB_PORT="$2"; shift 2 ;;
         --tlsport) TLS_PORT="$2"; shift 2 ;;
         --tls) TLS_ON="$2"; shift 2 ;;
@@ -116,6 +117,19 @@ if [[ -n "$ADMIN_PASS" ]]; then
         -e "s|<password>[^<]*</password>|<passphrase>${P}</passphrase>|" \
         -e "s|<passphrase>[^<]*</passphrase>|<passphrase>${P}</passphrase>|" \
         "$XML"
+fi
+
+# The game port is not in dedicatedServer.xml - it lives in the web interface's own saved settings, and
+# nothing else syncs it. An instance whose allocated port is not the default therefore binds a port AMP
+# never opened, and players cannot reach it. The file only appears once the web interface has saved
+# settings, so this is a no-op on a fresh instance; the start form carries the allocated port in that case.
+SERVER_CONFIG="$PROFILE/dedicated_server/dedicatedServerConfig.xml"
+if [[ -n "$GAME_PORT" && -f "$SERVER_CONFIG" ]]; then
+    if sed -E -i "s|<port>[^<]*</port>|<port>${GAME_PORT}</port>|" "$SERVER_CONFIG"; then
+        echo "Set the game server port to ${GAME_PORT}"
+    else
+        echo "WARNING: could not set the game server port in $SERVER_CONFIG"
+    fi
 fi
 
 echo "Configured dedicated server on port ${WEB_PORT}"
