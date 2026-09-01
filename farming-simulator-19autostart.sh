@@ -1,18 +1,7 @@
 #!/bin/bash
-# Presses Start on the dedicated server's web interface once it is up, so the game server comes up with the
-# instance rather than needing someone to visit the web interface and press the button by hand.
-#
-# dedicatedServer.exe is only a manager: it serves the web interface and spawns FarmingSimulator20XXGame.exe
-# as a child when the start form is submitted. There is no autostart field in dedicatedServer.xml and no
-# command line for it, so submitting that form is the only route.
-#
-# AMP has no post-start stage, so this is launched from PreStartStages with RunInBackground and outlives it:
-# it waits for the web interface to answer, logs in, and submits the form.
-#
-# The form is sent back exactly as the web interface serves it, with only the fields AMP owns replaced.
-# Whatever was last saved in the web interface is what starts. The field set differs between titles -
-# Farming Simulator 22 has "difficulty" where 25 has "economicDifficulty", "initialMoney" and "initialLoan" -
-# so the fields are read out of the form rather than hardcoded.
+# Starts the game server by submitting the dedicated server web interface's start form.
+# The server only spawns the game when that form is posted - there is no autostart setting.
+# Run from PreStartStages with RunInBackground so it outlives the stage while waiting.
 set -uo pipefail
 
 HOST=""; PORT=""; USERNAME="admin"; PASSWORD=""; GAME_PORT=""; SAVEGAME=""; TIMEOUT=300
@@ -33,8 +22,7 @@ done
 JAR="$(mktemp)"
 trap 'rm -f "$JAR"' EXIT
 
-# One field per line, as "name<TAB>value". Attribute order varies and the equals sign is padded in places
-# ('<select name = "initialMoney">'), so this matches attributes rather than a fixed layout.
+# Reads the form into "name<TAB>value" lines. Fields differ between titles, so nothing is hardcoded.
 parse_form() {
     sed -e 's/></>\n</g' \
     | awk '
@@ -49,7 +37,7 @@ parse_form() {
             t = attr($0, "type"); n = attr($0, "name")
             if (n == "\001" || t == "submit" || t == "button" || t == "reset") next
             v = attr($0, "value"); if (v == "\001") v = ""
-            # An unchecked box submits nothing at all, so only a checked one is carried over.
+            # Unchecked boxes submit nothing.
             if (t == "checkbox") { if ($0 ~ /checked/) print n "\t" (v == "" ? "on" : v); next }
             print n "\t" v
             next
@@ -69,10 +57,7 @@ parse_form() {
     '
 }
 
-# The dedicated server binds the interface address rather than the wildcard, so the loopback does not answer
-# even with AMP set to bind 0.0.0.0 - the server picks the primary address itself and reports it in its log
-# as "URL(s): http://<address>:<port>". Which address that is depends on how the container is networked, so
-# every local address is tried and whichever answers is the one used.
+# The server binds one interface address, not the wildcard, so the loopback may not answer.
 candidate_hosts() {
     if [[ -n "$HOST" ]]; then printf '%s\n' "$HOST"; return; fi
     printf '127.0.0.1\n'
@@ -112,7 +97,7 @@ if [[ -z "$PAGE" ]]; then
     echo "ERROR: the web interface returned nothing after logging in."
     exit 1
 fi
-# The start form only renders for a logged-in session, so its absence is a rejected login.
+# No form means the login was rejected.
 if ! grep -q 'name="start_server"\|name="stop_server"' <<<"$PAGE"; then
     echo "ERROR: the web interface rejected the admin username and password, so the game server was not started."
     echo "       These come from the Admin Username and Admin Password settings on this instance."
@@ -123,8 +108,7 @@ if grep -q 'name="stop_server"' <<<"$PAGE"; then
     exit 0
 fi
 
-# Rebuild the form, overriding only what AMP owns. curl encodes each field, so values with spaces and
-# punctuation survive intact.
+# Resend the form as served, overriding only the fields AMP owns.
 ARGS=()
 while IFS=$'\t' read -r name value; do
     [[ -n "$name" ]] || continue
@@ -147,7 +131,7 @@ if ! curl -fsS -m 60 -b "$JAR" -c "$JAR" -o /dev/null -X POST "$BASE" "${ARGS[@]
     exit 1
 fi
 
-# The button flipping to Stop is the web interface confirming it spawned the game server.
+# The Stop button replacing Start means the game server is up.
 deadline=$(( SECONDS + 120 ))
 while (( SECONDS < deadline )); do
     sleep 3

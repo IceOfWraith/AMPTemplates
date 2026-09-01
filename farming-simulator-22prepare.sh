@@ -119,10 +119,8 @@ if [[ -n "$ADMIN_PASS" ]]; then
         "$XML"
 fi
 
-# The game port is not in dedicatedServer.xml - it lives in the web interface's own saved settings, and
-# nothing else syncs it. An instance whose allocated port is not the default therefore binds a port AMP
-# never opened, and players cannot reach it. The file only appears once the web interface has saved
-# settings, so this is a no-op on a fresh instance; the start form carries the allocated port in that case.
+# The game port lives in the web interface's saved settings, not dedicatedServer.xml.
+# Absent until the web interface saves once; the start form carries the port until then.
 SERVER_CONFIG="$PROFILE/dedicated_server/dedicatedServerConfig.xml"
 if [[ -n "$GAME_PORT" && -f "$SERVER_CONFIG" ]]; then
     if sed -E -i "s|<port>[^<]*</port>|<port>${GAME_PORT}</port>|" "$SERVER_CONFIG"; then

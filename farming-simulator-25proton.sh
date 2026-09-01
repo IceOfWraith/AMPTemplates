@@ -1,7 +1,5 @@
 #!/bin/bash
-# Installs Proton GE into the instance, which is what runs the Windows dedicated server on Linux.
-# Mirrors the "Proton GE Download" stage the CubeCoders templates use, so the version pinning, the asset
-# naming and the prefix handling all behave the same way here as they do for the Steam-based Proton games.
+# Installs Proton GE, which runs the Windows dedicated server on Linux.
 set -uo pipefail
 
 ROOT=""; BASE=""; VERSION=""
@@ -16,14 +14,13 @@ done
 [[ -n "$ROOT" && -n "$BASE" ]] || { echo "ERROR: --root and --base are required"; exit 1; }
 
 PROTON_DIR="$ROOT/.proton"
-# Proton expects a compat data directory, a Steam client path and a protonfixes directory to exist even
-# when no Steam app is involved. HOME is the instance, so protonfixes state stays inside it.
+# Proton needs these to exist even with no Steam app involved.
 mkdir -p "$PROTON_DIR/compatdata" "$BASE/.steam/steam" "$BASE/.config/protonfixes" || exit 1
 
 VERSION="${VERSION//[[:space:]]/}"
 if [[ -z "$VERSION" ]]; then
     echo "Resolving the latest Proton GE release..."
-    # jq is not in every base image, so the tag is read straight out of the JSON.
+    # jq is not in every base image.
     VERSION=$(curl -fsSL https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest \
               | sed -nE 's/.*"tag_name"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/p' | head -1)
     [[ -n "$VERSION" ]] || { echo "ERROR: could not resolve the latest Proton GE release from GitHub."; exit 1; }
@@ -33,7 +30,7 @@ if [[ ! "$VERSION" =~ ^GE-Proton[0-9]+-[0-9]+$ ]]; then
     exit 1
 fi
 
-# The version file reads "<build stamp> GE-ProtonN-N", so the release is its second field.
+# The version file reads "<build stamp> GE-ProtonN-N".
 INSTALLED=""
 [[ -x "$PROTON_DIR/proton" && -f "$PROTON_DIR/version" ]] && read -r _ INSTALLED < "$PROTON_DIR/version"
 if [[ -n "$INSTALLED" && "$INSTALLED" == "$VERSION"* ]]; then
@@ -41,7 +38,7 @@ if [[ -n "$INSTALLED" && "$INSTALLED" == "$VERSION"* ]]; then
     exit 0
 fi
 
-# From GE-Proton11-4 onward the x86_64 build is named explicitly; earlier releases ship a single asset.
+# GE-Proton11-4 and later name the x86_64 build explicitly.
 ver="${VERSION#GE-Proton}"; major="${ver%%-*}"; minor="${ver#*-}"
 SUFFIX=""
 (( major > 11 || (major == 11 && minor >= 4) )) && SUFFIX="-x86_64"
@@ -54,9 +51,7 @@ if ! curl -fsSL -o "$PROTON_DIR/proton.tar.gz" "$URL"; then
     exit 1
 fi
 
-# A prefix built by one Proton version is not reusable by another, so it goes when the version changes.
-# Savegames, mods and logs live in the profile directory, which the preparation script links out of the
-# prefix, so nothing there is lost. The product key is entered again on the next start.
+# A prefix is not reusable across Proton versions. Savegames sit outside it, but the key is re-entered.
 rm -rf "${PROTON_DIR:?}/compatdata/"* >/dev/null 2>&1
 
 tar -xzf "$PROTON_DIR/proton.tar.gz" --strip-components=1 -C "$PROTON_DIR" || {
@@ -64,7 +59,7 @@ tar -xzf "$PROTON_DIR/proton.tar.gz" --strip-components=1 -C "$PROTON_DIR" || {
 rm -f "$PROTON_DIR/proton.tar.gz"
 [[ -x "$PROTON_DIR/proton" ]] || { echo "ERROR: Proton was unpacked but no proton binary was found."; exit 1; }
 
-# Build the prefix now rather than on first start, so a failure surfaces during the update.
+# Build the prefix now so a failure shows during the update, not on first start.
 STEAM_COMPAT_DATA_PATH="$PROTON_DIR/compatdata" \
 STEAM_COMPAT_CLIENT_INSTALL_PATH="$BASE/.steam/steam" \
 HOME="$BASE" WINEDEBUG=-all \
