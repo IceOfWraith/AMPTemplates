@@ -203,7 +203,7 @@
         "UpdateStageName": "Server Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/ut99UnrealTournament.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/ut99UnrealTournament.ini",
         "UpdateSourceArgs": "_AMP_UnrealTournament.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}System",
         "OverwriteExistingFiles": false,

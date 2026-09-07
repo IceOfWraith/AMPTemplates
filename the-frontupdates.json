@@ -36,7 +36,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/the-frontserverconfig_AMP.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-frontserverconfig_AMP.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}TheFrontManager",
         "UpdateSourceArgs": "ServerConfig_AMP.ini",
         "OverwriteExistingFiles": true,

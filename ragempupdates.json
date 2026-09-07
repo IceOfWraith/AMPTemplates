@@ -26,7 +26,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/ragempconf.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/ragempconf.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "conf.json",
         "OverwriteExistingFiles": false,

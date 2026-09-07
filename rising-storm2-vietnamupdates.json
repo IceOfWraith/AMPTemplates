@@ -12,7 +12,7 @@
         "UpdateStageName": "Game.ini Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/rising-storm2-vietnamgame.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/rising-storm2-vietnamgame.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}ROGame/Config",
         "UpdateSourceArgs": "ROGame.ini",
         "OverwriteExistingFiles": false,

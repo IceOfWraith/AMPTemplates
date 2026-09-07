@@ -26,7 +26,7 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
         "OverwriteExistingFiles": false,
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/barotraumaserversettings.xml",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/barotraumaserversettings.xml",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "serversettings.xml",
         "SkipOnFailure": false

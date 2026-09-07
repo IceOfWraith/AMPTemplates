@@ -37,7 +37,7 @@
         "UpdateStageName": "Default World Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/sunkenlandworld.zip",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/sunkenlandworld.zip",
         "UpdateSourceTarget": "{{$FullBaseDir}}Worlds",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": false,

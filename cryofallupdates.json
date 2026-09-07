@@ -40,7 +40,7 @@
         "UpdateStageName": "SettingsServer.xml File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/cryofallsettingsserver.xml",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/cryofallsettingsserver.xml",
         "UpdateSourceTarget": "{{$FullBaseDir}}Data",
         "UpdateSourceArgs": "SettingsServer.xml",
         "OverwriteExistingFiles": false

@@ -12,7 +12,7 @@
         "UpdateStageName": "Enshrouded_server.json Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/enshroudedserver.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/enshroudedserver.json",
         "UpdateSourceArgs": "enshrouded_server.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,

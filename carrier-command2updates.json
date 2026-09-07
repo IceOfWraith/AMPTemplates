@@ -28,7 +28,7 @@
         "UpdateStageName": "Server Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/carrier-command2server_config.xml",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/carrier-command2server_config.xml",
         "UpdateSourceArgs": "server_config.xml",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,

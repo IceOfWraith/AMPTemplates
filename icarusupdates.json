@@ -20,7 +20,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/icarusserversettings.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/icarusserversettings.ini",
         "UpdateSourceArgs": "ServerSettings.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}Icarus/Saved/Config/WindowsServer",
         "OverwriteExistingFiles": true,
