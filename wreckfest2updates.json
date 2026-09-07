@@ -18,7 +18,7 @@
         "UpdateStageName": "Server_config.scnf Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/wreckfest2server_config.scnf",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/wreckfest2server_config.scnf",
         "UpdateSourceArgs": "server_config.scnf",
         "UpdateSourceTarget": "{{$FullBaseDir}}server_data",
         "OverwriteExistingFiles": false
@@ -27,7 +27,7 @@
         "UpdateStageName": "Server_privilege.sprv Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/wreckfest2server_privilege.sprv",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/wreckfest2server_privilege.sprv",
         "UpdateSourceArgs": "server_privilege.sprv",
         "UpdateSourceTarget": "{{$FullBaseDir}}server_data",
         "OverwriteExistingFiles": false

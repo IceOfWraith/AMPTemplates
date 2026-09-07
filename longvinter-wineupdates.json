@@ -20,7 +20,7 @@
         "UpdateStageName": "Game.ini Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/longvintergame.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/longvintergame.ini",
         "UpdateSourceArgs": "Game.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}Longvinter/Saved/Config/WindowsServer",
         "OverwriteExistingFiles": true,

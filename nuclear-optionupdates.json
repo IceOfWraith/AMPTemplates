@@ -11,7 +11,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/nuclear-optiondedicatedserverconfig.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/nuclear-optiondedicatedserverconfig.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "DedicatedServerConfig.json",
         "OverwriteExistingFiles": false,

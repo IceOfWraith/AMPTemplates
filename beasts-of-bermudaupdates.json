@@ -12,7 +12,7 @@
         "UpdateStageName": "Game.ini File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/beasts-of-bermudagame.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/beasts-of-bermudagame.ini",
         "UpdateSourceArgs": "Game.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}WindowsServer/BeastsOfBermuda/Saved/Config/WindowsServer",
         "OverwriteExistingFiles": false,

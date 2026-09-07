@@ -39,7 +39,7 @@
         "UpdateStageName": "ServerSettings.cfg File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/reign-of-kingsserversettings.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/reign-of-kingsserversettings.cfg",
         "UpdateSourceArgs": "ServerSettings.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}Configuration",
         "OverwriteExistingFiles": false,

@@ -41,7 +41,7 @@
         "UpdateStageName": "Settings.ini Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/clone-herosettings.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/clone-herosettings.ini",
         "UpdateSourceArgs": "settings.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,

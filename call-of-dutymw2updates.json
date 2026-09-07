@@ -61,7 +61,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/call-of-dutymw2server.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/call-of-dutymw2server.cfg",
         "UpdateSourceArgs": "server.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}userraw",
         "OverwriteExistingFiles": false,

@@ -22,7 +22,7 @@
         "UpdateStageName": "Server Config Template File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/risk-of-rain-2server.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/risk-of-rain-2server.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
