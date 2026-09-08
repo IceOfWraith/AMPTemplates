@@ -13,7 +13,7 @@
         "UpdateStageName": "Base Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/empyriondedicated.yaml",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/empyriondedicated.yaml",
         "UpdateSourceTarget": "./530870/",
         "SkipOnFailure": false
     },

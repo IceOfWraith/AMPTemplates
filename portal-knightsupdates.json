@@ -28,7 +28,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/portal-knightsserver_config.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/portal-knightsserver_config.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "server_config.json",
         "OverwriteExistingFiles": false,

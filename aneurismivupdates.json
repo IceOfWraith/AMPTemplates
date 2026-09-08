@@ -19,7 +19,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/aneurismivaniv.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/aneurismivaniv.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}unity3d/Vellocet/ANEURISM IV",
         "UpdateSourceArgs": "aniv.cfg",
         "OverwriteExistingFiles": false

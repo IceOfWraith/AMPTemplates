@@ -19,7 +19,7 @@
         "UpdateStageName": "Game Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/theisle-legacygame.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/theisle-legacygame.ini",
         "UpdateSourceArgs": "Game.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}TheIsle/Saved/Config/WindowsServer/",
         "OverwriteExistingFiles": false,

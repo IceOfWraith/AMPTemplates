@@ -20,7 +20,7 @@
         "UpdateStageName": "MoriaServerConfig.ini Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/lotr-moriaserverconfig.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/lotr-moriaserverconfig.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "MoriaServerConfig.ini",
         "OverwriteExistingFiles": true,

@@ -11,7 +11,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/nebulous-fleet-commanddedicatedserverconfig.xml",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/nebulous-fleet-commanddedicatedserverconfig.xml",
         "UpdateSourceArgs": "AMPServerConfig.xml",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,

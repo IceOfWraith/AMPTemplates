@@ -21,7 +21,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/xonoticserver.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/xonoticserver.cfg",
         "UpdateSourceTarget": "../",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false

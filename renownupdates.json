@@ -35,7 +35,7 @@
         "UpdateStageName": "Game.ini Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/renowngame.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/renowngame.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}Renown_Combat/Saved/Config/LinuxServer",
         "UpdateSourceArgs": "Game.ini",
         "OverwriteExistingFiles": false
@@ -44,7 +44,7 @@
         "UpdateStageName": "Game.ini Download",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/renowngame.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/renowngame.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}Renown_Combat/Saved/Config/WindowsServer",
         "UpdateSourceArgs": "Game.ini",
         "OverwriteExistingFiles": false

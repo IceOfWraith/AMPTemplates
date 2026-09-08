@@ -116,7 +116,7 @@
         "UpdateStageName": "Config.json File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/open-worldserverconfig.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/open-worldserverconfig.json",
         "UpdateSourceArgs": "Config.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}Data",
         "OverwriteExistingFiles": false,

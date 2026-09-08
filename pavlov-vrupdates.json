@@ -36,7 +36,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/pavlov-vrconfigfile.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/pavlov-vrconfigfile.ini",
         "UpdateSourceArgs": "Game.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}Pavlov/Saved/Config/LinuxServer",
         "OverwriteExistingFiles": false,
