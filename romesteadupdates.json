@@ -11,7 +11,7 @@
         "UpdateStageName": "Config.json Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/romesteadserverconfig.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/romesteadserverconfig.json",
         "UpdateSourceArgs": "config.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": true

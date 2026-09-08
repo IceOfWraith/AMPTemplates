@@ -36,7 +36,7 @@
         "UpdateStageName": "Game Config Template File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/theisle-evrima6game.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/theisle-evrima6game.ini",
         "UpdateSourceArgs": "AMP_Game.ini",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,

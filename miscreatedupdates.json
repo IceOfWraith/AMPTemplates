@@ -12,7 +12,7 @@
         "UpdateStageName": "Settings Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/miscreatedhosting.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/miscreatedhosting.cfg",
         "UpdateSourceArgs": "hosting.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false

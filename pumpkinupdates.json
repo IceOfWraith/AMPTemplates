@@ -45,7 +45,7 @@
         "UpdateStageName": "Download Config File",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/pumpkin.toml",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/pumpkin.toml",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "pumpkin.toml",
         "SkipOnFailure": false,

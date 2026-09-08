@@ -12,7 +12,7 @@
         "UpdateStageName": "Base Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/the-forestserver.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-forestserver.cfg",
         "UpdateSourceTarget": "./556450/",
         "SkipOnFailure": false
     },

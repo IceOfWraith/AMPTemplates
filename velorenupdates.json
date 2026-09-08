@@ -41,7 +41,7 @@
         "UpdateStageName": "Settings Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/velorensettings.ron",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/velorensettings.ron",
         "UpdateSourceArgs": "AMP_settings.ron",
         "UpdateSourceTarget": "{{$FullBaseDir}}userdata/server/server_config/",
         "OverwriteExistingFiles": false,

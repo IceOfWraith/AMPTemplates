@@ -27,7 +27,7 @@
         "UpdateStageName": "World Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/creativerseconfig_world.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/creativerseconfig_world.json",
         "UpdateSourceArgs": "config_world.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}PlayfulCorp/CreativerseServer/worlddata/worlds/{{worldId}}/",
         "OverwriteExistingFiles": false,

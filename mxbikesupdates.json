@@ -109,7 +109,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/mxbikesdedicated.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/mxbikesdedicated.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "dedicated.ini",
         "OverwriteExistingFiles": false,

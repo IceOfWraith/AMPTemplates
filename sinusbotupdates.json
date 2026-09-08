@@ -94,7 +94,7 @@
         "UpdateStageName": "Config.ini Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/sinusbotconfig.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/sinusbotconfig.ini",
         "UpdateSourceArgs": "config.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,

@@ -12,7 +12,7 @@
         "UpdateStageName": "Server Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/craftopiaserversetting.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/craftopiaserversetting.ini",
         "UpdateSourceArgs": "ServerSetting.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,

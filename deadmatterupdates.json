@@ -30,7 +30,7 @@
         "UpdateStageName": "Game.ini Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/deadmattergame.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/deadmattergame.ini",
         "UpdateSourceArgs": "Game.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}DeadMatter/Saved/Config/WindowsServer/",
         "OverwriteExistingFiles": false,

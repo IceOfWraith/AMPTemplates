@@ -38,7 +38,7 @@
         "UpdateStageName": "Main Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/unturnedconfigfile.dat",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/unturnedconfigfile.dat",
         "UpdateSourceArgs": "Commands.dat",
         "UpdateSourceTarget": "{{$FullBaseDir}}Servers/{{ServerID}}/Server/",
         "OverwriteExistingFiles": false,
@@ -48,7 +48,7 @@
         "UpdateStageName": "Workshop Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/unturnedworkshopconfig.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/unturnedworkshopconfig.json",
         "UpdateSourceTarget": "{{$FullInstanceDir}}",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
