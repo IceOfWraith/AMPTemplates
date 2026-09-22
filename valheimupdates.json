@@ -36,7 +36,7 @@
         "UpdateStageName": "Settings Template File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/valheimvalheim_plus.cfg",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/refs/heads/dev/valheimvalheim_plus.cfg",
         "UpdateSourceArgs": "AMP_valheim_plus.cfg",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
