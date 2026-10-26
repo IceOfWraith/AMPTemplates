@@ -89,6 +89,23 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "Knowledge Base URL",
+        "Category": "Legends of Aria Eternal:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "",
+        "Keywords": "",
+        "FieldName": "KnowledgeBaseUrl",
+        "InputType": "text",
+        "Hidden": true,
+        "ExcludeFromSeed": true,
+        "ExcludeFromImport": true,
+        "IsFlagArgument": false,
+        "ParamFieldName": "/ClusterConfig/KnowledgeBaseUrl",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "http://{{ServerAddress}}:{{$KnowledgePort}}/knowledge",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "World",
         "Category": "Legends of Aria Eternal:stadia_controller",
         "Subcategory": "Server:dns:1",

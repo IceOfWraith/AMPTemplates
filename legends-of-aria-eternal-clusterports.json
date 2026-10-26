@@ -20,5 +20,12 @@
         "Ref": "QueryPort",
         "Name": "Steam Query Port",
         "Description": "UDP port for the Steam server browser. Only used when the cluster is listed"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": 5000,
+        "Ref": "KnowledgePort",
+        "Name": "Knowledge Base Port",
+        "Description": "TCP port for the in-game knowledge base web page, which opens when players join"
     }
 ]

@@ -40,5 +40,41 @@
         "UpdateSourceArgs": "{{$FullBaseDir}}amp-cluster.ps1",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Knowledge Base Server",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "# AMP: serves the knowledge base the official launcher would serve; exits once this instance's servers stop.\nimport http.server, os, sys, threading, time\n\nroot, port, srvdir = os.path.realpath(sys.argv[1]), int(sys.argv[2]), os.path.realpath(sys.argv[3]) + os.sep\n\n\nclass Handler(http.server.SimpleHTTPRequestHandler):\n    def __init__(self, *a, **k):\n        super().__init__(*a, directory=root, **k)\n\n    def log_message(self, *a):\n        pass\n\n    def list_directory(self, path):\n        self.send_error(404)\n\n    def route(self):\n        p = self.path.split('?', 1)[0]\n        if p != '/knowledge' and not p.startswith('/knowledge/'):\n            self.send_error(404)\n            return False\n        self.path = p[len('/knowledge'):] or '/'\n        if not os.path.isfile(self.translate_path(self.path)):\n            self.path = '/index.html'  # site routes like /whats-new are client-side\n        return True\n\n    def do_GET(self):\n        if self.route():\n            super().do_GET()\n\n    def do_HEAD(self):\n        if self.route():\n            super().do_HEAD()\n\n\ndef servers_running():\n    for pid in os.listdir('/proc'):\n        try:\n            if pid.isdigit() and os.readlink(f'/proc/{pid}/exe').startswith(srvdir):\n                return True\n        except OSError:\n            pass\n    return False\n\n\nfor _ in range(30):\n    try:\n        httpd = http.server.ThreadingHTTPServer(('', port), Handler)\n        break\n    except OSError:\n        time.sleep(1)\nelse:\n    sys.exit(f'[AMP] Knowledge base port {port} is in use')\n\nthreading.Thread(target=httpd.serve_forever, daemon=True).start()\nprint(f'[AMP] Knowledge base serving on port {port}', flush=True)\nseen, misses = False, 0\nwhile True:\n    time.sleep(2)\n    if servers_running():\n        seen, misses = True, 0\n    else:\n        misses += 1\n        if misses >= (3 if seen else 60):\n            break\n",
+        "UpdateSourceArgs": "{{$FullRootDir}}amp-web.py",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Create Knowledge Base Server",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "# AMP: serves the knowledge base the official launcher would serve; exits once this instance's servers stop.\nparam([string]$Root, [int]$Port, [string]$ServerDir)\n$Root = [IO.Path]::GetFullPath($Root).TrimEnd('\\') + '\\'\n$ServerDir = [IO.Path]::GetFullPath($ServerDir).TrimEnd('\\') + '\\'\n$types = @{ '.html' = 'text/html; charset=utf-8'; '.js' = 'text/javascript'; '.css' = 'text/css'; '.json' = 'application/json'; '.map' = 'application/json'; '.txt' = 'text/plain'; '.webp' = 'image/webp'; '.png' = 'image/png'; '.svg' = 'image/svg+xml'; '.ico' = 'image/x-icon' }\n\nfunction Send-Response($client) {\n    $client.ReceiveTimeout = 5000; $client.SendTimeout = 10000\n    $stream = $client.GetStream()\n    $reader = New-Object IO.StreamReader($stream)\n    $method, $target = $reader.ReadLine() -split ' '\n    while ($reader.ReadLine()) { }\n    $path = [Uri]::UnescapeDataString(($target -split '\\?')[0])\n    $file = $null\n    if ($path -eq '/knowledge' -or $path.StartsWith('/knowledge/')) {\n        $file = [IO.Path]::GetFullPath($Root + $path.Substring(10).TrimStart('/').Replace('/', '\\'))\n        # site routes like /whats-new are client-side\n        if (-not $file.StartsWith($Root) -or -not [IO.File]::Exists($file)) { $file = $Root + 'index.html' }\n    }\n    if ($file) {\n        $code = '200 OK'; $body = [IO.File]::ReadAllBytes($file)\n        $type = $types[[IO.Path]::GetExtension($file).ToLower()]; if (-not $type) { $type = 'application/octet-stream' }\n    } else {\n        $code = '404 Not Found'; $body = [Text.Encoding]::UTF8.GetBytes('Not found'); $type = 'text/plain'\n    }\n    $head = [Text.Encoding]::ASCII.GetBytes(\"HTTP/1.1 $code`r`nContent-Type: $type`r`nContent-Length: $($body.Length)`r`nConnection: close`r`n`r`n\")\n    $stream.Write($head, 0, $head.Length)\n    if ($method -ne 'HEAD') { $stream.Write($body, 0, $body.Length) }\n}\n\nfunction Test-ServersRunning {\n    [bool](Get-Process ShardsServer, ClusterServer -ErrorAction SilentlyContinue | Where-Object { $_.Path -and $_.Path.StartsWith($ServerDir, 'OrdinalIgnoreCase') })\n}\n\n$listener = $null\nfor ($i = 0; $i -lt 30 -and -not $listener; $i++) {\n    try { $l = New-Object Net.Sockets.TcpListener([Net.IPAddress]::Any, $Port); $l.Start(); $listener = $l } catch { Start-Sleep 1 }\n}\nif (-not $listener) { Write-Output \"[AMP] Knowledge base port $Port is in use\"; exit 1 }\nWrite-Output \"[AMP] Knowledge base serving on port $Port\"\n$seen = $false; $misses = 0; $next = [DateTime]::UtcNow\nwhile ($true) {\n    if ($listener.Pending()) {\n        $client = $listener.AcceptTcpClient()\n        try { Send-Response $client } catch { } finally { $client.Close() }\n        continue\n    }\n    if ([DateTime]::UtcNow -ge $next) {\n        $next = [DateTime]::UtcNow.AddSeconds(2)\n        if (Test-ServersRunning) { $seen = $true; $misses = 0 }\n        elseif (++$misses -ge $(if ($seen) { 3 } else { 60 })) { break }\n    }\n    Start-Sleep -Milliseconds 50\n}\n$listener.Stop()\n",
+        "UpdateSourceArgs": "{{$FullRootDir}}amp-web.ps1",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Start Knowledge Base Server",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "python3",
+        "UpdateSourceArgs": "\"{{$FullRootDir}}amp-web.py\" \"{{$FullRootDir}}3976640/wwwroot/knowledge\" {{$KnowledgePort}} \"{{$FullRootDir}}3976640/server\"",
+        "RunInBackground": true,
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Start Knowledge Base Server",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}amp-web.ps1\" -Root \"{{$FullRootDir}}3976640\\wwwroot\\knowledge\" -Port {{$KnowledgePort}} -ServerDir \"{{$FullRootDir}}3976640\\server\"",
+        "RunInBackground": true,
+        "SkipOnFailure": true
     }
 ]
