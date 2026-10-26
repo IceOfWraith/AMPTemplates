@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 3000,
+        "Ref": "GamePort",
+        "Name": "Game Port",
+        "Description": "UDP port players connect to"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 27015,
+        "Ref": "QueryPort",
+        "Name": "Steam Query Port",
+        "Description": "UDP port for the Steam server browser. Only used when the server is listed"
+    }
+]

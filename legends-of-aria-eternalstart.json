@@ -1,0 +1,58 @@
+[
+    {
+        "UpdateStageName": "Create Stop Request Directory",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}tmp/luaexec",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Remove Stale Stop Request",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"rm -f \\\"{{$FullBaseDir}}tmp/luaexec/amp-stop.request\\\" >/dev/null 2>&1\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Remove Stale Stop Request",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C del /Q /F \"{{$FullBaseDir}}tmp\\luaexec\\amp-stop.request\" > NUL 2>&1",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Collapse Empty Config Values",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"sed -i -z -E 's#<([A-Za-z]+)>[[:space:]]*</\\1>#<\\1 />#g' \\\"{{$FullBaseDir}}ClusterConfig.xml\\\"\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Collapse Empty Config Values",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -Command \"$f='{{$FullBaseDir}}ClusterConfig.xml'; if (Test-Path $f) { [IO.File]::WriteAllText($f, ([IO.File]::ReadAllText($f) -replace '<([A-Za-z]+)>\\s*</\\1>','<$1 />')) }\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Copy Steam Client Libraries",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C for %F in (steamclient64.dll tier0_s64.dll vstdlib_s64.dll) do copy /Y \"{{$FullRootDir}}%F\" \"{{$FullRootDir}}3976640\\server\" > NUL 2>&1",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Create Stop Script",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "ShutdownServer()\n",
+        "UpdateSourceArgs": "{{$FullBaseDir}}tmp/amp-stop.lua",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    }
+]

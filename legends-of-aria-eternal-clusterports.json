@@ -1,0 +1,24 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 5001,
+        "Ref": "ClusterPort",
+        "Name": "Cluster Port",
+        "Description": "UDP port players connect to. The cluster then hands each player to a region"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 3000,
+        "Range": 19,
+        "Ref": "RegionPorts",
+        "Name": "Region Ports",
+        "Description": "UDP port range for the regions. Each region listens on the first port plus its ServerIndex, so every ServerIndex in ClusterConfig.xml must be lower than the range size"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 27015,
+        "Ref": "QueryPort",
+        "Name": "Steam Query Port",
+        "Description": "UDP port for the Steam server browser. Only used when the cluster is listed"
+    }
+]

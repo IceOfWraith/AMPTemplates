@@ -1,0 +1,44 @@
+[
+    {
+        "UpdateStageName": "Collapse Empty Config Values",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"sed -i -z -E 's#<([A-Za-z]+)>[[:space:]]*</\\1>#<\\1 />#g' \\\"{{$FullBaseDir}}ClusterConfig.xml\\\"\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Collapse Empty Config Values",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -Command \"$f='{{$FullBaseDir}}ClusterConfig.xml'; if (Test-Path $f) { [IO.File]::WriteAllText($f, ([IO.File]::ReadAllText($f) -replace '<([A-Za-z]+)>\\s*</\\1>','<$1 />')) }\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Copy Steam Client Libraries",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C for %F in (steamclient64.dll tier0_s64.dll vstdlib_s64.dll) do copy /Y \"{{$FullRootDir}}%F\" \"{{$FullRootDir}}3976640\\server\" > NUL 2>&1",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Create Cluster Launch Script",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "#!/bin/bash\n# AMP cluster wrapper: ClusterServer plus one ShardsServer per <Region> in ClusterConfig.xml.\n# A region that dies makes the cluster panic and exit, so the whole set ends together and AMP restarts it.\ncd \"$(dirname \"$0\")\" || exit 1\nsrv=../3976640/server\nmapfile -t regions < <(sed 's/<!--.*-->//g' ClusterConfig.xml | grep -o '<Region [^>]*' | grep -o ' Address=\"[^\"]*\"' | cut -d'\"' -f2)\nrm -f amp-stop.flag tmp/luaexec/amp-stop.request\n\"$srv/ClusterServer\" & cluster=$!\nsleep 3\nfor r in \"${regions[@]}\"; do \"$srv/ShardsServer\" \"$r\" & done\nstopping=0\nwhile kill -0 \"$cluster\" 2>/dev/null; do\n    if [ \"$stopping\" = 0 ] && [ -f amp-stop.flag ]; then\n        stopping=1\n        rm -f amp-stop.flag\n        mkdir -p tmp/luaexec\n        echo 'ShutdownServer()' > tmp/amp-stop.lua\n        echo '{\"requestId\":\"amp-stop\",\"luaFilePath\":\"tmp/amp-stop.lua\"}' > tmp/luaexec/amp-stop.request\n        echo '[AMP] Stop requested, saving cluster'\n    fi\n    sleep 1\ndone\nfor _ in $(seq 60); do [ -z \"$(jobs -pr)\" ] && break; sleep 1; done\nkill $(jobs -pr) 2>/dev/null\nwait\n",
+        "UpdateSourceArgs": "{{$FullBaseDir}}amp-cluster.sh",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Cluster Launch Script",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "# AMP cluster wrapper: ClusterServer plus one ShardsServer per <Region> in ClusterConfig.xml.\n# A region that dies makes the cluster panic and exit, so the whole set ends together and AMP restarts it.\nSet-Location $PSScriptRoot\n$srv = Join-Path $PSScriptRoot '..\\3976640\\server'\n$regions = @(([xml](Get-Content -Raw ClusterConfig.xml)).ClusterConfig.Region | ForEach-Object { $_.Address })\nfunction Start-Shard($exe, $arg) {\n    $p = @{ FilePath = (Join-Path $srv $exe); WorkingDirectory = $PSScriptRoot; NoNewWindow = $true; PassThru = $true }\n    if ($arg) { $p.ArgumentList = $arg }\n    Start-Process @p\n}\nRemove-Item amp-stop.flag, tmp\\luaexec\\amp-stop.request -ErrorAction SilentlyContinue\n$cluster = Start-Shard 'ClusterServer.exe'\nStart-Sleep 3\n$shards = @(foreach ($r in $regions) { Start-Shard 'ShardsServer.exe' $r })\n$stopping = $false\nwhile (-not $cluster.HasExited) {\n    if (-not $stopping -and (Test-Path amp-stop.flag)) {\n        $stopping = $true\n        Remove-Item amp-stop.flag -ErrorAction SilentlyContinue\n        New-Item -ItemType Directory -Force tmp\\luaexec | Out-Null\n        [IO.File]::WriteAllText(\"$PSScriptRoot\\tmp\\amp-stop.lua\", 'ShutdownServer()')\n        [IO.File]::WriteAllText(\"$PSScriptRoot\\tmp\\luaexec\\amp-stop.request\", '{\"requestId\":\"amp-stop\",\"luaFilePath\":\"tmp/amp-stop.lua\"}')\n        Write-Output '[AMP] Stop requested, saving cluster'\n    }\n    Start-Sleep 1\n}\nforeach ($p in $shards) { if (-not $p.WaitForExit(60000)) { $p.Kill() } }\n",
+        "UpdateSourceArgs": "{{$FullBaseDir}}amp-cluster.ps1",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    }
+]
