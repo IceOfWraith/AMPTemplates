@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": 3724,
+        "Ref": "AuthPort",
+        "Name": "Auth Port",
+        "Description": "Port for client logins and the realm list (authserver)"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": 8085,
+        "Ref": "WorldPort",
+        "Name": "World Port",
+        "Description": "Port for game traffic (worldserver)"
+    }
+]
