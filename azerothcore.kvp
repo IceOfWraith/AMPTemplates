@@ -1,4 +1,4 @@
-Meta.DisplayName=AzerothCore
+Meta.DisplayName=World of Warcraft (AzerothCore)
 Meta.Description=AzerothCore World of Warcraft 3.3.5a (Wrath of the Lich King) server emulator, built from source with a bundled MySQL database
 Meta.OS=Linux
 Meta.AarchSupport=NotSupported
@@ -27,7 +27,7 @@ Meta.BreakingReleaseNotes=
 Meta.AppConfigId=0d217665-cd9b-4bca-8640-b2da3cd6c09b
 Meta.ImportableExtensions=[".conf"]
 Meta.AppIsMultiIPAware=False
-App.DisplayName=AzerothCore
+App.DisplayName=World of Warcraft (AzerothCore)
 App.RootDir=./azerothcore/
 App.BaseDirectory=./azerothcore/
 App.SteamWorkshopDownloadLocation=
