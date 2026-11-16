@@ -108,7 +108,7 @@
         "DisplayName": "Server MOTD",
         "Category": "Teeworlds:stadia_controller",
         "Subcategory": "Server:dns:1",
-        "Description": "Sets the server message of the day (MOTD), shown in server info and when joining a server",
+        "Description": "Sets the server message of the day (MOTD), shown in server info and when joining a server. Example MOTDs: https://github.com/octocat/Hello-World",
         "Keywords": "motd,message,day,sv_motd",
         "FieldName": "sv_motd",
         "InputType": "text",
