@@ -1,4 +1,4 @@
-Meta.DisplayName=Teeworlds [bot]
+Meta.DisplayName=Teeworlds
 Meta.Description=Teeworlds Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -22,9 +22,9 @@ Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=4
-Meta.ReleaseNotes=Default client limit per IP lowered from 12 to 4.
+Meta.ReleaseNotes=Default client limit per IP lowered from 12 to 4. That's a stupid thing to put in a comment.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=838c7738-cb07-45cf-9988-2420462800e0
+Meta.AppConfigId=c4021427-e349-48ef-9afe-99b3bc3560b3
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Teeworlds
