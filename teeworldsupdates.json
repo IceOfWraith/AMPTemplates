@@ -48,7 +48,7 @@
         "UpdateStageName": "Serverconfig.cfg File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/teeworldsserverconfig.cfg",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/165ba850219f4dcba9146cda2baea26802e04e57/teeworldsserverconfig.cfg",
         "UpdateSourceArgs": "serverconfig.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}user",
         "OverwriteExistingFiles": false,
