@@ -1,4 +1,4 @@
-Meta.DisplayName=Teeworlds
+Meta.DisplayName=Teeworlds [bot]
 Meta.Description=Teeworlds Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=3
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=c4021427-e349-48ef-9afe-99b3bc3560b3
+Meta.AppConfigId=797dde41-73ee-4c07-9473-5174384b7f7e
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Teeworlds
