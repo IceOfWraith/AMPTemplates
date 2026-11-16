@@ -194,8 +194,8 @@
         "FieldName": "sv_max_clients_per_ip",
         "InputType": "number",
         "ParamFieldName": "sv_max_clients_per_ip",
-        "DefaultValue": "12",
-        "Placeholder": "12",
+        "DefaultValue": "4",
+        "Placeholder": "4",
         "Suffix": "clients",
         "EnumValues": {}
     },
@@ -425,7 +425,7 @@
         "DisplayName": "External Console Auth Timeout",
         "Category": "Teeworlds:stadia_controller",
         "Subcategory": "Server:dns:1",
-        "Description": "Sets the before the external console authentication times out",
+        "Description": "Sets the time before the external console authentication times out",
         "Keywords": "external,console,auth,timeout,ec_auth_timeout",
         "FieldName": "ec_auth_timeout",
         "InputType": "number",
@@ -457,6 +457,21 @@
         "FieldName": "logfile_timestamp",
         "InputType": "checkbox",
         "ParamFieldName": "logfile_timestamp",
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Abort TCP Connection On Close",
+        "Category": "Teeworlds:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If set, the server will abort the TCP connection on close",
+        "Keywords": "abort,tcp,connection,close,sv_abort_on_close",
+        "FieldName": "net_tcp_abort_on_close",
+        "InputType": "checkbox",
+        "ParamFieldName": "net_tcp_abort_on_close",
         "DefaultValue": "0",
         "EnumValues": {
             "False": "0",
