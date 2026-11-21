@@ -1,9 +1,0 @@
-[
-    {
-        "UpdateStageName": "Once Human Download",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "SteamCMD",
-        "UpdateSourceData": "2139460",
-        "SkipOnFailure": false
-    }
-]
