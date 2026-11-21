@@ -1,4 +1,4 @@
-Meta.DisplayName=Astro Colony
+Meta.DisplayName=Astro Colony [bot]
 Meta.Description=Astro Colony Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=4
 Meta.ReleaseNotes=Linux: use the Steamworks SDK steamclient so the server registers with Steam before the game's 15 second timeout, and flush console output so AMP sees the server become ready. The console is now read-only (the server never accepted commands).
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=27e85739-18a4-4613-ab70-5a185d32eb4a
+Meta.AppConfigId=342f7b93-cfb7-4340-8d98-96f920af929c
 App.DisplayName=Astro Colony
 App.RootDir=./astro-colony/
 App.BaseDirectory=./astro-colony/2662210/
