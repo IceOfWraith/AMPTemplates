@@ -1,4 +1,4 @@
-Meta.DisplayName=Once Human
+Meta.DisplayName=Once Human [bot]
 Meta.Description=Once Human Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=6f1d3b52-9a4e-4c0b-8e7a-2d5c1f0b9e41
+Meta.AppConfigId=ad383237-af63-4131-9bee-b0cc92563ce0
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Once Human
