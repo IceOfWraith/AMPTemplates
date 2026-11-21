@@ -1,4 +1,4 @@
-Meta.DisplayName=Farming Simulator 25
+Meta.DisplayName=Farming Simulator 25 [bot]
 Meta.Description=Farming Simulator 25 Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=True
 Meta.ConfigVersion=4
 Meta.ReleaseNotes=Optional GIANTS DLC installation using named product keys and direct HTTPS or uploaded EXE/IMG installers. Run Update while stopped, then start. Select installed DLCs for the savegame in the GIANTS web interface. Pin the current Proton release before updating an instance with managed DLC activation data.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=0245cfc5-5fb5-4919-9cb8-c51cccbe31ae
+Meta.AppConfigId=fd6d408f-2dce-42a9-b1ce-8f1007242a00
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Farming Simulator 25
