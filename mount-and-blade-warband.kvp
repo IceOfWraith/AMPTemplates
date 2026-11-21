@@ -1,4 +1,4 @@
-Meta.DisplayName=Mount & Blade: Warband
+Meta.DisplayName=Mount & Blade: Warband [bot]
 Meta.Description=Mount & Blade: Warband Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=f32347a8-0802-4cdb-88fb-0288619b8510
+Meta.AppConfigId=18056005-f700-4612-a3ec-e1fd26556daa
 Meta.ImportableExtensions=[".txt"]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Mount & Blade: Warband
