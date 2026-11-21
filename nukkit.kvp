@@ -1,4 +1,4 @@
-Meta.DisplayName=Nukkit
+Meta.DisplayName=Nukkit [bot]
 Meta.Description=Cloudburst Nukkit Server for Minecraft Bedrock
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=7
 Meta.ReleaseNotes=Java is now downloaded into the instance when Java Version is set to Specific instance version
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=04b2978f-1595-41d2-81c1-4d5e823b236b
+Meta.AppConfigId=2608c89e-bdca-4957-aee1-ea4802b31216
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Nukkit
