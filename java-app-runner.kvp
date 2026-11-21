@@ -1,4 +1,4 @@
-Meta.DisplayName=Java App Runner [bot]
+Meta.DisplayName=Java App Runner
 Meta.Description=Java App Runner
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -22,9 +22,9 @@ Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=9
-Meta.ReleaseNotes=Added "single file, not extracted" options for GitHub release and Download URL so a .jar can be downloaded without AMP trying to extract it
+Meta.ReleaseNotes=Added "single file, not extracted" options for GitHub release and Download URL so a .jar can be downloaded without AMP trying to extract it. Fixed the instance Java download so it runs when "Specific instance version" is selected
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=4df8dd59-a874-4bfa-be0e-df18099ac682
+Meta.AppConfigId=521c9ad3-f8cd-40b2-9026-9122f9490406
 App.DisplayName=Java App Runner
 App.RootDir=./java-app-runner/
 App.BaseDirectory=./java-app-runner/
