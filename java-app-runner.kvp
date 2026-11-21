@@ -1,4 +1,4 @@
-Meta.DisplayName=Java App Runner
+Meta.DisplayName=Java App Runner [bot]
 Meta.Description=Java App Runner
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=8
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=521c9ad3-f8cd-40b2-9026-9122f9490406
+Meta.AppConfigId=b2b004da-c449-4663-9973-ca9afc13d567
 App.DisplayName=Java App Runner
 App.RootDir=./java-app-runner/
 App.BaseDirectory=./java-app-runner/
