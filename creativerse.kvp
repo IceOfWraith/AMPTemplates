@@ -1,4 +1,4 @@
-Meta.DisplayName=Creativerse [bot]
+Meta.DisplayName=Creativerse
 Meta.Description=Creativerse Dedicated Server
 Meta.OS=Windows, Linux
 Meta.Arch=x86_64
@@ -21,7 +21,7 @@ Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=6
 Meta.ReleaseNotes=Adds a World Owner SteamID setting that writes WorldOwnerSteamId, so the world file no longer needs editing by hand. Players joining and leaving now show in AMP. The query port now opens TCP as well as UDP, and the web admin port is now TCP.
-Meta.AppConfigId=dfb264ae-fd72-4164-bb8d-824cb5cfb627
+Meta.AppConfigId=34fc091c-f0bf-4a36-a792-1e05928ce816
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Creativerse
 App.RootDir=./creativerse/

@@ -118,7 +118,7 @@
         "FieldName": "SteamID",
         "InputType": "text",
         "IsFlagArgument": false,
-        "ParamFieldName": "$.WorldOwnerSteamId",
+        "ParamFieldName": "SteamID",
         "IncludeInCommandLine": false,
         "EnumValues": {},
         "DefaultValue": "",

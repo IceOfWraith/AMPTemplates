@@ -27,10 +27,26 @@
         "UpdateStageName": "World Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/b88b4f674b44c5c1d5285ead970a8a9b0eadf4b9/creativerseconfig_world.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/creativerseconfig_world.json",
         "UpdateSourceArgs": "config_world.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}PlayfulCorp/CreativerseServer/worlddata/worlds/{{worldId}}/",
         "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "World Owner SteamID",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"sed -i -E 's/(WorldOwnerSteamId.: *)[^,]*/\\1{{SteamID}}/' '{{$FullBaseDir}}PlayfulCorp/CreativerseServer/worlddata/worlds/{{worldId}}/config_world.json'\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "World Owner SteamID",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -Command \"(Get-Content -Raw '{{$FullBaseDir}}PlayfulCorp/CreativerseServer/worlddata/worlds/{{worldId}}/config_world.json') -replace '(WorldOwnerSteamId.:\\s*)[^,\\r\\n]*', '${1}{{SteamID}}' | Set-Content -NoNewline '{{$FullBaseDir}}PlayfulCorp/CreativerseServer/worlddata/worlds/{{worldId}}/config_world.json'\"",
         "SkipOnFailure": false
     }
 ]
