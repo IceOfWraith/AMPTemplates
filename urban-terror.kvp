@@ -1,4 +1,4 @@
-Meta.DisplayName=Urban Terror
+Meta.DisplayName=Urban Terror [bot]
 Meta.Description=Urban Terror 4.3 Dedicated Server
 Meta.OS=Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=7bd541dc-7f95-49e7-8c54-66b17727e45a
+Meta.AppConfigId=df233b7a-e9da-4c36-ac48-89541ca12740
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Urban Terror
