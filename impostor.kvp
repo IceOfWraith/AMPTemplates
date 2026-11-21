@@ -1,4 +1,4 @@
-Meta.DisplayName=Impostor - Among Us Server
+Meta.DisplayName=Impostor - Among Us Server [bot]
 Meta.Description=Impostor Dedicated Server - an open source private server implementation for Among Us
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -23,7 +23,7 @@ Meta.ConfigVersion=6
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=651bda41-8294-4964-a6b8-e7a8dff4c310
+Meta.AppConfigId=00c34231-8423-4c36-ac51-8ce8d95dd74f
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Impostor
 App.RootDir=./impostor/
