@@ -37,20 +37,6 @@
     {
         "UpdateStageName": "App Download",
         "UpdateSourcePlatform": "All",
-        "UpdateSource": "GithubRelease",
-        "UpdateSourceArgs": "{{DownloadSource}}",
-        "UpdateSourceData": "{{DownloadFilename}}",
-        "UpdateSourceVersion": "{{DownloadVersion}}",
-        "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": true,
-        "UpdateSourceConditionSetting": "DownloadType",
-        "UpdateSourceConditionValue": "GithubReleaseFile",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "App Download",
-        "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "{{DownloadSource}}",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
@@ -59,18 +45,6 @@
         "DeleteAfterExtract": true,
         "UpdateSourceConditionSetting": "DownloadType",
         "UpdateSourceConditionValue": "DownloadURL",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "App Download",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "{{DownloadSource}}",
-        "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": true,
-        "UpdateSourceConditionSetting": "DownloadType",
-        "UpdateSourceConditionValue": "DownloadURLFile",
         "SkipOnFailure": false
     },
     {
