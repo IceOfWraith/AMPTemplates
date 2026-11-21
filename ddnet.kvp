@@ -1,4 +1,4 @@
-Meta.DisplayName=DDNet
+Meta.DisplayName=DDNet [bot]
 Meta.Description=DDraceNetwork (DDNet) Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=67640d01-71cf-4d30-957f-5a4c5aa8665f
+Meta.AppConfigId=14cad723-9d38-4fce-a111-4d69fbcde70b
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=DDNet
