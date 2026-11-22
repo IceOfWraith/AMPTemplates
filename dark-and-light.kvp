@@ -1,4 +1,4 @@
-Meta.DisplayName=Dark and Light
+Meta.DisplayName=Dark and Light [bot]
 Meta.Description=Dark and Light (2017) Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -22,7 +22,7 @@ Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
-Meta.AppConfigId=7f3c2a9e-4d1b-4e8a-9c55-2b6f1d0e8a41
+Meta.AppConfigId=bc135913-7e37-476b-aa67-3933655c4715
 App.DisplayName=Dark and Light
 App.RootDir=./dark-and-light/
 App.BaseDirectory=./dark-and-light/630230/
