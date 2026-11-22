@@ -1,4 +1,4 @@
-Meta.DisplayName=Satisfactory
+Meta.DisplayName=Satisfactory [bot]
 Meta.Description=Satisfactory Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=8
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=c9eabe8e-5219-4c16-8692-14740d5f8e92
+Meta.AppConfigId=07a28a05-23c6-449b-8f06-ef51d4df1027
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Satisfactory
