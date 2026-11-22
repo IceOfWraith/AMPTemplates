@@ -1,4 +1,4 @@
-Meta.DisplayName=LEGO Universe (Darkflame Universe)
+Meta.DisplayName=LEGO Universe (Darkflame Universe) [bot]
 Meta.Description=Darkflame Universe server emulator for LEGO Universe. Requires your own LEGO Universe client files
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unsupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=True
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=5b0e8a52-6f0f-4f43-9a52-3d3c0b5c2d71
+Meta.AppConfigId=42a6eb3f-a812-43ef-a112-44b50c10fdef
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=LEGO Universe (Darkflame Universe)
