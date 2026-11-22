@@ -24,12 +24,36 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "7-Zip Download",
+        "UpdateStageDescription": "Downloads the official 7-Zip tools used to unpack the AssaultCube installer",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/ip7z/7zip/releases/download/26.06/7zr.exe",
+        "UpdateSourceArgs": "7zr.exe",
+        "UpdateSourceTarget": "ac-tools",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "7-Zip Download",
+        "UpdateStageDescription": "Downloads the official 7-Zip tools used to unpack the AssaultCube installer",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/ip7z/7zip/releases/download/26.06/7z2606-x64.exe",
+        "UpdateSourceArgs": "7z-x64.exe",
+        "UpdateSourceTarget": "ac-tools",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "AssaultCube Installation",
-        "UpdateStageDescription": "Runs the installer silently into a temporary folder, then copies it into the server folder without replacing existing config files",
+        "UpdateStageDescription": "Unpacks the installer into a temporary folder, then copies it into the server folder without replacing existing config files",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C set __COMPAT_LAYER=RunAsInvoker& rd /S /Q \"{{$FullRootDir}}ac-install\" > NUL 2>&1 & for %f in (\"{{$FullRootDir}}ac-download\\AssaultCube_v*.exe\") do (start \"\" /wait \"%f\" /S /D={{$FullRootDir}}ac-install) & if not exist \"{{$FullRootDir}}ac-install\\bin_win32\\ac_server.exe\" (echo AssaultCube installer did not produce the server executable & exit /b 1) else (robocopy \"{{$FullRootDir}}ac-install\\config\" \"{{$FullBaseDir}}config\" /E /XC /XN /XO /NFL /NDL /NJH /NJS /NP > NUL & robocopy \"{{$FullRootDir}}ac-install\" \"{{$FullBaseDir}}.\" /E /XD \"{{$FullRootDir}}ac-install\\config\" /XF Uninstall.exe /NFL /NDL /NJH /NJS /NP > NUL & rd /S /Q \"{{$FullRootDir}}ac-install\" \"{{$FullRootDir}}ac-download\" > NUL 2>&1 & if not exist \"{{$FullBaseDir}}bin_win32\\ac_server.exe\" (exit /b 1) else (echo AssaultCube installed/updated & exit /b 0))",
+        "UpdateSourceArgs": "/C cd /D \"{{$FullRootDir}}.\" & (if not exist ac-tools\\7z.exe ac-tools\\7zr.exe x -y -oac-tools ac-tools\\7z-x64.exe 7z.exe 7z.dll > NUL) & rd /S /Q ac-install > NUL 2>&1 & for %f in (ac-download\\AssaultCube_v*.exe) do (ac-tools\\7z.exe x -y -oac-install -x!$PLUGINSDIR \"%f\" > NUL) & if not exist ac-install\\bin_win32\\ac_server.exe (echo AssaultCube installer could not be unpacked & exit /b 1) else (robocopy ac-install\\config \"{{$FullBaseDir}}config\" /E /XC /XN /XO /NFL /NDL /NJH /NJS /NP > NUL & robocopy ac-install \"{{$FullBaseDir}}.\" /E /XD config /XF *.exe.nsis /NFL /NDL /NJH /NJS /NP > NUL & rd /S /Q ac-install ac-download > NUL 2>&1 & if not exist \"{{$FullBaseDir}}bin_win32\\ac_server.exe\" (exit /b 1) else (echo AssaultCube installed/updated & exit /b 0))",
         "SkipOnFailure": false
     },
     {
