@@ -23,17 +23,6 @@
     },
     {
         "UpdateStageName": "Server Binary Download",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://github.com/nzp-team/fteqw/releases/download/bleeding-edge/pc-nzp-win64-nosdl.zip",
-        "UpdateSourceTarget": "./",
-        "UnzipUpdateSource": true,
-        "OverwriteExistingFiles": true,
-        "DeleteAfterExtract": true,
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Server Binary Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://github.com/nzp-team/fteqw/releases/download/bleeding-edge/pc-nzp-linux64-nosdl.zip",
