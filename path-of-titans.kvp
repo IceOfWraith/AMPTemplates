@@ -1,4 +1,4 @@
-Meta.DisplayName=Path of Titans
+Meta.DisplayName=Path of Titans [bot]
 Meta.Description=Path of Titans Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=10
 Meta.ReleaseNotes=New Mods setting that writes the [PathOfTitans.Mods] section of GameUserSettings.ini, so mods can be enabled from AMP
 Meta.BreakingReleaseNotes=AMP now rewrites GameUserSettings.ini on every start. If you edited that file by hand (e.g. EnabledMods lines), copy its contents into the new Mods setting before starting the server
-Meta.AppConfigId=b7a9a499-80a5-4f04-b781-92c11f72ed9a
+Meta.AppConfigId=94e44c84-c7f8-495c-afda-41df7c1c382c
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Path of Titans
