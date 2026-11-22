@@ -1,4 +1,4 @@
-Meta.DisplayName=AssaultCube
+Meta.DisplayName=AssaultCube [bot]
 Meta.Description=AssaultCube Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=7d1c3e52-9a4b-4f0e-b6c8-2e5a91d4f377
+Meta.AppConfigId=eb39221c-b9de-4c17-89fe-618171910ff8
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=AssaultCube
