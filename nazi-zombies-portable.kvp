@@ -1,4 +1,4 @@
-Meta.DisplayName=Nazi Zombies: Portable [bot]
+Meta.DisplayName=Nazi Zombies: Portable
 Meta.Description=Nazi Zombies: Portable (NZ:P) co-op dedicated server, using the NZ:P team's FTEQW engine build
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=f1b9ad16-8fc7-4d70-b66b-7e0f0164b0c3
+Meta.AppConfigId=ea25685e-715d-4a89-a776-3a692ef5ab34
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Nazi Zombies: Portable
 App.RootDir=./nazi-zombies-portable/
@@ -84,7 +84,7 @@ App.WakeupMode=Any
 App.ApplicationReadyMode=RegexMatch
 Console.FilterMatchRegex=
 Console.FilterMatchReplacement=
-Console.ThrowawayMessageRegex=^$
+Console.ThrowawayMessageRegex=^Rcon from .+$
 Console.AppReadyRegex=^======== Nazi Zombies Portable Initialized ========$
 Console.UserJoinRegex=^$
 Console.UserLeaveRegex=^$
