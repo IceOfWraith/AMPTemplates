@@ -1,4 +1,4 @@
-Meta.DisplayName=Project Zomboid
+Meta.DisplayName=Project Zomboid [bot]
 Meta.Description=Project Zomboid Dedicated Server
 Meta.OS=Windows, Linux
 Meta.Arch=x86_64
@@ -19,7 +19,7 @@ Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=8
-Meta.AppConfigId=c2b4163c-cf2a-4d67-b6bb-5fee166b4d33
+Meta.AppConfigId=312fc668-2558-486b-bfea-f04ce8aeb0d0
 App.DisplayName=Project Zomboid
 App.RootDir=./project-zomboid/
 App.BaseDirectory=./project-zomboid/380870/
