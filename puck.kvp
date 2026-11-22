@@ -1,4 +1,4 @@
-Meta.DisplayName=Puck
+Meta.DisplayName=Puck [bot]
 Meta.Description=Puck Dedicated Server
 Meta.OS=Linux, Windows
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=5
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=f0b1a8cd-da69-4907-a844-a191d7587e21
+Meta.AppConfigId=e93f270f-4dd0-4393-9e70-c13ec4ff42b5
 Meta.ImportableExtensions=[]
 App.DisplayName=Puck
 App.RootDir=./puck/

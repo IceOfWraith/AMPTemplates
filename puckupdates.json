@@ -21,7 +21,7 @@
         "UpdateStageName": "Server_config.json Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/puckserver_config.json",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/7ee1c9e2cfedf81f541ba2f45f5ef9826920c254/puckserver_config.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "server_config.json",
         "OverwriteExistingFiles": false,
