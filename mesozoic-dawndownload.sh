@@ -73,8 +73,9 @@ done
 
 [ -x "$WORK/root/app/GameServ.x86_64" ] || { echo "Server executable not found in image"; exit 1; }
 
-# Remove the old game binaries and data, keep server saves, mods and logs.
-rm -rf "$DEST/GameServ_Data" "$DEST/GameServ.x86_64" "$DEST/GameAssembly.so" "$DEST/UnityPlayer.so"
+# Replace the game code and bundled assets. Everything else in GameServ_Data
+# (Database, Logs and any mods) is kept.
+rm -rf "$DEST/GameServ_Data/il2cpp_data" "$DEST/GameServ_Data/Plugins" "$DEST/GameServ_Data/StreamingAssets/aa"
 cp -a "$WORK/root/app/." "$DEST/"
 chmod +x "$DEST/GameServ.x86_64"
 echo "$LAYERSUM" > "$STAMP"
