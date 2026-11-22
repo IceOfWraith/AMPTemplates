@@ -1,4 +1,4 @@
-Meta.DisplayName=Monday Night Combat [bot]
+Meta.DisplayName=Monday Night Combat
 Meta.Description=Monday Night Combat Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=975f1364-12ac-4969-a0f2-943332379da1
+Meta.AppConfigId=9a70e50b-8a70-423f-87ad-58ce7780a318
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Monday Night Combat
@@ -36,7 +36,7 @@ App.ExecutableLinux=/usr/bin/wine
 App.WorkingDir=63220/Binaries/Win32
 App.LinuxCommandLineArgs="./MNCDS.exe"
 App.WindowsCommandLineArgs=
-App.CommandLineArgs={{$PlatformArgs}} server HostileLobby?game=HostileGame.HGameInfo_PreGameLobby?bIsLanMatch=False?bIsDedicated=True?ServerDescription="{{ServerDescription}}"?bAllowJuicePurch={{AllowJuicePurch}}?bAllowBotPurch={{AllowBotPurch}}?bAllowHazards={{AllowHazards}}?bAllowMascot={{AllowMascot}}?bAllowCustomClass={{AllowCustomClass}}?bAllowChangeClass={{AllowChangeClass}}?bForceRndClass={{ForceRndClass}}?bAllowTeamSelect={{AllowTeamSelect}}?bAutoBalance={{AutoBalance}}?MatchDuration={{MatchDuration}}?OTDuration={{OTDuration}}?ClassLimitAssault={{ClassLimitAssault}}?ClassLimitTank={{ClassLimitTank}}?ClassLimitSupport={{ClassLimitSupport}}?ClassLimitAssassin={{ClassLimitAssassin}}?ClassLimitGunner={{ClassLimitGunner}}?ClassLimitSniper={{ClassLimitSniper}}?MaxStarRating={{MaxStarRating}}?MinNumToStart={{MinNumToStart}} -Port={{$GamePort}} -MultiHome={{$ApplicationIPBinding}} -ServerInstance=0 -log=DedicatedServer.log -STEAM_DEDSERVER -seekfreeloadingserver -nohomedir
+App.CommandLineArgs={{$PlatformArgs}} server HostileLobby?game=HostileGame.HGameInfo_PreGameLobby?bIsLanMatch=False?bIsDedicated=True?ServerDescription="{{ServerDescription}}"?bAllowJuicePurch={{AllowJuicePurch}}?bAllowBotPurch={{AllowBotPurch}}?bAllowHazards={{AllowHazards}}?bAllowMascot={{AllowMascot}}?bAllowCustomClass={{AllowCustomClass}}?bAllowChangeClass={{AllowChangeClass}}?bForceRndClass={{ForceRndClass}}?bAllowTeamSelect={{AllowTeamSelect}}?bAutoBalance={{AutoBalance}}?MatchDuration={{MatchDuration}}?OTDuration={{OTDuration}}?ClassLimitAssault={{ClassLimitAssault}}?ClassLimitTank={{ClassLimitTank}}?ClassLimitSupport={{ClassLimitSupport}}?ClassLimitAssassin={{ClassLimitAssassin}}?ClassLimitGunner={{ClassLimitGunner}}?ClassLimitSniper={{ClassLimitSniper}}?MaxStarRating={{MaxStarRating}}?MinNumToStart={{MinNumToStart}} -Port={{$GamePort}} -MultiHome={{$ApplicationIPBinding}} -ServerInstance=0 -log=DedicatedServer.log -STEAM_DEDSERVER -seekfreeloadingserver -nohomedir -forcelogflush
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={"SteamAppId":"63200","WINEPREFIX":"{{$FullRootDir}}.wine","WINEARCH":"win64","WINEDEBUG":"-all"}
@@ -96,7 +96,7 @@ App.ApplicationReadyMode=RegexMatch
 Console.FilterMatchRegex=
 Console.FilterMatchReplacement=
 Console.ThrowawayMessageRegex=
-Console.AppReadyRegex=^(?:\[[\d\.]+\] )?Log: Bringing World .+ up for play .*$
+Console.AppReadyRegex=^Log: Bringing .+ up for play \(\d+\) at .+$
 Console.UserJoinRegex=^$
 Console.UserLeaveRegex=^$
 Console.UserChatRegex=^$
