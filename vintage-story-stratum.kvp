@@ -1,4 +1,4 @@
-Meta.DisplayName=Vintage Story (Stratum)
+Meta.DisplayName=Vintage Story (Stratum) [bot]
 Meta.Description=Vintage Story Dedicated Server running Stratum, a community performance and admin-tools fork of the vanilla server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -19,7 +19,7 @@ Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
-Meta.AppConfigId=ea018acb-d55a-424b-a4f8-aaeef94d2631
+Meta.AppConfigId=3c58e2f1-faca-4b72-9cdb-7a2ebe1211ac
 App.DisplayName=Vintage Story (Stratum)
 App.RootDir=./vintage-story-stratum/
 App.BaseDirectory=./vintage-story-stratum/
