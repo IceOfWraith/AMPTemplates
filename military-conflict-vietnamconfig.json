@@ -59,9 +59,22 @@
     "FieldName": "map",
     "InputType": "enum",
     "ParamFieldName": "map",
-    "DefaultValue": "MAPDEFAULT",
+    "DefaultValue": "mcv_camp",
     "EnumValues": {
-      "MAPDEFAULT": "x",
+      "mcv_bridge": "Bridge (Zombies)",
+      "mcv_camp": "Camp (default)",
+      "mcv_depot": "Depot",
+      "mcv_embassy": "Embassy",
+      "mcv_mansion": "Mansion (Zombies)",
+      "mcv_outpost": "Outpost",
+      "mcv_post": "Post",
+      "mcv_ruins": "Ruins (Zombies)",
+      "mcv_saigon": "Saigon",
+      "mcv_siege": "Siege",
+      "mcv_slums": "Slums",
+      "mcv_tower": "Tower (Zombies)",
+      "mcv_training": "Training",
+      "mcv_usns_card": "USNS Card",
       "{{CustomMap}}": "--Custom--"
     }
   },
@@ -76,6 +89,30 @@
     "ParamFieldName": "CustomMap",
     "DefaultValue": "",
     "EnumValues": {}
+  },
+  {
+    "DisplayName": "Game Mode",
+    "Category": "Military Conflict: Vietnam:stadia_controller",
+    "Subcategory": "Server:dns:1",
+    "Description": "Sets the game mode the server runs. Zombies needs a Zombies map (Bridge, Mansion, Ruins or Tower)",
+    "Keywords": "game,mode,type,game_type,game_mode",
+    "FieldName": "GameMode",
+    "InputType": "enum",
+    "ParamFieldName": "GameMode",
+    "DefaultValue": "+game_type 0 +game_mode 0",
+    "EnumValues": {
+      "+game_type 0 +game_mode 0": "Team Deathmatch (default)",
+      "+game_type 0 +game_mode 2": "Capture the Flag",
+      "+game_type 0 +game_mode 3": "Conquest",
+      "+game_type 0 +game_mode 4": "Deathmatch",
+      "+game_type 0 +game_mode 7": "Gun Game",
+      "+game_type 0 +game_mode 10": "Gun Game Deathmatch",
+      "+game_type 3 +game_mode 0": "PvE: Team Deathmatch",
+      "+game_type 3 +game_mode 2": "PvE: Capture the Flag",
+      "+game_type 3 +game_mode 3": "PvE: Conquest",
+      "+game_type 3 +game_mode 12": "PvE: Skirmish",
+      "+game_type 4 +game_mode 0": "Zombies"
+    }
   },
   {
     "DisplayName": "Player Limit",
