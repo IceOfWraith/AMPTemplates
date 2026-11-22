@@ -61,16 +61,16 @@
         "DisplayName": "Persistence",
         "Category": "Mosquitto:hub",
         "Subcategory": "Broker:settings:1",
-        "Description": "Saves retained messages, subscriptions and queued messages to the data folder so they survive a restart",
+        "Description": "Saves retained messages, subscriptions and queued messages to the data folder so they survive a restart. Uses the SQLite persistence plugin on Windows and the built-in database on Linux",
         "Keywords": "persistence,retained,database",
         "FieldName": "SaveBrokerState",
         "InputType": "checkbox",
         "ParamFieldName": "SaveBrokerState",
         "IncludeInCommandLine": false,
-        "DefaultValue": "true",
+        "DefaultValue": "",
         "EnumValues": {
-            "False": "false",
-            "True": "true"
+            "False": "#",
+            "True": ""
         }
     },
     {
