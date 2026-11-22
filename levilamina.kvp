@@ -1,4 +1,4 @@
-Meta.DisplayName=LeviLamina
+Meta.DisplayName=LeviLamina [bot]
 Meta.Description=LeviLamina Mod Loader for Minecraft Bedrock Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release. Installs LeviLamina and the matching Bedrock Dedicated Server with lip; on Linux, lip runs the server through Wine.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=43d87456-4783-4626-90e3-05a6d4ae70b9
+Meta.AppConfigId=e0f8a1fc-8f4b-4c5c-9892-309f2383d3ef
 Meta.ImportableExtensions=[]
 App.DisplayName=LeviLamina
 App.RootDir=./levilamina/
