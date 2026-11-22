@@ -62,6 +62,25 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "Maximum Players",
+        "Category": "Echoes of Elysium:sailing",
+        "Subcategory": "Server:dns:1",
+        "Description": "The maximum number of players that can be connected at the same time",
+        "Keywords": "max,players,connections,slots",
+        "FieldName": "$MaxUsers",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "64",
+        "IsFlagArgument": false,
+        "ParamFieldName": "$.maxConnections",
+        "IncludeInCommandLine": false,
+        "SkipIfEmpty": false,
+        "DefaultValue": "16",
+        "Placeholder": "16",
+        "Suffix": "players",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "All Players Are Admins",
         "Category": "Echoes of Elysium:sailing",
         "Subcategory": "Server:dns:1",

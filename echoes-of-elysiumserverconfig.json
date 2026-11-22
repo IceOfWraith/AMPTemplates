@@ -3,6 +3,7 @@
     "port": 33000,
     "name": "AMP Powered Echoes of Elysium Server",
     "password": "",
+    "maxConnections": 16,
     "allPlayersAdmin": false,
     "seed": "",
     "saveFreqMins": 5,
