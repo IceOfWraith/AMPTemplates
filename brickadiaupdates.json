@@ -18,7 +18,7 @@
         "UpdateStageName": "GameUserSettings.ini Download",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/brickadiagameusersettings.ini",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/0026ab7f1b40cdaf242a86d9c806f83bbd433541/brickadiagameusersettings.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}Data/Saved/Config/WindowsServer",
         "UpdateSourceArgs": "GameUserSettings.ini",
         "OverwriteExistingFiles": false
@@ -27,7 +27,7 @@
         "UpdateStageName": "GameUserSettings.ini Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/brickadiagameusersettings.ini",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/0026ab7f1b40cdaf242a86d9c806f83bbd433541/brickadiagameusersettings.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}Data/Saved/Config/LinuxServer",
         "UpdateSourceArgs": "GameUserSettings.ini",
         "OverwriteExistingFiles": false
