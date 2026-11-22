@@ -45,7 +45,7 @@
         "UpdateStageName": "Download Config File",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/pumpkin.toml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/ff50a25a2adfcafee8b01266e04730495f6e5c27/pumpkin.toml",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "pumpkin.toml",
         "SkipOnFailure": false,
