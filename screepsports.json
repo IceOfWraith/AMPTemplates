@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": 21025,
+        "Ref": "ServerPort",
+        "Name": "Server Port",
+        "Description": "Port for game client and web traffic"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": 21026,
+        "Ref": "CLIPort",
+        "Name": "CLI Port",
+        "Description": "Port for the server's administrative CLI. Only needs to be open if the CLI binding is set to all IP addresses"
+    }
+]
