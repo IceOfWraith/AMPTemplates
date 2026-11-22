@@ -1,4 +1,4 @@
-Meta.DisplayName=Big Ambitions (Going Public server)
+Meta.DisplayName=Big Ambitions (Going Public server) [bot]
 Meta.Description=Always-on Big Ambitions multiplayer host: the Going Public mod in headless server mode under Proton
 Meta.OS=Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=1
 Meta.ReleaseNotes=Going Public Server - dedicated server for Big Ambitions.
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=6b0c6a3e-9d1f-4a5e-8c2b-2f6d1e7a4b90
+Meta.AppConfigId=1a2820dc-bdc3-4588-b098-81111624b8c6
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Big Ambitions
 App.RootDir=./bigambitions/
