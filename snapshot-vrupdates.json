@@ -1,0 +1,11 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1948990",
+        "UpdateSourceArgs": "1133580",
+        "ForceDownloadPlatform": "Linux",
+        "SkipOnFailure": false
+    }
+]
