@@ -5,5 +5,12 @@
         "Ref": "GamePort",
         "Name": "Game Port",
         "Description": "Port for game traffic"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 33001,
+        "Ref": "MasterPort",
+        "Name": "Master Port",
+        "Description": "Port for server listing and query traffic"
     }
 ]
