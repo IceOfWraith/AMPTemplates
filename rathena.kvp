@@ -1,4 +1,4 @@
-Meta.DisplayName=Ragnarok Online (rAthena) [bot]
+Meta.DisplayName=Ragnarok Online (rAthena)
 Meta.Description=rAthena Ragnarok Online server emulator, built from source with a bundled MariaDB database
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=66db926a-4c04-4d45-a990-6c3a1ae41727
+Meta.AppConfigId=5f0b8f9e-2c4d-4b7a-9a3e-6d1c2e8f4a71
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Ragnarok Online (rAthena)
