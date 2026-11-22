@@ -1,4 +1,4 @@
-Meta.DisplayName=Team Fortress 2 Classified
+Meta.DisplayName=Team Fortress 2 Classified [bot]
 Meta.Description=Team Fortress 2 Classified Dedicated Server
 Meta.OS=Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=dc696aa5-db45-4339-8162-7e659375ee66
+Meta.AppConfigId=e6fff56c-6c4a-47cf-9d6f-cc54b0096655
 Meta.ConfigVersion=3
 Meta.ReleaseNotes=Updating SourceMod no longer replaces an existing (patched) TF2 Tools extension
 Meta.BreakingReleaseNotes=
