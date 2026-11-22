@@ -1,4 +1,4 @@
-Meta.DisplayName=Holdfast: Nations At War
+Meta.DisplayName=Holdfast: Nations At War [bot]
 Meta.Description=Holdfast: Nations At War Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a6b6cd80-b75e-4870-b4a5-565daff4d8d7
+Meta.AppConfigId=faa50a90-5f8d-41f9-bf9d-9904ea8e9364
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Holdfast: Nations At War
