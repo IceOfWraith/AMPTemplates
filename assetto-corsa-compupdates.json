@@ -12,7 +12,7 @@
         "UpdateStageName": "Settings.json Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/assetto-corsa-compsettings.json",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/6a5aa7a8f9454b6682ad73c2169425e4b46021f2/assetto-corsa-compsettings.json",
         "UpdateSourceArgs": "settings.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}server/cfg",
         "OverwriteExistingFiles": true,

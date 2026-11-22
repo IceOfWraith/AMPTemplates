@@ -1,4 +1,4 @@
-Meta.DisplayName=Assetto Corsa
+Meta.DisplayName=Assetto Corsa [bot]
 Meta.Description=Assetto Corsa Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -23,7 +23,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Practice Time now maps to PRACTICE.TIME in server_cfg.ini, so it is written and imported
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=25c90491-a76b-4c57-8620-6fd9116e2cae
+Meta.AppConfigId=7a1e0e4d-414c-4e7f-8793-699328064627
 App.DisplayName=Assetto Corsa
 App.RootDir=./assetto-corsa/
 App.BaseDirectory=./assetto-corsa/302550/
