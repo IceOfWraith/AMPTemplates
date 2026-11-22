@@ -28,7 +28,7 @@
         "UpdateStageName": "Database Script Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/db503e98c5a002ef646559ea9ef84bef75ed13f5/knockout-citystartdb.sh",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/knockout-citystartdb.sh",
         "UpdateSourceArgs": "startdb.sh",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,

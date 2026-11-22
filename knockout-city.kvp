@@ -1,4 +1,4 @@
-Meta.DisplayName=Knockout City: Private Server Edition [bot]
+Meta.DisplayName=Knockout City: Private Server Edition
 Meta.Description=Knockout City Private Server Edition Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Runs in a container on Windows and Linux, with its own PostgreSQL and Redis servers per instance
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=89fb6f34-5ce7-4651-b2ae-1a4997b2e670
+Meta.AppConfigId=09020e9d-06c2-411b-b6a6-ffaffb17e133
 Meta.ImportableExtensions=[]
 App.DisplayName=Knockout City
 App.RootDir=./knockout-city/

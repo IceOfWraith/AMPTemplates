@@ -29,7 +29,7 @@ fi
 if ! "$PG_BIN/pg_isready" -q -h 127.0.0.1 -p "$PG_PORT"; then
   "$PG_BIN/pg_ctl" -D "$PG_DATA" stop -m fast >/dev/null 2>&1
   echo "Starting PostgreSQL on 127.0.0.1:$PG_PORT"
-  if ! "$PG_BIN/pg_ctl" -D "$PG_DATA" -w -t 60 -l "$DATA_DIR/postgresql.log" -o "-p $PG_PORT -h 127.0.0.1 -k $PG_DATA" start >/dev/null; then
+  if ! "$PG_BIN/pg_ctl" -D "$PG_DATA" -w -t 60 -l "$DATA_DIR/postgresql.log" -o "-p $PG_PORT -h 127.0.0.1 -k $PG_DATA -c synchronous_commit=off" start >/dev/null; then
     echo "PostgreSQL failed to start, see $DATA_DIR/postgresql.log"
     exit 1
   fi
