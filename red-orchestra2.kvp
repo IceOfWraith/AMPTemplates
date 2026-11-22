@@ -1,4 +1,4 @@
-Meta.DisplayName=Red Orchestra 2: Heroes of Stalingrad
+Meta.DisplayName=Red Orchestra 2: Heroes of Stalingrad [bot]
 Meta.Description=Red Orchestra 2: Heroes of Stalingrad Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -20,7 +20,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=7e5f45ea-6203-4571-90cd-02d41bb1aecf
+Meta.AppConfigId=d53f93d7-4ff9-4053-9f6f-d6db80a1073a
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
