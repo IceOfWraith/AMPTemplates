@@ -1,4 +1,4 @@
-Meta.DisplayName=Star Conflict
+Meta.DisplayName=Star Conflict [bot]
 Meta.Description=Star Conflict local server (Hub, cloud services and bundled MongoDB)
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=9d3f6a2e-4b71-4c8e-a5d2-7e1b0c94f6a3
+Meta.AppConfigId=4b9adb4b-c093-4a98-87d1-73561116b3e2
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Star Conflict
