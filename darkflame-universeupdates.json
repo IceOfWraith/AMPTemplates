@@ -1,5 +1,12 @@
 [
     {
+        "UpdateStageName": "Download Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullRootDir}}download",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Server Download",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "GithubRelease",
