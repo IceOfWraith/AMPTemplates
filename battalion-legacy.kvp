@@ -1,4 +1,4 @@
-Meta.DisplayName=BATTALION: Legacy [bot]
+Meta.DisplayName=BATTALION: Legacy
 Meta.Description=BATTALION: Legacy Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=7ab11c38-2baf-4848-b692-0f7f9c9b2660
+Meta.AppConfigId=8de62e9c-909d-43dd-a810-bcd4d5fa4a93
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=BATTALION: Legacy
@@ -35,7 +35,7 @@ App.ExecutableLinux=805140/Battalion/Binaries/Linux/BattalionServer-Linux-Shippi
 App.WorkingDir=805140
 App.LinuxCommandLineArgs=
 App.WindowsCommandLineArgs=
-App.CommandLineArgs=Battalion -MULTIHOME={{$ApplicationIPBinding}} -Port={{$ApplicationPort1}} -QueryPort={{$ApplicationPort2}} -SteamServerName="{{SteamServerName}}" -ServerPassword="{{ServerPassword}}" -AdminPassword="{{$RemoteAdminPassword}}" -log {{CustomArgs}}
+App.CommandLineArgs=Battalion -MULTIHOME={{$ApplicationIPBinding}} -Port={{$ApplicationPort1}} -QueryPort={{$ApplicationPort2}} -Queue="{{Queue}}" -SteamServerName="{{SteamServerName}}" -ServerPassword="{{ServerPassword}}" -AdminPassword="{{$RemoteAdminPassword}}" -log {{CustomArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}Battalion/Binaries/Linux:{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"489940"}
@@ -95,7 +95,7 @@ App.ApplicationReadyMode=RegexMatch
 Console.FilterMatchRegex=
 Console.FilterMatchReplacement=
 Console.ThrowawayMessageRegex=
-Console.AppReadyRegex=^$
+Console.AppReadyRegex=^(?:\[[^\]]+\]\[[\d ]+\])?LogB44GameMode: MatchState Entering Map -> Waiting To Start\s*$
 Console.UserJoinRegex=
 Console.UserLeaveRegex=
 Console.UserChatRegex=
