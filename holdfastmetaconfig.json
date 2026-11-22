@@ -14,6 +14,7 @@
                     "server_admin_senior_password": "SeniorAdminPassword",
                     "server_port": "$GamePort",
                     "steam_query_port": "$QueryPort",
+                    "steam_communications_port": "$CommsPort",
                     "maximum_players": "$MaxUsers",
                     "maximum_queue_size": "MaxQueueSize",
                     "server_welcome_message": "WelcomeMessage",
