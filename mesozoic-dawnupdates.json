@@ -3,7 +3,7 @@
         "UpdateStageName": "Download Script Fetch",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/mesozoic-dawndownload.sh",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/b773eef741c615f19996c2f2ba2bd1d7dc5cd7e5/mesozoic-dawndownload.sh",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
