@@ -1,4 +1,4 @@
-Meta.DisplayName=Dysterra
+Meta.DisplayName=Dysterra [bot]
 Meta.Description=Dysterra Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=5d0f6a43-6e7b-4c2a-9a1e-3f2d8b7c1a64
+Meta.AppConfigId=ad8458ef-f4b7-4145-9ea5-dc363db34cc6
 Meta.ImportableExtensions=[".json"]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Dysterra
