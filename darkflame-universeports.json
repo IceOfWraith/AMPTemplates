@@ -1,0 +1,30 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 1001,
+        "Ref": "AuthPort",
+        "Name": "Auth Port",
+        "Description": "Login port. The LEGO Universe client always connects to 1001, so leave it unchanged"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 2000,
+        "Ref": "MasterPort",
+        "Name": "Master Port",
+        "Description": "Internal port the auth, chat and world servers use to reach the master server"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 2005,
+        "Ref": "ChatPort",
+        "Name": "Chat Port",
+        "Description": "Port for chat traffic"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 3000,
+        "Ref": "WorldPort",
+        "Name": "World Port",
+        "Description": "First port for world servers; each running world uses the next free port above it"
+    }
+]
