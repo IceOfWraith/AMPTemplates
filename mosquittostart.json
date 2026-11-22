@@ -20,7 +20,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -Command \"$User = '{{MqttUsername}}'; $Password = '{{MqttPassword}}'; if ($User) { if (-not $Password) { Write-Output 'A password is required for the MQTT user. Skipping'; exit 0 }; & '{{$FullBaseDir}}mosquitto_passwd.exe' -b '{{$FullBaseDir}}passwords.txt' $User $Password }\"",
+        "UpdateSourceArgs": "-NoProfile -Command \"$User = '{{MqttUsername}}'; $Password = '{{MqttPassword}}'; Set-Location -Path '{{$FullBaseDir}}'; $Clean = { Get-ChildItem -Force -File -Filter 'passwords.txt.backup.*' | ForEach-Object { icacls $_.FullName /reset *> $null; Remove-Item -LiteralPath $_.FullName -Force -ErrorAction SilentlyContinue } }; & $Clean; if (-not $User) { exit 0 }; if (-not $Password) { Write-Output 'A password is required for the MQTT user. Skipping'; exit 0 }; & '.\\mosquitto_passwd.exe' -b 'passwords.txt' $User $Password; $Code = $LASTEXITCODE; & $Clean; exit $Code\"",
         "ProcessToolOutput": true,
         "SkipOnFailure": true
     },
