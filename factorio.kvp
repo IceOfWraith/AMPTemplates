@@ -1,4 +1,4 @@
-Meta.DisplayName=Factorio [bot]
+Meta.DisplayName=Factorio
 Meta.Description=Factorio Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Emulated
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=6
 Meta.ReleaseNotes=Players who drop from the server without a normal leave message are now removed from the online user list.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=ecc9b79c-be2c-4479-ba5b-abf7455991ac
+Meta.AppConfigId=50882765-e275-413b-91a6-28f0fd821fde
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Factorio
@@ -91,7 +91,7 @@ Console.FilterMatchRegex=
 Console.FilterMatchReplacement=
 Console.ThrowawayMessageRegex=^((WARNING|ERROR): Shader.+)$
 Console.AppReadyRegex=$
-Console.UserJoinRegex=^\s*[\d.]+ Info \S+: Received (?:New)?Peer ?Info for peer\((?<sessionid>\d+)\) username\((?<username>(?!<server>\)).+?)\)\.?$
+Console.UserJoinRegex=^(?:[\d-]+ [\d:]+ \[JOIN\] (?<username>.+?) joined the game|\s*[\d.]+ Info \S+: Received (?:New)?Peer ?Info for peer\((?<sessionid>\d+)\) username\((?<username>(?!<server>\)).+?)\)\.?)$
 Console.UserLeaveRegex=^(?:[\d-]+ [\d:]+ \[LEAVE\] (?<username>.+?) left the game|\s*[\d.]+ Info \S+: nextHeartbeatSequenceNumber\(\d+\) removing peer\((?<sessionid>\d+)\)\.?)$
 Console.UserChatRegex=^[\d-]+ [\d:]+ \[CHAT\] (?<username>(?!<server>).+?): (?<message>(?!\[gps=.*?\]).*)$
 Console.UpdateAvailableRegex=^\[\d\d:\d\d:\d\d\] \[INFO\] A new server update is available! v[\d\.]+.$
