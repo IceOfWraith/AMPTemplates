@@ -1,4 +1,4 @@
-Meta.DisplayName=Military Conflict: Vietnam
+Meta.DisplayName=Military Conflict: Vietnam [bot]
 Meta.Description=Military Conflict: Vietnam Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=26ae5ba3-caca-477a-98c2-a71e3d96334c
+Meta.AppConfigId=4fdfcb85-738e-46c5-8fe2-daa60543146d
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
