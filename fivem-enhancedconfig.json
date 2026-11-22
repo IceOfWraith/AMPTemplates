@@ -65,21 +65,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Enable Endpoint Privacy",
-        "Category": "FiveM Enhanced:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "If set, player IP addresses will be hidden from public reports that the server outputs",
-        "Keywords": "endpoint,privacy,hide,hidden,addresses,sv_endpointPrivacy",
-        "FieldName": "sv_endpointPrivacy",
-        "InputType": "checkbox",
-        "ParamFieldName": "sv_endpointPrivacy",
-        "DefaultValue": "true",
-        "EnumValues": {
-            "False": "false",
-            "True": "true"
-        }
-    },
-    {
         "DisplayName": "Load Base Game Only",
         "Category": "FiveM Enhanced:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -182,23 +167,6 @@
         "ParamFieldName": "AccessControlCommands",
         "DefaultValue": "",
         "EnumValues": {}
-    },
-    {
-        "DisplayName": "Enable HTTP Flood Protection",
-        "Category": "FiveM Enhanced:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "Sets whether to implement measures to counter proxy-based HTTP floods. If set to Level 2 or 3, all requests made to info.json, dynamic.json and players.json related endpoints will return \"Nope\"",
-        "Keywords": "http,flood,protection,sv_requestParanoia",
-        "FieldName": "sv_requestParanoia",
-        "InputType": "enum",
-        "ParamFieldName": "sv_requestParanoia",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "0": "Off (default)",
-            "1": "Level 1: Blocks IPs with 'Via' header requests",
-            "2": "Level 2: Previous + blocks IPs with 'Upgrade-Insecure-Requests' header requests",
-            "3": "Level 3: Previous + closes socket on which requests submitted"
-        }
     },
     {
         "DisplayName": "Server/RCON IP Binding",

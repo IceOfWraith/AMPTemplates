@@ -42,7 +42,7 @@
         "UpdateStageName": "Server.cfg Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/fbbda2089733a30e3c3dfbc39cf718ae0a558501/fivem-enhancedserver.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/fivem-enhancedserver.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullInstanceDir}}",
         "OverwriteExistingFiles": true,
