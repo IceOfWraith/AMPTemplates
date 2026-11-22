@@ -1,4 +1,4 @@
-Meta.DisplayName=Ships At Sea [bot]
+Meta.DisplayName=Ships At Sea
 Meta.Description=Ships At Sea Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=0b77f4e5-48c2-4fd3-b292-6880112604e1
+Meta.AppConfigId=b2d34b5c-08a8-4649-b115-ff086fec3ebe
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Ships At Sea
 App.RootDir=./ships-at-sea/
@@ -35,8 +35,8 @@ App.ExecutableWin=3951240\SAS\Binaries\Win64\SasServer-Win64-Shipping.exe
 App.ExecutableLinux=3951240/SAS/Binaries/Linux/SasServer-Linux-Shipping
 App.WorkingDir=3951240
 App.LinuxCommandLineArgs=
-App.WindowsCommandLineArgs=-FullStdOutLogOutput
-App.CommandLineArgs=SAS -port={{$GamePort}} -beaconport={{$BeaconPort}} -QueryPort={{$QueryPort}} -multihome={{$ApplicationIPBinding}} {{$FormattedArgs}} -log -stdout {{$PlatformArgs}}
+App.WindowsCommandLineArgs=
+App.CommandLineArgs=SAS -port={{$GamePort}} -beaconport={{$BeaconPort}} -QueryPort={{$QueryPort}} -multihome={{$ApplicationIPBinding}} {{$FormattedArgs}} -log -stdout -FullStdOutLogOutput {{$PlatformArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"1266540"}
