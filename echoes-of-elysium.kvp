@@ -1,4 +1,4 @@
-Meta.DisplayName=Echoes of Elysium
+Meta.DisplayName=Echoes of Elysium [bot]
 Meta.Description=Echoes of Elysium Dedicated Server
 Meta.OS=Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release.
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=eb64951a-85a7-42c2-b3f8-481a87ba8f98
+Meta.AppConfigId=c09c1c33-2b1a-49a4-9dfd-c201afcf6632
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Echoes of Elysium
 App.RootDir=./echoes-of-elysium/
