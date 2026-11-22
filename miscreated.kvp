@@ -1,4 +1,4 @@
-Meta.DisplayName=Miscreated
+Meta.DisplayName=Miscreated [bot]
 Meta.Description=Miscreated Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=4
 Meta.ReleaseNotes=On Linux, AMP now tracks the actual server process, so stop signals and CPU/memory stats reach the game instead of the xvfb-run wrapper
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a0ee7e94-a28a-4694-9f95-24f7508b91ac
+Meta.AppConfigId=4802a869-3c85-42b7-ab9a-cb3c3783552c
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Miscreated
