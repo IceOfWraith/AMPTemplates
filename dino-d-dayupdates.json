@@ -1,9 +1,9 @@
 [
     {
-        "UpdateStageName": "SteamCMD Server Download",
+        "UpdateStageName": "SteamCMD Game Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "SteamCMD",
-        "UpdateSourceData": "70010",
+        "UpdateSourceData": "70000",
         "UpdateSourceArgs": "70000",
         "ForceDownloadPlatform": "Windows",
         "SkipOnFailure": false
@@ -13,7 +13,7 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "SteamCMD",
         "UpdateSourceData": "1007",
-        "UpdateSourceTarget": "70010",
+        "UpdateSourceTarget": "70000",
         "UpdateSourceArgs": "70000",
         "ForceDownloadPlatform": "Windows",
         "SkipOnFailure": false
@@ -22,7 +22,7 @@
         "UpdateStageName": "Server.cfg Template File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/8962382d87df4fb07a4ed2a47c03c6e6cbe87521/dino-d-dayserver.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/dino-d-dayserver.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,

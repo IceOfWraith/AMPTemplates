@@ -71,11 +71,23 @@
         "FieldName": "map",
         "InputType": "enum",
         "ParamFieldName": "map",
-        "IncludeInCommandLine": true,
-        "DefaultValue": "ddd_hill",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "ddd_hilltop",
         "EnumValues": {
-            "ddd_hill": "ddd_hill (default)",
-            "ddd_bocage": "ddd_bocage",
+            "ddd_airstrip": "ddd_airstrip",
+            "ddd_canyon": "ddd_canyon",
+            "ddd_depot": "ddd_depot",
+            "ddd_fortress": "ddd_fortress",
+            "ddd_gela": "ddd_gela",
+            "ddd_hilltop": "ddd_hilltop (default)",
+            "ddd_market": "ddd_market",
+            "ddd_opera": "ddd_opera",
+            "ddd_pacentro": "ddd_pacentro",
+            "ddd_resistance": "ddd_resistance",
+            "ddd_snowypark": "ddd_snowypark",
+            "ddd_subbase": "ddd_subbase",
+            "ddd_troina": "ddd_troina",
+            "ddd_ziegenfarm": "ddd_ziegenfarm",
             "{{CustomMap}}": "--Custom--"
         }
     },
@@ -90,6 +102,25 @@
         "ParamFieldName": "CustomMap",
         "DefaultValue": "",
         "EnumValues": {}
+    },
+    {
+        "DisplayName": "Initial Game Mode",
+        "Category": "Dino D-Day:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the game mode for the initial map. Not every map supports every mode: Objective is available on ddd_canyon, ddd_depot and ddd_fortress, and ddd_opera is Survival only. Later maps and modes follow \"dinodday/mapcycle.txt\"",
+        "Keywords": "game,mode,gamemode,type",
+        "FieldName": "GameMode",
+        "InputType": "enum",
+        "ParamFieldName": "GameMode",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "dm",
+        "EnumValues": {
+            "dm": "Deathmatch (default)",
+            "koth": "King of the Hill",
+            "cp": "Capture Point",
+            "obj": "Objective",
+            "sur": "Survival"
+        }
     },
     {
         "DisplayName": "Player Limit",
