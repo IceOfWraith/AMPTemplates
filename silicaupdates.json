@@ -12,7 +12,7 @@
         "UpdateStageName": "Server Settings Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/silicaserversettings.xml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/dc9a5c3fc327c0e07b7c28c44f6a80a7b2a49748/silicaserversettings.xml",
         "UpdateSourceTarget": "{{$FullBaseDir}}Silica_Data",
         "UpdateSourceArgs": "ServerSettings.xml",
         "OverwriteExistingFiles": false,
