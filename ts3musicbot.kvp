@@ -1,4 +1,4 @@
-Meta.DisplayName=TS3MusicBot
+Meta.DisplayName=TS3MusicBot [bot]
 Meta.Description=TS3MusicBot - TeamSpeak 3/6 and Discord music bot (requires a TS3MusicBot license)
 Meta.OS=Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=01a4e014-e4d4-4a58-a4a2-b71beff2824f
+Meta.AppConfigId=76a3b921-4e43-430a-a37e-337087263c3c
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=TS3MusicBot
