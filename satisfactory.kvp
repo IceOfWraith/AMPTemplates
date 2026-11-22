@@ -1,4 +1,4 @@
-Meta.DisplayName=Satisfactory
+Meta.DisplayName=Satisfactory [bot]
 Meta.Description=Satisfactory Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=9
 Meta.ReleaseNotes=Added a Network Quality setting (Low, Medium, High, Ultra or Unrestricted) that overrides the in-game Server Manager setting on every start. Network settings now have their own subcategory
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=c9eabe8e-5219-4c16-8692-14740d5f8e92
+Meta.AppConfigId=1175544d-6372-4f48-ba10-4ecd4e9b5860
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Satisfactory
