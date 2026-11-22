@@ -1,4 +1,4 @@
-Meta.DisplayName=RustDesk Server [bot]
+Meta.DisplayName=RustDesk Server
 Meta.Description=RustDesk self-hosted ID/rendezvous (hbbs) and relay (hbbr) server for remote desktop
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,14 +24,14 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=82dd2136-3c95-4701-b4b7-b245a9520929
+Meta.AppConfigId=1cee00c6-0730-4123-9fac-d9b4f68e39bc
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=RustDesk Server
 App.RootDir=./rustdesk/
 App.BaseDirectory=./rustdesk/
 App.SteamWorkshopDownloadLocation=
-App.ExecutableWin=powershell.exe
+App.ExecutableWin=$PATH\powershell.exe
 App.ExecutableLinux=/bin/bash
 App.WorkingDir=
 App.LinuxCommandLineArgs=-c "cd \"{{$FullBaseDir}}\" || exit 1; key=(); [[ \"{{RequireKey}}\" == true ]] && key=(-k _); extra=(); relay=\"{{RelayServers}}\"; mask=\"{{LanMask}}\"; [[ -n \"$relay\" ]] && extra+=(-r \"$relay\"); [[ -n \"$mask\" ]] && extra+=(--mask \"$mask\"); trap 'kill -TERM $s $r 2>/dev/null' INT TERM; ./amd64/hbbs -p {{$IdPort}} \"${key[@]}\" \"${extra[@]}\" & s=$!; sleep 1; ./amd64/hbbr -p {{$RelayPort}} \"${key[@]}\" & r=$!; wait -n $s $r; kill -TERM $s $r 2>/dev/null; wait"
