@@ -42,7 +42,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/kissmpserverconfig.json",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/57a3a36751f82b3025999ee07941ede8a92f1711/kissmpserverconfig.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "config.json",
         "OverwriteExistingFiles": false,

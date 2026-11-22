@@ -1,4 +1,4 @@
-Meta.DisplayName=KissMP (BeamNG.drive)
+Meta.DisplayName=KissMP (BeamNG.drive) [bot]
 Meta.Description=KISS Multiplayer server for BeamNG.drive
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -21,7 +21,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a07ab2f0-bd69-4c35-b34f-9e83ae72d677
+Meta.AppConfigId=91e82c7e-3406-45f4-b12d-1a16c3a44e30
 App.DisplayName=KissMP
 App.RootDir=./kissmp/
 App.BaseDirectory=./kissmp/server/
