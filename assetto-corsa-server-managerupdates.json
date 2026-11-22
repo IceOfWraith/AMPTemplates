@@ -38,7 +38,7 @@
         "UpdateStageName": "Server Manager Config Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/assetto-corsa-server-managerconfig.yml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/474e6ca8b3cc8c93baaefb4bfb870a3a5f68a467/assetto-corsa-server-managerconfig.yml",
         "UpdateSourceArgs": "AMP_config.yml",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
