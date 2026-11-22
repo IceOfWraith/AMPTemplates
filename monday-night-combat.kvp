@@ -1,4 +1,4 @@
-Meta.DisplayName=Monday Night Combat [bot]
+Meta.DisplayName=Monday Night Combat
 Meta.Description=Monday Night Combat Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=b14abb8d-836d-46e4-a8cc-ad395654df83
+Meta.AppConfigId=9a70e50b-8a70-423f-87ad-58ce7780a318
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Monday Night Combat
