@@ -1,4 +1,4 @@
-Meta.DisplayName=Mesozoic Dawn [bot]
+Meta.DisplayName=Mesozoic Dawn
 Meta.Description=Mesozoic Dawn Dedicated Server
 Meta.OS=Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=True
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a0c90c46-ac59-40c4-9a47-bd1a8801c835
+Meta.AppConfigId=bc60b97d-fb0e-45a7-9939-45af0cde37fb
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Mesozoic Dawn
@@ -91,7 +91,7 @@ App.ApplicationReadyMode=RegexMatch
 Console.FilterMatchRegex=GAME_(TOKEN|PASSWORD)=\S+
 Console.FilterMatchReplacement=GAME_$1=********
 Console.ThrowawayMessageRegex=^[\w.`<>\[\]]+:[\w.`<>\[\]]+\(.*\)$|^\[ line -?\d+\]$|^Trying to access a shader but no shaders were included|^\s*$
-Console.AppReadyRegex=^> \[CLI\][\d:.]+ \[MasterAuth\.[\w.]+:\d+\] \[SRV\] (?:Oath SUCCESS|RegisterRoom)
+Console.AppReadyRegex=^Server listening on port \d+$
 Console.UserJoinRegex=
 Console.UserLeaveRegex=
 Console.UserChatRegex=
