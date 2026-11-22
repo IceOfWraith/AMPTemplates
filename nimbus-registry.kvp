@@ -1,4 +1,4 @@
-Meta.DisplayName=Nimbus Registry (Vintage Story)
+Meta.DisplayName=Nimbus Registry (Vintage Story) [bot]
 Meta.Description=Optional standalone Nimbus registry, for multi-proxy or multi-host networks
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=b0ed14fe-3b73-4044-9339-71bd3df1ced3
+Meta.AppConfigId=ab5fa743-0723-423f-81a4-ce4ef3f2df2e
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Nimbus Registry

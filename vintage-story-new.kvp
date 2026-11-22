@@ -1,4 +1,4 @@
-Meta.DisplayName=Vintage Story 1.18.8+
+Meta.DisplayName=Vintage Story 1.18.8+ [bot]
 Meta.Description=Vintage Story Dedicated Server, from v1.18.8+. Optionally runs Stratum, a server-side performance fork
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -18,7 +18,7 @@ Meta.Prerequisites=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=18
-Meta.AppConfigId=161f1dcd-f9c5-47d8-b191-f9dceecd4fc6
+Meta.AppConfigId=b8912d6c-abdd-4c97-9171-03201318d84d
 App.DisplayName=Vintage Story
 App.RootDir=./vintage-story/
 App.BaseDirectory=./vintage-story/
