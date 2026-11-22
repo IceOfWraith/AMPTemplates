@@ -29,7 +29,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"u='{{MqttUsername}}'; p='{{MqttPassword}}'; [ -z \\\"$u\\\" ] && exit 0; [ -z \\\"$p\\\" ] && { echo 'A password is required for the MQTT user. Skipping'; exit 0; }; mosquitto_passwd -b '{{$FullBaseDir}}passwords.txt' \\\"$u\\\" \\\"$p\\\"\"",
+        "UpdateSourceArgs": "-c \"chmod 0700 '{{$FullBaseDir}}passwords.txt' 2>/dev/null; u='{{MqttUsername}}'; p='{{MqttPassword}}'; [ -z \\\"$u\\\" ] && exit 0; [ -z \\\"$p\\\" ] && { echo 'A password is required for the MQTT user. Skipping'; exit 0; }; mosquitto_passwd -b '{{$FullBaseDir}}passwords.txt' \\\"$u\\\" \\\"$p\\\"\"",
         "ProcessToolOutput": true,
         "SkipOnFailure": true
     }

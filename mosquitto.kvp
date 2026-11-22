@@ -1,4 +1,4 @@
-Meta.DisplayName=Eclipse Mosquitto [bot]
+Meta.DisplayName=Eclipse Mosquitto
 Meta.Description=Eclipse Mosquitto MQTT Broker
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=9139b35a-6025-4945-a723-36d67311aa4a
+Meta.AppConfigId=f634b421-9be9-4279-ae38-6fbc10d7bc85
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Eclipse Mosquitto
