@@ -22,7 +22,7 @@
         "UpdateStageName": "Server.cfg Template File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/7ffe0b32b78aa70c69af7cb33c064ebef2d2db2b/dino-d-dayserver.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/dino-d-dayserver.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
