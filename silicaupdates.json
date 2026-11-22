@@ -7,5 +7,21 @@
         "UpdateSourceArgs": "1494420",
         "UpdateSourceVersion": "{{ServerBranch}}",
         "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Steam SDK64 Directory",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}.steam/sdk64",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Copy SteamClient Library",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}.steam/sdk64/steamclient.so",
+        "UpdateSourceArgs": "{{$FullBaseDir}}linux64/steamclient.so",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
     }
 ]
