@@ -18,14 +18,6 @@
     },
     {
         "UpdateStageName": "Data Directory Creation",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C mkdir \"%UserProfile%\\AppData\\Local\\KnockoutCityServer\" > NUL 2>&1 & rd /S /Q \"{{$FullBaseDir}}KnockoutCityServerData\" > NUL 2>&1 & mklink /J \"{{$FullBaseDir}}KnockoutCityServerData\" \"%UserProfile%\\AppData\\Local\\KnockoutCityServer\" > NUL 2>&1",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Data Directory Creation",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
@@ -33,12 +25,13 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Create Readme File",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "CreateFile",
-        "UpdateSourceArgs": "{{$FullBaseDir}}KnockoutCityServerData/README.txt",
-        "UpdateSourceData": "WARNING: This directory will include the save data of multiple Knockout City servers\nrun on this system.\n\nTake care when managing files in this directory or its subdirectories!",
+        "UpdateStageName": "Database Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/knockout-citystartdb.sh",
+        "UpdateSourceArgs": "startdb.sh",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
-        "SkipOnFailure": true
+        "SkipOnFailure": false
     }
 ]

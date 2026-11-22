@@ -1,0 +1,10 @@
+[
+    {
+        "UpdateStageName": "Start Database Servers",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "\"{{$FullRootDir}}startdb.sh\" \"{{$FullBaseDir}}KnockoutCityDatabase\" {{$ServerPort2}} {{$ServerPort3}}",
+        "SkipOnFailure": false
+    }
+]
