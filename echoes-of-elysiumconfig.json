@@ -62,44 +62,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Availability",
-        "Category": "Echoes of Elysium:sailing",
-        "Subcategory": "Server:dns:1",
-        "Description": "Who can see and join the server",
-        "Keywords": "availability,public,private,friends",
-        "FieldName": "availability",
-        "InputType": "enum",
-        "IsFlagArgument": false,
-        "ParamFieldName": "$.availability",
-        "IncludeInCommandLine": false,
-        "SkipIfEmpty": false,
-        "DefaultValue": "Public",
-        "EnumValues": {
-            "Public": "Public",
-            "Friends": "Friends only",
-            "Private": "Private"
-        }
-    },
-    {
-        "DisplayName": "Maximum Players",
-        "Category": "Echoes of Elysium:sailing",
-        "Subcategory": "Server:dns:1",
-        "Description": "The maximum number of players that can be connected at the same time",
-        "Keywords": "max,players,connections,slots",
-        "FieldName": "$MaxUsers",
-        "InputType": "number",
-        "MinValue": "1",
-        "MaxValue": "64",
-        "IsFlagArgument": false,
-        "ParamFieldName": "$.maxConnections",
-        "IncludeInCommandLine": false,
-        "SkipIfEmpty": false,
-        "DefaultValue": "16",
-        "Placeholder": "16",
-        "Suffix": "players",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "All Players Are Admins",
         "Category": "Echoes of Elysium:sailing",
         "Subcategory": "Server:dns:1",
