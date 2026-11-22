@@ -1,4 +1,4 @@
-Meta.DisplayName=RustDesk Server
+Meta.DisplayName=RustDesk Server [bot]
 Meta.Description=RustDesk self-hosted ID/rendezvous (hbbs) and relay (hbbr) server for remote desktop
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=1cee00c6-0730-4123-9fac-d9b4f68e39bc
+Meta.AppConfigId=82dd2136-3c95-4701-b4b7-b245a9520929
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=RustDesk Server
