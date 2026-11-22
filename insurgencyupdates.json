@@ -11,7 +11,7 @@
         "UpdateStageName": "Server.cfg Template File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/insurgencyserver.cfg",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/526dd83d899d1fb588375ebfbacc4f620d295090/insurgencyserver.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,

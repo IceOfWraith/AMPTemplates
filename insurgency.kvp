@@ -1,4 +1,4 @@
-Meta.DisplayName=Insurgency
+Meta.DisplayName=Insurgency [bot]
 Meta.Description=Insurgency Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequsites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=eba6a05b-2b75-4ac5-a222-21a71380275d
+Meta.AppConfigId=bba1c843-5cb7-4752-a54e-98a2466c8044
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
