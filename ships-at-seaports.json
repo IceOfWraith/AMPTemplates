@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "Both",
+        "Port": 7777,
+        "Ref": "GamePort",
+        "Name": "Game Port",
+        "Description": "Port for game traffic"
+    },
+    {
+        "Protocol": "Both",
+        "Port": 15000,
+        "Ref": "BeaconPort",
+        "Name": "Beacon Port",
+        "Description": "Port for beacon traffic"
+    }
+]
