@@ -11,7 +11,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/694279bbc08521af62e28cf050e5ff47030c2304/echoes-of-elysiumserverconfig.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/echoes-of-elysiumserverconfig.json",
         "UpdateSourceArgs": "config.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,
