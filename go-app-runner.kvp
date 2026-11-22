@@ -1,4 +1,4 @@
-Meta.DisplayName=Go App Runner
+Meta.DisplayName=Go App Runner [bot]
 Meta.Description=Go App Runner
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=9c3e35e6-22cc-4b1e-9696-098613974f45
+Meta.AppConfigId=04b7f69e-4d69-449c-b0bb-e6314068a28f
 Meta.ImportableExtensions=[]
 App.DisplayName=Go App Runner
 App.RootDir=./go-app-runner/
