@@ -1,4 +1,4 @@
-Meta.DisplayName=Windrose
+Meta.DisplayName=Windrose [bot]
 Meta.Description=Windrose Dedicated Server with Windrose+ option
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=7
 Meta.ReleaseNotes=Added CurseForge mod store support (mods install to R5/Content/Paks/~mods)
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=719703a2-78d0-45fc-86c7-3d548aba1706
+Meta.AppConfigId=734dab9b-f640-4f48-b021-c609e9b67366
 Meta.ImportableExtensions=[".json"]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Windrose
