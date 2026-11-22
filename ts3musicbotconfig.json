@@ -112,9 +112,42 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "Java Version",
+        "Category": "TS3MusicBot:music_note",
+        "Subcategory": "Java:coffee:2",
+        "Description": "Sets the Java version to run the bot with. \"System default\" uses the Java installed on the system (included in AMP's Docker image). \"Instance version\" downloads Eclipse Temurin into the instance. Update the server after changing this setting",
+        "Keywords": "java,version,JavaVersion",
+        "FieldName": "JavaVersion",
+        "InputType": "enum",
+        "ParamFieldName": "JavaVersion",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "/usr/bin/java",
+        "EnumValues": {
+            "/usr/bin/java": "System default",
+            "java/bin/java": "Instance version"
+        }
+    },
+    {
+        "DisplayName": "Instance Java Version",
+        "Category": "TS3MusicBot:music_note",
+        "Subcategory": "Java:coffee:2",
+        "Description": "Sets the Eclipse Temurin Java version to download into the instance, if \"Instance version\" is selected under Java Version. Update the server after changing this setting",
+        "Keywords": "java,version,instance,InstanceJavaVersion",
+        "FieldName": "InstanceJavaVersion",
+        "InputType": "enum",
+        "ParamFieldName": "InstanceJavaVersion",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "21",
+        "EnumValues": {
+            "25": "25 - LTS",
+            "21": "21 - LTS",
+            "17": "17 - LTS"
+        }
+    },
+    {
         "DisplayName": "Additional Java Arguments",
         "Category": "TS3MusicBot:music_note",
-        "Subcategory": "Bot:settings:1",
+        "Subcategory": "Java:coffee:2",
         "Description": "Additional Java arguments (not bot arguments) for the launcher. Use with care",
         "Keywords": "custom,java,arguments",
         "FieldName": "CustomJavaArgs",
