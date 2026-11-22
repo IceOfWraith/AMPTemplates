@@ -1,4 +1,4 @@
-Meta.DisplayName=Red Orchestra 2: Heroes of Stalingrad [bot]
+Meta.DisplayName=Red Orchestra 2: Heroes of Stalingrad
 Meta.Description=Red Orchestra 2: Heroes of Stalingrad Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -20,7 +20,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=fc4a8e76-8367-4e4c-b3e2-1616a875ac21
+Meta.AppConfigId=7e5f45ea-6203-4571-90cd-02d41bb1aecf
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
@@ -31,8 +31,8 @@ App.BaseDirectory=./redorchestra2/212542/
 App.SteamWorkshopDownloadLocation=
 App.ExecutableWin=212542\Binaries\Win32\ROGame.exe
 App.ExecutableLinux=/usr/bin/xvfb-run
-App.WorkingDir=212542
-App.LinuxCommandLineArgs=-a wine "./Binaries/Win32/ROGame.exe"
+App.WorkingDir=212542\Binaries\Win32
+App.LinuxCommandLineArgs=-a wine "./ROGame.exe"
 App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} {{ServerMap}}?MaxPlayers={{$MaxUsers}}{{CustomServerOptions}} -Port={{$GamePort}} -QueryPort={{$QueryPort}} -MultiHome={{$ApplicationIPBinding}} {{CustomServerSwitches}} -unattended -forcelogflush
 App.UseLinuxIOREDIR=False
