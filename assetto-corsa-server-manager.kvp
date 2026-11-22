@@ -1,4 +1,4 @@
-Meta.DisplayName=Assetto Corsa Server Manager
+Meta.DisplayName=Assetto Corsa Server Manager [bot]
 Meta.Description=Assetto Corsa Dedicated Server with the Assetto Server Manager web interface
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -23,7 +23,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=255664f6-ff97-43b0-83fc-53cba2fd9cf7
+Meta.AppConfigId=8fa7ac43-bc7d-4cd1-adb3-359fca6fb848
 App.DisplayName=Assetto Corsa Server Manager
 App.RootDir=./assetto-corsa/
 App.BaseDirectory=./assetto-corsa/server-manager/
