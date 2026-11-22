@@ -1,4 +1,4 @@
-Meta.DisplayName=Ships At Sea
+Meta.DisplayName=Ships At Sea [bot]
 Meta.Description=Ships At Sea Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=b2d34b5c-08a8-4649-b115-ff086fec3ebe
+Meta.AppConfigId=cfbfa35f-2e81-4218-a576-bb4e4b68f0d4
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Ships At Sea
 App.RootDir=./ships-at-sea/
