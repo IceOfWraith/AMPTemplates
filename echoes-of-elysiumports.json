@@ -4,13 +4,16 @@
         "Port": 33000,
         "Ref": "GamePort",
         "Name": "Game Port",
-        "Description": "Port for game traffic"
-    },
-    {
-        "Protocol": "UDP",
-        "Port": 33001,
-        "Ref": "MasterPort",
-        "Name": "Master Port",
-        "Description": "Port for server listing and query traffic"
+        "Description": "Port for game traffic",
+        "ChildPorts": [
+            {
+                "Protocol": "UDP",
+                "Port": 33001,
+                "Offset": 1,
+                "Ref": "MasterPort",
+                "Name": "Master Port",
+                "Description": "Game Port +1, used by the server for server listing traffic"
+            }
+        ]
     }
 ]
