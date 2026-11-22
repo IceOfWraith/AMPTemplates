@@ -1,4 +1,4 @@
-Meta.DisplayName=MariaDB
+Meta.DisplayName=MariaDB [bot]
 Meta.Description=MariaDB Service Instance
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=3
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=dbc03533-2478-4262-a262-49231c1dca7f
+Meta.AppConfigId=22bd3b87-9ee5-40f7-ab8c-14248c2a0d5e
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=MariaDB
