@@ -3,7 +3,7 @@
         "UpdateStageName": "Config Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/nimbus-proxytemplate.toml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/adc410e359fc2cd0bee0653a97cecc0940457ca5/nimbus-proxytemplate.toml",
         "UpdateSourceArgs": "AMP_nimbus.proxy.toml",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": true
