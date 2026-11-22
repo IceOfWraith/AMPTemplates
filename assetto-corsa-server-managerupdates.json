@@ -9,6 +9,13 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Create Download Directory",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullRootDir}}sm-download",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Server Manager Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURLfromJQ",
@@ -24,21 +31,21 @@
         "UpdateStageName": "Server Manager Install",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "CMD",
-        "UpdateSourceArgs": "move /Y \"{{$FullRootDir}}sm-download\\windows\\server-manager.exe\" \"{{$FullBaseDir}}server-manager.exe\" && rmdir /S /Q \"{{$FullRootDir}}sm-download\"",
+        "UpdateSourceArgs": "move /Y sm-download\\windows\\server-manager.exe server-manager\\server-manager.exe && rmdir /S /Q sm-download",
         "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Server Manager Install",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Bash",
-        "UpdateSourceArgs": "mv -f \"{{$FullRootDir}}sm-download/linux/server-manager\" \"{{$FullBaseDir}}server-manager\" && chmod +x \"{{$FullBaseDir}}server-manager\" && rm -rf \"{{$FullRootDir}}sm-download\"",
+        "UpdateSourceArgs": "mv -f sm-download/linux/server-manager server-manager/server-manager && chmod +x server-manager/server-manager && rm -rf sm-download",
         "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Server Manager Config Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/474e6ca8b3cc8c93baaefb4bfb870a3a5f68a467/assetto-corsa-server-managerconfig.yml",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/assetto-corsa-server-managerconfig.yml",
         "UpdateSourceArgs": "AMP_config.yml",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
