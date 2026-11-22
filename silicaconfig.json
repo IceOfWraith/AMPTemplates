@@ -1,0 +1,17 @@
+[
+  {
+    "DisplayName": "Server Branch",
+    "Category": "Updates",
+    "Subcategory": "Steam Downloads:download",
+    "Description": "Sets the server branch to install. NOTE: Update the server after changing this setting!",
+    "Keywords": "branch,beta,public",
+    "FieldName": "ServerBranch",
+    "InputType": "enum",
+    "ParamFieldName": "ServerBranch",
+    "DefaultValue": "public",
+    "EnumValues": {
+      "public": "Public (default)",
+      "beta": "Beta"
+    }
+  }
+]
