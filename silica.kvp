@@ -1,4 +1,4 @@
-Meta.DisplayName=Silica
+Meta.DisplayName=Silica [bot]
 Meta.Description=Silica Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=cb8b5a29-98c6-47eb-ac45-8873e2ec174c
+Meta.AppConfigId=a60e4896-d00e-4820-84c0-d04955aab099
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Silica
