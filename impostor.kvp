@@ -1,4 +1,4 @@
-Meta.DisplayName=Impostor - Among Us Server
+Meta.DisplayName=Impostor - Among Us Server [bot]
 Meta.Description=Impostor Dedicated Server - an open source private server implementation for Among Us
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -23,7 +23,7 @@ Meta.ConfigVersion=7
 Meta.ReleaseNotes=Defaults to Impostor v1.10.10 and adds the .NET 10.0 release stream (now the default). Existing instances moving to v1.10.10+ should switch Dotnet Release Stream to 10.0 and update.
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=651bda41-8294-4964-a6b8-e7a8dff4c310
+Meta.AppConfigId=794d3955-82ee-4857-a8f7-dfdc51d820ae
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Impostor
 App.RootDir=./impostor/
