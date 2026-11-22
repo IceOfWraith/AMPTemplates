@@ -28,6 +28,20 @@
     "EnumValues": {}
   },
   {
+    "DisplayName": "Admin Password",
+    "Category": "BATTALION: Legacy:stadia_controller",
+    "Subcategory": "Server:dns:1",
+    "Description": "Password players use in the in-game console with Server.Login <password> to get admin commands. Leave blank to disable",
+    "Keywords": "admin,password,login",
+    "FieldName": "AdminPassword",
+    "InputType": "password",
+    "IsFlagArgument": false,
+    "ParamFieldName": "AdminPassword",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
+    "EnumValues": {}
+  },
+  {
     "DisplayName": "Game Mode",
     "Category": "BATTALION: Legacy:stadia_controller",
     "Subcategory": "Server:dns:1",
