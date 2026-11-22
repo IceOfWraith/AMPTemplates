@@ -465,21 +465,6 @@
         }
     },
     {
-        "DisplayName": "Abort TCP Connection On Close",
-        "Category": "Teeworlds:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "If set, the server will abort the TCP connection on close",
-        "Keywords": "abort,tcp,connection,close,sv_abort_on_close",
-        "FieldName": "net_tcp_abort_on_close",
-        "InputType": "checkbox",
-        "ParamFieldName": "net_tcp_abort_on_close",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
         "DisplayName": "Game Type",
         "Category": "Teeworlds:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
