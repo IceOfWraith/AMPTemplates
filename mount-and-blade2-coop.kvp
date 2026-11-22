@@ -1,4 +1,4 @@
-Meta.DisplayName=Mount & Blade II: Bannerlord Co-op
+Meta.DisplayName=Mount & Blade II: Bannerlord Co-op [bot]
 Meta.Description=Co-op campaign dedicated server for Linux Docker using Wine. Experimental template.
 Meta.OS=Linux
 Meta.Arch=x86_64
@@ -16,7 +16,7 @@ Meta.ContainerPolicy=RecommendedOnLinux
 Meta.ContainerPolicyReason=The AMP Wine image provides Wine, Xvfb, socat and jq. Native Linux requires these dependencies on the host.
 Meta.ExtraContainerPackages=[]
 Meta.ConfigVersion=12
-Meta.AppConfigId=7b025c72-f27d-4fcf-bced-9b4ad2964dac
+Meta.AppConfigId=4508514a-f91e-481f-9e0a-cc4c32173918
 App.DisplayName=Mount & Blade II: Bannerlord Co-op
 App.RootDir=./bannerlord-coop/
 App.BaseDirectory=./bannerlord-coop/
