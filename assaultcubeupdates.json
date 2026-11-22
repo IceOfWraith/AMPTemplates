@@ -67,7 +67,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd /D \"{{$FullRootDir}}.\" & (if not exist ac-tools\\7z.exe ac-tools\\7zr.exe x -y -oac-tools ac-tools\\7z-x64.exe 7z.exe 7z.dll > NUL) & rd /S /Q ac-install > NUL 2>&1 & for %f in (ac-download\\AssaultCube_v*.exe) do (ac-tools\\7z.exe x -y -oac-install -x!$PLUGINSDIR \"%f\" > NUL) & if not exist ac-install\\bin_win32\\ac_server.exe (echo AssaultCube installer could not be unpacked & exit /b 1) else (robocopy ac-install\\config \"{{$FullBaseDir}}config\" /E /XC /XN /XO /NFL /NDL /NJH /NJS /NP > NUL & robocopy ac-install \"{{$FullBaseDir}}.\" /E /XD config /XF *.exe.nsis /NFL /NDL /NJH /NJS /NP > NUL & rd /S /Q ac-install ac-download > NUL 2>&1 & if not exist \"{{$FullBaseDir}}bin_win32\\ac_server.exe\" (exit /b 1) else (echo AssaultCube installed/updated & exit /b 0))",
+        "UpdateSourceArgs": "/C cd /D \"{{$FullRootDir}}.\" & (if not exist ac-tools\\7z.exe ac-tools\\7zr.exe x -y -oac-tools ac-tools\\7z-x64.exe 7z.exe 7z.dll > NUL) & rd /S /Q ac-install > NUL 2>&1 & for %f in (ac-download\\AssaultCube_v*.exe) do (ac-tools\\7z.exe x -y -oac-install -x!$PLUGINSDIR -x!$TEMP \"%f\" > NUL) & if not exist ac-install\\bin_win32\\ac_server.exe (echo AssaultCube installer could not be unpacked & exit /b 1) else (robocopy ac-install\\config \"{{$FullBaseDir}}config\" /E /XC /XN /XO /NFL /NDL /NJH /NJS /NP > NUL & robocopy ac-install \"{{$FullBaseDir}}.\" /E /XD config /XF Uninstall.exe /NFL /NDL /NJH /NJS /NP > NUL & rd /S /Q ac-install ac-download > NUL 2>&1 & cd /D \"{{$FullBaseDir}}.\" & copy /Y bin_win32\\ac_server.exe ac_server.exe > NUL & copy /Y bin_win32\\SDL2.dll SDL2.dll > NUL & copy /Y bin_win32\\zlib1.dll zlib1.dll > NUL & if not exist ac_server.exe (exit /b 1) else (echo AssaultCube installed/updated & exit /b 0))",
         "SkipOnFailure": false
     },
     {
@@ -77,6 +77,13 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c \"cd \\\"{{$FullRootDir}}\\\" && rm -rf ac-install && mkdir -p ac-install \\\"{{$FullBaseDir}}config\\\" && tar -xjf ac-download/AssaultCube_v*.tar.bz2 -C ac-install && cp -rn ac-install/config/. \\\"{{$FullBaseDir}}config/\\\" && rm -rf ac-install/config && cp -rf ac-install/. \\\"{{$FullBaseDir}}\\\" && chmod +x \\\"{{$FullBaseDir}}bin_unix/linux_64_server\\\" && rm -rf ac-install ac-download && echo 'AssaultCube installed/updated'\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Logs Folder Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}logs",
         "SkipOnFailure": false
     }
 ]
