@@ -125,7 +125,8 @@ function Stop-Hub {
 
 # Copy Hub's log to the console and watch for "quit" on stdin.
 $logFile = $null; $stream = $null; $reader = $null
-$stdin = [Console]::In
+# Console.In blocks even in ReadLineAsync, so read the raw stdin stream.
+$stdin = New-Object IO.StreamReader([Console]::OpenStandardInput(), [Text.Encoding]::UTF8)
 $pending = $stdin.ReadLineAsync()
 $exitCode = 0
 try {
