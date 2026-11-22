@@ -79,6 +79,22 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Stop lip Daemon",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "{{$FullRootDir}}lip\\lip.exe",
+        "UpdateSourceArgs": "daemon stop",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Stop lip Daemon",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"export XDG_DATA_HOME=\\\"{{$FullRootDir}}.lip/data\\\" XDG_CACHE_HOME=\\\"{{$FullRootDir}}.lip/cache\\\" XDG_CONFIG_HOME=\\\"{{$FullRootDir}}.lip/config\\\" XDG_STATE_HOME=\\\"{{$FullRootDir}}.lip/state\\\" XDG_RUNTIME_DIR=; \\\"{{$FullRootDir}}lip/lip\\\" daemon stop\"",
+        "SkipOnFailure": true
+    },
+    {
         "UpdateStageName": "Allowlist.json Restore",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CopyFilePath",
