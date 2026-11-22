@@ -1,4 +1,4 @@
-Meta.DisplayName=Running With Rifles
+Meta.DisplayName=Running With Rifles [bot]
 Meta.Description=RUNNING WITH RIFLES Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=7b73bea2-517c-4463-974e-1960d80c37f7
+Meta.AppConfigId=daad954f-b631-44d3-96e0-8eef98fccbd2
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Running With Rifles

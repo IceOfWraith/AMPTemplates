@@ -11,7 +11,7 @@
         "UpdateStageName": "Server Script Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/running-with-riflesamp_server.as",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/7e309df4fab5309378b5bc9f42ae0d20376f0826/running-with-riflesamp_server.as",
         "UpdateSourceArgs": "AMP_amp_server.as",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
