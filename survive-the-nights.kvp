@@ -1,4 +1,4 @@
-Meta.DisplayName=Survive the Nights
+Meta.DisplayName=Survive the Nights [bot]
 Meta.Description=Survive the Nights Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=78124ad2-6f21-4533-ae11-783d93aabfd5
+Meta.AppConfigId=ab3e98aa-e758-499f-b302-328be770ff2a
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Survive the Nights
