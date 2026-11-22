@@ -1,5 +1,19 @@
 [
     {
+        "UpdateStageName": "Download Folder Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullRootDir}}ac-download",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Tools Folder Creation",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullRootDir}}ac-tools",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "AssaultCube Download",
         "UpdateStageDescription": "Downloads the latest AssaultCube release from GitHub",
         "UpdateSourcePlatform": "Windows",
