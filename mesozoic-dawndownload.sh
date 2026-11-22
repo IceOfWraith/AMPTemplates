@@ -63,10 +63,10 @@ N=0
 for LAYER in $LAYERS; do
     N=$((N + 1))
     echo "Downloading layer $N of $COUNT"
-    curl -fSL --retry 3 -H "Authorization: Bearer $TOKEN" -o "$WORK/layer.tgz" "$REGISTRY/v2/$IMAGE/blobs/$LAYER"
+    curl -fsSL --retry 3 -H "Authorization: Bearer $TOKEN" -o "$WORK/layer.tgz" "$REGISTRY/v2/$IMAGE/blobs/$LAYER"
     # Only the game folder (/app) is needed; layers without it are skipped.
     if tar -tzf "$WORK/layer.tgz" 2>/dev/null | grep '^app/' >/dev/null; then
-        tar -xzf "$WORK/layer.tgz" -C "$WORK/root" --no-same-owner --wildcards 'app/*'
+        tar -xzf "$WORK/layer.tgz" -C "$WORK/root" --no-same-owner app
     fi
     rm -f "$WORK/layer.tgz"
 done
