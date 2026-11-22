@@ -1,4 +1,4 @@
-Meta.DisplayName=Snapshot VR
+Meta.DisplayName=Snapshot VR [bot]
 Meta.Description=Snapshot VR Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a1c2347e-8223-4d2f-98e3-a506530c4920
+Meta.AppConfigId=3b354b78-4268-44b6-b5ca-67f106fcdc11
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Snapshot VR
