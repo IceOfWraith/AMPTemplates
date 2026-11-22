@@ -22,8 +22,8 @@ monitoring:
   enabled: {{monitoring.enabled}}
 
 store:
-  type: boltdb
-  path: server_manager.db
+  type: json
+  path: data
   shared_data_path:
   scheduled_event_check_loop: 0s
 
