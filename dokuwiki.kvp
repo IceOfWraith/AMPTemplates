@@ -1,4 +1,4 @@
-Meta.DisplayName=DokuWiki
+Meta.DisplayName=DokuWiki [bot]
 Meta.Description=DokuWiki self-hosted wiki, served by PHP's built-in web server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=d8c7f776-80ef-4fb0-a5ce-d51026fa99be
+Meta.AppConfigId=3e853d6c-c663-4597-a77b-539a64428b8f
 Meta.ImportableExtensions=[]
 App.DisplayName=DokuWiki
 App.RootDir=./dokuwiki/
