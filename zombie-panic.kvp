@@ -1,4 +1,4 @@
-Meta.DisplayName=Zombie Panic!
+Meta.DisplayName=Zombie Panic! [bot]
 Meta.Description=Zombie Panic! (GoldSrc) Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=b47e3b1b-d7e8-4ec2-8b52-0268cbaffcc6
+Meta.AppConfigId=a8451646-9cc2-4c5f-a894-c8ad36747275
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
