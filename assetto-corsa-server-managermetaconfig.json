@@ -4,5 +4,10 @@
         "AutoMap": true,
         "ConfigType": "template",
         "ConfigFileTemplate": "assetto-corsa/AMP_config.yml"
+    },
+    {
+        "ConfigFile": "data/server_options.json",
+        "AutoMap": true,
+        "ConfigType": "json"
     }
 ]
