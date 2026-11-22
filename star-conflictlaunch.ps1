@@ -129,6 +129,8 @@ $logFile = $null; $stream = $null; $reader = $null
 $stdin = New-Object IO.StreamReader([Console]::OpenStandardInput(), [Text.Encoding]::UTF8)
 $pending = $stdin.ReadLineAsync()
 $exitCode = 0
+$announced = $false
+$nextProbe = Get-Date
 try {
     while ($true) {
         $newest = Get-ChildItem -Path (Join-Path $LogDir 'hub_*.log') -ErrorAction SilentlyContinue |
@@ -142,6 +144,15 @@ try {
         }
         if ($reader) {
             while ($null -ne ($line = $reader.ReadLine())) { Say $line }
+        }
+
+        # Hub registers the services before the shard has loaded its data, so check the player ports.
+        if (-not $announced -and (Get-Date) -ge $nextProbe) {
+            $nextProbe = (Get-Date).AddSeconds(2)
+            if ((Test-Port $LoadBalancerPort) -and (Test-Port $ShardPort) -and (Test-Port $ChatPort)) {
+                Say "Star Conflict server is ready: load balancer, shard and chat ports are listening."
+                $announced = $true
+            }
         }
 
         if ($pending.IsCompleted) {

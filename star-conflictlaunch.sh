@@ -151,6 +151,12 @@ while true; do
         TAIL_PID=$!
     fi
 
+    # Hub registers the services before the shard has loaded its data, so check the player ports.
+    if [ -z "$ANNOUNCED" ] && port_open "$LB_PORT" && port_open "$SHARD_PORT" && port_open "$CHAT_PORT"; then
+        say "Star Conflict server is ready: load balancer, shard and chat ports are listening."
+        ANNOUNCED=1
+    fi
+
     if read -r -t 1 CMD; then
         CMD="$(printf '%s' "$CMD" | tr -d '\r' | xargs)"
         if [[ "$CMD" =~ ^/?(quit|stop|exit)$ ]]; then break; fi

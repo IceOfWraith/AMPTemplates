@@ -1,4 +1,4 @@
-Meta.DisplayName=Star Conflict [bot]
+Meta.DisplayName=Star Conflict
 Meta.Description=Star Conflict local server (Hub, cloud services and bundled MongoDB)
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=1e50b376-9397-42ca-a789-ca109d258c01
+Meta.AppConfigId=9d3f6a2e-4b71-4c8e-a5d2-7e1b0c94f6a3
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Star Conflict
@@ -91,7 +91,7 @@ App.ApplicationReadyMode=RegexMatch
 Console.FilterMatchRegex=
 Console.FilterMatchReplacement=
 Console.ThrowawayMessageRegex=^(\d\d:\d\d:\d\d\.\d+\s+\|\s+(\*{5,}.*|\s?\w+(\[\s*\d+\])?\s+= .*|Hub::OnConnect, .*|NetEndpoint::Update: incoming connection .*|Hub::OnDisconnect, .*)|.*fixme:.*)$
-Console.AppReadyRegex=^\d\d:\d\d:\d\d\.\d+\s+\|\s+Hub: Connectee at \S+ registered itself as 810000000000001$
+Console.AppReadyRegex=^Star Conflict server is ready: .*$
 Console.UserJoinRegex=^$
 Console.UserLeaveRegex=^$
 Console.UserChatRegex=^$
