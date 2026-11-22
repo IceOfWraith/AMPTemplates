@@ -1,4 +1,4 @@
-Meta.DisplayName=Arma 2
+Meta.DisplayName=Arma 2 [bot]
 Meta.Description=Arma 2 Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=aff84d24-eee8-40c7-8628-1cd8a5c0a384
+Meta.AppConfigId=799434d5-9391-4a64-ac00-8882d70114ba
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
