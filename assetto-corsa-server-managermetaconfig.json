@@ -1,0 +1,8 @@
+[
+    {
+        "ConfigFile": "config.yml",
+        "AutoMap": true,
+        "ConfigType": "template",
+        "ConfigFileTemplate": "assetto-corsa/AMP_config.yml"
+    }
+]

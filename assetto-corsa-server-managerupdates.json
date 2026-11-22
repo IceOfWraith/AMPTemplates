@@ -1,0 +1,47 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Server Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "302550",
+        "UpdateSourceArgs": "244210",
+        "ForceDownloadPlatform": "Windows",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Manager Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURLfromJQ",
+        "UpdateSourceData": "https://api.github.com/repos/JustaPenguin/assetto-server-manager/releases/latest",
+        "UpdateSourceArgs": "$.assets[?(@.name =~ /^server-manager_v.*\\.zip$/)].browser_download_url",
+        "UpdateSourceTarget": "{{$FullRootDir}}sm-download",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Manager Install",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "CMD",
+        "UpdateSourceArgs": "move /Y \"{{$FullRootDir}}sm-download\\windows\\server-manager.exe\" \"{{$FullBaseDir}}server-manager.exe\" && rmdir /S /Q \"{{$FullRootDir}}sm-download\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Manager Install",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Bash",
+        "UpdateSourceArgs": "mv -f \"{{$FullRootDir}}sm-download/linux/server-manager\" \"{{$FullBaseDir}}server-manager\" && chmod +x \"{{$FullBaseDir}}server-manager\" && rm -rf \"{{$FullRootDir}}sm-download\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Manager Config Template Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/assetto-corsa-server-managerconfig.yml",
+        "UpdateSourceArgs": "AMP_config.yml",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    }
+]
