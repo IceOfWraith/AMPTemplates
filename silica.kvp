@@ -1,4 +1,4 @@
-Meta.DisplayName=Silica [bot]
+Meta.DisplayName=Silica
 Meta.Description=Silica Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=d909004d-f956-426e-b32c-6c45d6af7b06
+Meta.AppConfigId=cb8b5a29-98c6-47eb-ac45-8873e2ec174c
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Silica
@@ -36,10 +36,10 @@ App.ExecutableLinux=2738040/Silica.x86_64
 App.WorkingDir=2738040
 App.LinuxCommandLineArgs=
 App.WindowsCommandLineArgs=
-App.CommandLineArgs=-batchmode -nographics -logFile - -GamePort {{$GamePort}} -QueryPort {{$QueryPort}} -ServerName "AMP Probe Server" -MaxPlayers 20
+App.CommandLineArgs=-batchmode -nographics -logFile - -GamePort {{$GamePort}} -QueryPort {{$QueryPort}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
-App.EnvironmentVariables={"SteamAppId":"1494420","HOME":"{{$FullBaseDir}}","USERPROFILE":"{{$FullBaseDir}}","LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%"}
+App.EnvironmentVariables={"SteamAppId":"1494420","USERPROFILE":"{{$FullBaseDir}}","HOME":"{{$FullBaseDir}}Documents","LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%"}
 App.CommandLineParameterFormat=-{0}={1}
 App.CommandLineParameterDelimiter= 
 App.ExitMethod=OS_CLOSE
