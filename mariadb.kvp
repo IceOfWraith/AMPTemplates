@@ -1,4 +1,4 @@
-Meta.DisplayName=MariaDB
+Meta.DisplayName=MariaDB [bot]
 Meta.Description=MariaDB Service Instance
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=4
 Meta.ReleaseNotes=IP binding can now be changed in instance settings and application shuts down properly
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=dbc03533-2478-4262-a262-49231c1dca7f
+Meta.AppConfigId=751c7fe2-ae8c-4e92-b0c8-5bfd791e8e46
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=MariaDB
