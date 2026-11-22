@@ -11,7 +11,7 @@
         "UpdateStageName": "Server Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/ccb7486d95179db1240b3ceb81dd1659b23c0672/solace-craftingservercfg.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/solace-craftingservercfg.json",
         "UpdateSourceArgs": "servercfg.dat",
         "UpdateSourceTarget": "{{$FullBaseDir}}Solace Crafting_Data",
         "OverwriteExistingFiles": false,
