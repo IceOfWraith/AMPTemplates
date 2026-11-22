@@ -1,4 +1,4 @@
-Meta.DisplayName=Nazi Zombies: Portable
+Meta.DisplayName=Nazi Zombies: Portable [bot]
 Meta.Description=Nazi Zombies: Portable (NZ:P) co-op dedicated server, using the NZ:P team's FTEQW engine build
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=ea25685e-715d-4a89-a776-3a692ef5ab34
+Meta.AppConfigId=56fba682-5547-4995-b521-2927969eeed1
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Nazi Zombies: Portable
 App.RootDir=./nazi-zombies-portable/
