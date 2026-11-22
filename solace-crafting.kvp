@@ -1,4 +1,4 @@
-Meta.DisplayName=Solace Crafting
+Meta.DisplayName=Solace Crafting [bot]
 Meta.Description=Solace Crafting Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=671b3d42-c16d-4a99-8d04-ef60c0eeb407
+Meta.AppConfigId=e903492d-9e28-42e8-a15b-2605bd0ab91a
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Solace Crafting
