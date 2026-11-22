@@ -1,9 +1,0 @@
-[
-  {
-    "Protocol": "UDP",
-    "Port": 4200,
-    "Ref": "GamePort",
-    "Name": "Co-op game",
-    "Description": "Direct connection port for players"
-  }
-]
