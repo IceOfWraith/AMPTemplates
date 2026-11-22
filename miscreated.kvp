@@ -1,4 +1,4 @@
-Meta.DisplayName=Miscreated
+Meta.DisplayName=Miscreated [bot]
 Meta.Description=Miscreated Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=3
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a0ee7e94-a28a-4694-9f95-24f7508b91ac
+Meta.AppConfigId=63f1ee67-2bde-441f-be01-e6f2f9ba9d96
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Miscreated
