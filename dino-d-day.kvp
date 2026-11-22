@@ -1,4 +1,4 @@
-Meta.DisplayName=Dino D-Day
+Meta.DisplayName=Dino D-Day [bot]
 Meta.Description=Dino D-Day Dedicated Server. Requires a Steam login that owns Dino D-Day
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=5b0d3c3e-9f2a-4c71-8e6d-2a7d1f4b9c60
+Meta.AppConfigId=24986961-fe47-4e3a-b09d-506a878da238
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
