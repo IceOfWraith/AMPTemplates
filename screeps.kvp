@@ -1,4 +1,4 @@
-Meta.DisplayName=Screeps
+Meta.DisplayName=Screeps [bot]
 Meta.Description=Screeps: World private server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=e247e2c4-e095-4b3f-9544-234a1421af5a
+Meta.AppConfigId=0447c548-d229-4349-8c7c-016ba440ccce
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Screeps
