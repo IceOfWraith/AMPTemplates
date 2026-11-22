@@ -29,7 +29,7 @@
     "UpdateStageName": "Mod Helper Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/screepsmods.js",
+    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/05b810097e491cc420216e9ef2df63ee1a919a5a/screepsmods.js",
     "UpdateSourceTarget": "{{$FullBaseDir}}",
     "OverwriteExistingFiles": true,
     "SkipOnFailure": false
