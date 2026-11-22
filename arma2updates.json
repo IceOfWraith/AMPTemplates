@@ -20,10 +20,20 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "BattlEye Server Library Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://www.battleye.com/downloads/arma2/BEServer.dll",
+        "UpdateSourceArgs": "BEServer.dll",
+        "UpdateSourceTarget": "{{$FullBaseDir}}BattlEye",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": true
+    },
+    {
         "UpdateStageName": "Server Config Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/1da77edc5a572eff8621f0fc6418a885b341bf3e/arma2server.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma2server.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,
@@ -33,7 +43,7 @@
         "UpdateStageName": "Basic Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/1da77edc5a572eff8621f0fc6418a885b341bf3e/arma2basic.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma2basic.cfg",
         "UpdateSourceArgs": "basic.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,
