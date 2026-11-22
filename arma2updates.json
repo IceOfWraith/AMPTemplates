@@ -20,6 +20,22 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "BattlEye Directory Creation",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C if not exist \"{{$FullBaseDir}}BattlEye\" mkdir \"{{$FullBaseDir}}BattlEye\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "BattlEye Directory Creation",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"mkdir -p \\\"{{$FullBaseDir}}BattlEye\\\"\"",
+        "SkipOnFailure": true
+    },
+    {
         "UpdateStageName": "BattlEye Server Library Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
@@ -33,7 +49,7 @@
         "UpdateStageName": "Server Config Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/64871f8a561ccc58f4069499e9551b6995cc262e/arma2server.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma2server.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,
@@ -43,7 +59,7 @@
         "UpdateStageName": "Basic Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/64871f8a561ccc58f4069499e9551b6995cc262e/arma2basic.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma2basic.cfg",
         "UpdateSourceArgs": "basic.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": false,
