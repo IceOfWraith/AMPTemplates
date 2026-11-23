@@ -1,5 +1,12 @@
 [
     {
+        "UpdateStageName": "Debug",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}KnockoutCityServer\\\"; { id; mount | grep -i amp; ls -la \\\"{{$FullRootDir}}.wine/dosdevices\\\"; WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEDEBUG=err+all timeout 40 /usr/bin/wine KnockoutCityServer.exe -backend_port=23600; echo exit=$?; } > \\\"{{$FullBaseDir}}debug.txt\\\" 2>&1\"",
+        "SkipOnFailure": true
+    },{
         "UpdateStageName": "Start Databases",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
@@ -8,3 +15,4 @@
         "SkipOnFailure": false
     }
 ]
+
