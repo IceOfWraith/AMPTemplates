@@ -1,0 +1,10 @@
+[
+    {
+        "UpdateStageName": "Start Databases",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "\"{{$FullRootDir}}start-databases.sh\" \"{{$FullRootDir}}database\"",
+        "SkipOnFailure": false
+    }
+]
