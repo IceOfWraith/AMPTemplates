@@ -1,4 +1,4 @@
-Meta.DisplayName=Space Engineers 2 (SE2 Online)
+Meta.DisplayName=Space Engineers 2 (SE2 Online) [bot]
 Meta.Description=SE2 Online community multiplayer dedicated server for Space Engineers 2. The server zip must be downloaded from se2-online.yellow51.dev and uploaded to the instance.
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unsupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=True
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=5b0e8f3a-9c47-4d2e-b1a6-7e3f2c8d9a41
+Meta.AppConfigId=10d1483b-73c3-452b-b91b-724219632491
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Space Engineers 2 (SE2 Online)
