@@ -1,18 +1,10 @@
 [
     {
-        "UpdateStageName": "Debug",
+        "UpdateStageName": "Prepare Server and Databases",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\"; if [ -f debug.sh ]; then bash debug.sh > debug.txt 2>&1; fi; true\"",
-        "SkipOnFailure": true
-    },{
-        "UpdateStageName": "Start Databases",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "\"{{$FullRootDir}}start-databases.sh\" \"{{$FullBaseDir}}KnockoutCityServerData/database\"",
+        "UpdateSourceArgs": "\"{{$FullRootDir}}prepare-start.sh\" \"{{$FullBaseDir}}KnockoutCityServerData/database\" \"{{$FullBaseDir}}KnockoutCityServer\"",
         "SkipOnFailure": false
     }
 ]
-

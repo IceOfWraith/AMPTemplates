@@ -1,4 +1,4 @@
-Meta.DisplayName=Knockout City: Private Server Edition [bot]
+Meta.DisplayName=Knockout City: Private Server Edition
 Meta.Description=Knockout City Private Server Edition Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=f72b081e-8c73-4660-9e82-5f20adfdba83
+Meta.AppConfigId=09020e9d-06c2-411b-b6a6-ffaffb17e133
 Meta.ImportableExtensions=[]
 App.DisplayName=Knockout City
 App.RootDir=./knockout-city/
@@ -32,7 +32,7 @@ App.BaseDirectory=./knockout-city/2915930/
 App.SteamWorkshopDownloadLocation=
 App.ExecutableWin=2915930\KnockoutCityServer\KnockoutCityServer.exe
 App.ExecutableLinux=/usr/bin/wine
-App.WorkingDir=2915930/KnockoutCityServer
+App.WorkingDir=/tmp/knockout-city-server
 App.LinuxCommandLineArgs=KnockoutCityServer.exe -backend_db=postgresql://viper:viper@localhost:5434/viper -backend_redis_db_host=127.0.0.1 -backend_redis_db_port=6380
 App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} -backend_port={{$ServerPort1}} -server_min_port={{$ServerPort1}} -server_max_port={{$ServerPort3}} {{$FormattedArgs}}
@@ -85,7 +85,7 @@ App.RapidStartup=False
 App.SmartExcludeExemptions=["*.cfg","*.conf","*.config","*.ini","*.json","*.xml","*.properties","*.kvp","*.yml","*.yaml","*.toml","*.lua"]
 App.SmartExcludeSupported=False
 App.DumpFullChildProcessTree=False
-App.MonitorChildProcessName=^{{$WineBaseDir}}KnockoutCityServer\\KnockoutCityServer\.exe.*-backend_port={{$ServerPort1}}.*$
+App.MonitorChildProcessName=^Z:\\tmp\\knockout-city-server\\KnockoutCityServer\.exe.*-backend_port={{$ServerPort1}}.*$
 App.MonitorDirectChildOnly=False
 App.SupportsUniversalSleep=False
 App.WakeupMode=Any
