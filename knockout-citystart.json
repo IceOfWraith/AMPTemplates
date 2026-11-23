@@ -4,7 +4,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "\"{{$FullRootDir}}start-databases.sh\" \"{{$FullRootDir}}database\"",
+        "UpdateSourceArgs": "\"{{$FullRootDir}}start-databases.sh\" \"{{$FullBaseDir}}KnockoutCityServerData/database\"",
         "SkipOnFailure": false
     }
 ]
