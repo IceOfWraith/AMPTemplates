@@ -4,7 +4,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$ErrorActionPreference='Stop'; $ProgressPreference='SilentlyContinue'; Set-Location -LiteralPath '{{$FullRootDir}}'; New-Item -ItemType Directory -Force -Path 'server','upload' | Out-Null; $z = Get-ChildItem -Path 'upload' -Filter '*.zip' -File | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if ($z) { Write-Output ('Extracting ' + $z.Name + ' into the server folder'); tar.exe -xf $z.FullName -C server; if ($LASTEXITCODE -ne 0) { Write-Output ('Could not extract ' + $z.Name + '. Upload it again and click Update'); exit 1 }; if (-not (Test-Path -LiteralPath 'server/Y51_SE2Online.DedicatedServer.exe')) { Write-Output ($z.Name + ' is not the SE2 Online dedicated server zip (no Y51_SE2Online.DedicatedServer.exe inside)'); exit 1 }; Remove-Item -LiteralPath $z.FullName -Force; Write-Output 'SE2 Online server installed. The uploaded zip was removed' } elseif (Test-Path -LiteralPath 'server/Y51_SE2Online.DedicatedServer.exe') { Write-Output 'No new server zip in the upload folder. Keeping the installed SE2 Online server' } else { Write-Output 'SE2 Online server files not found. Download the dedicated server zip from https://se2-online.yellow51.dev/ (sign in with Steam), upload it to the space-engineers2/upload folder with the File Manager, then click Update again'; exit 1 }\"",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$ErrorActionPreference='Stop'; $ProgressPreference='SilentlyContinue'; Set-Location -LiteralPath '{{$FullRootDir}}'; New-Item -ItemType Directory -Force -Path 'server','upload' | Out-Null; $z = Get-ChildItem -Path 'upload' -Filter '*.zip' -File | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if ($z) { Write-Output ('Extracting ' + $z.Name + ' into the server folder'); tar.exe -xf $z.FullName -C server; if ($LASTEXITCODE -ne 0) { Write-Output ('Could not extract ' + $z.Name + '. Upload it again and click Update'); exit 1 }; if (-not (Test-Path -LiteralPath 'server/Y51_SE2Online.DedicatedServer.exe')) { Write-Output ($z.Name + ' is not the SE2 Online dedicated server zip (no Y51_SE2Online.DedicatedServer.exe inside)'); exit 1 }; Remove-Item -LiteralPath $z.FullName -Force; Write-Output 'SE2 Online server installed. The uploaded zip was removed' } elseif (Test-Path -LiteralPath 'server/Y51_SE2Online.DedicatedServer.exe') { Write-Output 'No new server zip in the upload folder. Keeping the installed SE2 Online server' } else { Write-Output 'SE2 Online server files not found. Download the dedicated server zip from https://se2-online.yellow51.dev/ (sign in with Steam), upload it to the upload folder with the File Manager, then click Update again'; exit 1 }\"",
         "SkipOnFailure": false
     },
     {
@@ -12,7 +12,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullRootDir}}\\\" && mkdir -p server upload; z=$(ls -t upload/*.zip 2>/dev/null | head -n1); if [[ -n \\\"$z\\\" ]]; then echo \\\"Extracting $(basename \\\"$z\\\") into the server folder\\\"; if ! unzip -oq \\\"$z\\\" -d server; then echo \\\"Could not extract $(basename \\\"$z\\\"). Upload it again and click Update\\\"; exit 1; fi; if [[ ! -f server/Y51_SE2Online.DedicatedServer.exe ]]; then echo \\\"$(basename \\\"$z\\\") is not the SE2 Online dedicated server zip (no Y51_SE2Online.DedicatedServer.exe inside)\\\"; exit 1; fi; rm -f \\\"$z\\\"; echo \\\"SE2 Online server installed. The uploaded zip was removed\\\"; elif [[ -f server/Y51_SE2Online.DedicatedServer.exe ]]; then echo \\\"No new server zip in the upload folder. Keeping the installed SE2 Online server\\\"; else echo \\\"SE2 Online server files not found. Download the dedicated server zip from https://se2-online.yellow51.dev/ (sign in with Steam), upload it to the space-engineers2/upload folder with the File Manager, then click Update again\\\"; exit 1; fi\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullRootDir}}\\\" && mkdir -p server upload; z=$(ls -t upload/*.zip 2>/dev/null | head -n1); if [[ -n \\\"$z\\\" ]]; then echo \\\"Extracting $(basename \\\"$z\\\") into the server folder\\\"; if ! unzip -oq \\\"$z\\\" -d server; then echo \\\"Could not extract $(basename \\\"$z\\\"). Upload it again and click Update\\\"; exit 1; fi; if [[ ! -f server/Y51_SE2Online.DedicatedServer.exe ]]; then echo \\\"$(basename \\\"$z\\\") is not the SE2 Online dedicated server zip (no Y51_SE2Online.DedicatedServer.exe inside)\\\"; exit 1; fi; rm -f \\\"$z\\\"; echo \\\"SE2 Online server installed. The uploaded zip was removed\\\"; elif [[ -f server/Y51_SE2Online.DedicatedServer.exe ]]; then echo \\\"No new server zip in the upload folder. Keeping the installed SE2 Online server\\\"; else echo \\\"SE2 Online server files not found. Download the dedicated server zip from https://se2-online.yellow51.dev/ (sign in with Steam), upload it to the upload folder with the File Manager, then click Update again\\\"; exit 1; fi\"",
         "SkipOnFailure": false
     },
     {
@@ -40,7 +40,7 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateFile",
         "UpdateSourceData": "{\n  \"GameDirectory\": \"../1133870/Game2\",\n  \"Configuration\": \"server.json\",\n  \"Profile\": \"profile\",\n  \"Plugin\": \"Y51_SE2Online.dll\",\n  \"ShowWindow\": false,\n  \"Headless\": true\n}",
-        "UpdateSourceArgs": "{{$FullBaseDir}}runner.json",
+        "UpdateSourceArgs": "{{$FullBaseDir}}server/runner.json",
         "OverwriteExistingFiles": false,
         "SkipOnFailure": false
     },
@@ -48,8 +48,8 @@
         "UpdateStageName": "Server Config Creation",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CopyFilePath",
-        "UpdateSourceData": "{{$FullBaseDir}}server.json",
-        "UpdateSourceArgs": "{{$FullBaseDir}}server.example.json",
+        "UpdateSourceData": "{{$FullBaseDir}}server/server.json",
+        "UpdateSourceArgs": "{{$FullBaseDir}}server/server.example.json",
         "OverwriteExistingFiles": false,
         "SkipOnFailure": false
     }
