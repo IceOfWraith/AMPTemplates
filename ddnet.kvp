@@ -1,4 +1,4 @@
-Meta.DisplayName=DDNet
+Meta.DisplayName=DDNet [bot]
 Meta.Description=DDraceNetwork (DDNet) Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Initial release. Maximum Clients now sets AMP's player limit
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=67640d01-71cf-4d30-957f-5a4c5aa8665f
+Meta.AppConfigId=a89de496-109f-443a-9ec9-d545bec0c88b
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=DDNet

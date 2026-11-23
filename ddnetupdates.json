@@ -37,7 +37,7 @@
         "UpdateStageName": "Server Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/ddnetautoexec_server.cfg",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/a4827a0c2c3789d11117d14be587deab99b223a1/ddnetautoexec_server.cfg",
         "UpdateSourceArgs": "autoexec_server.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}user",
         "OverwriteExistingFiles": false,
