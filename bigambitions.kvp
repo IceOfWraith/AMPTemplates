@@ -1,4 +1,4 @@
-Meta.DisplayName=Big Ambitions (Going Public server) [bot]
+Meta.DisplayName=Big Ambitions (Going Public server)
 Meta.Description=Always-on Big Ambitions multiplayer host: the Going Public mod in headless server mode under Proton. The server files add Unity Doorstop and a small preloader so the game's mod loader starts without a Steam client - see the setup steps.
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=2
 Meta.ReleaseNotes=Windows support through a container (required on Windows).
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=7272ce6f-1138-4c9e-b8c9-344f961cd4af
+Meta.AppConfigId=6b0c6a3e-9d1f-4a5e-8c2b-2f6d1e7a4b90
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Big Ambitions
 App.RootDir=./bigambitions/
@@ -88,7 +88,7 @@ App.WakeupMode=Any
 App.ApplicationReadyMode=RegexMatch
 Console.FilterMatchRegex=(\e\[(\d+;)*(\d+)?[ABCDHJKfmsu]|\e\[?[?\>\=\da-z]+)
 Console.FilterMatchReplacement=
-Console.ThrowawayMessageRegex=^(?!.*\[BAMP-HEADLESS\]).*(Shader|wine: |fixme:|AsyncGPUReadback|does not support asynchronous readback|Compressed to C:|Game C:/users/steamuser/AppData/Local/Temp).*$
+Console.ThrowawayMessageRegex=^(?!.*\[BAMP-HEADLESS\]).*(Shader|fixme:|AsyncGPUReadback|does not support asynchronous readback|Compressed to C:|Game C:/users/steamuser/AppData/Local/Temp).*$
 Console.AppReadyRegex=^.*\[BAMP-HEADLESS\] READY .*$
 Console.UserJoinRegex=^.*\[BAMP-HEADLESS\] JOIN (?<username>.+)$
 Console.UserLeaveRegex=^.*\[BAMP-HEADLESS\] LEAVE (?<username>.+)$
