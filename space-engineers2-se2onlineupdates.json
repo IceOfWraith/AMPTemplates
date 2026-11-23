@@ -22,8 +22,6 @@
         "UpdateSourceData": "1133870",
         "UpdateSourceTarget": "1133870",
         "ForceDownloadPlatform": "Windows",
-        "UpdateSourceConditionSetting": "GameDirectory",
-        "UpdateSourceConditionValue": "../1133870/Game2",
         "SkipOnFailure": false
     },
     {
@@ -39,7 +37,7 @@
         "UpdateStageName": "Steamworks Library Copy 1",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CopyFilePath",
-        "UpdateSourceData": "{{$FullBaseDir}}server/{{GameDirectory}}/steamclient64.dll",
+        "UpdateSourceData": "{{$FullBaseDir}}1133870/Game2/steamclient64.dll",
         "UpdateSourceArgs": "{{$FullBaseDir}}server/steamclient64.dll",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
@@ -48,7 +46,7 @@
         "UpdateStageName": "Steamworks Library Copy 2",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CopyFilePath",
-        "UpdateSourceData": "{{$FullBaseDir}}server/{{GameDirectory}}/tier0_s64.dll",
+        "UpdateSourceData": "{{$FullBaseDir}}1133870/Game2/tier0_s64.dll",
         "UpdateSourceArgs": "{{$FullBaseDir}}server/tier0_s64.dll",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
@@ -57,7 +55,7 @@
         "UpdateStageName": "Steamworks Library Copy 3",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CopyFilePath",
-        "UpdateSourceData": "{{$FullBaseDir}}server/{{GameDirectory}}/vstdlib_s64.dll",
+        "UpdateSourceData": "{{$FullBaseDir}}1133870/Game2/vstdlib_s64.dll",
         "UpdateSourceArgs": "{{$FullBaseDir}}server/vstdlib_s64.dll",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false

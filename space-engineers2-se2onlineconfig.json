@@ -357,23 +357,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Game Files",
-        "Category": "SE2 Online:rocket_launch",
-        "Subcategory": "Installation:download:4",
-        "Description": "Sets where the Space Engineers 2 game files come from. Steam downloads them with SteamCMD and needs a Steam login that owns Space Engineers 2 (about 60 GB). The standalone server zip already includes them",
-        "Keywords": "game,files,steam,standalone,GameDirectory",
-        "FieldName": "GameDirectory",
-        "InputType": "enum",
-        "IsFlagArgument": false,
-        "ParamFieldName": "$.GameDirectory",
-        "IncludeInCommandLine": false,
-        "DefaultValue": "../1133870/Game2",
-        "EnumValues": {
-            "../1133870/Game2": "Steam (needs a Steam login that owns the game)",
-            "runtime/Game2": "Included in the standalone server zip"
-        }
-    },
-    {
         "DisplayName": "Server Self-Update",
         "Category": "SE2 Online:rocket_launch",
         "Subcategory": "Installation:download:4",
