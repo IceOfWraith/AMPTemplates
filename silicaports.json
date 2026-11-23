@@ -11,6 +11,6 @@
         "Port": 26900,
         "Ref": "QueryPort",
         "Name": "Query Port",
-        "Description": "Port for Steam query traffic"
+        "Description": "Port for Steam server query traffic"
     }
 ]
