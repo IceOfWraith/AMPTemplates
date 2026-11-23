@@ -1,4 +1,4 @@
-Meta.DisplayName=Stormforge
+Meta.DisplayName=Stormforge [bot]
 Meta.Description=Stormforge Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=2
 Meta.ReleaseNotes=Initial release. Linux runs the Windows server under Wine.
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=5110902a-e826-4bd2-8095-993fa62d357f
+Meta.AppConfigId=7fe32b62-0027-4079-af6b-c605ba8acac5
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Stormforge
 App.RootDir=./stormforge/
