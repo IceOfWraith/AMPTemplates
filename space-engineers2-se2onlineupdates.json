@@ -36,6 +36,33 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Steamworks Library Copy 1",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}server/{{GameDirectory}}/steamclient64.dll",
+        "UpdateSourceArgs": "{{$FullBaseDir}}server/steamclient64.dll",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Steamworks Library Copy 2",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}server/{{GameDirectory}}/tier0_s64.dll",
+        "UpdateSourceArgs": "{{$FullBaseDir}}server/tier0_s64.dll",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Steamworks Library Copy 3",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}server/{{GameDirectory}}/vstdlib_s64.dll",
+        "UpdateSourceArgs": "{{$FullBaseDir}}server/vstdlib_s64.dll",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Runner Config Creation",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateFile",
