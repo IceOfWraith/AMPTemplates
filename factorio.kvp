@@ -1,4 +1,4 @@
-Meta.DisplayName=Factorio
+Meta.DisplayName=Factorio [bot]
 Meta.Description=Factorio Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=7
 Meta.ReleaseNotes=Runs the native Linux ARM64 server on aarch64 hosts instead of the emulated x86_64 one.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=50882765-e275-413b-91a6-28f0fd821fde
+Meta.AppConfigId=e8011486-2990-4af3-9dd5-aa1a3234776e
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Factorio
