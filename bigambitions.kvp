@@ -1,4 +1,4 @@
-Meta.DisplayName=Big Ambitions (Going Public server)
+Meta.DisplayName=Big Ambitions (Going Public server) [bot]
 Meta.Description=Always-on Big Ambitions multiplayer host: the Going Public mod in headless server mode under Proton. The server files add Unity Doorstop and a small preloader so the game's mod loader starts without a Steam client - see the setup steps.
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=2
 Meta.ReleaseNotes=Windows support: runs natively, each instance keeps its saves in its own folder.
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=6b0c6a3e-9d1f-4a5e-8c2b-2f6d1e7a4b90
+Meta.AppConfigId=a199a7b3-d234-4f31-8fbe-8743936ac7dc
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Big Ambitions
 App.RootDir=./bigambitions/
