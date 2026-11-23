@@ -1,4 +1,4 @@
-Meta.DisplayName=Stormforge [bot]
+Meta.DisplayName=Stormforge
 Meta.Description=Stormforge Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release.
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=b8030359-71d7-4e56-aff3-cd9eeb1ccee3
+Meta.AppConfigId=5110902a-e826-4bd2-8095-993fa62d357f
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Stormforge
 App.RootDir=./stormforge/
