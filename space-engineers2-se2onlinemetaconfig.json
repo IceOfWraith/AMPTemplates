@@ -1,0 +1,13 @@
+[
+    {
+        "ConfigFile": "runner.json",
+        "AutoMap": true,
+        "ConfigType": "json"
+    },
+    {
+        "ConfigFile": "server.json",
+        "AutoMap": true,
+        "Importable": true,
+        "ConfigType": "json"
+    }
+]
