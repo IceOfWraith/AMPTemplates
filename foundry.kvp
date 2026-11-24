@@ -1,4 +1,4 @@
-Meta.DisplayName=FOUNDRY
+Meta.DisplayName=FOUNDRY [bot]
 Meta.Description=FOUNDRY Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=4
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=56105756-01a5-4658-b9c7-643ffedc4766
+Meta.AppConfigId=8f56567f-0085-46da-9e3f-8245a96cd1a6
 Meta.ImportableExtensions=[]
 App.DisplayName=FOUNDRY
 App.RootDir=./foundry/
