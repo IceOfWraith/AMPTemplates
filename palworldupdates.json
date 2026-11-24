@@ -30,7 +30,7 @@
         "UpdateStageName": "Config Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/512a07aa506d1b1557484d87e957f957f0644761/palworld20templatesettings.ini",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/palworld20templatesettings.ini",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "UpdateSourceArgs": "AMP_PalWorldSettings.ini",
         "OverwriteExistingFiles": true,
