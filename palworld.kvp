@@ -1,4 +1,4 @@
-Meta.DisplayName=Palworld
+Meta.DisplayName=Palworld [bot]
 Meta.Description=Palworld Dedicated Server with Steam Workshop and legacy Unreal Engine 4/5 Scripting System modding support for Windows
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Emulated
@@ -25,7 +25,7 @@ Meta.ConfigVersion=24
 Meta.ReleaseNotes=Added the Fishing Difficulty Rate, Max Buildings Per Player and Allow Enemy Camps Near Bases settings
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=afacd4b2-eb92-4668-8068-9a9975651f54
+Meta.AppConfigId=ed283b07-7e2d-4bcc-b0ab-8ffd0659b872
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Palworld
 App.RootDir=./palworld/
