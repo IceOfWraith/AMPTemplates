@@ -1,4 +1,4 @@
-Meta.DisplayName=Halo: Project Reclaimer
+Meta.DisplayName=Halo: Project Reclaimer [bot]
 Meta.Description=Project Reclaimer dedicated server for Halo: The Master Chief Collection, hosting Halo 3 with Halo: Reach, Halo: CE, Halo 2 and Halo 3: ODST
 Meta.OS=Windows, Linux
 Meta.Arch=x86_64
@@ -23,7 +23,7 @@ Meta.NoCommercialUsage=True
 Meta.ConfigVersion=3
 Meta.ReleaseNotes=Project Reclaimer 0.10: Linux now runs the native Linux dedicated server instead of the Windows server under Wine, which 0.10 no longer supports. The server browser port now opens UDP as well as TCP, as 0.10 needs. New settings from 0.10: Tick Rate, Network Model, Camera, Allow Bots, Minimum Players, Start Countdown, Post-Game Time, Ping Limit and Vote-Kick Immune Player IDs. The firewall now also opens UDP 44329, where the server answers LAN server searches. New download options for Halo: Reach, Halo: CE, Halo 2 and Halo 3: ODST files, which 0.10 can now host. The template is now called Halo: Project Reclaimer.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=c14d68b6-7623-4b7f-baf2-ee54a0737ddc
+Meta.AppConfigId=8882c932-6aea-4f05-9b29-587f3336dffb
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Halo: Project Reclaimer
 App.RootDir=./halo3-project-reclaimer/
