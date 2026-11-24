@@ -1,4 +1,4 @@
-Meta.DisplayName=TeamSpeak 6
+Meta.DisplayName=TeamSpeak 6 [bot]
 Meta.Description=TeamSpeak 6 Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Connect link now opens the TeamSpeak client
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=abb20bca-3c7e-4f74-9bd6-ff9a21a04aef
+Meta.AppConfigId=36c1fe11-bdf8-4afc-9112-90226b6d3759
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=TeamSpeak 6
