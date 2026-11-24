@@ -1,4 +1,4 @@
-Meta.DisplayName=TeamSpeak 3
+Meta.DisplayName=TeamSpeak 3 [bot]
 Meta.Description=TeamSpeak 3 Server
 Meta.OS=Windows, Linux
 Meta.Author=IceOfWraith, YamiKaitou (base)
@@ -13,7 +13,7 @@ Meta.SpecificDockerImage=cubecoders/ampbase:debian
 Meta.Prerequisites=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.ConfigVersion=5
-Meta.AppConfigId=f249d165-d473-4e52-8c9a-9181c6907f60
+Meta.AppConfigId=8cf8b42d-dc6a-4ffd-bdb1-79c630c051f6
 Meta.AppIsMultiIPAware=True
 App.DisplayName=TeamSpeak 3
 App.RootDir=./ts3/

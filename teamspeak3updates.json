@@ -61,7 +61,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/teamspeak3server.ini",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/e9f8cb31584e56ad26ced16ba4bd1ced3a81441e/teamspeak3server.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}teamspeak3-server_win64/",
         "OverwriteExistingFiles": false,
         "SkipOnFailure": false
