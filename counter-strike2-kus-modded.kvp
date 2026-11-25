@@ -1,4 +1,4 @@
-Meta.DisplayName=CS2 (Kus Mod)
+Meta.DisplayName=CS2 (Kus Mod) [bot]
 Meta.Description=Counter-Strike 2 dedicated server with the kus cs2-modded-server pack: Metamod, CounterStrikeSharp and game modes players can switch between in game. Put your own changes in the custom_files folder (at the top of the File Manager, laid out like game/csgo); they are applied over the pack every time the server starts
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Steam Web API Key is only passed when set; added a 30 s exit timeout
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=6149d3c5-0b4e-483d-862a-54d73646d6dd
+Meta.AppConfigId=31b6aeb3-4a87-4d97-8d2b-551d0198c20f
 Meta.AppIsMultiIPAware=True
 App.DisplayName=CS2 (Kus Mod)
 App.RootDir=./counter-strike2/
