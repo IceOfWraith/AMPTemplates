@@ -1,4 +1,4 @@
-Meta.DisplayName=Arma Reforger
+Meta.DisplayName=Arma Reforger [bot]
 Meta.Description=Arma Reforger Dedicated Server
 Meta.OS=Windows, Linux
 Meta.Arch=x86_64
@@ -21,7 +21,7 @@ Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=14
 Meta.ReleaseNotes=Added Public Port Selection Mode; removed -bindPort from the command line so a custom public port can be advertised
-Meta.AppConfigId=23e04f07-dab1-4741-a6e9-e9d0d292c8f1
+Meta.AppConfigId=bb9b6c85-f3be-47a1-bccb-47b358e93ffa
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Arma Reforger
 App.RootDir=./arma-reforger/
