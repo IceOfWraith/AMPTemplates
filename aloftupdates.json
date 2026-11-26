@@ -20,7 +20,7 @@
     "UpdateStageName": "Winescript Download",
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/aloftwinescript.sh",
+    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/ddc0cf6684eda0315df734e5c90d49218ffdde34/aloftwinescript.sh",
     "UpdateSourceArgs": "winescript.sh",
     "UpdateSourceTarget": "{{$FullInstanceDir}}",
     "OverwriteExistingFiles": true,
