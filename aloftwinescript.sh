@@ -59,7 +59,7 @@ echo "" > winescript_log.txt 2>&1
 for PACKAGE in $PACKAGES; do
   #if [[ "$PACKAGE" == "vcrun2022" && "$WINE_VERSION" =~ ^(10|11)$ ]]; then continue; fi
   echo "Installing $PACKAGE"
-  ./winetricks -q $PACKAGE >> winescript_log.txt 2>&1
+  ./winetricks -q $PACKAGE 2>&1 | tee -a winescript_log.txt
 done
 rm -rf ~/.cache/winetricks
 
