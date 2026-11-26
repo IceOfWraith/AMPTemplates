@@ -2,23 +2,23 @@
     {
         "Protocol": "Both",
         "Port": 42420,
-        "Ref": "ProxyPort",
+        "Ref": "ServerPort",
         "Name": "Proxy Port",
-        "Description": "Port used for main game traffic"
+        "Description": "Public port players connect to"
     },
     {
         "Protocol": "TCP",
         "Port": 42499,
         "Ref": "AdminPort",
         "Name": "Admin Port",
-        "Description": "Port used for admin traffic"
+        "Description": "Port used for nimctl admin traffic"
     },
     {
         "Protocol": "TCP",
         "Port": 42500,
         "Ref": "MetricsPort",
         "Name": "Metrics Port",
-        "Description": "Port used for Prometheus metrics endpoint"
+        "Description": "Port used for the Prometheus metrics endpoint"
     },
     {
         "Protocol": "TCP",
