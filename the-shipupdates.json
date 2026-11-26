@@ -11,7 +11,7 @@
     "UpdateStageName": "Server.cfg Template File Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/f1cb9e0abfa5f558917a9bfcadf4f7289a3ac576/the-shipserver.cfg",
+    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-shipserver.cfg",
     "UpdateSourceArgs": "AMP_server.cfg",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "OverwriteExistingFiles": true,
@@ -22,7 +22,7 @@
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
     "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"cd the-ship/2403; ldd --version | head -1; export LD_LIBRARY_PATH=.:bin; timeout 20 ./srcds_i686 -game ship -console -port 27015 +map batavier 2>&1 | tail -8; echo ===TUNABLE; export GLIBC_TUNABLES=glibc.rtld.execstack=2; timeout 30 ./srcds_i686 -game ship -console -port 27015 +map batavier 2>&1 | tail -30; echo EXIT\"",
+    "UpdateSourceArgs": "-c \"cd the-ship/2403; ln -sfn GameInfo.txt ship/gameinfo.txt; export LD_LIBRARY_PATH=.:bin GLIBC_TUNABLES=glibc.rtld.execstack=2; (timeout 45 ./srcds_i686 -game ship -console -port 27015 +maxplayers 16 +map batavier 2>&1 | tail -45) ; echo EXIT\"",
     "SkipOnFailure": true
   }
 ]
