@@ -19,7 +19,7 @@
     "UpdateStageName": "Server.cfg Template File Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/2f86ce3e808fcd08cb456b53a49ff15382dafcbf/the-shipserver.cfg",
+    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-shipserver.cfg",
     "UpdateSourceArgs": "AMP_server.cfg",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "OverwriteExistingFiles": true,
@@ -30,7 +30,7 @@
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
     "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"cd the-ship/2403; export LD_LIBRARY_PATH=.:bin GLIBC_TUNABLES=glibc.rtld.execstack=2\n(stdbuf -oL -eL ./srcds_i686 -game ship -console -usercon -port 27115 -ip 0.0.0.0 -maxplayers 16 +clientport 27105 -nohltv +rcon_password abc123 +map batavier > /tmp/ship_out.txt 2>&1; echo \\\"SRCDS EXIT $?\\\" >> /tmp/ship_out.txt) &\nsleep 75\necho \\\"--- connecting\\\"; (exec 3<>/dev/tcp/127.0.0.1/27115 && echo CONNECTED && printf '\\x11\\x00\\x00\\x00\\x07\\x00\\x00\\x00\\x03\\x00\\x00\\x00abc123\\x00\\x00' >&3 && timeout 5 cat <&3 | od -An -tx1 | head -5) 2>&1\necho \\\"--- after rcon\\\"; sleep 5\ngrep -v SOLID_VPHYSICS /tmp/ship_out.txt | tail -60\npkill -f srcds_i686; sleep 2; grep \\\"SRCDS EXIT\\\" /tmp/ship_out.txt; true\n\"",
+    "UpdateSourceArgs": "-c \"cd the-ship/2403; export LD_LIBRARY_PATH=.:bin GLIBC_TUNABLES=glibc.rtld.execstack=2\nwhich script; (script -qfec './srcds_i686 -game ship -console -usercon -port 27115 -ip 0.0.0.0 -maxplayers 16 +clientport 27105 -nohltv +rcon_password abc123 +map batavier' /tmp/ship_out.txt > /dev/null 2>&1; echo \\\"SRCDS EXIT $?\\\" >> /tmp/ship_out.txt) &\nsleep 90\necho \\\"--- a2s\\\"; (exec 4<>/dev/udp/127.0.0.1/27115 && printf '\\xff\\xff\\xff\\xffTSource Engine Query\\x00' >&4 && timeout 4 head -c 200 <&4 | od -An -c | head -6) 2>&1\necho \\\"--- rcon\\\"; (exec 3<>/dev/tcp/127.0.0.1/27115 && echo CONNECTED && printf '\\x11\\x00\\x00\\x00\\x07\\x00\\x00\\x00\\x03\\x00\\x00\\x00abc123\\x00\\x00' >&3 && timeout 5 cat <&3 | od -An -tx1 | head -5) 2>&1\necho \\\"--- out\\\"; sleep 3\ntr -d '\\r' < /tmp/ship_out.txt | grep -v SOLID_VPHYSICS | tail -70\npkill -f srcds_i686; sleep 2; grep \\\"SRCDS EXIT\\\" /tmp/ship_out.txt; true\n\"",
     "SkipOnFailure": true
   }
 ]
