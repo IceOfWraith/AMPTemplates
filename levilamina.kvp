@@ -1,4 +1,4 @@
-Meta.DisplayName=LeviLamina
+Meta.DisplayName=LeviLamina [bot]
 Meta.Description=LeviLamina Mod Loader for Minecraft Bedrock Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Display image now uses the LeviLamina logo from levimc.org.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=43d87456-4783-4626-90e3-05a6d4ae70b9
+Meta.AppConfigId=ef486483-fcb6-4883-beb1-db19a2fc0270
 Meta.ImportableExtensions=[]
 App.DisplayName=LeviLamina
 App.RootDir=./levilamina/
