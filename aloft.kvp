@@ -1,4 +1,4 @@
-Meta.DisplayName=Aloft [bot]
+Meta.DisplayName=Aloft
 Meta.Description=Aloft Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,16 +24,16 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release (runs under Wine; container required on Windows)
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=bfb9a9b0-2c46-4ae0-a1b0-9e5e12365c10
+Meta.AppConfigId=426a1e03-da22-401c-9f57-302d5c0e8e71
 Meta.ImportableExtensions=[]
 App.DisplayName=Aloft
 App.RootDir=./aloft/
 App.BaseDirectory=./aloft/1660080/
 App.SteamWorkshopDownloadLocation=
 App.ExecutableWin=
-App.ExecutableLinux=/usr/bin/wine
+App.ExecutableLinux=/bin/bash
 App.WorkingDir=1660080
-App.LinuxCommandLineArgs=Aloft.exe
+App.LinuxCommandLineArgs=-c "N=99; while [ -e /tmp/.X$N-lock ]; do N=$((N+1)); done; setsid -f /usr/bin/Xvfb :$N -screen 0 640x480x24 -nolisten tcp >/dev/null 2>&1; for i in $(seq 1 20); do [ -e /tmp/.X$N-lock ] && break; sleep 0.5; done; sleep 1; export DISPLAY=:$N; trap 'kill $(cat /tmp/.X$N-lock 2>/dev/null) 2>/dev/null' EXIT; /usr/bin/wine Aloft.exe \"$@\"" amp-launch
 App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} -batchmode -nographics -server load#{{MapName}}# servername#{{servername}}# log#{{log}}# isvisible#{{isvisible}}# privateislands#{{privateislands}}# playercount#{{$MaxUsers}}# serverport#{{$ServerPort}}# {{Admins}}
 App.UseLinuxIOREDIR=False
