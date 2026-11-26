@@ -19,7 +19,7 @@
     "UpdateStageName": "Server.cfg Template File Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-shipserver.cfg",
+    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/2f86ce3e808fcd08cb456b53a49ff15382dafcbf/the-shipserver.cfg",
     "UpdateSourceArgs": "AMP_server.cfg",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "OverwriteExistingFiles": true,
