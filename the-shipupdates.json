@@ -5,32 +5,25 @@
     "UpdateSource": "SteamCMD",
     "UpdateSourceData": "2403",
     "UpdateSourceArgs": "2400",
-    "SkipOnFailure": false
-  },
-  {
-    "UpdateStageName": "GameInfo Case Fix",
-    "UpdateSourcePlatform": "Linux",
-    "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"ln -sfn GameInfo.txt \\\"{{$FullBaseDir}}ship/gameinfo.txt\\\"\"",
+    "ForceDownloadPlatform": "Windows",
     "SkipOnFailure": false
   },
   {
     "UpdateStageName": "Server.cfg Template File Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/08a3c9b5d45d66ace9ace1cd40bd1f7334982627/the-shipserver.cfg",
+    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-shipserver.cfg",
     "UpdateSourceArgs": "AMP_server.cfg",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "OverwriteExistingFiles": true,
     "SkipOnFailure": false
   },
   {
-    "UpdateStageName": "DEBUG",
+    "UpdateStageName": "Initialise Wine",
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
     "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"cd the-ship/2403; export LD_LIBRARY_PATH=.:bin GLIBC_TUNABLES=glibc.rtld.execstack=2 SteamAppId=2400\n(script -qfec './srcds_i686 -game ship -console -usercon -port 27115 -ip 0.0.0.0 -maxplayers 16 +clientport 27105 -nohltv +rcon_password abc123 +map batavier' /tmp/ship_out.txt > /dev/null 2>&1; echo \\\"SRCDS EXIT $?\\\" >> /tmp/ship_out.txt) &\nsleep 80\nP=$(pgrep -f '^./srcds_i686' | head -1); echo \\\"PID $P\\\"\nfor i in 1 2 3; do grep -E 'State|Threads' /proc/$P/status | tr '\\n' ' '; awk '{print \\\"utime\\\",$14,\\\"stime\\\",$15}' /proc/$P/stat; sleep 2; done\nfor t in /proc/$P/task/*; do echo \\\"$(basename $t) $(cat $t/comm) $(cat $t/wchan) $(awk '{print $3,$14}' $t/stat)\\\"; done\nls -l /proc/$P/fd 2>/dev/null | awk '{print $NF}' | sort | uniq -c | sort -rn | head -15\ncat /proc/net/udp | head -20; cat /proc/net/tcp | head -10\ntr -d '\\r' < /tmp/ship_out.txt | grep -v SOLID_VPHYSICS | tail -8\npkill -f srcds_i686; true\n\"",
-    "SkipOnFailure": true
+    "UpdateSourceArgs": "-c \"rm -rf \\\"{{$FullRootDir}}.wine\\\" >/dev/null 2>&1; WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win32 WINEDEBUG=-all /usr/bin/wineboot --init\"",
+    "SkipOnFailure": false
   }
 ]
