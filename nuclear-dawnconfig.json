@@ -74,7 +74,15 @@
         "IncludeInCommandLine": false,
         "DefaultValue": "hydro",
         "EnumValues": {
+            "clocktower": "clocktower",
+            "coast": "coast",
+            "downtown": "downtown",
+            "gate": "gate",
             "hydro": "hydro (default)",
+            "metro": "metro",
+            "oasis": "oasis",
+            "oilfield": "oilfield",
+            "silo": "silo",
             "{{CustomMap}}": "--Custom--"
         }
     },
