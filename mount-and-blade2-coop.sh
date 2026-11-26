@@ -107,7 +107,18 @@ steam_account() {
     die 'No cached account could log in; complete AMP Update login again'
 }
 
+diag() {
+    log "DIAG id=$(id) HOME=${HOME:-} ROOT=$ROOT"
+    log "DIAG mounts:"; grep -E ' /AMP| /home/amp' /proc/mounts | sed 's/^/[coop] DIAG   /' || true
+    log "DIAG ls ROOT/..:"; ls -la "$ROOT/.." 2>&1 | sed 's/^/[coop] DIAG   /'
+    log "DIAG ls HOME/Steam/config:"; ls -la "${HOME:-/nonexist}/Steam/config" 2>&1 | sed 's/^/[coop] DIAG   /'
+    log "DIAG ls ROOT/../.virtualhome/Steam/config:"; ls -la "$ROOT/../.virtualhome/Steam/config" 2>&1 | sed 's/^/[coop] DIAG   /'
+    log "DIAG df:"; df -h "$ROOT" /tmp 2>&1 | sed 's/^/[coop] DIAG   /'
+    log "DIAG fstype:"; stat -f -c '%T' "$ROOT" /tmp 2>&1 | sed 's/^/[coop] DIAG   /'
+}
+
 update() {
+    diag
     local account output
     account=$(steam_account)
     output=$(mktemp "$ROOT/.workshop-update.XXXXXX")
