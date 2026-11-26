@@ -22,7 +22,7 @@ read -r DPY_NUM < display.log
 rm display.log
 
 export WINEPREFIX="$SCRIPTDIR/aloft/.wine"
-export WINEDLLOVERRIDES="mscoree,mshtml="
+export WINEDLLOVERRIDES="mscoree,mshtml=;winedbg.exe=d"
 export WINEARCH=win64
 export WINEDEBUG=fixme-all
 export DISPLAY=:$DPY_NUM
