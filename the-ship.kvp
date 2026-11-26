@@ -1,4 +1,4 @@
-Meta.DisplayName=The Ship: Murder Party
+Meta.DisplayName=The Ship: Murder Party [bot]
 Meta.Description=The Ship: Murder Party Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=fc41111a-b73c-4186-b2ff-5b591afaf5d9
+Meta.AppConfigId=666eb211-6d09-45e5-acd3-19ecb3327444
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
