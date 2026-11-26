@@ -1,4 +1,4 @@
-Meta.DisplayName=Nuclear Dawn
+Meta.DisplayName=Nuclear Dawn [bot]
 Meta.Description=Nuclear Dawn Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=c6613ed2-1fa8-45e7-bc31-02cbc0c5687b
+Meta.AppConfigId=cf864664-d289-4169-9ae8-c29ecf2332d1
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
