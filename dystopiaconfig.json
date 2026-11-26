@@ -91,6 +91,48 @@
     "EnumValues": {}
   },
   {
+    "DisplayName": "Public Listing",
+    "Category": "Dystopia:stadia_controller",
+    "Subcategory": "Server:dns:1",
+    "Description": "If set, the server is listed in the public server browser. Otherwise players join via LAN discovery, Steam friends or connect <ip:port>",
+    "Keywords": "public,listing,browser,unlisted,dys_public_listing",
+    "FieldName": "dys_public_listing",
+    "InputType": "checkbox",
+    "ParamFieldName": "dys_public_listing",
+    "DefaultValue": "1",
+    "EnumValues": {
+      "False": "0",
+      "True": "1"
+    }
+  },
+  {
+    "DisplayName": "Global Stats",
+    "Category": "Dystopia:stadia_controller",
+    "Subcategory": "Server:dns:1",
+    "Description": "If set, the server takes part in the Dystopia global stats system. A Stats Token is needed for its stats to be recorded",
+    "Keywords": "stats,statistics,dys_stats_enabled",
+    "FieldName": "dys_stats_enabled",
+    "InputType": "checkbox",
+    "ParamFieldName": "dys_stats_enabled",
+    "DefaultValue": "1",
+    "EnumValues": {
+      "False": "0",
+      "True": "1"
+    }
+  },
+  {
+    "DisplayName": "Stats Token",
+    "Category": "Dystopia:stadia_controller",
+    "Subcategory": "Server:dns:1",
+    "Description": "Sets the per-server stats API token. The server prints where to generate one in the console on startup. Leave empty to not record stats",
+    "Keywords": "stats,token,dys_stat_token",
+    "FieldName": "dys_stat_token",
+    "InputType": "Password",
+    "ParamFieldName": "dys_stat_token",
+    "DefaultValue": "",
+    "EnumValues": {}
+  },
+  {
     "DisplayName": "Initial Map",
     "Category": "Dystopia:stadia_controller",
     "Subcategory": "Server:dns:1",
@@ -588,31 +630,16 @@
     "DisplayName": "Automatic Team Balancing",
     "Category": "Dystopia:stadia_controller",
     "Subcategory": "Gameplay:joystick:2",
-    "Description": "Sets whether to automatically balance teams based on the Teams Unbalance Limit",
+    "Description": "If set, teams will be automatically balanced",
     "Keywords": "team,automatic,balance,balancing,mp_autoteambalance",
     "FieldName": "mp_autoteambalance",
-    "InputType": "enum",
+    "InputType": "checkbox",
     "ParamFieldName": "mp_autoteambalance",
     "DefaultValue": "1",
     "EnumValues": {
-      "0": "Off",
-      "1": "Forcibly switch (default)",
-      "2": "Ask for volunteers"
+      "False": "0",
+      "True": "1"
     }
-  },
-  {
-    "DisplayName": "Teams Unbalance Limit",
-    "Category": "Dystopia:stadia_controller",
-    "Subcategory": "Gameplay:joystick:2",
-    "Description": "Teams will be considered unbalanced for the purpose of Automatic Team Balancing when one team has this many more players than the other team. 0 = check disabled",
-    "Keywords": "team,automatic,balance,balancing,limit,mp_teams_unbalance_limit",
-    "FieldName": "mp_teams_unbalance_limit",
-    "InputType": "number",
-    "MinValue": "0",
-    "ParamFieldName": "mp_teams_unbalance_limit",
-    "DefaultValue": "1",
-    "Placeholder": "1",
-    "EnumValues": {}
   },
   {
     "DisplayName": "Map Rotation Time Limit",
@@ -676,6 +703,37 @@
     }
   },
   {
+    "DisplayName": "Melee Only",
+    "Category": "Dystopia:stadia_controller",
+    "Subcategory": "Gameplay:joystick:2",
+    "Description": "If set, only melee weapons can be used",
+    "Keywords": "melee,only,dys_melee_only",
+    "FieldName": "dys_melee_only",
+    "InputType": "checkbox",
+    "ParamFieldName": "dys_melee_only",
+    "DefaultValue": "0",
+    "EnumValues": {
+      "False": "0",
+      "True": "1"
+    }
+  },
+  {
+    "DisplayName": "Spawn Time per Player",
+    "Category": "Dystopia:stadia_controller",
+    "Subcategory": "Gameplay:joystick:2",
+    "Description": "Sets the seconds added to the 15-second respawn wave interval per connected player. Negative values shorten waves as more players join (never below 1 second). 0 = standard behaviour",
+    "Keywords": "spawn,respawn,wave,time,dys_spawntime_per_player",
+    "FieldName": "dys_spawntime_per_player",
+    "InputType": "number",
+    "MinValue": "-1",
+    "MaxValue": "5",
+    "ParamFieldName": "dys_spawntime_per_player",
+    "DefaultValue": "0",
+    "Placeholder": "0",
+    "Suffix": "seconds",
+    "EnumValues": {}
+  },
+  {
     "DisplayName": "Restrict Spectator Mode",
     "Category": "Dystopia:stadia_controller",
     "Subcategory": "Gameplay:joystick:2",
@@ -684,7 +742,7 @@
     "FieldName": "mp_forcecamera",
     "InputType": "checkbox",
     "ParamFieldName": "mp_forcecamera",
-    "DefaultValue": "0",
+    "DefaultValue": "1",
     "EnumValues": {
       "False": "0",
       "True": "1"
