@@ -110,15 +110,44 @@ steam_account() {
 diag() {
     log "DIAG id=$(id) HOME=${HOME:-} ROOT=$ROOT"
     log "DIAG mounts:"; grep -E ' /AMP| /home/amp' /proc/mounts | sed 's/^/[coop] DIAG   /' || true
-    log "DIAG ls ROOT/..:"; ls -la "$ROOT/.." 2>&1 | sed 's/^/[coop] DIAG   /'
-    log "DIAG ls HOME/Steam/config:"; ls -la "${HOME:-/nonexist}/Steam/config" 2>&1 | sed 's/^/[coop] DIAG   /'
-    log "DIAG ls ROOT/../.virtualhome/Steam/config:"; ls -la "$ROOT/../.virtualhome/Steam/config" 2>&1 | sed 's/^/[coop] DIAG   /'
-    log "DIAG df:"; df -h "$ROOT" /tmp 2>&1 | sed 's/^/[coop] DIAG   /'
-    log "DIAG fstype:"; stat -f -c '%T' "$ROOT" /tmp 2>&1 | sed 's/^/[coop] DIAG   /'
+    log "DIAG ls ROOT/..:"; ls -la "$ROOT/.." 2>&1 | sed 's/^/[coop] DIAG   /' || true
+    log "DIAG ls HOME/Steam/config:"; ls -la "${HOME:-/nonexist}/Steam/config" 2>&1 | sed 's/^/[coop] DIAG   /' || true
+    log "DIAG ls ROOT/../.virtualhome/Steam/config:"; ls -la "$ROOT/../.virtualhome/Steam/config" 2>&1 | sed 's/^/[coop] DIAG   /' || true
+    log "DIAG df:"; df -h "$ROOT" /tmp 2>&1 | sed 's/^/[coop] DIAG   /' || true
+    log "DIAG fstype:"; stat -f -c '%T' "$ROOT" /tmp 2>&1 | sed 's/^/[coop] DIAG   /' || true
+}
+
+collect_logs() {
+    mkdir -p "$ROOT/diaglogs"
+    cp -f "$ROOT/../.virtualhome/Steam/logs/"*.txt "$ROOT/diaglogs/" 2>/dev/null || true
+    cp -f "$ROOT/.workshop-update."* "$ROOT/diaglogs/" 2>/dev/null || true
+    ls -laR "$ROOT/workshop" > "$ROOT/diaglogs/workshop-tree.txt" 2>&1 || true
+    date -u >> "$ROOT/diaglogs/when.txt"
+}
+
+tmp_test() {
+    local acct t0 rc
+    acct=$(steam_account)
+    rm -rf /tmp/coopws; mkdir -p /tmp/coopws
+    log "DIAG tmp_test start $(date -u +%T) fstype=$(stat -f -c %T /tmp/coopws)"
+    t0=$(date +%s); rc=0
+    HOME="$ROOT/../.virtualhome" timeout 1200 /bin/bash "$ROOT/steamcmd.sh" \
+        +@NoPromptForPassword 1 +@sSteamCmdForcePlatformType windows \
+        +force_install_dir /tmp/coopws +login "$acct" \
+        +workshop_download_item "$APP" "$ITEM" +quit </dev/null 2>&1 | grep -E 'Download|ERROR|Success|Timeout' | sed 's/^/[coop] DIAG tmp: /' || rc=$?
+    log "DIAG tmp_test end $(date -u +%T) elapsed=$(( $(date +%s) - t0 ))s size=$(du -sh /tmp/coopws 2>/dev/null | cut -f1) files=$(find /tmp/coopws -type f | wc -l)"
+    mkdir -p "$ROOT/diaglogs"; cp -f "$ROOT/../.virtualhome/Steam/logs/"*.txt "$ROOT/diaglogs/" 2>/dev/null || true
+    for f in content_log.txt workshop_log.txt; do mv -f "$ROOT/diaglogs/$f" "$ROOT/diaglogs/tmp-$f" 2>/dev/null || true; done
+    rm -rf /tmp/coopws
+    log "DIAG bind-mount test start $(date -u +%T)"
 }
 
 update() {
+    exec > >(tee -a "$ROOT/diag.log") 2>&1
+    trap collect_logs EXIT
+    date -u
     diag
+    tmp_test
     local account output
     account=$(steam_account)
     output=$(mktemp "$ROOT/.workshop-update.XXXXXX")
@@ -126,9 +155,12 @@ update() {
         +@NoPromptForPassword 1 +@sSteamCmdForcePlatformType windows \
         +force_install_dir "$ROOT/workshop" +login "$account" \
         +workshop_download_item "$APP" "$ITEM" validate +quit </dev/null 2>&1 | tee "$output"; then
+        cp -f -- "$output" "$ROOT/diaglogs-output.txt" || true
+        log "DIAG bind-mount end $(date -u +%T) size=$(du -sh "$ROOT/workshop" | cut -f1) files=$(find "$ROOT/workshop" -type f | wc -l)"
         rm -f -- "$output"
         die 'Workshop update failed; retry AMP Update login if the cached session expired'
     fi
+    log "DIAG bind-mount end $(date -u +%T) size=$(du -sh "$ROOT/workshop" | cut -f1) files=$(find "$ROOT/workshop" -type f | wc -l)"
     if ! grep -Eq "Success[.] Downloaded item $ITEM([[:space:]]|$)" "$output"; then
         rm -f -- "$output"
         die 'SteamCMD did not confirm the Workshop download; existing files were left in place'
