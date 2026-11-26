@@ -1,4 +1,4 @@
-Meta.DisplayName=Ricochet
+Meta.DisplayName=Ricochet [bot]
 Meta.Description=Ricochet (GoldSrc) Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=119e8001-dd74-45bd-bd52-9a786148ad89
+Meta.AppConfigId=fc63df50-49ac-444e-9c8b-84c846902969
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
