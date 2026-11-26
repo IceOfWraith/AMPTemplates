@@ -3,15 +3,22 @@
 SCRIPT_NAME=$(echo \"$0\" | xargs readlink -f)
 SCRIPTDIR=$(dirname "$SCRIPT_NAME")
 
-exec 6>display.log
+DISPLAY_FILE=$(mktemp)
+exec 6>"$DISPLAY_FILE"
 /usr/bin/Xvfb -displayfd 6 -nolisten tcp -nolisten unix &
 XVFB_PID=$!
-while [[ ! -s display.log ]]; do
+for i in $(seq 1 30); do
+  [[ -s "$DISPLAY_FILE" ]] && break
   sleep 1
 done
-read -r DPY_NUM < display.log
+read -r DPY_NUM < "$DISPLAY_FILE"
+rm -f "$DISPLAY_FILE"
+if [[ -z "$DPY_NUM" ]]; then
+  echo "Xvfb did not start"
+  kill $XVFB_PID 2>/dev/null
+  exit 1
+fi
 echo "Xvfb display :$DPY_NUM"
-rm display.log
 
 export WINEPREFIX="$SCRIPTDIR/aloft/.wine"
 export WINEDLLOVERRIDES="mscoree,mshtml="
