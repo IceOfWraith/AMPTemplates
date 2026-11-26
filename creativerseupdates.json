@@ -27,7 +27,7 @@
         "UpdateStageName": "World Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/9a375d9d0c941a3ff70c6d5ca045e71cad7a64b4/creativerseconfig_world.json",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/creativerseconfig_world.json",
         "UpdateSourceArgs": "config_world.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}PlayfulCorp/CreativerseServer/worlddata/worlds/{{worldId}}/",
         "OverwriteExistingFiles": false,
