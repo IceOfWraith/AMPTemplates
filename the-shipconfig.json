@@ -1,0 +1,160 @@
+[
+  {
+    "DisplayName": "RCON Password",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "",
+    "Keywords": "",
+    "FieldName": "$RemoteAdminPassword",
+    "InputType": "text",
+    "ParamFieldName": "rcon_password",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
+    "EnumValues": {},
+    "Hidden": true
+  },
+  {
+    "DisplayName": "Server Name",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "Sets the name of the server that appears in the server list",
+    "Keywords": "server,name,hostname",
+    "FieldName": "hostname",
+    "InputType": "text",
+    "ParamFieldName": "hostname",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "AMP Powered The Ship Server",
+    "EnumValues": {}
+  },
+  {
+    "DisplayName": "Server Password",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "Password players must enter to join. Leave blank for a public server",
+    "Keywords": "password,sv_password",
+    "FieldName": "sv_password",
+    "InputType": "password",
+    "ParamFieldName": "sv_password",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
+    "EnumValues": {}
+  },
+  {
+    "DisplayName": "LAN Server",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "If enabled, the server will operate as a LAN server: no heartbeat, no authentication, and no non-class C addresses",
+    "Keywords": "lan,local,sv_lan",
+    "FieldName": "sv_lan",
+    "InputType": "checkbox",
+    "ParamFieldName": "sv_lan",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "0",
+    "EnumValues": {
+      "False": "0",
+      "True": "1"
+    }
+  },
+  {
+    "DisplayName": "Initial Map",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "Sets the map to start the server with",
+    "Keywords": "map",
+    "FieldName": "map",
+    "InputType": "text",
+    "ParamFieldName": "map",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "batavier",
+    "EnumValues": {}
+  },
+  {
+    "DisplayName": "Server Tickrate",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "Sets the server tickrate",
+    "Keywords": "tick,rate,tickrate",
+    "FieldName": "tickrate",
+    "InputType": "number",
+    "MinValue": "1",
+    "MaxValue": "100",
+    "ParamFieldName": "tickrate",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "66",
+    "Placeholder": "66",
+    "Suffix": "tps",
+    "EnumValues": {}
+  },
+  {
+    "DisplayName": "Disable Valve Anti-Cheat",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "If set, Valve Anti-Cheat (VAC) will be disabled",
+    "Keywords": "valve,anti,cheat,vac,insecure",
+    "FieldName": "insecure",
+    "InputType": "checkbox",
+    "ParamFieldName": "insecure",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
+    "EnumValues": {
+      "False": "",
+      "True": "-insecure "
+    }
+  },
+  {
+    "DisplayName": "Disable SourceTV",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "If set, SourceTV will be disabled on the server",
+    "Keywords": "sourcetv,source,nohltv",
+    "FieldName": "nohltv",
+    "InputType": "checkbox",
+    "ParamFieldName": "nohltv",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "-nohltv ",
+    "EnumValues": {
+      "False": "",
+      "True": "-nohltv "
+    }
+  },
+  {
+    "DisplayName": "Additional Command Line Parameters",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "Specifies additional command line parameters (anything that begins with a -) that are not otherwise set by AMP. Use with care",
+    "Keywords": "custom,server,arguments,parameters",
+    "FieldName": "CustomParameters",
+    "InputType": "text",
+    "ParamFieldName": "CustomParameters",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
+    "EnumValues": {}
+  },
+  {
+    "DisplayName": "Additional Console Variables",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "Specifies additional console variables (anything that begins with a +) that are not otherwise set by AMP. Use with care. Preferably, specify the equivalent under \"Additional Server Settings\"",
+    "Keywords": "custom,server,variables,cvars,convars",
+    "FieldName": "CustomConVars",
+    "InputType": "text",
+    "ParamFieldName": "CustomConVars",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
+    "Placeholder": "+sv_gravity \"600\"",
+    "EnumValues": {}
+  },
+  {
+    "DisplayName": "Additional Server Settings",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "Specifies additional settings to include in 'server.cfg' that are not otherwise set by AMP. One setting per line",
+    "Keywords": "additional,settings,custom",
+    "FieldName": "UserSettings",
+    "InputType": "textarea",
+    "ParamFieldName": "UserSettings",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
+    "EnumValues": {}
+  }
+]
