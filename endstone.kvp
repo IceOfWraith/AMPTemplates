@@ -1,4 +1,4 @@
-Meta.DisplayName=Endstone
+Meta.DisplayName=Endstone [bot]
 Meta.Description=Endstone Plugin API for Minecraft Bedrock Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release. Runs in a Linux container on Windows.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=35839ca5-2615-4774-9fa9-5479c3928195
+Meta.AppConfigId=d5b15778-168f-41b9-924a-0849dad68e80
 App.DisplayName=Endstone
 App.RootDir=./endstone/
 App.BaseDirectory=./endstone/bedrock_server/
