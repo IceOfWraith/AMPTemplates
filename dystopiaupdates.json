@@ -1,0 +1,10 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Server Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "17585",
+        "UpdateSourceArgs": "17580",
+        "SkipOnFailure": false
+    }
+]
