@@ -1,4 +1,4 @@
-Meta.DisplayName=Nuclear Dawn
+Meta.DisplayName=Nuclear Dawn [bot]
 Meta.Description=Nuclear Dawn Dedicated Server. Requires a Steam login that owns Nuclear Dawn
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=c6613ed2-1fa8-45e7-bc31-02cbc0c5687b
+Meta.AppConfigId=0d95de5b-1fb0-47c9-8aad-4ba914546cef
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
