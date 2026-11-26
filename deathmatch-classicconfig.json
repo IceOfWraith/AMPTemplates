@@ -88,6 +88,12 @@
         "DefaultValue": "dcdm5",
         "EnumValues": {
             "dcdm5": "dcdm5",
+            "dmc_dm2": "dmc_dm2",
+            "dmc_dm3": "dmc_dm3",
+            "dmc_dm4": "dmc_dm4",
+            "dmc_dm6": "dmc_dm6",
+            "dmc_e1m2": "dmc_e1m2",
+            "p_se_3": "p_se_3",
             "{{CustomMap}}": "--Custom--"
         }
     },
@@ -112,7 +118,7 @@
         "FieldName": "mapcycle",
         "InputType": "list",
         "ParamFieldName": "mapcycle",
-        "DefaultValue": "[\"dcdm5\"]",
+        "DefaultValue": "[\"dcdm5\",\"dmc_dm2\",\"dmc_dm3\",\"dmc_dm4\",\"dmc_dm6\",\"dmc_e1m2\",\"p_se_3\"]",
         "Special": "listfile:./dmc/90/dmc/mapcycle.txt",
         "EnumValues": {}
     },
@@ -509,6 +515,21 @@
         "ParamFieldName": "UserSettings",
         "DefaultValue": "",
         "EnumValues": {}
+    },
+    {
+        "DisplayName": "Weapon Stay",
+        "Category": "Deathmatch Classic:stadia_controller",
+        "Subcategory": "Gameplay:joystick:2",
+        "Description": "If enabled, weapon pickups stay on the map after being collected, as in classic deathmatch",
+        "Keywords": "weapon,stay,pickup,mp_weaponstay",
+        "FieldName": "mp_weaponstay",
+        "InputType": "checkbox",
+        "ParamFieldName": "mp_weaponstay",
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
     },
     {
         "DisplayName": "Maximum Player Movement Speed",
