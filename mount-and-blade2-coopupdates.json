@@ -3,7 +3,7 @@
     "UpdateStageName": "Download Linux preparation helper",
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/mount-and-blade2-coop.sh",
+    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/fdf15e071bacd2ff37e43f7a4cd4481a9a184376/mount-and-blade2-coop.sh",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "UpdateSourceArgs": "mount-and-blade2-coop.sh",
     "OverwriteExistingFiles": true,
