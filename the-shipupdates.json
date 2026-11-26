@@ -8,21 +8,21 @@
     "SkipOnFailure": false
   },
   {
+    "UpdateStageName": "GameInfo Case Fix",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"ln -sfn GameInfo.txt \\\"{{$FullBaseDir}}ship/gameinfo.txt\\\"\"",
+    "SkipOnFailure": false
+  },
+  {
     "UpdateStageName": "Server.cfg Template File Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/1b8cfa81985eb136e70a839061e9606049dfe3ba/the-shipserver.cfg",
+    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-shipserver.cfg",
     "UpdateSourceArgs": "AMP_server.cfg",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "OverwriteExistingFiles": true,
     "SkipOnFailure": false
-  },
-  {
-    "UpdateStageName": "DEBUG",
-    "UpdateSourcePlatform": "Linux",
-    "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"cd the-ship/2403; ln -sfn GameInfo.txt ship/gameinfo.txt; export LD_LIBRARY_PATH=.:bin GLIBC_TUNABLES=glibc.rtld.execstack=2; (timeout 45 ./srcds_i686 -game ship -console -port 27015 +maxplayers 16 +map batavier 2>&1 | tail -45) ; echo EXIT\"",
-    "SkipOnFailure": true
   }
 ]

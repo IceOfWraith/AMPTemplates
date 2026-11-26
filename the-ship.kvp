@@ -1,4 +1,4 @@
-Meta.DisplayName=The Ship: Murder Party [bot]
+Meta.DisplayName=The Ship: Murder Party
 Meta.Description=The Ship: Murder Party Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=ac87dc3e-04d0-48d7-8c36-262d9b33a721
+Meta.AppConfigId=fc41111a-b73c-4186-b2ff-5b591afaf5d9
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
@@ -38,7 +38,7 @@ App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} -game ship -console -usercon -port {{$ServerPort}} -ip {{$ApplicationIPBinding}} -maxplayers {{$MaxUsers}} -tickrate {{tickrate}} {{insecure}}{{nohltv}}{{CustomParameters}} {{CustomConVars}} +tv_port {{$SourceTVPort}} +clientport {{$ClientPort}} +sv_logfile 1 +ship_game_mode {{ship_game_mode}} +ship_game_mode_random {{ship_game_mode_random}} +exec server.cfg +map {{map}} +log on
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
-App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}:{{$FullBaseDir}}bin:%LD_LIBRARY_PATH%","SteamAppId":"2400"}
+App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}:{{$FullBaseDir}}bin:%LD_LIBRARY_PATH%","GLIBC_TUNABLES":"glibc.rtld.execstack=2","SteamAppId":"2400"}
 App.CommandLineParameterFormat=+{0} {1}
 App.CommandLineParameterDelimiter= 
 App.ExitMethod=String
