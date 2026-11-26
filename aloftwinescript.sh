@@ -1,6 +1,4 @@
 #!/bin/bash
-exec 2> >(tee -a aloft/1660080/dbg_winescript.txt >&2) 1> >(tee -a aloft/1660080/dbg_winescript.txt)
-set -x
 
 SCRIPT_NAME=$(echo \"$0\" | xargs readlink -f)
 SCRIPTDIR=$(dirname "$SCRIPT_NAME")
