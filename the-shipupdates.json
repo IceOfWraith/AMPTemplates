@@ -11,7 +11,7 @@
     "UpdateStageName": "Server.cfg Template File Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/8fe063bd3b4ace9a4867071c5ee2e800e69ac3cc/the-shipserver.cfg",
+    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-shipserver.cfg",
     "UpdateSourceArgs": "AMP_server.cfg",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "OverwriteExistingFiles": true,
@@ -22,7 +22,7 @@
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
     "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"cd the-ship/2403; uname -m; ldd srcds_i686; ldd bin/dedicated_i686.so | grep -i not; ldd bin/engine_i686.so | grep -i not; export LD_LIBRARY_PATH=.:bin; timeout 25 ./srcds_i686 -game ship -console -port 27015 +map batavier 2>&1 | tail -40; echo EXIT $?\"",
+    "UpdateSourceArgs": "-c \"cd the-ship/2403/bin; for f in *.so; do echo == $f; LD_LIBRARY_PATH=.:.. ldd $f | grep -iE \\\"not found|stdc|gcc\\\"; done; ls /usr/lib/i386-linux-gnu /lib/i386-linux-gnu | grep -iE \\\"stdc|libgcc\\\"; cat /etc/os-release | head -2\"",
     "SkipOnFailure": true
   }
 ]
