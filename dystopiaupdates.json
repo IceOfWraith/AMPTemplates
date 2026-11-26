@@ -11,7 +11,7 @@
         "UpdateStageName": "Server.cfg Template File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/e2794196b69cf7deba13a32883393a4cf6f1480f/dystopiaserver.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/dystopiaserver.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
