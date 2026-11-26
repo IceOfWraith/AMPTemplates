@@ -28,9 +28,26 @@
         "UpdateStageName": "Server Settings Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/18e5663a2282ec04b28b6fc0b5df479c929b8df4/silicaserversettings.xml",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/silicaserversettings.xml",
         "UpdateSourceTarget": "{{$FullBaseDir}}Silica_Data",
         "UpdateSourceArgs": "ServerSettings.xml",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Settings Directory",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}Documents/Silica",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Game Settings Template Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/silicagamesettings.xml",
+        "UpdateSourceTarget": "{{$FullBaseDir}}Documents/Silica",
+        "UpdateSourceArgs": "GameSettings.xml",
         "OverwriteExistingFiles": false,
         "SkipOnFailure": false
     }
