@@ -1,4 +1,4 @@
-Meta.DisplayName=Mesozoic Dawn
+Meta.DisplayName=Mesozoic Dawn [bot]
 Meta.Description=Mesozoic Dawn Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=True
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Windows support: the server now runs in a required Linux container on Windows.
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=bc60b97d-fb0e-45a7-9939-45af0cde37fb
+Meta.AppConfigId=f5ecdcbb-954d-4e26-af5f-dd1bc17970cb
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Mesozoic Dawn
