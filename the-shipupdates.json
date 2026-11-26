@@ -1,20 +1,28 @@
 [
-    {
-        "UpdateStageName": "SteamCMD Server Download",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "SteamCMD",
-        "UpdateSourceData": "2403",
-        "UpdateSourceArgs": "2400",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Server.cfg Template File Download",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/4503ceb2675f6d51ff0a2146c8a30f18312a6858/the-shipserver.cfg",
-        "UpdateSourceArgs": "AMP_server.cfg",
-        "UpdateSourceTarget": "{{$FullRootDir}}",
-        "OverwriteExistingFiles": true,
-        "SkipOnFailure": false
-    }
+  {
+    "UpdateStageName": "SteamCMD Server Download",
+    "UpdateSourcePlatform": "All",
+    "UpdateSource": "SteamCMD",
+    "UpdateSourceData": "2403",
+    "UpdateSourceArgs": "2400",
+    "SkipOnFailure": false
+  },
+  {
+    "UpdateStageName": "Server.cfg Template File Download",
+    "UpdateSourcePlatform": "All",
+    "UpdateSource": "FetchURL",
+    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-shipserver.cfg",
+    "UpdateSourceArgs": "AMP_server.cfg",
+    "UpdateSourceTarget": "{{$FullRootDir}}",
+    "OverwriteExistingFiles": true,
+    "SkipOnFailure": false
+  },
+  {
+    "UpdateStageName": "DEBUG",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"cd the-ship/2403; uname -m; ldd srcds_i686; ldd bin/dedicated_i686.so | grep -i not; ldd bin/engine_i686.so | grep -i not; export LD_LIBRARY_PATH=.:bin; timeout 25 ./srcds_i686 -game ship -console -port 27015 +map batavier 2>&1 | tail -40; echo EXIT $?\"",
+    "SkipOnFailure": true
+  }
 ]
