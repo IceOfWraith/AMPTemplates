@@ -1,4 +1,4 @@
-Meta.DisplayName=Dystopia
+Meta.DisplayName=Dystopia [bot]
 Meta.Description=Dystopia Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=ff8058ea-388e-45a3-abb4-58cb9f67c512
+Meta.AppConfigId=1deb21b4-27f5-4bb4-a4e1-27346ffab7e0
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
