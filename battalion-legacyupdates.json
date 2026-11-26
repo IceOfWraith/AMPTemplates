@@ -24,6 +24,14 @@
     "SkipOnFailure": false
   },
   {
+    "UpdateStageName": "Disable Sentry Crash Handler",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"f=\\\"{{$FullBaseDir}}Battalion/Plugins/Sentry/Binaries/Linux/crashpad_handler\\\"; if [[ -f \\\"$f\\\" ]]; then mv -f \\\"$f\\\" \\\"$f.disabled\\\"; fi; exit 0\"",
+    "SkipOnFailure": true
+  },
+  {
     "UpdateStageName": "Copy steamclient64.dll",
     "UpdateSourcePlatform": "Windows",
     "UpdateSource": "CopyFilePath",
