@@ -1,4 +1,4 @@
-Meta.DisplayName=BATTALION: Legacy
+Meta.DisplayName=BATTALION: Legacy [bot]
 Meta.Description=BATTALION: Legacy Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Linux: disable the Sentry crash handler that blocked startup and provide steamclient.so; HOME is now the instance folder
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=8de62e9c-909d-43dd-a810-bcd4d5fa4a93
+Meta.AppConfigId=a6fb0804-979f-4d67-a421-2d5d0deb5e42
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=BATTALION: Legacy
