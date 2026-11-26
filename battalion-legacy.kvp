@@ -1,4 +1,4 @@
-Meta.DisplayName=BATTALION: Legacy
+Meta.DisplayName=BATTALION: Legacy [bot]
 Meta.Description=BATTALION: Legacy Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=8de62e9c-909d-43dd-a810-bcd4d5fa4a93
+Meta.AppConfigId=38b2da82-dc04-4530-b7ea-b87fe00f39a2
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=BATTALION: Legacy
