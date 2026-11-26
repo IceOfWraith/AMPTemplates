@@ -1,4 +1,4 @@
-Meta.DisplayName=Alien Swarm
+Meta.DisplayName=Alien Swarm [bot]
 Meta.Description=Alien Swarm Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=a2f07fb0-4284-48c3-aed5-33783d16548c
+Meta.AppConfigId=0f507397-6ee8-461f-9ff9-63086559069c
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
