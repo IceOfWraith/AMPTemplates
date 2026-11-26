@@ -52,7 +52,7 @@ MONO_URL="https://dl.winehq.org/wine/wine-mono/${MONO_VERSION}/wine-mono-${MONO_
 wget -q -O "$WINEPREFIX/mono.msi" "$MONO_URL"
 /usr/bin/wine msiexec /i "$WINEPREFIX/mono.msi" /qn /quiet /norestart /log "$WINEPREFIX/mono_install.log"
 
-PACKAGES="vcrun2022 wmp11 sound=disabled"
+PACKAGES="sound=disabled"
 echo "" > winescript_log.txt 2>&1
 for PACKAGE in $PACKAGES; do
   #if [[ "$PACKAGE" == "vcrun2022" && "$WINE_VERSION" =~ ^(10|11)$ ]]; then continue; fi
