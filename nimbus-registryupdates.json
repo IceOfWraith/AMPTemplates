@@ -3,7 +3,7 @@
         "UpdateStageName": "Config Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/nimbus-registrytemplate.toml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/2f04dc960164a1bdf223ea9c1c4082894ca0b9bf/nimbus-registrytemplate.toml",
         "UpdateSourceArgs": "AMP_nimbus.registry.toml",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": true

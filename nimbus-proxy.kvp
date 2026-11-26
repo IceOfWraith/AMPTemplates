@@ -1,4 +1,4 @@
-Meta.DisplayName=Nimbus Proxy (Vintage Story)
+Meta.DisplayName=Nimbus Proxy (Vintage Story) [bot]
 Meta.Description=Nimbus proxy for Vintage Story. Fronts multiple backend servers on one address
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=6ce2a583-1448-46f5-9f9d-b505d5eab311
+Meta.AppConfigId=32d73d9c-668b-49c4-8412-5d4d96982daf
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Nimbus Proxy
