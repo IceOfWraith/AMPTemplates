@@ -1,4 +1,4 @@
-Meta.DisplayName=Silica
+Meta.DisplayName=Silica [bot]
 Meta.Description=Silica Dedicated Server
 Meta.OS=Windows, Linux
 Meta.Arch=x86_64
@@ -17,7 +17,7 @@ Meta.ContainerPolicyReason=
 Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
-Meta.AppConfigId=f8b69911-19f6-4dad-9f92-0064f7d9cfc6
+Meta.AppConfigId=0cf298dc-7355-4a87-b378-ab3e47a6a784
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 App.DisplayName=Silica
