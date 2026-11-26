@@ -10,6 +10,7 @@ while [[ ! -s display.log ]]; do
   sleep 1
 done
 read -r DPY_NUM < display.log
+echo "Xvfb display :$DPY_NUM"
 rm display.log
 
 export WINEPREFIX="$SCRIPTDIR/aloft/.wine"
@@ -34,6 +35,7 @@ case "$WINE_VERSION" in
     ;;
 esac
 
+echo "Installing wine-mono $MONO_VERSION"
 # Setup winetricks and install Mono
 [[ -f winetricks ]] && rm -f winetricks
 wget -q https://raw.githubusercontent.com/Winetricks/winetricks/refs/tags/20260125/src/winetricks
@@ -47,6 +49,7 @@ PACKAGES="vcrun2022 wmp11 sound=disabled"
 echo "" > winescript_log.txt 2>&1
 for PACKAGE in $PACKAGES; do
   #if [[ "$PACKAGE" == "vcrun2022" && "$WINE_VERSION" =~ ^(10|11)$ ]]; then continue; fi
+  echo "Installing $PACKAGE"
   ./winetricks -q $PACKAGE >> winescript_log.txt 2>&1
 done
 rm -rf ~/.cache/winetricks
