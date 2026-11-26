@@ -12,7 +12,7 @@
     "UpdateStageName": "Server.cfg Template File Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/6def23563c5679f8a8dd7536dee453f5403d9021/the-shipserver.cfg",
+    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/the-shipserver.cfg",
     "UpdateSourceArgs": "AMP_server.cfg",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "OverwriteExistingFiles": true,
@@ -25,13 +25,5 @@
     "UpdateSourceData": "/bin/bash",
     "UpdateSourceArgs": "-c \"rm -rf \\\"{{$FullRootDir}}.wine\\\" >/dev/null 2>&1; WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win32 WINEDEBUG=-all /usr/bin/wineboot --init\"",
     "SkipOnFailure": false
-  },
-  {
-    "UpdateStageName": "DEBUG",
-    "UpdateSourcePlatform": "Linux",
-    "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"cd the-ship/2403; export WINEPREFIX=/AMP/the-ship/.wine WINEARCH=win32 SteamAppId=2400 WINEDEBUG=err+all\ntimeout 60 wine ./srcds.exe -game ship -console -usercon -port 27115 -ip 0.0.0.0 -maxplayers 16 +clientport 27105 -nohltv +rcon_password abc123 +map batavier > /tmp/w.txt 2>&1; echo \\\"EXIT $?\\\"\ngrep -v SOLID_VPHYSICS /tmp/w.txt | tr -d '\\r' | tail -70; true\n\"",
-    "SkipOnFailure": true
   }
 ]
