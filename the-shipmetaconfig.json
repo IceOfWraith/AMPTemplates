@@ -1,8 +1,0 @@
-[
-    {
-        "ConfigFile": "ship/cfg/server.cfg",
-        "AutoMap": true,
-        "ConfigType": "template",
-        "ConfigFileTemplate": "the-ship/AMP_server.cfg"
-    }
-]
