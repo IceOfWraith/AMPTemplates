@@ -1,4 +1,4 @@
-Meta.DisplayName=Deathmatch Classic
+Meta.DisplayName=Deathmatch Classic [bot]
 Meta.Description=Deathmatch Classic (GoldSrc) Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=8375e920-ce15-4345-ac4d-9b5d3f58fefd
+Meta.AppConfigId=56577dc6-8356-477f-a7fb-15f52ea4faab
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
