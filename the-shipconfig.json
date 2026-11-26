@@ -59,13 +59,39 @@
     "DisplayName": "Initial Map",
     "Category": "The Ship:directions_boat",
     "Subcategory": "Server:dns:1",
-    "Description": "Sets the map to start the server with",
+    "Description": "Sets the map to start the server with. If \"Custom\" is selected, Custom Initial Map must also be specified",
     "Keywords": "map",
     "FieldName": "map",
-    "InputType": "text",
+    "InputType": "enum",
     "ParamFieldName": "map",
     "IncludeInCommandLine": false,
     "DefaultValue": "batavier",
+    "EnumValues": {
+      "andrea_doria": "Andrea Doria",
+      "atalanta": "Atalanta",
+      "batavier": "Batavier",
+      "batavier_christmas": "Batavier (Christmas)",
+      "connemara": "Connemara",
+      "cotopaxi": "Cotopaxi",
+      "cyclops": "Cyclops",
+      "huronian": "Huronian",
+      "krassin": "Krassin",
+      "raifucu_maru": "Raifucu Maru",
+      "rubicon": "Rubicon",
+      "{{CustomMap}}": "--Custom--"
+    }
+  },
+  {
+    "DisplayName": "Custom Initial Map",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Server:dns:1",
+    "Description": "Name of a custom map (without .bsp) placed in ship/maps. Only used when Initial Map is set to \"Custom\"",
+    "Keywords": "map,custom",
+    "FieldName": "CustomMap",
+    "InputType": "text",
+    "ParamFieldName": "CustomMap",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
     "EnumValues": {}
   },
   {
@@ -156,5 +182,73 @@
     "IncludeInCommandLine": false,
     "DefaultValue": "",
     "EnumValues": {}
+  },
+  {
+    "DisplayName": "Game Mode",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Gameplay:sports_esports:2",
+    "Description": "Sets the game mode. Ignored when Random Game Mode is enabled",
+    "Keywords": "game,mode,ship_game_mode",
+    "FieldName": "ship_game_mode",
+    "InputType": "enum",
+    "ParamFieldName": "ship_game_mode",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "0",
+    "EnumValues": {
+      "0": "Hunt",
+      "1": "Elimination",
+      "2": "Duel",
+      "3": "Deathmatch",
+      "4": "Team VIP",
+      "5": "Team Elimination"
+    }
+  },
+  {
+    "DisplayName": "Random Game Mode",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Gameplay:sports_esports:2",
+    "Description": "If enabled, a random game mode is picked from the modes enabled in ship/ship_random_game_modes.txt (Duel is never picked)",
+    "Keywords": "random,game,mode,ship_game_mode_random",
+    "FieldName": "ship_game_mode_random",
+    "InputType": "checkbox",
+    "ParamFieldName": "ship_game_mode_random",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "0",
+    "EnumValues": {
+      "False": "0",
+      "True": "1"
+    }
+  },
+  {
+    "DisplayName": "Enable Voice Chat",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Gameplay:sports_esports:2",
+    "Description": "If enabled, players can use voice chat",
+    "Keywords": "voice,sv_voiceenable",
+    "FieldName": "sv_voiceenable",
+    "InputType": "checkbox",
+    "ParamFieldName": "sv_voiceenable",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "1",
+    "EnumValues": {
+      "False": "0",
+      "True": "1"
+    }
+  },
+  {
+    "DisplayName": "All Talk",
+    "Category": "The Ship:directions_boat",
+    "Subcategory": "Gameplay:sports_esports:2",
+    "Description": "If enabled, all players can hear each other's voice chat regardless of team",
+    "Keywords": "alltalk,voice,sv_alltalk",
+    "FieldName": "sv_alltalk",
+    "InputType": "checkbox",
+    "ParamFieldName": "sv_alltalk",
+    "IncludeInCommandLine": false,
+    "DefaultValue": "0",
+    "EnumValues": {
+      "False": "0",
+      "True": "1"
+    }
   }
 ]
