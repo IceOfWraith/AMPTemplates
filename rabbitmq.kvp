@@ -1,4 +1,4 @@
-Meta.DisplayName=RabbitMQ [bot]
+Meta.DisplayName=RabbitMQ
 Meta.Description=RabbitMQ multi-protocol message broker (AMQP 0-9-1, AMQP 1.0, MQTT, STOMP) with the management web UI
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=20bff63d-de08-427f-ae5d-b430d168d4b1
+Meta.AppConfigId=4c7d2a61-8e3b-4f0a-9b52-6d1e0f3a7c85
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=RabbitMQ
@@ -37,7 +37,7 @@ App.WorkingDir=
 App.LinuxCommandLineArgs=
 App.WindowsCommandLineArgs=/C "{{$FullBaseDir}}server\sbin\rabbitmq-server.bat"
 abbitmq-server.bat""
-App.CommandLineArgs=
+App.CommandLineArgs={{$PlatformArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={"RABBITMQ_NODENAME":"rabbit-{{$InstanceID}}@localhost","RABBITMQ_BASE":"{{$FullBaseDir}}","RABBITMQ_CONFIG_FILES":"{{$FullBaseDir}}conf.d","RABBITMQ_ENABLED_PLUGINS_FILE":"{{$FullBaseDir}}enabled_plugins","RABBITMQ_MNESIA_BASE":"{{$FullBaseDir}}data","RABBITMQ_LOG_BASE":"{{$FullBaseDir}}log","RABBITMQ_DIST_PORT":"{{$DistributionPort}}","ERLANG_HOME":"{{$FullBaseDir}}erlang","HOME":"{{$FullBaseDir}}"}
