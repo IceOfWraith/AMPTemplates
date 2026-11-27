@@ -1,4 +1,4 @@
-Meta.DisplayName=Medal of Honor: Allied Assault
+Meta.DisplayName=Medal of Honor: Allied Assault [bot]
 Meta.Description=Medal of Honor: Allied Assault, Spearhead and Breakthrough dedicated server, powered by OpenMoHAA. Needs the game data from your own copy of the game.
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=d8dc94a4-2383-481f-9ad4-bd50ba4b4f9e
+Meta.AppConfigId=5b7099b4-fa5e-4aee-8fbf-3b2f6653b5c9
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Medal of Honor: Allied Assault
