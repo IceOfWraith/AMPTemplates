@@ -1,9 +1,0 @@
-[
-    {
-        "Protocol": "TCP",
-        "Port": 30000,
-        "Ref": "ServerPort",
-        "Name": "Server Port",
-        "Description": "Port Minecraft Java clients or a proxy connect to"
-    }
-]
