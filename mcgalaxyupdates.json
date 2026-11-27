@@ -39,7 +39,7 @@
         "UpdateStageName": "Server Properties Seed",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/mcgalaxyserver.properties",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/a1f933d65b95b77efe5cbfa1ebc4bb4cbae14d5f/mcgalaxyserver.properties",
         "UpdateSourceArgs": "server.properties",
         "UpdateSourceTarget": "{{$FullBaseDir}}properties",
         "OverwriteExistingFiles": false,

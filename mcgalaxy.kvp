@@ -1,4 +1,4 @@
-Meta.DisplayName=MCGalaxy (ClassiCube)
+Meta.DisplayName=MCGalaxy (ClassiCube) [bot]
 Meta.Description=MCGalaxy server for ClassiCube, the open-source Minecraft Classic compatible game
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=1d37be5e-7fe0-4d58-8540-a03cd6b8cf3d
+Meta.AppConfigId=26bc5b9e-ecf9-4644-898b-8b42d9ea0a83
 Meta.AppIsMultiIPAware=True
 App.DisplayName=MCGalaxy
 App.RootDir=./mcgalaxy/
