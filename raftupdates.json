@@ -24,6 +24,14 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Install Wine Mono",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"/usr/bin/wine --version; ls /usr/share/wine/mono /opt/wine/mono 2>&1; strings /usr/lib/wine/x86_64-windows/appwiz.cpl /opt/wine-stable/lib/wine/x86_64-windows/appwiz.cpl 2>/dev/null | grep -i -m5 mono\"",
+        "SkipOnFailure": true
+    },
+    {
         "UpdateStageName": "Check Server File",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",

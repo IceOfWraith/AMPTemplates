@@ -1,4 +1,4 @@
-Meta.DisplayName=Raft [bot]
+Meta.DisplayName=Raft
 Meta.Description=Raft Dedicated Server (RDS by RaftModding). Requires a Steam login that owns Raft, an RDS master private key, and the RaftDedicatedServer.exe file uploaded by you into the "server" folder
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=45862b03-c809-4cc4-bf8d-3f50b9599bf4
+Meta.AppConfigId=78a2e546-80c4-4bcd-9aec-4e2a0bc33b62
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release. The RaftDedicatedServer.exe file must be uploaded manually into the "server" folder
 Meta.BreakingReleaseNotes=
