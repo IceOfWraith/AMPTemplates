@@ -12,12 +12,5 @@
         "Ref": "QueryPort",
         "Name": "Steam Query Port",
         "Description": "Port for the Steam server browser and player list"
-    },
-    {
-        "Protocol": "UDP",
-        "Port": 8700,
-        "Ref": "CommsPort",
-        "Name": "Steam Communications Port",
-        "Description": "Port for Steam server communications"
     }
 ]
