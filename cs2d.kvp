@@ -1,4 +1,4 @@
-Meta.DisplayName=CS2D [bot]
+Meta.DisplayName=CS2D
 Meta.Description=CS2D Dedicated Server, a free top-down 2D shooter
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=9691620e-f0f2-4b5f-b525-0d2c24ef5697
+Meta.AppConfigId=31a35e3e-a7a0-4464-951a-0c69174dd492
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=CS2D
