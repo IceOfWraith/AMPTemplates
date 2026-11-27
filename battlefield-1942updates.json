@@ -48,7 +48,7 @@
         "UpdateStageName": "Server Settings Template Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/battlefield-1942serversettings.con",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/0f91e32617f4a1e3b0191caf91b81399f1c74342/battlefield-1942serversettings.con",
         "UpdateSourceArgs": "AMP_serversettings.con",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,

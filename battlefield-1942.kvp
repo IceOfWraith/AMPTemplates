@@ -1,4 +1,4 @@
-Meta.DisplayName=Battlefield 1942
+Meta.DisplayName=Battlefield 1942 [bot]
 Meta.Description=Battlefield 1942 Dedicated Server (Linux standalone server 1.6 with the 1.61b patch, from the PCGamingWiki community files)
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=d6faed9b-d7d7-4490-b9ac-e1bf2195353f
+Meta.AppConfigId=416dc1cb-4066-414d-9089-8fc65e6dc500
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Battlefield 1942
