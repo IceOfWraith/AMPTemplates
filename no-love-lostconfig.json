@@ -23,8 +23,9 @@
         "FieldName": "ServerPassword",
         "InputType": "password",
         "IsFlagArgument": false,
-        "ParamFieldName": "ServerPassword",
-        "IncludeInCommandLine": false,
+        "ParamFieldName": "serverpassword",
+        "IncludeInCommandLine": true,
+        "SkipIfEmpty": true,
         "DefaultValue": "",
         "EnumValues": {}
     },
