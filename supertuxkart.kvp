@@ -1,4 +1,4 @@
-Meta.DisplayName=SuperTuxKart [bot]
+Meta.DisplayName=SuperTuxKart
 Meta.Description=SuperTuxKart Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=48a32747-2fab-4878-b732-9e5da0995356
+Meta.AppConfigId=4c0e6f43-4b0f-4f43-9a52-7e3f2b1d5a61
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=SuperTuxKart
