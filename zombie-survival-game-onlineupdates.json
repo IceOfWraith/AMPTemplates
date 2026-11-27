@@ -19,7 +19,7 @@
         "UpdateStageName": "Default World Settings Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/zombie-survival-game-onlinedefaultworldsettings.json",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/d64e4153b43b8ad435eeded5226870ec5176b3fa/zombie-survival-game-onlinedefaultworldsettings.json",
         "UpdateSourceTarget": "{{$FullBaseDir}}ZSGO/Saved/WorldSettings",
         "UpdateSourceArgs": "DefaultWorldSettings.json",
         "OverwriteExistingFiles": false,

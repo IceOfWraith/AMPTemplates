@@ -1,4 +1,4 @@
-Meta.DisplayName=Zombie Survival Game Online
+Meta.DisplayName=Zombie Survival Game Online [bot]
 Meta.Description=Zombie Survival Game Online Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=869d07ad-d082-4434-a01a-8b3af83943fd
+Meta.AppConfigId=00be4ca3-99fe-4adb-ba92-788ff6fd3229
 Meta.ImportableExtensions=[".json"]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Zombie Survival Game Online
