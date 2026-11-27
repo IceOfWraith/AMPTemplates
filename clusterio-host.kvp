@@ -1,4 +1,4 @@
-Meta.DisplayName=Clusterio Host [bot]
+Meta.DisplayName=Clusterio Host
 Meta.Description=Clusterio host: runs the Factorio servers of a Clusterio cluster
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=480f4782-2df8-46f1-b6f0-bc96e1a13a5b
+Meta.AppConfigId=b2d7e915-4c3a-4e8f-a1d6-7f90c3e2b584
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Clusterio Host
