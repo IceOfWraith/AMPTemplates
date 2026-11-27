@@ -1,4 +1,4 @@
-Meta.DisplayName=BetterCrewLink Server
+Meta.DisplayName=BetterCrewLink Server [bot]
 Meta.Description=Voice relay server for BetterCrewLink, the proximity voice chat mod for Among Us
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=5d1df309-aa84-4b58-bb47-aebac608f5c9
+Meta.AppConfigId=0aaf095b-8527-4120-bfd6-3c0b28c5b278
 Meta.ImportableExtensions=[]
 App.DisplayName=BetterCrewLink Server
 App.RootDir=./bettercrewlink/

@@ -3,7 +3,7 @@
         "UpdateStageName": "Peer Config Template",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/bettercrewlinkpeerConfig.yml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/5349f70cb8d9d8b7ee04e00e5655389b6527b19b/bettercrewlinkpeerConfig.yml",
         "UpdateSourceArgs": "AMP_peerConfig.yml",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true
