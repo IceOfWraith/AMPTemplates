@@ -1,4 +1,4 @@
-Meta.DisplayName=Tiny Block
+Meta.DisplayName=Tiny Block [bot]
 Meta.Description=Tiny Block Dedicated Server (community worlds listed in the official server browser)
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=5d0c8e1a-7b3f-4c2e-9a61-2f8b4e7d1c93
+Meta.AppConfigId=5c436cd1-50d4-41a3-9eee-145605e9f349
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Tiny Block
 App.RootDir=./tiny-block/
