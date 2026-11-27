@@ -1,4 +1,4 @@
-Meta.DisplayName=GoldenEye: Source [bot]
+Meta.DisplayName=GoldenEye: Source
 Meta.Description=GoldenEye: Source Dedicated Server. The server files are supplied by you: enter a download URL for the official server archive or upload it to the instance
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=209e9a47-37f4-4d8b-8b6a-37592bd272c8
+Meta.AppConfigId=8fe2830d-e36a-4d70-a01a-f8bbb21316a9
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
