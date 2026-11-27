@@ -1,4 +1,4 @@
-Meta.DisplayName=Modiverse
+Meta.DisplayName=Modiverse [bot]
 Meta.Description=Modiverse Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=83129ea3-322f-473a-b76a-d065ee651546
+Meta.AppConfigId=b048b3a7-30f6-4f57-ae75-40ed8e0a942b
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Modiverse
