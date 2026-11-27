@@ -1,4 +1,4 @@
-Meta.DisplayName=Midnight Ghost Hunt
+Meta.DisplayName=Midnight Ghost Hunt [bot]
 Meta.Description=Midnight Ghost Hunt Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=192757a8-e6c0-4068-a4e0-3145f418d68b
+Meta.AppConfigId=d97eb17c-38de-4a11-98bd-990791293c3d
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Midnight Ghost Hunt
