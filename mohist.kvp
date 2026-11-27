@@ -1,4 +1,4 @@
-Meta.DisplayName=MohistMC
+Meta.DisplayName=MohistMC [bot]
 Meta.Description=MohistMC Minecraft Java server that runs Forge mods and Bukkit/Spigot plugins together
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a9595420-920c-4198-8404-727ec4ccfb55
+Meta.AppConfigId=c8630224-2580-4eef-a37a-23e30520f3a0
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=MohistMC
