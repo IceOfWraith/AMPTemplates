@@ -1,4 +1,4 @@
-Meta.DisplayName=Aloft [bot]
+Meta.DisplayName=Aloft
 Meta.Description=Aloft Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Initial release (Linux via Wine; Windows in a Linux container)
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=1479ffb0-7d27-487b-815b-3d300eabc31f
+Meta.AppConfigId=426a1e03-da22-401c-9f57-302d5c0e8e71
 Meta.ImportableExtensions=[]
 App.DisplayName=Aloft
 App.RootDir=./aloft/
