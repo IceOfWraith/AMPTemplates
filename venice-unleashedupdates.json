@@ -1,5 +1,21 @@
 [
     {
+        "UpdateStageName": "Directory Creation",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C (if not exist \"{{$FullBaseDir}}client\" mkdir \"{{$FullBaseDir}}client\") & (if not exist \"{{$FullBaseDir}}bf3\" mkdir \"{{$FullBaseDir}}bf3\") & (if not exist \"{{$FullBaseDir}}instance\\Admin\\Mods\" mkdir \"{{$FullBaseDir}}instance\\Admin\\Mods\")",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Directory Creation",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"mkdir -p \\\"{{$FullBaseDir}}client\\\" \\\"{{$FullBaseDir}}bf3\\\" \\\"{{$FullBaseDir}}instance/Admin/Mods\\\"\"",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Venice Unleashed Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
@@ -24,26 +40,10 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Directory Creation",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C (if not exist \"{{$FullBaseDir}}bf3\" mkdir \"{{$FullBaseDir}}bf3\") & (if not exist \"{{$FullBaseDir}}instance\\Admin\\Mods\" mkdir \"{{$FullBaseDir}}instance\\Admin\\Mods\")",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Directory Creation",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"mkdir -p \\\"{{$FullBaseDir}}bf3\\\" \\\"{{$FullBaseDir}}instance/Admin/Mods\\\"\"",
-        "SkipOnFailure": false
-    },
-    {
         "UpdateStageName": "Startup Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/44cd99d57b00af1dcbe019caca42839c9a3f60b1/venice-unleashedstartup.txt",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/venice-unleashedstartup.txt",
         "UpdateSourceArgs": "Startup.txt",
         "UpdateSourceTarget": "{{$FullBaseDir}}instance/Admin",
         "OverwriteExistingFiles": false,
@@ -53,7 +53,7 @@
         "UpdateStageName": "Map List Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/44cd99d57b00af1dcbe019caca42839c9a3f60b1/venice-unleashedmaplist.txt",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/venice-unleashedmaplist.txt",
         "UpdateSourceArgs": "MapList.txt",
         "UpdateSourceTarget": "{{$FullBaseDir}}instance/Admin",
         "OverwriteExistingFiles": false,

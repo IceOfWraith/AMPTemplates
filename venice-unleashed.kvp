@@ -1,4 +1,4 @@
-Meta.DisplayName=Venice Unleashed [bot]
+Meta.DisplayName=Venice Unleashed
 Meta.Description=Venice Unleashed dedicated server, the community server and modding platform for Battlefield 3 (requires your own copy of Battlefield 3 and a VU server key)
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unsupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=292d7355-799b-4e68-900e-03d6b2426203
+Meta.AppConfigId=5d0c7a8e-3f1b-4c62-9a57-2e8b6d41f9c3
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
