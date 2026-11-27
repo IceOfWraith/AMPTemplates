@@ -35,6 +35,28 @@ wine_prefix() {
     if on_9p_share; then echo /tmp/amp-coop-wine; else printf '%s\n' "$ROOT/.wine"; fi
 }
 
+# A fresh SteamCMD updates itself on its first run. On a 9p share its relaunch
+# after that update ends the run before AMP's login step, so AMP's first Update
+# never logs in. Install and self-update SteamCMD here first, so AMP's Steam
+# stage starts with a current SteamCMD and goes straight to the login.
+bootstrap_steamcmd() {
+    on_9p_share || return 0
+    [[ ! -f "$ROOT/steamcmd.sh" ]] || return 0
+    local archive
+    command -v curl >/dev/null || { log 'curl missing; skipping SteamCMD bootstrap'; return 0; }
+    log 'Installing SteamCMD before the Steam login'
+    archive=$(mktemp /tmp/amp-coop-steamcmd.XXXXXX)
+    if ! curl -fsSL --retry 3 -o "$archive" https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz ||
+        ! tar -xzf "$archive" -C "$ROOT"; then
+        rm -f -- "$archive"
+        log 'SteamCMD bootstrap failed; AMP will install SteamCMD itself'
+        return 0
+    fi
+    rm -f -- "$archive"
+    HOME="$ROOT/../.virtualhome" timeout 600 /bin/bash "$ROOT/steamcmd.sh" +quit </dev/null || true
+    log 'SteamCMD is ready'
+}
+
 check_port() {
     if [[ ! "$1" =~ ^[1-9][0-9]{0,4}$ ]] || (( 10#$1 > ${2:-65535} )); then
         die 'Invalid allocated port'
@@ -305,7 +327,7 @@ main() {
     command -v jq >/dev/null || die 'jq is required; refresh the AMP container packages'
     case "${1:-}" in
         update) update ;;
-        init) settings ;;
+        init) settings; bootstrap_steamcmd ;;
         prepare) [[ $# == 3 ]] || die 'Usage: mount-and-blade2-coop.sh prepare GAME_PORT MODULE_ID'; prepare "$2" "$3" ;;
         start) [[ $# == 2 ]] || die 'Usage: mount-and-blade2-coop.sh start MODULE_ID'; start "$2" ;;
         *) die 'Usage: mount-and-blade2-coop.sh init|update|prepare GAME_PORT MODULE_ID|start MODULE_ID' ;;
