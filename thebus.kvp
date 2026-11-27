@@ -1,4 +1,4 @@
-Meta.DisplayName=The Bus
+Meta.DisplayName=The Bus [bot]
 Meta.Description=The Bus Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=8d6f2b41-3c7e-4a59-9e0b-6a1f4c2d7b93
+Meta.AppConfigId=163b6245-e340-44c7-aa6f-7528ad4cbb4a
 Meta.AppIsMultiIPAware=False
 App.DisplayName=The Bus
 App.RootDir=./thebus/
