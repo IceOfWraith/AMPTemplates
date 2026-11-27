@@ -1,4 +1,4 @@
-Meta.DisplayName=WaterdogPE
+Meta.DisplayName=WaterdogPE [bot]
 Meta.Description=WaterdogPE proxy server for Minecraft: Bedrock Edition
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=38316907-618a-4f13-94b3-610ce5b4ddf6
+Meta.AppConfigId=75ce7bb7-af28-4c85-844b-284cc6628a19
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=WaterdogPE
