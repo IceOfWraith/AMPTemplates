@@ -102,6 +102,34 @@ if [[ $LOCAL_PREFIX == 1 ]]; then
     rm -rf "$LOCALLOW/Aloft"
     ln -s "$GAMEDIR/Aloft" "$LOCALLOW/Aloft"
   fi
+
+  # The game's DLLs crash while loading from the shared folder, so its .exe and .dll
+  # files run from container storage. The originals are kept in the instance
+  # (aloft/.binaries) so the copies can be rebuilt; SteamCMD replaces the links with
+  # real files when it updates them, and they are moved across again here.
+  ORIGDIR="$ROOTDIR/.binaries"
+  BINDIR="/tmp/aloft-bin"
+  if [[ -f "$GAMEDIR/Aloft.exe" || -L "$GAMEDIR/Aloft.exe" ]]; then
+    echo "Linking the game binaries to container storage"
+    cd "$GAMEDIR" || exit 1
+    while IFS= read -r -d '' FILE; do
+      FILE="${FILE#./}"
+      if [[ -f "$FILE" && ! -L "$FILE" ]]; then
+        mkdir -p "$ORIGDIR/$(dirname "$FILE")"
+        mv -f "$FILE" "$ORIGDIR/$FILE"
+      fi
+    done < <(find . -path ./Aloft -prune -o -type f \( -iname '*.dll' -o -iname '*.exe' \) -print0)
+    cd "$ORIGDIR" || exit 1
+    while IFS= read -r -d '' FILE; do
+      FILE="${FILE#./}"
+      mkdir -p "$BINDIR/$(dirname "$FILE")"
+      if ! cmp -s "$FILE" "$BINDIR/$FILE"; then
+        cp -f "$FILE" "$BINDIR/$FILE" || exit 1
+      fi
+      ln -sfn "$BINDIR/$FILE" "$GAMEDIR/$FILE"
+    done < <(find . -type f -print0)
+    cd "$SCRIPTDIR" || exit 1
+  fi
 else
   # Saves live in the prefix (inside the instance); the game folder links to them.
   [[ -L "$LOCALLOW/Aloft" ]] && rm -f "$LOCALLOW/Aloft"
