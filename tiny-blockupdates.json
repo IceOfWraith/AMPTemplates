@@ -1,0 +1,21 @@
+[
+    {
+        "UpdateStageName": "Tiny Block Server Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "GithubRelease",
+        "UpdateSourceArgs": "hardtab/tinyblock-server",
+        "UpdateSourceData": "tinyblock-server-linux-x86_64.tar.gz",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Set Executable Flag",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SetExecutableFlag",
+        "UpdateSourceArgs": "{{$FullBaseDir}}tinyblock-server.x86_64",
+        "SkipOnFailure": false
+    }
+]
