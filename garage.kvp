@@ -1,4 +1,4 @@
-Meta.DisplayName=Garage [bot]
+Meta.DisplayName=Garage
 Meta.Description=Garage S3-compatible object storage
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=0b5c2c54-c20a-4ef0-8ef8-36d71aaa052c
+Meta.AppConfigId=816b995d-e51f-411d-8967-c0f3fb7819d2
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Garage
@@ -36,7 +36,7 @@ App.ExecutableLinux=/bin/bash
 App.WorkingDir=
 App.LinuxCommandLineArgs=-c "cd '{{$FullBaseDir}}' || exit 1; k='{{DefaultAccessKey}}'; s='{{DefaultSecretKey}}'; [ -n \"$k\" ] || k=$(cat secrets/default_access_key); [ -n \"$s\" ] || s=$(cat secrets/default_secret_key); export GARAGE_CONFIG_FILE=\"$PWD/garage.toml\" GARAGE_DEFAULT_ACCESS_KEY=\"$k\" GARAGE_DEFAULT_SECRET_KEY=\"$s\" GARAGE_DEFAULT_BUCKET='{{DefaultBucket}}'; echo \"Default access key ID: $k\"; exec ./garage server --single-node {{CreateDefaultBucket}}"
 App.WindowsCommandLineArgs=
-App.CommandLineArgs=
+App.CommandLineArgs={{$PlatformArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={}
