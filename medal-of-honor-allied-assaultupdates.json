@@ -2,19 +2,6 @@
     {
         "UpdateStageName": "OpenMoHAA Download",
         "UpdateStageDescription": "Downloads the latest OpenMoHAA release from GitHub",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "FetchURLfromJQ",
-        "UpdateSourceData": "https://api.github.com/repos/openmoh/openmohaa/releases/latest",
-        "UpdateSourceArgs": "$.assets[?(@.name =~ /^openmohaa-.*-windows-x64\\.zip$/)].browser_download_url",
-        "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "UnzipUpdateSource": true,
-        "OverwriteExistingFiles": true,
-        "DeleteAfterExtract": true,
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "OpenMoHAA Download",
-        "UpdateStageDescription": "Downloads the latest OpenMoHAA release from GitHub",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURLfromJQ",
         "UpdateSourceData": "https://api.github.com/repos/openmoh/openmohaa/releases/latest",
