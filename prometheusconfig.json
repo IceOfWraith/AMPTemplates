@@ -103,24 +103,6 @@
         }
     },
     {
-        "DisplayName": "Log Level",
-        "Category": "Prometheus:monitoring",
-        "Subcategory": "Server:dns:1",
-        "Description": "Minimum level of messages written to the console",
-        "Keywords": "log,logging,level,debug",
-        "FieldName": "LogLevel",
-        "InputType": "enum",
-        "ParamFieldName": "log.level",
-        "IncludeInCommandLine": true,
-        "DefaultValue": "info",
-        "EnumValues": {
-            "debug": "Debug",
-            "info": "Info (default)",
-            "warn": "Warning",
-            "error": "Error"
-        }
-    },
-    {
         "DisplayName": "Custom Arguments",
         "Category": "Prometheus:monitoring",
         "Subcategory": "Server:dns:1",
