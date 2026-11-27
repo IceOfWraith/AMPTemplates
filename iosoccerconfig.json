@@ -1,7 +1,7 @@
 [
   {
     "DisplayName": "RCON Password",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "",
     "Keywords": "",
@@ -13,7 +13,7 @@
   },
   {
     "DisplayName": "Server Name",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets the name of the server that appears in the server list",
     "Keywords": "server,name,hostname",
@@ -25,7 +25,7 @@
   },
   {
     "DisplayName": "Server Tags",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Comma-separated list of server tags that give additional information about the server in the server browser",
     "Keywords": "tags,sv_tags",
@@ -37,20 +37,8 @@
     "EnumValues": {}
   },
   {
-    "DisplayName": "Server Steam Group",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Server:dns:1",
-    "Description": "Sets the ID of the steam group that the server belongs to. You can find your group's ID on the admin profile page in the steam community",
-    "Keywords": "steam,group,id,sv_steamgroup",
-    "FieldName": "sv_steamgroup",
-    "InputType": "text",
-    "ParamFieldName": "sv_steamgroup",
-    "DefaultValue": "",
-    "EnumValues": {}
-  },
-  {
     "DisplayName": "LAN Server",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "If enabled, the server will operate as a LAN server: no heartbeat, no authentication, and no non-class C addresses",
     "Keywords": "lan,local,sv_lan",
@@ -64,25 +52,10 @@
     }
   },
   {
-    "DisplayName": "Game Server Login Token (GSLT)",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Server:dns:1",
-    "Description": "Sets the [Steam Game Server Login Token](https://steamcommunity.com/dev/managegameservers) for the server, to allow it to be listed in the server browser. Use app ID 673560 when generating the token",
-    "Keywords": "steam,server,login,token,gslt,sv_setsteamaccount",
-    "FieldName": "sv_setsteamaccount",
-    "InputType": "Password",
-    "ParamFieldName": "sv_setsteamaccount",
-    "IncludeInCommandLine": true,
-    "SkipIfEmpty": true,
-    "DefaultValue": "",
-    "Placeholder": "6544F7E034119F113526E96474F559AH",
-    "EnumValues": {}
-  },
-  {
     "DisplayName": "Server Password",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
-    "Description": "Sets the password required to connect to the server. Default is no password",
+    "Description": "Sets the password required to join the server. Overrides the password set by the match configuration",
     "Keywords": "server,password,sv_password",
     "FieldName": "sv_password",
     "InputType": "Password",
@@ -92,19 +65,37 @@
   },
   {
     "DisplayName": "Initial Map",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets the map to start the server with. If \"Custom\" is selected, Custom Initial Map must also be specified",
     "Keywords": "map",
     "FieldName": "map",
-    "InputType": "text",
+    "InputType": "enum",
     "ParamFieldName": "map",
     "DefaultValue": "8v8_vienna",
-    "EnumValues": {}
+    "EnumValues": {
+      "4v4_arena": "4v4: Arena",
+      "4v4_indoor": "4v4: Indoor",
+      "4v4_rooftop": "4v4: Rooftop",
+      "4v4_samba": "4v4: Samba",
+      "5v5_night_academy": "5v5: Night Academy",
+      "6v6_peacock_park": "6v6: Peacock Park",
+      "6v6_south": "6v6: South",
+      "8v8_coral": "8v8: Coral",
+      "8v8_court_hey": "8v8: Court Hey",
+      "8v8_dayfall": "8v8: Dayfall",
+      "8v8_glasgow": "8v8: Glasgow",
+      "8v8_london": "8v8: London",
+      "8v8_nightfall": "8v8: Nightfall",
+      "8v8_stanley_park": "8v8: Stanley Park",
+      "8v8_vienna": "8v8: Vienna (default)",
+      "11v11_north": "11v11: North",
+      "{{CustomMap}}": "--Custom--"
+    }
   },
   {
     "DisplayName": "Custom Initial Map",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets a custom map to use for the Initial Map, if \"Custom\" is selected",
     "Keywords": "custom,map",
@@ -115,15 +106,72 @@
     "EnumValues": {}
   },
   {
+    "DisplayName": "Map Cycle",
+    "Category": "IOSoccer:sports_soccer",
+    "Subcategory": "Server:dns:1",
+    "Description": "Sets the map cycle file the server rotates through",
+    "Keywords": "map,cycle,rotation,mapcyclefile",
+    "FieldName": "mapcyclefile",
+    "InputType": "enum",
+    "ParamFieldName": "mapcyclefile",
+    "DefaultValue": "mapcycle_8v8.txt",
+    "EnumValues": {
+      "mapcycle_4v4.txt": "4v4 maps",
+      "mapcycle_5v5.txt": "5v5 maps",
+      "mapcycle_6v6.txt": "6v6 maps",
+      "mapcycle_8v8.txt": "8v8 maps (default)",
+      "mapcycle_11v11.txt": "11v11 maps"
+    }
+  },
+  {
+    "DisplayName": "Match Configuration",
+    "Category": "IOSoccer:sports_soccer",
+    "Subcategory": "Server:dns:1",
+    "Description": "Sets the bundled match configuration to load before the settings below. \"Public\" suits open servers (bot keepers, no captains); the team-size, league and cup presets suit organised matches. Use Additional Server Settings to override individual rules such as mp_maxplayers or mp_botkeepers",
+    "Keywords": "match,mode,config,preset,public,league,cup,4v4,6v6,8v8",
+    "FieldName": "MatchConfig",
+    "InputType": "enum",
+    "ParamFieldName": "MatchConfig",
+    "DefaultValue": "shared_server.cfg",
+    "EnumValues": {
+      "shared_server.cfg": "Public (default)",
+      "3v3.cfg": "3v3 match",
+      "4v4.cfg": "4v4 match",
+      "5v5.cfg": "5v5 match",
+      "6v6.cfg": "6v6 match",
+      "7v7.cfg": "7v7 match",
+      "8v8.cfg": "8v8 match",
+      "9v9.cfg": "9v9 match",
+      "league.cfg": "League",
+      "cup.cfg": "Cup",
+      "training.cfg": "Training"
+    }
+  },
+  {
+    "DisplayName": "Custom Assets",
+    "Category": "IOSoccer:sports_soccer",
+    "Subcategory": "Server:dns:1",
+    "Description": "If enabled, the server allows custom assets such as custom kits and balls",
+    "Keywords": "custom,assets,kits,sv_custom_assets",
+    "FieldName": "sv_custom_assets",
+    "InputType": "checkbox",
+    "ParamFieldName": "sv_custom_assets",
+    "DefaultValue": "0",
+    "EnumValues": {
+      "False": "0",
+      "True": "1"
+    }
+  },
+  {
     "DisplayName": "Server Region",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets the server region shown in the server list",
     "Keywords": "server,region,sv_region",
     "FieldName": "sv_region",
     "InputType": "enum",
     "ParamFieldName": "sv_region",
-    "DefaultValue": "-1",
+    "DefaultValue": "255",
     "EnumValues": {
       "-1": "No region",
       "0": "East Coast US",
@@ -139,23 +187,23 @@
   },
   {
     "DisplayName": "Player Limit",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
-    "Description": "Sets the maximum number of players allowed on the server at one time",
+    "Description": "Sets the maximum number of player slots on the server, including both teams and spectators. Players per team is set by the match configuration (mp_maxplayers)",
     "Keywords": "max,players,limit,maxplayers",
     "FieldName": "$MaxUsers",
     "InputType": "number",
     "MinValue": "1",
-    "MaxValue": "24",
+    "MaxValue": "64",
     "ParamFieldName": "sv_maxplayers",
-    "DefaultValue": "8",
-    "Placeholder": "8",
+    "DefaultValue": "18",
+    "Placeholder": "18",
     "Suffix": "players",
     "EnumValues": {}
   },
   {
     "DisplayName": "Bot Player Count Mode",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets whether to count bots as players for the player count in AMP. This AMP instance must be restarted for changes to this setting to take effect",
     "Keywords": "bot,count,players",
@@ -170,7 +218,7 @@
   },
   {
     "DisplayName": "Visible Player Limit",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets the maximum players reported to prospective clients, regardless of the Player Limit. -1 = do not override",
     "Keywords": "visible,max,players,sv_visiblemaxplayers",
@@ -186,7 +234,7 @@
   },
   {
     "DisplayName": "Pure Server Mode",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets whether clients are only allowed to use certain files",
     "Keywords": "pure,server,cheat,hack,integrity,sv_pure",
@@ -203,7 +251,7 @@
   },
   {
     "DisplayName": "Kick Clients On Pure Server",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "If enabled, the server will kick clients with mismatching files. Otherwise, it will issue a warning to the clients",
     "Keywords": "pure,server,cheat,hack,integrity,sv_pure_kick_clients",
@@ -218,7 +266,7 @@
   },
   {
     "DisplayName": "Enable Cheats",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "If set, cheat convars will be allowed to be used on the server",
     "Keywords": "allow,cheat,hack,integrity,sv_cheats",
@@ -233,7 +281,7 @@
   },
   {
     "DisplayName": "Disable Valve Anti-Cheat",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "If set, Valve Anti-Cheat (VAC) will be disabled",
     "Keywords": "valve,anti,cheat,vac,insecure",
@@ -248,7 +296,7 @@
   },
   {
     "DisplayName": "Enable IP Packet Filter",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "If set, enables packet filtering by IP mode. If disabled, everyone will treated as IP-banned, but their IP won't be added to the banlist",
     "Keywords": "ip,ban,banning,sv_filterban",
@@ -263,7 +311,7 @@
   },
   {
     "DisplayName": "Server Tickrate",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets the server tickrate",
     "Keywords": "tick,rate,tickrate",
@@ -272,14 +320,14 @@
     "MinValue": "1",
     "MaxValue": "128",
     "ParamFieldName": "tickrate",
-    "DefaultValue": "64",
-    "Placeholder": "64",
+    "DefaultValue": "100",
+    "Placeholder": "100",
     "Suffix": "tps",
     "EnumValues": {}
   },
   {
     "DisplayName": "Allow Download From Server",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "If set, clients will be allowed to download content from the server (maps, sprays and related)",
     "Keywords": "allow,download,content,maps,sv_allowdownload",
@@ -294,7 +342,7 @@
   },
   {
     "DisplayName": "Fast Download URL",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets the URL for clients to download custom content from, instead of sourcing the content from the server. This allows for faster downloads",
     "Keywords": "fastdl,download,url,sv_downloadurl",
@@ -307,7 +355,7 @@
   },
   {
     "DisplayName": "Allow Upload To Server",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "If set, clients will be allowed to upload customisation files to the server",
     "Keywords": "allow,upload,customisation,files,sv_allowupload",
@@ -322,7 +370,7 @@
   },
   {
     "DisplayName": "Maximum File Size",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Sets the maximum allowed file size for uploading to the server",
     "Keywords": "maximum,upload,file,size,net_maxfilesize",
@@ -337,66 +385,8 @@
     "EnumValues": {}
   },
   {
-    "DisplayName": "Minimum Client Rate",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Server:dns:1",
-    "Description": "Sets the minimum allowable bandwidth rate a client may have set when connected to the server. 0 = no minimum",
-    "Keywords": "minimum,bandwidth,rate,sv_minrate",
-    "FieldName": "sv_minrate",
-    "InputType": "number",
-    "MinValue": "0",
-    "ParamFieldName": "sv_minrate",
-    "DefaultValue": "3500",
-    "Placeholder": "3500",
-    "Suffix": "bytes/second",
-    "EnumValues": {}
-  },
-  {
-    "DisplayName": "Maximum Client Rate",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Server:dns:1",
-    "Description": "Sets the maximum allowable bandwidth rate a client may have set when connected to the server. 0 = no limit",
-    "Keywords": "maximum,bandwidth,rate,sv_maxrate",
-    "FieldName": "sv_maxrate",
-    "InputType": "number",
-    "MinValue": "0",
-    "ParamFieldName": "sv_maxrate",
-    "DefaultValue": "0",
-    "Placeholder": "0",
-    "Suffix": "bytes/second",
-    "EnumValues": {}
-  },
-  {
-    "DisplayName": "Minimum Server Update Rate",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Server:dns:1",
-    "Description": "Sets the minimum number of updates per second of the positions of the server's models (players, guns, etc) that server sends to clients",
-    "Keywords": "minimum,update,rate,sv_minupdaterate",
-    "FieldName": "sv_minupdaterate",
-    "InputType": "number",
-    "MinValue": "0",
-    "ParamFieldName": "sv_minupdaterate",
-    "DefaultValue": "10",
-    "Placeholder": "10",
-    "EnumValues": {}
-  },
-  {
-    "DisplayName": "Maximum Server Update Rate",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Server:dns:1",
-    "Description": "Sets the maximum number of updates per second of the positions of the server's models (players, guns, etc) that server sends to clients",
-    "Keywords": "maximum,update,rate,sv_maxupdaterate",
-    "FieldName": "sv_maxupdaterate",
-    "InputType": "number",
-    "MinValue": "0",
-    "ParamFieldName": "sv_maxupdaterate",
-    "DefaultValue": "66",
-    "Placeholder": "66",
-    "EnumValues": {}
-  },
-  {
     "DisplayName": "Server/RCON IPv4 IP Binding",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "If required, you can change the IPv4 IP binding of the server and RCON by changing the Application IP Binding for this instance. NOTE: AMP requires the server to be bound to a specific IP, rather than 0.0.0.0, for the server to log to AMP's console. The IP must also be reachable by AMP",
     "Keywords": "ip,binding",
@@ -407,7 +397,7 @@
   },
   {
     "DisplayName": "Additional Command Line Parameters",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Specifies additional [command line parameters](https://developer.valvesoftware.com/wiki/Command_line_options#Source_Dedicated_Server) (anything that begins with a -) that are not otherwise set by AMP. Use with care",
     "Keywords": "custom,server,arguments,parameters",
@@ -419,7 +409,7 @@
   },
   {
     "DisplayName": "Additional Console Variables",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
     "Description": "Specifies additional [console variables](https://developer.valvesoftware.com/wiki/List_of_Source_Dedicated_Server_console_variables) (anything that begins with a +) that are not otherwise set by AMP. Use with care. Preferably, specify the equivalent under \"Additional Server Settings\"",
     "Keywords": "custom,server,arguments,variables,cvars,convars,parameters",
@@ -432,9 +422,9 @@
   },
   {
     "DisplayName": "Additional Server Settings",
-    "Category": "IOSoccer:stadia_controller",
+    "Category": "IOSoccer:sports_soccer",
     "Subcategory": "Server:dns:1",
-    "Description": "Specifies additional [settings](https://developer.valvesoftware.com/wiki/List_of_Source_Dedicated_Server_console_variables) to include in 'server.cfg' that are not otherwise set by AMP. One setting per line",
+    "Description": "Specifies additional [settings](https://developer.valvesoftware.com/wiki/List_of_Source_Dedicated_Server_console_variables) to include at the end of 'server.cfg', for example 'mp_maxplayers 6' or 'mp_botkeepers 0'. These override the match configuration. One setting per line",
     "Keywords": "additional,settings,custom",
     "FieldName": "UserSettings",
     "InputType": "Textarea",
@@ -444,54 +434,9 @@
     "EnumValues": {}
   },
   {
-    "DisplayName": "Allow Players To Pause Server",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Gameplay:sports_soccer:2",
-    "Description": "If set, players will be able to pause the server. Not recommended",
-    "Keywords": "pause,pausable,sv_pausable",
-    "FieldName": "sv_pausable",
-    "InputType": "checkbox",
-    "ParamFieldName": "sv_pausable",
-    "DefaultValue": "0",
-    "EnumValues": {
-      "False": "0",
-      "True": "1"
-    }
-  },
-  {
-    "DisplayName": "Enable Voice Communication",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Gameplay:sports_soccer:2",
-    "Description": "If set, voice communication will be enabled on the server",
-    "Keywords": "voice,communication,sv_voiceenable",
-    "FieldName": "sv_voiceenable",
-    "InputType": "checkbox",
-    "ParamFieldName": "sv_voiceenable",
-    "DefaultValue": "1",
-    "EnumValues": {
-      "False": "0",
-      "True": "1"
-    }
-  },
-  {
-    "DisplayName": "Allow All Talk",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "Gameplay:sports_soccer:2",
-    "Description": "If enabled, players can communicate with all other players, with no team restrictions",
-    "Keywords": "all,talk,sv_alltalk",
-    "FieldName": "sv_alltalk",
-    "InputType": "checkbox",
-    "ParamFieldName": "sv_alltalk",
-    "DefaultValue": "0",
-    "EnumValues": {
-      "False": "0",
-      "True": "1"
-    }
-  },
-  {
     "DisplayName": "Disable SourceTV",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "SourceTV:tv:3",
+    "Category": "IOSoccer:sports_soccer",
+    "Subcategory": "SourceTV:tv:2",
     "Description": "If set, SourceTV will be disabled on the server",
     "Keywords": "sourcetv,source,nohltv",
     "FieldName": "nohltv",
@@ -505,8 +450,8 @@
   },
   {
     "DisplayName": "Enable Automatic Demo Recording",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "SourceTV:tv:3",
+    "Category": "IOSoccer:sports_soccer",
+    "Subcategory": "SourceTV:tv:2",
     "Description": "If set, all games will be recorded as SourceTV demos",
     "Keywords": "sourcetv,tv,tv_autorecord",
     "FieldName": "tv_autorecord",
@@ -520,8 +465,8 @@
   },
   {
     "DisplayName": "SourceTV Viewer Limit",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "SourceTV:tv:3",
+    "Category": "IOSoccer:sports_soccer",
+    "Subcategory": "SourceTV:tv:2",
     "Description": "Sets the maximum number of clients allowed to connect to the server's SourceTV. 0 = no SourceTV viewers are allowed, the game will only be recorded locally",
     "Keywords": "max,spectators,clients,viewers,sourcetv,tv,tv_maxclients",
     "FieldName": "tv_maxclients",
@@ -536,8 +481,8 @@
   },
   {
     "DisplayName": "Maximum SourceTV Bandwidth",
-    "Category": "IOSoccer:stadia_controller",
-    "Subcategory": "SourceTV:tv:3",
+    "Category": "IOSoccer:sports_soccer",
+    "Subcategory": "SourceTV:tv:2",
     "Description": "Sets the maximum SourceTV spectator bandwidth rate allowed. 0 = unlimited",
     "Keywords": "maximum,bandwidth,rate,sourcetv,tv,tv_maxrate",
     "FieldName": "tv_maxrate",
