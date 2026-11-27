@@ -1,11 +1,11 @@
 [
     {
-        "UpdateStageName": "Clear Download Folder",
-        "UpdateStageDescription": "Removes any leftover download folder from an earlier update",
+        "UpdateStageName": "Prepare Download Folder",
+        "UpdateStageDescription": "Creates an empty download folder, removing any leftover from an earlier update",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"rm -rf \\\"{{$FullBaseDir}}forgejo-download\\\"\"",
+        "UpdateSourceArgs": "-c \"rm -rf \\\"{{$FullBaseDir}}forgejo-download\\\" && mkdir -p \\\"{{$FullBaseDir}}forgejo-download\\\"\"",
         "SkipOnFailure": false
     },
     {
