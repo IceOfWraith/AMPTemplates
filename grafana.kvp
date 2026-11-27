@@ -1,4 +1,4 @@
-Meta.DisplayName=Grafana
+Meta.DisplayName=Grafana [bot]
 Meta.Description=Open-source dashboards and visualisation for metrics, logs and traces
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=14ae0dd1-b5ae-461d-8e7a-cad5ed22da94
+Meta.AppConfigId=312146ed-437a-42cd-b269-94deb89b5fb3
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Grafana

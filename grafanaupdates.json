@@ -29,7 +29,7 @@
         "UpdateStageName": "Default Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/grafana.ini",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/5e88eedac0e94a99d160bce95449adfcf9e5cd8e/grafana.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "grafana.ini",
         "OverwriteExistingFiles": false,
