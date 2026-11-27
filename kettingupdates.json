@@ -1,5 +1,12 @@
 [
   {
+    "UpdateStageName": "Create Download Directory",
+    "UpdateSourcePlatform": "All",
+    "UpdateSource": "CreateDirectory",
+    "UpdateSourceArgs": "{{$FullRootDir}}launcher-download",
+    "SkipOnFailure": false
+  },
+  {
     "UpdateStageName": "Ketting Launcher Download",
     "UpdateStageDescription": "Downloads the latest Ketting Launcher release from GitHub",
     "UpdateSourcePlatform": "All",
