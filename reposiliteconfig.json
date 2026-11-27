@@ -16,23 +16,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Debug Mode",
-        "Category": "Reposilite",
-        "Subcategory": "Reposilite:dns:2",
-        "Description": "Enables debug mode with extra log output",
-        "Keywords": "debug",
-        "FieldName": "DebugMode",
-        "InputType": "checkbox",
-        "IsFlagArgument": false,
-        "ParamFieldName": "DebugMode",
-        "IncludeInCommandLine": false,
-        "DefaultValue": "",
-        "EnumValues": {
-            "False": "",
-            "True": "--debug "
-        }
-    },
-    {
         "DisplayName": "Java Version",
         "Category": "Reposilite",
         "Subcategory": "Java:settings:1",
