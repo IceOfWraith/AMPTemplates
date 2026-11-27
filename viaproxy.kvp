@@ -1,4 +1,4 @@
-Meta.DisplayName=ViaProxy
+Meta.DisplayName=ViaProxy [bot]
 Meta.Description=Standalone proxy that lets Minecraft clients join servers of any version
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=de54dc34-3584-44cc-a78b-cb9571b4283f
+Meta.AppConfigId=ee4f58e5-dd10-4348-a58e-95b07dc5f0c1
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=ViaProxy
