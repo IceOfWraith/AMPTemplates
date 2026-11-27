@@ -1,4 +1,4 @@
-Meta.DisplayName=Modiverse [bot]
+Meta.DisplayName=Modiverse
 Meta.Description=Modiverse Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=0891bf32-c3ec-4267-83b6-cb61ca81002e
+Meta.AppConfigId=83129ea3-322f-473a-b76a-d065ee651546
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Modiverse
@@ -36,10 +36,10 @@ App.ExecutableLinux=1549820/KJModServer.sh
 App.WorkingDir=1549820
 App.LinuxCommandLineArgs=
 App.WindowsCommandLineArgs=
-App.CommandLineArgs=-log -stdout -forcelogflush -MultiHome={{$ApplicationIPBinding}} -Port={{$GamePort}} -QueryPort={{$QueryPort}} {{$FormattedArgs}}
+App.CommandLineArgs=/Game/Levels/ServerDefaultMap?MaxPlayers={{$MaxUsers}} -stdout -forcelogflush -MultiHome={{$ApplicationIPBinding}} -Port={{$GamePort}} -QueryPort={{$QueryPort}} {{$FormattedArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
-App.EnvironmentVariables={"SteamAppId":"1281150"}
+App.EnvironmentVariables={"HOME":"{{$FullBaseDir}}","LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"1281150"}
 App.CommandLineParameterFormat=-{0}="{1}"
 App.CommandLineParameterDelimiter= 
 App.ExitMethod=OS_CLOSE
@@ -95,7 +95,7 @@ App.ApplicationReadyMode=RegexMatch
 Console.FilterMatchRegex=
 Console.FilterMatchReplacement=
 Console.ThrowawayMessageRegex=
-Console.AppReadyRegex=^$
+Console.AppReadyRegex=^\[[\d.:-]+\]\[\s*\d+\]LogTemp: Display: \[info\] \\ KJModServerLogicActorBP is valid$
 Console.UserJoinRegex=^$
 Console.UserLeaveRegex=^$
 Console.UserChatRegex=^$
