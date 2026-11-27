@@ -1,4 +1,4 @@
-Meta.DisplayName=Holdfast: Nations At War
+Meta.DisplayName=Holdfast: Nations At War [bot]
 Meta.Description=Holdfast: Nations At War Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Added a Steam communications port and hid the log-archive message printed on stop
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a6b6cd80-b75e-4870-b4a5-565daff4d8d7
+Meta.AppConfigId=ca3ae453-c830-4adf-89d9-565d99a3c33e
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Holdfast: Nations At War
