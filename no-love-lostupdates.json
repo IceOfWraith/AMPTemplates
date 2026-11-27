@@ -9,6 +9,42 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Copy steamclient64.dll",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}NoLoveLost/Binaries/Win64/steamclient64.dll",
+        "UpdateSourceArgs": "{{$FullBaseDir}}steamclient64.dll",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Copy tier0_s64.dll",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}NoLoveLost/Binaries/Win64/tier0_s64.dll",
+        "UpdateSourceArgs": "{{$FullBaseDir}}tier0_s64.dll",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Copy vstdlib_s64.dll",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}NoLoveLost/Binaries/Win64/vstdlib_s64.dll",
+        "UpdateSourceArgs": "{{$FullBaseDir}}vstdlib_s64.dll",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create steam_appid.txt",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "1873120",
+        "UpdateSourceArgs": "{{$FullBaseDir}}NoLoveLost/Binaries/Win64/steam_appid.txt",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Initialise Wine",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
