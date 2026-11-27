@@ -1,5 +1,14 @@
 [
     {
+        "UpdateStageName": "Visual C++ Runtime Check",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C if exist %SystemRoot%\\System32\\vcruntime140_1.dll (exit 0) else (echo The Microsoft Visual C++ 2015-2022 Redistributable x64 is required. Install it from https://aka.ms/vs/17/release/vc_redist.x64.exe & exit 1)",
+        "ProcessToolOutput": true,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Erlang/OTP Installation",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
