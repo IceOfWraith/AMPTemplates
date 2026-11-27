@@ -3,7 +3,7 @@
     "UpdateStageName": "Server Download Script",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/tachyonsdownload.sh",
+    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/a2bf4484b85b847f78d2e3f12575b4c664ce7bed/tachyonsdownload.sh",
     "UpdateSourceTarget": "{{$FullBaseDir}}",
     "UnzipUpdateSource": false,
     "OverwriteExistingFiles": true,
