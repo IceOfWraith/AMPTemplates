@@ -26,7 +26,7 @@
         "IsFlagArgument": false,
         "ParamFieldName": "DebugMode",
         "IncludeInCommandLine": false,
-        "DefaultValue": "False",
+        "DefaultValue": "",
         "EnumValues": {
             "False": "",
             "True": "--debug "
