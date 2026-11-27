@@ -40,7 +40,7 @@
         "UpdateStageDescription": "Seeds config.yml with the AMP-managed keys on first install. WaterdogPE adds the remaining options on first start",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateFile",
-        "UpdateSourceData": "listener:\n  motd: \"§bWaterdog§3PE\"\n  sub_motd: \"WaterdogPE Proxy\"\n  name: \"WaterdogPE\"\n  host: 0.0.0.0:19132\n  transport: \"both\"\n  max_players: 20\nnethernet:\n  webrtc_port: 19133\nonline_mode: true\n",
+        "UpdateSourceData": "listener:\n  motd: \"§bWaterdog§3PE\"\n  sub_motd: \"WaterdogPE Proxy\"\n  name: \"WaterdogPE\"\n  host: 0.0.0.0:19132\n  transport: \"both\"\n  max_players: 20\nnethernet:\n  webrtc_port: 19134\nonline_mode: true\n",
         "UpdateSourceArgs": "{{$FullBaseDir}}config.yml",
         "OverwriteExistingFiles": false
     }

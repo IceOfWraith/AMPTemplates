@@ -8,7 +8,7 @@
     },
     {
         "Protocol": "UDP",
-        "Port": 19133,
+        "Port": 19134,
         "Ref": "WebRTCPort",
         "Name": "NetherNet Media Port",
         "Description": "UDP port for NetherNet (WebRTC) game traffic"
