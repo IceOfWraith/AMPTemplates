@@ -18,7 +18,7 @@
         "UpdateStageName": "Config File Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/los-angeles-crimesServerConfig.txt",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/49dd212120ff5d558e8ee19bab786f7e5ea26a26/los-angeles-crimesServerConfig.txt",
         "UpdateSourceTarget": "{{$FullBaseDir}}unity3d/MA/LAC",
         "UpdateSourceArgs": "ServerConfig.txt",
         "OverwriteExistingFiles": false,
