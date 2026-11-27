@@ -1,4 +1,4 @@
-Meta.DisplayName=No Love Lost
+Meta.DisplayName=No Love Lost [bot]
 Meta.Description=No Love Lost Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=d33231bf-b7ec-47e7-86ee-934ff15a8f0a
+Meta.AppConfigId=dffe9f2a-160e-42a0-b00e-068fe377e28e
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=No Love Lost
