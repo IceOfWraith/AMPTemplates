@@ -23,7 +23,7 @@
         "UpdateStageName": "Server.cfg Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/9f929ae86026fc0777a04f0a6dcfca5d13270865/openarenaserver.cfg",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/openarenaserver.cfg",
         "UpdateSourceArgs": "server.cfg",
         "UpdateSourceTarget": "{{$FullBaseDir}}baseoa",
         "OverwriteExistingFiles": false,
