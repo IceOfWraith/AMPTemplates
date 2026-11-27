@@ -1,4 +1,4 @@
-Meta.DisplayName=RabbitMQ
+Meta.DisplayName=RabbitMQ [bot]
 Meta.Description=RabbitMQ multi-protocol message broker (AMQP 0-9-1 and AMQP 1.0, with MQTT and STOMP plugins) and its management web UI
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=3c3637a6-96f2-49e6-af61-95db74500c8d
+Meta.AppConfigId=1e78f768-f37e-4087-877b-a7e1bad999a9
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=RabbitMQ
