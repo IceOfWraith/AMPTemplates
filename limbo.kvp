@@ -1,4 +1,4 @@
-Meta.DisplayName=Limbo [bot]
+Meta.DisplayName=Limbo
 Meta.Description=Lightweight standalone Minecraft Java limbo server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=05996e71-e4c1-4c28-bee5-20ff63c1a7fb
+Meta.AppConfigId=49acca67-43c1-4d3c-a945-dc66c729d1d6
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Limbo
@@ -36,7 +36,7 @@ App.ExecutableLinux=java/bin/java
 App.WorkingDir=
 App.LinuxCommandLineArgs=
 App.WindowsCommandLineArgs=
-App.CommandLineArgs=-Xms{{MinMemory}}M -Xmx{{MaxMemory}}M -Dfile.encoding=UTF-8 {{CustomJavaArgs}} -jar Limbo.jar --nogui
+App.CommandLineArgs=-Xms{{MinMemory}}M -Xmx{{MaxMemory}}M -Dfile.encoding=UTF-8 --enable-native-access=ALL-UNNAMED {{CustomJavaArgs}} -jar Limbo.jar --nogui
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={}
