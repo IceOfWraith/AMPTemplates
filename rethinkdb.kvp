@@ -1,4 +1,4 @@
-Meta.DisplayName=RethinkDB
+Meta.DisplayName=RethinkDB [bot]
 Meta.Description=RethinkDB, the open-source JSON document database with realtime changefeeds
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=7d3f2a61-4b8e-4c19-9a52-e6c0f1b83d47
+Meta.AppConfigId=defff108-2597-4cef-91d0-453bb07e790b
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=RethinkDB
