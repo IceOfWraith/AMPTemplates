@@ -36,7 +36,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C if exist \"{{$FullBaseDir}}RaftDedicatedServer.exe\" (echo RaftDedicatedServer.exe found) else (echo RaftDedicatedServer.exe not found. Download it from master.raftmodding.com, upload it with the File Manager into the top folder (next to Raft.exe), then start the server & exit /B 1)",
+        "UpdateSourceArgs": "/C if exist \"{{$FullBaseDir}}RaftDedicatedServer.exe\" (echo RaftDedicatedServer.exe found) else (echo RaftDedicatedServer.exe not found. Download it from master.raftmodding.com, upload it with the File Manager into the top folder next to Raft.exe, then start the server & exit /B 1)",
         "SkipOnFailure": true
     },
     {
@@ -44,7 +44,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"if [[ -f \\\"{{$FullBaseDir}}RaftDedicatedServer.exe\\\" ]]; then echo 'RaftDedicatedServer.exe found'; else echo 'RaftDedicatedServer.exe not found. Download it from master.raftmodding.com, upload it with the File Manager into the top folder (next to Raft.exe), then start the server'; exit 1; fi\"",
+        "UpdateSourceArgs": "-c \"if [[ -f \\\"{{$FullBaseDir}}RaftDedicatedServer.exe\\\" ]]; then echo 'RaftDedicatedServer.exe found'; else echo 'RaftDedicatedServer.exe not found. Download it from master.raftmodding.com, upload it with the File Manager into the top folder next to Raft.exe, then start the server'; exit 1; fi\"",
         "SkipOnFailure": true
     }
 ]
