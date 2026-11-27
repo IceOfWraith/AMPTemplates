@@ -18,7 +18,6 @@
                     "requestLimit=": "requestLimit",
                     "requestLimitPeriodInSeconds=": "requestLimitPeriodInSeconds",
                     "pipelineCaching=": "pipelineCaching",
-                    "suggestionsEnabled=": "suggestionsEnabled",
                     "trustXForwardForHeader=": "trustXForwardForHeader",
                     "": "UserSettings"
                 }

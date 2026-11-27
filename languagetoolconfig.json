@@ -45,22 +45,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Enable Spelling Suggestions",
-        "Category": "LanguageTool:spellcheck",
-        "Subcategory": "Server:dns:1",
-        "Description": "If set, suggestions are generated for spelling errors",
-        "Keywords": "suggestions,spelling,suggestionsEnabled",
-        "FieldName": "suggestionsEnabled",
-        "InputType": "checkbox",
-        "ParamFieldName": "suggestionsEnabled",
-        "IncludeInCommandLine": false,
-        "DefaultValue": "true",
-        "EnumValues": {
-            "False": "false",
-            "True": "true"
-        }
-    },
-    {
         "DisplayName": "Trust X-Forwarded-For Header",
         "Category": "LanguageTool:spellcheck",
         "Subcategory": "Server:dns:1",

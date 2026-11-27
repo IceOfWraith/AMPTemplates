@@ -1,4 +1,4 @@
-Meta.DisplayName=LanguageTool Server [bot]
+Meta.DisplayName=LanguageTool Server
 Meta.Description=Self-hosted LanguageTool HTTP server for grammar, style and spell checking in over 20 languages
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=168914b1-47cd-49ac-8e57-7215e3bb3c6e
+Meta.AppConfigId=c89ecace-e22a-4635-a8d5-964132944058
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=LanguageTool Server
