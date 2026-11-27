@@ -31,7 +31,7 @@
         "UpdateStageName": "Config Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/2a78649156a6c8112f3247654f1fb904ad95b518/jmusicbot-config.txt",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/jmusicbot-config.txt",
         "UpdateSourceArgs": "AMP_config.txt",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": true,
