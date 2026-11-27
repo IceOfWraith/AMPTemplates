@@ -1,4 +1,4 @@
-Meta.DisplayName=GTA Connected
+Meta.DisplayName=GTA Connected [bot]
 Meta.Description=GTA Connected scriptable multiplayer server for Grand Theft Auto III, Vice City, San Andreas and IV
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=ae4ceb2d-13d5-4018-8b4f-d512194bcba5
+Meta.AppConfigId=89930c6b-00c1-40b8-97e1-24dba7c1d6d9
 Meta.ImportableExtensions=[]
 App.DisplayName=GTA Connected
 App.RootDir=./gtac/
