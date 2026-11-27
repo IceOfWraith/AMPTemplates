@@ -1,0 +1,23 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 20100,
+        "Ref": "GamePort",
+        "Name": "Game Port",
+        "Description": "Port for main game traffic"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 27000,
+        "Ref": "QueryPort",
+        "Name": "Steam Query Port",
+        "Description": "Port for the Steam server browser and player list"
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 8700,
+        "Ref": "CommsPort",
+        "Name": "Steam Communications Port",
+        "Description": "Port for Steam server communications"
+    }
+]
