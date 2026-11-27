@@ -1,0 +1,8 @@
+[
+    {
+        "ConfigFile": "config.txt",
+        "AutoMap": false,
+        "ConfigType": "template",
+        "ConfigFileTemplate": "jmusicbot/AMP_config.txt"
+    }
+]
