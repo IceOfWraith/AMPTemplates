@@ -1,4 +1,4 @@
-Meta.DisplayName=Limbo
+Meta.DisplayName=Limbo [bot]
 Meta.Description=Lightweight standalone Minecraft Java limbo server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=49acca67-43c1-4d3c-a945-dc66c729d1d6
+Meta.AppConfigId=4092ab2c-a1fa-46e1-93c3-17ee8e0fb140
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Limbo
