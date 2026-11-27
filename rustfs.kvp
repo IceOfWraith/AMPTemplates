@@ -1,4 +1,4 @@
-Meta.DisplayName=RustFS
+Meta.DisplayName=RustFS [bot]
 Meta.Description=S3-compatible object storage server with a web console
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=4d1f8b2e-7a63-4c95-b0e8-2f6a9c1d5e37
+Meta.AppConfigId=b3496585-b657-437f-8fbb-eae76bc13761
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=RustFS
