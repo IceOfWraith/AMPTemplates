@@ -1,5 +1,12 @@
 [
     {
+        "UpdateStageName": "Clusterio Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Node.js Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSourceArch": "x86_64",
