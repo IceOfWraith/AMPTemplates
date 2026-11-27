@@ -1,4 +1,4 @@
-Meta.DisplayName=Forgejo
+Meta.DisplayName=Forgejo [bot]
 Meta.Description=Forgejo, a lightweight self-hosted Git forge
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=a7f30e7f-787a-4be9-8356-26c4ff5294ff
+Meta.AppConfigId=d9b803c9-ea5d-41b2-a497-b543de5a846e
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Forgejo
