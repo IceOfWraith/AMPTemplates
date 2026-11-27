@@ -1,9 +1,0 @@
-[
-    {
-        "Protocol": "Both",
-        "Port": 25565,
-        "Ref": "ServerPort",
-        "Name": "Server Port",
-        "Description": "Port for game traffic (TCP) and the optional query protocol (UDP)"
-    }
-]
