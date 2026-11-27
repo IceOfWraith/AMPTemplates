@@ -1,4 +1,4 @@
-Meta.DisplayName=Brickadia
+Meta.DisplayName=Brickadia [bot]
 Meta.Description=Brickadia Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=2
 Meta.ReleaseNotes=Initial release. Adds server name, description, password, listing, welcome message, rules and building limit settings
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=70c122fa-6ecb-4240-89ab-9d047930bd97
+Meta.AppConfigId=50a7a830-adfb-4a92-a5fb-719e1b74cd25
 Meta.ImportableExtensions=[".ini"]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Brickadia
