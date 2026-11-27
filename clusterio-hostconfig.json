@@ -10,8 +10,9 @@
         "IsFlagArgument": false,
         "ParamFieldName": "ControllerURL",
         "IncludeInCommandLine": false,
-        "DefaultValue": "http://localhost:8080/",
+        "DefaultValue": "",
         "Placeholder": "http://192.168.1.10:8080/",
+        "Required": true,
         "EnumValues": {}
     },
     {
