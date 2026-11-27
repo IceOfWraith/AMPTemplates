@@ -29,7 +29,7 @@
     "UpdateStageName": "Default Config Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/prometheus.yml",
+    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/efd82d037910f997598ea0f819a39700391a8942/prometheus.yml",
     "UpdateSourceTarget": "{{$FullBaseDir}}",
     "UpdateSourceArgs": "prometheus.yml",
     "OverwriteExistingFiles": false,
