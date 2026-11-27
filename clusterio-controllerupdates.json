@@ -1,0 +1,44 @@
+[
+    {
+        "UpdateStageName": "Node.js Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "x86_64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"NodeVersion=\\\"{{NodeVersion}}\\\"; cd clusterio && if [[ -x node/bin/node ]]; then InstalledVersion=$(node/bin/node --version); else InstalledVersion=\\\"\\\"; fi; [[ -z \\\"$NodeVersion\\\" ]] && NodeVersion=\\\"v$(wget -qO- https://endoflife.date/api/v1/products/nodejs/releases/{{NodeRelease}} | jq -r \\\".result.latest.name\\\")\\\"; if [[ ! \\\"$NodeVersion\\\" =~ ^v(22|24|26)\\.[0-9]+\\.[0-9]+$ ]]; then echo \\\"Invalid Node.js version format specified\\\" && exit 1; elif [[ \\\"$InstalledVersion\\\" == \\\"$NodeVersion\\\" ]]; then echo \\\"Node.js $NodeVersion already installed. Skipping\\\" && exit 0; else [[ -f node.tar.gz ]] && rm -f node.tar.gz >/dev/null 2>&1; wget -qO node.tar.gz https://nodejs.org/download/release/$NodeVersion/node-$NodeVersion-linux-x64.tar.gz || { echo \\\"Download failed from the Node.js CDN. This is a fault with the CDN, not AMP. Aborting\\\"; exit 1; }; mkdir -p node && rm -rf node/* >/dev/null 2>&1 && tar -xzf node.tar.gz -C node --strip-components=1 >/dev/null 2>&1 && rm -f node.tar.gz >/dev/null 2>&1 && echo \\\"Node.js $NodeVersion downloaded\\\"; fi\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Node.js Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "aarch64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"NodeVersion=\\\"{{NodeVersion}}\\\"; cd clusterio && if [[ -x node/bin/node ]]; then InstalledVersion=$(node/bin/node --version); else InstalledVersion=\\\"\\\"; fi; [[ -z \\\"$NodeVersion\\\" ]] && NodeVersion=\\\"v$(wget -qO- https://endoflife.date/api/v1/products/nodejs/releases/{{NodeRelease}} | jq -r \\\".result.latest.name\\\")\\\"; if [[ ! \\\"$NodeVersion\\\" =~ ^v(22|24|26)\\.[0-9]+\\.[0-9]+$ ]]; then echo \\\"Invalid Node.js version format specified\\\" && exit 1; elif [[ \\\"$InstalledVersion\\\" == \\\"$NodeVersion\\\" ]]; then echo \\\"Node.js $NodeVersion already installed. Skipping\\\" && exit 0; else [[ -f node.tar.gz ]] && rm -f node.tar.gz >/dev/null 2>&1; wget -qO node.tar.gz https://nodejs.org/download/release/$NodeVersion/node-$NodeVersion-linux-arm64.tar.gz || { echo \\\"Download failed from the Node.js CDN. This is a fault with the CDN, not AMP. Aborting\\\"; exit 1; }; mkdir -p node && rm -rf node/* >/dev/null 2>&1 && tar -xzf node.tar.gz -C node --strip-components=1 >/dev/null 2>&1 && rm -f node.tar.gz >/dev/null 2>&1 && echo \\\"Node.js $NodeVersion downloaded\\\"; fi\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Node.js Download",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -Command \"$ProgressPreference='SilentlyContinue'; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $NodeVersion='{{NodeVersion}}'; Set-Location -Path 'clusterio'; if (Test-Path 'node/node.exe') { $InstalledVersion =  & node/node.exe --version } else { $InstalledVersion = '' }; if ( [string]::IsNullOrWhiteSpace($NodeVersion) ) { $NodeVersion = 'v' + ((Invoke-RestMethod -UseBasicParsing -Uri \\\"https://endoflife.date/api/v1/products/nodejs/releases/{{NodeRelease}}\\\").result.latest.name) }; if ( $NodeVersion -notmatch '^v(22|24|26)\\.\\d+\\.\\d+$' ) { Write-Output 'Invalid Node.js version format specified'; exit 1 } elseif ( $InstalledVersion -eq $NodeVersion ) { Write-Output \\\"Node.js $NodeVersion already installed. Skipping\\\"; exit 0 } else { if ( Test-Path node.zip ) { Remove-Item node.zip -Force -ErrorAction SilentlyContinue *> $null }; try { Invoke-WebRequest -UseBasicParsing -Uri https://nodejs.org/download/release/$NodeVersion/node-$NodeVersion-win-x64.zip -OutFile node.zip -ErrorAction Stop } catch { Write-Output \\\"Download failed from the Node.js CDN. This is a fault with the CDN, not AMP. Aborting\\\"; exit 1; }; Expand-Archive -Path \\\"node.zip\\\" -DestinationPath \\\".\\\" -Force *> $null; if ( Test-Path node.zip ) { Remove-Item node.zip -Force -ErrorAction SilentlyContinue *> $null }; if (Test-Path \\\"node-*\\\") { Remove-Item -Recurse -Force node -ErrorAction SilentlyContinue *> $null; Get-ChildItem -Directory | Where-Object { $_.Name -like \\\"node-*\\\" } | Rename-Item -NewName \\\"node\\\" *> $null; Write-Output \\\"Node.js $NodeVersion downloaded\\\" } }\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Clusterio Install",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd clusterio && export PATH=\\\"{{$FullRootDir}}node/bin:$PATH\\\" && J=node_modules/@clusterio/controller/dist/node/controller.js && { [ -f package.json ] || echo {} > package.json; } && npm install --no-fund --no-audit --cache \\\"{{$FullRootDir}}.npm\\\" \\\"@clusterio/controller@{{ClusterioVersion}}\\\" {{Plugins}} && { [ -f config-controller.json ] || node $J config create; } && node $J bootstrap create-admin \\\"{{AdminName}}\\\" && { [ -s admin-token.txt ] || { node $J bootstrap generate-user-token \\\"{{AdminName}}\\\" | tail -n 1 > admin-token.txt && echo \\\"Login token for {{AdminName}} saved to admin-token.txt\\\"; }; } && echo \\\"Clusterio controller installed\\\"\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Clusterio Install",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -Command \"$ProgressPreference='SilentlyContinue'; Set-Location clusterio; $env:PATH = '{{$FullRootDir}}node;' + $env:PATH; $J = 'node_modules/@clusterio/controller/dist/node/controller.js'; if (!(Test-Path package.json)) { Set-Content -Path package.json -Value '{}' }; $P = @('{{Plugins}}'.Split(' ', [StringSplitOptions]::RemoveEmptyEntries)); & npm.cmd install --no-fund --no-audit --cache '{{$FullRootDir}}.npm' '@clusterio/controller@{{ClusterioVersion}}' @P; if ($LASTEXITCODE -ne 0) { exit 1 }; if (!(Test-Path config-controller.json)) { & node.exe $J config create; if ($LASTEXITCODE -ne 0) { exit 1 } }; & node.exe $J bootstrap create-admin '{{AdminName}}'; if ($LASTEXITCODE -ne 0) { exit 1 }; if (!(Test-Path admin-token.txt) -or (Get-Item admin-token.txt).Length -eq 0) { & node.exe $J bootstrap generate-user-token '{{AdminName}}' | Select-Object -Last 1 | Set-Content -Path admin-token.txt; Write-Output 'Login token for {{AdminName}} saved to admin-token.txt' }; Write-Output 'Clusterio controller installed'\"",
+        "SkipOnFailure": false
+    }
+]
