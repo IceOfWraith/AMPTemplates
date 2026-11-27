@@ -1,4 +1,4 @@
-Meta.DisplayName=Reposilite
+Meta.DisplayName=Reposilite [bot]
 Meta.Description=Lightweight Maven repository manager for JVM artifacts
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -20,7 +20,7 @@ Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
-Meta.AppConfigId=7dde7df4-c7a9-4a69-aef7-4ea3342528c6
+Meta.AppConfigId=fb81fe34-3ba1-43cd-b95c-79559bc8e9a6
 App.DisplayName=Reposilite
 App.RootDir=./reposilite/
 App.BaseDirectory=./reposilite/
