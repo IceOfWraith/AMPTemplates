@@ -1,4 +1,4 @@
-Meta.DisplayName=R5Reloaded
+Meta.DisplayName=R5Reloaded [bot]
 Meta.Description=R5Reloaded (modded Apex Legends) dedicated server. You supply the server files: upload a zip of your R5Reloaded server folder to the instance's upload folder, then update.
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unsupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=True
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=53f880e8-62e1-4442-9446-885d76cfaf75
+Meta.AppConfigId=fe38fe4f-7aa5-42d1-9c33-0b515c5f634c
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=R5Reloaded
