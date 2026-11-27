@@ -1,4 +1,4 @@
-Meta.DisplayName=IOSoccer
+Meta.DisplayName=IOSoccer [bot]
 Meta.Description=IOSoccer Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -21,7 +21,7 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=808cd472-d0a4-4ebe-9761-583fa1c33605
+Meta.AppConfigId=e3602265-4dcc-4da6-bdd6-598011d2d863
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=

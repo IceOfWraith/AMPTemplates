@@ -11,7 +11,7 @@
     "UpdateStageName": "Server.cfg Template File Download",
     "UpdateSourcePlatform": "All",
     "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/iosoccerserver.cfg",
+    "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/229f838c265e28dcb0853a6c0a2100284c7f1a1f/iosoccerserver.cfg",
     "UpdateSourceArgs": "AMP_server.cfg",
     "UpdateSourceTarget": "{{$FullRootDir}}",
     "OverwriteExistingFiles": true,
