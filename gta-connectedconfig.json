@@ -49,7 +49,7 @@
         "Hidden": true,
         "ParamFieldName": "/server/logpath",
         "ExcludeFromImport": true,
-        "DefaultValue": "logs",
+        "DefaultValue": "server.log",
         "EnumValues": {}
     },
     {
