@@ -1,4 +1,4 @@
-Meta.DisplayName=JMusicBot
+Meta.DisplayName=JMusicBot [bot]
 Meta.Description=Self-hosted Discord music bot
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -20,7 +20,7 @@ Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
-Meta.AppConfigId=ba891d67-c290-4bd1-83e5-d746c2bbe4e7
+Meta.AppConfigId=1a36643c-7af6-473c-ac17-4d3ea57580f4
 App.DisplayName=JMusicBot
 App.RootDir=./jmusicbot/
 App.BaseDirectory=./jmusicbot/
