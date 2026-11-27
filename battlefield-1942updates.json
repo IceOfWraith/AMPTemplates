@@ -34,7 +34,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullRootDir}}\\\" && tar -xzf bf1942-update-1.61.tar.gz --no-same-owner --strip-components=1 && rm -f bf1942-update-1.61.tar.gz\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullRootDir}}\\\" && tar -xzf bf1942-update-1.61.tar.gz --no-same-owner --strip-components=1 && rm -f bf1942-update-1.61.tar.gz && ln -sf bf1942_lnxded.static bf1942_lnxded\"",
         "SkipOnFailure": false
     },
     {
@@ -48,7 +48,7 @@
         "UpdateStageName": "Server Settings Template Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/a8f5c3cb40d169d6277f5cfee4d6ef77f0376d0d/battlefield-1942serversettings.con",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/battlefield-1942serversettings.con",
         "UpdateSourceArgs": "AMP_serversettings.con",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
