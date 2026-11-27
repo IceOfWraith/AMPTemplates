@@ -29,7 +29,7 @@
         "UpdateStageName": "Default Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/loki.yaml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/0b6d93f740536ae58762bcbfef0c40480ef03cdf/loki.yaml",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceArgs": "loki.yaml",
         "OverwriteExistingFiles": false,

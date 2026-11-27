@@ -1,4 +1,4 @@
-Meta.DisplayName=Grafana Loki
+Meta.DisplayName=Grafana Loki [bot]
 Meta.Description=Horizontally scalable log aggregation system, run as a single binary with local filesystem storage
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=8e3c1a57-2f4b-4d6e-a9c0-5b7d2e4f1c93
+Meta.AppConfigId=ead54da0-1fc6-4660-a101-8605ee864ac3
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Grafana Loki
