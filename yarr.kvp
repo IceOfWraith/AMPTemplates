@@ -1,4 +1,4 @@
-Meta.DisplayName=yarr
+Meta.DisplayName=yarr [bot]
 Meta.Description=Self-hosted RSS/Atom feed reader with a web interface, shipped as a single binary
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=11eb929f-24e4-4298-87a8-d15a4733429f
+Meta.AppConfigId=797e4ff6-1653-4958-b043-34f29f37853b
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=yarr
