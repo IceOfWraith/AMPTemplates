@@ -1,4 +1,4 @@
-Meta.DisplayName=Red-DiscordBot
+Meta.DisplayName=Red-DiscordBot [bot]
 Meta.Description=Red, a self-hosted modular Discord bot written in Python
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=793945bc-16aa-42d2-9147-3d754095a407
+Meta.AppConfigId=1b3bb0f4-8c23-46fe-90b1-5e13eff7fd1d
 Meta.ImportableExtensions=[]
 App.DisplayName=Red-DiscordBot
 App.RootDir=./red-discordbot/
