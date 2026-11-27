@@ -1,4 +1,4 @@
-Meta.DisplayName=Farming Simulator 25
+Meta.DisplayName=Farming Simulator 25 [bot]
 Meta.Description=Farming Simulator 25 Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=True
 Meta.ConfigVersion=5
 Meta.ReleaseNotes=Optional GIANTS DLC installation from named DLC product keys, looked up at the GIANTS download portal or taken from direct HTTPS or uploaded EXE/IMG installers. Run Update while stopped after changing DLC settings, then start. Select installed DLCs for the savegame in the GIANTS web interface.
 Meta.BreakingReleaseNotes=Linux now uses Wine instead of Proton GE. Existing container instances: change the image to cubecoders/ampbase:wine-stable. Native hosts: install Wine. Until then the old Proton GE install keeps working but is no longer updated. Savegames and activation are kept in the instance.
-Meta.AppConfigId=0245cfc5-5fb5-4919-9cb8-c51cccbe31ae
+Meta.AppConfigId=567b5c09-f453-4aaa-bdc3-3f1d98ef88b4
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Farming Simulator 25
