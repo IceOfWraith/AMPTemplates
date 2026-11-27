@@ -1,4 +1,4 @@
-Meta.DisplayName=OpenArena
+Meta.DisplayName=OpenArena [bot]
 Meta.Description=OpenArena 0.8.8 Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=c4856bd1-df31-48fa-9f55-e20ba9055966
+Meta.AppConfigId=f9da7002-173a-4fe8-90e3-66e4017731bd
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=OpenArena
