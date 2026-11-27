@@ -1,4 +1,4 @@
-Meta.DisplayName=Elasticsearch
+Meta.DisplayName=Elasticsearch [bot]
 Meta.Description=Distributed RESTful search and analytics engine
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=4b7d2e91-6c3a-4f58-9e0b-1a8c5d27f614
+Meta.AppConfigId=27fc86ca-365a-43c1-916b-7b319725e8f3
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Elasticsearch
