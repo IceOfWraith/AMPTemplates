@@ -1,4 +1,4 @@
-Meta.DisplayName=SeaweedFS
+Meta.DisplayName=SeaweedFS [bot]
 Meta.Description=Distributed file system and object store with an S3-compatible API
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=9e3c7a51-2f4b-4d86-a1c0-5b7e2d9f3a64
+Meta.AppConfigId=a202f426-2adb-4ab7-b7fd-6a8e2585d5bc
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=SeaweedFS
