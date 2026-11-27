@@ -1,4 +1,4 @@
-Meta.DisplayName=Meilisearch
+Meta.DisplayName=Meilisearch [bot]
 Meta.Description=Fast, self-hosted search engine with a RESTful API
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=8e3c5a71-2f4d-4b9e-a6c0-5d17b2e94f38
+Meta.AppConfigId=9374b629-445a-41d9-80ad-9a47d1134241
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Meilisearch
