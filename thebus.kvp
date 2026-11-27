@@ -1,4 +1,4 @@
-Meta.DisplayName=The Bus [bot]
+Meta.DisplayName=The Bus
 Meta.Description=The Bus Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -25,7 +25,7 @@ Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
 Meta.ImportableExtensions=[]
-Meta.AppConfigId=ee5c08d8-0bd7-4bcc-95ac-229416c2fd59
+Meta.AppConfigId=8d6f2b41-3c7e-4a59-9e0b-6a1f4c2d7b93
 Meta.AppIsMultiIPAware=False
 App.DisplayName=The Bus
 App.RootDir=./thebus/
@@ -35,8 +35,8 @@ App.ExecutableWin=507320\TheBus\Binaries\Win64\TheBusServer.exe
 App.ExecutableLinux=507320/TheBus/Binaries/Linux/TheBusServer_Linux
 App.WorkingDir=507320
 App.LinuxCommandLineArgs=
-App.WindowsCommandLineArgs=-FullStdOutLogOutput
-App.CommandLineArgs=-log -stdout -port={{$GamePort}} -useperfthreads {{CustomArgs}} {{$PlatformArgs}}
+App.WindowsCommandLineArgs=
+App.CommandLineArgs=-log -stdout -FullStdOutLogOutput -ForceLogFlush -port={{$GamePort}} -useperfthreads {{CustomArgs}} {{$PlatformArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={"HOME":"{{$FullBaseDir}}","LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%"}
