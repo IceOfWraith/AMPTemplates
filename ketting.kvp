@@ -1,4 +1,4 @@
-Meta.DisplayName=Ketting
+Meta.DisplayName=Ketting [bot]
 Meta.Description=Ketting Minecraft Java server, running Forge mods and Bukkit/Spigot plugins together
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=f8b23206-c4b2-4a63-82a6-5ec59d38e095
+Meta.AppConfigId=e6bfec40-249d-4f4f-920b-deaa920de2cc
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Ketting
