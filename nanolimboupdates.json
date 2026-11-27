@@ -39,7 +39,7 @@
         "UpdateStageName": "Settings Template Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/nanolimbosettings.yml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/d197adb80c65e3329175b38f49c5e0d9dd979199/nanolimbosettings.yml",
         "UpdateSourceArgs": "AMP_settings.yml",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,

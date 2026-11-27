@@ -1,4 +1,4 @@
-Meta.DisplayName=NanoLimbo
+Meta.DisplayName=NanoLimbo [bot]
 Meta.Description=Lightweight Minecraft: Java Edition limbo server, usually used as an AFK or fallback server behind a Velocity or BungeeCord proxy
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -23,7 +23,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=6a30b887-3782-45c6-b99d-ac22e908bcb7
+Meta.AppConfigId=cfa5aa43-c1f1-4453-b58b-3865e106fdb9
 App.DisplayName=NanoLimbo
 App.RootDir=./nanolimbo/
 App.BaseDirectory=./nanolimbo/
