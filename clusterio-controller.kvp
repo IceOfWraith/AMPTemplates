@@ -1,4 +1,4 @@
-Meta.DisplayName=Clusterio Controller
+Meta.DisplayName=Clusterio Controller [bot]
 Meta.Description=Clusterio controller: web interface and cluster manager for linked Factorio servers
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=6f0c2a4e-93b1-4f7d-9c55-2e8d1a7b4c10
+Meta.AppConfigId=3fb1b60b-6f2d-44b7-83c2-af9d0936af34
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=Clusterio Controller
