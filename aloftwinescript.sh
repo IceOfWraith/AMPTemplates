@@ -3,6 +3,7 @@
 SCRIPT_NAME=$(echo \"$0\" | xargs readlink -f)
 SCRIPTDIR=$(dirname "$SCRIPT_NAME")
 
+echo "[winescript] starting Xvfb"
 exec 6>display.log
 /usr/bin/Xvfb -displayfd 6 -nolisten tcp -nolisten unix &
 XVFB_PID=$!
@@ -10,6 +11,7 @@ while [[ ! -s display.log ]]; do
   sleep 1
 done
 read -r DPY_NUM < display.log
+echo "[winescript] Xvfb on :$DPY_NUM"
 rm display.log
 
 export WINEPREFIX="$SCRIPTDIR/aloft/.wine"
@@ -41,13 +43,15 @@ chmod +x winetricks
 
 MONO_URL="https://dl.winehq.org/wine/wine-mono/${MONO_VERSION}/wine-mono-${MONO_VERSION}-x86.msi"
 wget -q -O "$WINEPREFIX/mono.msi" "$MONO_URL"
+echo "[winescript] installing wine-mono $MONO_VERSION"
 /usr/bin/wine msiexec /i "$WINEPREFIX/mono.msi" /qn /quiet /norestart /log "$WINEPREFIX/mono_install.log"
 
 PACKAGES="vcrun2022 wmp11 sound=disabled"
 echo "" > winescript_log.txt 2>&1
 for PACKAGE in $PACKAGES; do
   #if [[ "$PACKAGE" == "vcrun2022" && "$WINE_VERSION" =~ ^(10|11)$ ]]; then continue; fi
-  ./winetricks -q $PACKAGE >> winescript_log.txt 2>&1
+  echo "[winescript] winetricks $PACKAGE"
+  timeout 1200 ./winetricks -q $PACKAGE >> winescript_log.txt 2>&1; echo "[winescript] $PACKAGE exit $?"
 done
 rm -rf ~/.cache/winetricks
 
