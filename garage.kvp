@@ -1,4 +1,4 @@
-Meta.DisplayName=Garage
+Meta.DisplayName=Garage [bot]
 Meta.Description=Garage S3-compatible object storage
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=816b995d-e51f-411d-8967-c0f3fb7819d2
+Meta.AppConfigId=23fb7f1d-0f3b-4c39-8c92-d74b43da8775
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Garage
