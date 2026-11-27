@@ -1,4 +1,4 @@
-Meta.DisplayName=Prometheus
+Meta.DisplayName=Prometheus [bot]
 Meta.Description=Open-source monitoring system and time series database
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Native
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=4b6f2e1c-8d7a-4f3e-9c52-1a9e7d3b6f80
+Meta.AppConfigId=2db58b1e-c91b-4c22-8c43-fa05ff215500
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=True
 App.DisplayName=Prometheus
