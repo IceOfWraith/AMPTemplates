@@ -28,15 +28,15 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"/usr/bin/wine --version; ls /usr/share/wine/mono /opt/wine/mono 2>&1; strings /usr/lib/wine/x86_64-windows/appwiz.cpl /opt/wine-stable/lib/wine/x86_64-windows/appwiz.cpl 2>/dev/null | grep -i -m5 mono\"",
-        "SkipOnFailure": true
+        "UpdateSourceArgs": "-c \"cd raft && wget -q -N https://dl.winehq.org/wine/wine-mono/10.4.1/wine-mono-10.4.1-x86.msi && export WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win64 WINEDEBUG=-all && /usr/bin/wine msiexec /i wine-mono-10.4.1-x86.msi /qn /norestart /log \\\"$WINEPREFIX/mono_install.log\\\"\"",
+        "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Check Server File",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C if exist \"{{$FullBaseDir}}RaftDedicatedServer.exe\" (echo RaftDedicatedServer.exe found) else (echo RaftDedicatedServer.exe not found. Download it from master.raftmodding.com, upload it into the server folder with the File Manager, then start the server & exit /B 1)",
+        "UpdateSourceArgs": "/C if exist \"{{$FullBaseDir}}RaftDedicatedServer.exe\" (echo RaftDedicatedServer.exe found) else (echo RaftDedicatedServer.exe not found. Download it from master.raftmodding.com, upload it with the File Manager into the top folder (next to Raft.exe), then start the server & exit /B 1)",
         "SkipOnFailure": true
     },
     {
@@ -44,7 +44,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"if [[ -f \\\"{{$FullBaseDir}}RaftDedicatedServer.exe\\\" ]]; then echo 'RaftDedicatedServer.exe found'; else echo 'RaftDedicatedServer.exe not found. Download it from master.raftmodding.com, upload it into the server folder with the File Manager, then start the server'; exit 1; fi\"",
+        "UpdateSourceArgs": "-c \"if [[ -f \\\"{{$FullBaseDir}}RaftDedicatedServer.exe\\\" ]]; then echo 'RaftDedicatedServer.exe found'; else echo 'RaftDedicatedServer.exe not found. Download it from master.raftmodding.com, upload it with the File Manager into the top folder (next to Raft.exe), then start the server'; exit 1; fi\"",
         "SkipOnFailure": true
     }
 ]

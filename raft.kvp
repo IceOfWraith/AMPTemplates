@@ -1,5 +1,5 @@
-Meta.DisplayName=Raft [bot]
-Meta.Description=Raft Dedicated Server (RDS by RaftModding). Requires a Steam login that owns Raft, an RDS master private key, and the RaftDedicatedServer.exe file uploaded by you into the "server" folder
+Meta.DisplayName=Raft
+Meta.Description=Raft Dedicated Server (RDS by RaftModding). Requires a Steam login that owns Raft, an RDS master private key, and the RaftDedicatedServer.exe file uploaded by you with the File Manager into the top folder, next to Raft.exe
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
 Meta.Arch=x86_64
@@ -21,9 +21,9 @@ Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
-Meta.AppConfigId=ce3f4c74-9a12-439d-a5d4-aed86ab45b66
+Meta.AppConfigId=78a2e546-80c4-4bcd-9aec-4e2a0bc33b62
 Meta.ConfigVersion=1
-Meta.ReleaseNotes=Initial release. The RaftDedicatedServer.exe file must be uploaded manually into the "server" folder
+Meta.ReleaseNotes=Initial release. The RaftDedicatedServer.exe file must be uploaded manually with the File Manager, next to Raft.exe
 Meta.BreakingReleaseNotes=
 App.DisplayName=Raft
 App.RootDir=./raft/
@@ -41,6 +41,7 @@ App.EnvironmentVariables={"SteamAppId":"648800","WINEPREFIX":"{{$FullRootDir}}.w
 App.CommandLineParameterFormat={0}={1}
 App.CommandLineParameterDelimiter=
 App.ExitMethod=String
+App.ExitMethodWindows=CtrlC
 App.ExitTimeout=60
 App.ExitString=exit
 App.ExitFile=app_exit.lck
