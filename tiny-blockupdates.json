@@ -12,6 +12,16 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Console Output Override",
+        "UpdateStageDescription": "Makes the server flush each console line so AMP can see it",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "[application]\n\nrun/flush_stdout_on_print=true\n",
+        "UpdateSourceArgs": "{{$FullBaseDir}}override.cfg",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Set Executable Flag",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "SetExecutableFlag",
