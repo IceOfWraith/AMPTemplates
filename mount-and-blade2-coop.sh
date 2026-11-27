@@ -152,13 +152,23 @@ update() {
         mkdir -p -- "$WORKSHOP_DIR"
     fi
     output=$(mktemp "$ROOT/.workshop-update.XXXXXX")
-    if ! HOME="$ROOT/../.virtualhome" timeout 7200 /bin/bash "$ROOT/steamcmd.sh" \
-        +@NoPromptForPassword 1 +@sSteamCmdForcePlatformType windows \
-        +force_install_dir "$WORKSHOP_DIR" +login "$account" \
-        +workshop_download_item "$APP" "$ITEM" validate +quit </dev/null 2>&1 | tee "$output"; then
+    # SteamCMD gives up on a Workshop item after a fixed time. Partial downloads
+    # are kept, so retrying a timed-out download resumes it.
+    local attempt
+    for attempt in 1 2 3; do
+        if HOME="$ROOT/../.virtualhome" timeout 7200 /bin/bash "$ROOT/steamcmd.sh" \
+            +@NoPromptForPassword 1 +@sSteamCmdForcePlatformType windows \
+            +force_install_dir "$WORKSHOP_DIR" +login "$account" \
+            +workshop_download_item "$APP" "$ITEM" validate +quit </dev/null 2>&1 | tee "$output"; then
+            break
+        fi
+        if (( attempt < 3 )) && grep -q "Timeout downloading item $ITEM" "$output"; then
+            log "Workshop download timed out; resuming (attempt $((attempt + 1)) of 3)"
+            continue
+        fi
         rm -f -- "$output"
         die 'Workshop update failed; retry AMP Update login if the cached session expired'
-    fi
+    done
     if ! grep -Eq "Success[.] Downloaded item $ITEM([[:space:]]|$)" "$output"; then
         rm -f -- "$output"
         die 'SteamCMD did not confirm the Workshop download; existing files were left in place'
@@ -229,6 +239,8 @@ prepare() {
     if [[ ! -f "$WINEPREFIX/.amp-coop-prefix-ok" || ! -f "$WINEPREFIX/system.reg" ]]; then
         [[ ! -L "$WINEPREFIX" ]] || die 'Refusing a symlink as Wine prefix'
         rm -rf -- "$WINEPREFIX"
+        # Wine won't create a prefix inside a folder it doesn't own, such as /tmp.
+        mkdir -p -m 700 -- "$WINEPREFIX"
         if ! timeout 900 xvfb-run -a wineboot -i; then
             wineserver -k || true
             rm -rf -- "$WINEPREFIX"
