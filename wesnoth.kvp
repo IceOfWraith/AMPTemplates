@@ -1,4 +1,4 @@
-Meta.DisplayName=The Battle for Wesnoth
+Meta.DisplayName=The Battle for Wesnoth [bot]
 Meta.Description=The Battle for Wesnoth Multiplayer Server (wesnothd)
 Meta.OS=Windows, Linux
 Meta.AarchSupport=NotSupported
@@ -24,7 +24,7 @@ Meta.NoCommercialUsage=False
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Initial release
 Meta.BreakingReleaseNotes=
-Meta.AppConfigId=02a586e0-97d3-4553-90fd-cf5ff3ab9292
+Meta.AppConfigId=4a4c5f18-92f9-4686-b25e-323eb7e7194f
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
 App.DisplayName=The Battle for Wesnoth
