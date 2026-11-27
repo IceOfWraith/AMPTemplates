@@ -47,10 +47,10 @@
         "FieldName": "ConsoleEnable",
         "InputType": "checkbox",
         "IncludeInCommandLine": false,
-        "DefaultValue": "--console-enable ",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "",
-            "True": "--console-enable "
+            "False": "false",
+            "True": "true"
         }
     },
     {
