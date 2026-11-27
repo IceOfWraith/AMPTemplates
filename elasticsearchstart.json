@@ -1,0 +1,18 @@
+[
+    {
+        "UpdateStageName": "Set Elastic Password",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$ErrorActionPreference='Stop'; $p='{{ElasticPassword}}'; if (-not $p) { exit 0 }; $env:ES_PATH_CONF='{{$FullBaseDir}}config'; $p | & '{{$FullBaseDir}}es\\bin\\elasticsearch-keystore.bat' add -x -f bootstrap.password; if ($LASTEXITCODE -ne 0) { Write-Output 'Failed to store the elastic password in the keystore'; exit 1 }; Write-Output 'Stored the elastic password in the keystore'\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Set Elastic Password",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"P='{{ElasticPassword}}'; [[ -z $P ]] && exit 0; printf '%s\\n' \\\"$P\\\" | ES_PATH_CONF='{{$FullBaseDir}}config' '{{$FullBaseDir}}es/bin/elasticsearch-keystore' add -x -f bootstrap.password || { echo 'Failed to store the elastic password in the keystore'; exit 1; }; echo 'Stored the elastic password in the keystore'\"",
+        "SkipOnFailure": false
+    }
+]

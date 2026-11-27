@@ -20,9 +20,7 @@
         "Keywords": "cluster,name,cluster.name",
         "FieldName": "ClusterName",
         "InputType": "text",
-        "ParamFieldName": "cluster.name",
-        "IncludeInCommandLine": true,
-        "SkipIfEmpty": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "amp-cluster",
         "Placeholder": "amp-cluster",
         "EnumValues": {}
@@ -31,13 +29,11 @@
         "DisplayName": "Node Name",
         "Category": "Elasticsearch:search",
         "Subcategory": "Server:dns:1",
-        "Description": "Name of this node, shown in logs and the API. Leave empty to use the host name",
+        "Description": "Name of this node, shown in logs and the API",
         "Keywords": "node,name,node.name",
         "FieldName": "NodeName",
         "InputType": "text",
-        "ParamFieldName": "node.name",
-        "IncludeInCommandLine": true,
-        "SkipIfEmpty": true,
+        "IncludeInCommandLine": false,
         "DefaultValue": "amp-node",
         "Placeholder": "amp-node",
         "EnumValues": {}
@@ -70,6 +66,18 @@
             "False": "",
             "True": "-Expack.security.enabled=false "
         }
+    },
+    {
+        "DisplayName": "Elastic Password",
+        "Category": "Elasticsearch:search",
+        "Subcategory": "Server:dns:1",
+        "Description": "Password for the elastic superuser, at least 6 characters and without single quotes. Stored in the Elasticsearch keystore at each start and used until the password is changed through the API. Leave empty to set it yourself with elasticsearch-reset-password",
+        "Keywords": "password,elastic,superuser,security,login,bootstrap",
+        "FieldName": "ElasticPassword",
+        "InputType": "password",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Custom Settings",
