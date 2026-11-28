@@ -1,4 +1,4 @@
-Meta.DisplayName=Avorion
+Meta.DisplayName=Avorion [bot]
 Meta.Description=Avorion Dedicated Server
 Meta.OS=Windows, Linux
 Meta.Arch=x86_64
@@ -18,7 +18,7 @@ Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=4
 Meta.ReleaseNotes=Mark server.ini as importable so changes made to it outside AMP can be imported into the settings.
-Meta.AppConfigId=2b7ce232-f1db-44b3-847b-0379f6a99884
+Meta.AppConfigId=213ce63f-f529-4b8d-9dc2-4aaf37acddfc
 App.DisplayName=Avorion
 App.RootDir=./avorion/
 App.BaseDirectory=./avorion/565060/
