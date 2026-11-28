@@ -38,7 +38,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -Command \"Set-Location -Path 'mesorift-survival'; & ./7-Zip/7z.exe x -y -aoa MesoriftServer.rar -xr!*.pdb -xr!*.lnk | Out-Null; $code = $LASTEXITCODE; Remove-Item -Path 'MesoriftServer.rar' -Force -ErrorAction SilentlyContinue | Out-Null; if ($code -ne 0) { Write-Output \\\"7-Zip returned exit code $code while extracting the server files\\\"; exit 1 }\"",
+        "UpdateSourceArgs": "-NoProfile -Command \"Set-Location -Path 'mesorift-survival'; & ./7-Zip/7z.exe x -y -aoa MesoriftServer.rar '-xr!*.pdb' '-xr!*.lnk' | Out-Null; $code = $LASTEXITCODE; Remove-Item -Path 'MesoriftServer.rar' -Force -ErrorAction SilentlyContinue | Out-Null; if (($code -ne 0) -or -not (Test-Path 'WindowsServer/MesoRift_Survival/Binaries/Win64/MesoRift_SurvivalServer.exe')) { Write-Output \\\"7-Zip returned exit code $code while extracting the server files\\\"; exit 1 }\"",
         "SkipOnFailure": false
     },
     {
@@ -46,7 +46,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd mesorift-survival && ./7-Zip/7zzs x -y -aoa MesoriftServer.rar '-xr!*.pdb' '-xr!*.lnk' >/dev/null; code=$?; rm -f MesoriftServer.rar >/dev/null 2>&1; if [[ $code -ne 0 ]]; then echo \\\"7-Zip returned exit code $code while extracting the server files\\\"; exit 1; fi\"",
+        "UpdateSourceArgs": "-c \"cd mesorift-survival && ./7-Zip/7zzs x -y -aoa MesoriftServer.rar '-xr!*.pdb' '-xr!*.lnk' >/dev/null; code=$?; rm -f MesoriftServer.rar >/dev/null 2>&1; if [[ $code -ne 0 || ! -f WindowsServer/MesoRift_Survival/Binaries/Win64/MesoRift_SurvivalServer.exe ]]; then echo \\\"7-Zip returned exit code $code while extracting the server files\\\"; exit 1; fi\"",
         "SkipOnFailure": false
     },
     {
