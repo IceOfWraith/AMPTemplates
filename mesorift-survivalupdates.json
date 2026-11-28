@@ -69,7 +69,7 @@
         "UpdateStageName": "CustomConfig.ini Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/mesorift-survivalcustomconfig.ini",
+        "UpdateSourceData": "https://raw.githubusercontent.com/IceOfWraith/AMPTemplates/1cbfac99af27ff549dca4b0dfcad517774585a22/mesorift-survivalcustomconfig.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}MesoRift_Survival/Saved/Config/WindowsServer",
         "UpdateSourceArgs": "CustomConfig.ini",
         "OverwriteExistingFiles": false,
