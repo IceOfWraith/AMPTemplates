@@ -1,0 +1,28 @@
+[
+    {
+        "DisplayName": "Server Download URL",
+        "Category": "Mesorift Survival:landscape",
+        "Subcategory": "Server:dns:1",
+        "Description": "Direct download link for the server files archive (.rar) published by the developer in the official Mesorift Survival Dedicated Server Guide on Steam. Only change this if the developer posts a new link. Update the server after changing it",
+        "Keywords": "download,url,server files",
+        "FieldName": "ServerDownloadURL",
+        "InputType": "text",
+        "ParamFieldName": "ServerDownloadURL",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "https://drive.usercontent.google.com/download?id=1U1saXEu7s61ygBaQuc5HFUDhaDQMfKu_&export=download&confirm=t",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Custom Command Line Arguments",
+        "Category": "Mesorift Survival:landscape",
+        "Subcategory": "Server:dns:1",
+        "Description": "Extra arguments to pass to the server on startup",
+        "Keywords": "custom,arguments,command line",
+        "FieldName": "CustomArgs",
+        "InputType": "text",
+        "ParamFieldName": "CustomArgs",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    }
+]
