@@ -1,0 +1,9 @@
+[
+    {
+        "ConfigFile": "galaxies/{{GalaxyName}}/server.ini",
+        "AutoMap": true,
+        "Importable": true,
+        "ConfigType": "ini",
+        "ConfigFormatRegex": "^(?<key>.+?)=(?<value>.*?)$"
+    }
+]
