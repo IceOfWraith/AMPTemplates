@@ -50,6 +50,32 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "SteamCMD Component Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1007",
+        "UpdateSourceTarget": "{{$FullBaseDir}}MesoRift_Survival/Binaries/Win64",
+        "ForceDownloadPlatform": "Windows",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Config Directory",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}MesoRift_Survival/Saved/Config/WindowsServer",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "CustomConfig.ini Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/mesorift-survivalcustomconfig.ini",
+        "UpdateSourceTarget": "{{$FullBaseDir}}MesoRift_Survival/Saved/Config/WindowsServer",
+        "UpdateSourceArgs": "CustomConfig.ini",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Initialise Wine",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
